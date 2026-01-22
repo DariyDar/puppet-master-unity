@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: dcbc91a395888a4498e821a6649f787c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6972972081104732496
+    second: Hit_Left Shadow 112_0
+  - first:
+      213: 2042392789220520174
+    second: Hit_Left Shadow 112_1
+  - first:
+      213: -7542583344345546834
+    second: Hit_Left Shadow 112_2
+  - first:
+      213: 4637207340566002121
+    second: Hit_Left Shadow 112_3
+  - first:
+      213: 804544739078058313
+    second: Hit_Left Shadow 112_4
+  - first:
+      213: 8899712925995599590
+    second: Hit_Left Shadow 112_5
+  - first:
+      213: -7294804735603491642
+    second: Hit_Left Shadow 112_6
+  - first:
+      213: 5137954490172471294
+    second: Hit_Left Shadow 112_7
+  - first:
+      213: -3411819959692941472
+    second: Hit_Left Shadow 112_8
+  - first:
+      213: 3382095998667603353
+    second: Hit_Left Shadow 112_9
+  - first:
+      213: 6301766926424824675
+    second: Hit_Left Shadow 112_10
+  - first:
+      213: 1811557562275143933
+    second: Hit_Left Shadow 112_11
+  - first:
+      213: -402361105085523263
+    second: Hit_Left Shadow 112_12
+  - first:
+      213: 8198189093204909007
+    second: Hit_Left Shadow 112_13
+  - first:
+      213: 102730693828140216
+    second: Hit_Left Shadow 112_14
+  - first:
+      213: -7024799440141090417
+    second: Hit_Left Shadow 112_15
+  - first:
+      213: -7785053740275262692
+    second: Hit_Left Shadow 112_16
+  - first:
+      213: -6928625830771527148
+    second: Hit_Left Shadow 112_17
+  - first:
+      213: -7673462905218562075
+    second: Hit_Left Shadow 112_18
+  - first:
+      213: 6058192268483924254
+    second: Hit_Left Shadow 112_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1087
+        width: 174
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0be390d26d60b3f90800000000000000
+      internalID: -6972972081104732496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_1
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1087
+        width: 174
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0fe45bb69085c10800000000000000
+      internalID: 2042392789220520174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_2
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1086
+        width: 172
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaf718f196c535790800000000000000
+      internalID: -7542583344345546834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_3
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1086
+        width: 164
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9354cd18baa5040800000000000000
+      internalID: 4637207340566002121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 830
+        width: 162
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94138a27d215a2b00800000000000000
+      internalID: 804544739078058313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_5
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 830
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e68be4e0c1228b70800000000000000
+      internalID: 8899712925995599590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_6
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 830
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc34841eb5a3ca90800000000000000
+      internalID: -7294804735603491642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_7
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 830
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef77ad2036ead4740800000000000000
+      internalID: 5137954490172471294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 574
+        width: 163
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0672ae0c2d7c6a0d0800000000000000
+      internalID: -3411819959692941472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_9
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 574
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d3ad4446e9fee20800000000000000
+      internalID: 3382095998667603353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_10
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 574
+        width: 162
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b5bd2a1af547750800000000000000
+      internalID: 6301766926424824675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_11
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 574
+        width: 162
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df0259d3102f32910800000000000000
+      internalID: 1811557562275143933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_12
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 318
+        width: 163
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca91fbe4b68a6af0800000000000000
+      internalID: -402361105085523263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_13
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 319
+        width: 163
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcbd5fd5b81d5c170800000000000000
+      internalID: 8198189093204909007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_14
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 319
+        width: 168
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcd7219509fc6100800000000000000
+      internalID: 102730693828140216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_15
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 319
+        width: 174
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f810700d026e28e90800000000000000
+      internalID: -7024799440141090417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_16
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 63
+        width: 173
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b1195cedee5f390800000000000000
+      internalID: -7785053740275262692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_17
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 63
+        width: 173
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412744f248398df90800000000000000
+      internalID: -6928625830771527148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_18
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 63
+        width: 174
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e78f49b422628590800000000000000
+      internalID: -7673462905218562075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Shadow 112_19
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 63
+        width: 174
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e11900045c5031450800000000000000
+      internalID: 6058192268483924254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hit_Left Shadow 112_0: -6972972081104732496
+      Hit_Left Shadow 112_1: 2042392789220520174
+      Hit_Left Shadow 112_10: 6301766926424824675
+      Hit_Left Shadow 112_11: 1811557562275143933
+      Hit_Left Shadow 112_12: -402361105085523263
+      Hit_Left Shadow 112_13: 8198189093204909007
+      Hit_Left Shadow 112_14: 102730693828140216
+      Hit_Left Shadow 112_15: -7024799440141090417
+      Hit_Left Shadow 112_16: -7785053740275262692
+      Hit_Left Shadow 112_17: -6928625830771527148
+      Hit_Left Shadow 112_18: -7673462905218562075
+      Hit_Left Shadow 112_19: 6058192268483924254
+      Hit_Left Shadow 112_2: -7542583344345546834
+      Hit_Left Shadow 112_3: 4637207340566002121
+      Hit_Left Shadow 112_4: 804544739078058313
+      Hit_Left Shadow 112_5: 8899712925995599590
+      Hit_Left Shadow 112_6: -7294804735603491642
+      Hit_Left Shadow 112_7: 5137954490172471294
+      Hit_Left Shadow 112_8: -3411819959692941472
+      Hit_Left Shadow 112_9: 3382095998667603353
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

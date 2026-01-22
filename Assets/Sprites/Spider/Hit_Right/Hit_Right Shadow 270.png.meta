@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 3cef9778b40431341b5915be69827e79
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3717884233519720912
+    second: Hit_Right Shadow 270_0
+  - first:
+      213: -8704031626847987936
+    second: Hit_Right Shadow 270_1
+  - first:
+      213: -3469451938019749434
+    second: Hit_Right Shadow 270_2
+  - first:
+      213: 3339982557128893332
+    second: Hit_Right Shadow 270_3
+  - first:
+      213: -8279664582621481150
+    second: Hit_Right Shadow 270_4
+  - first:
+      213: -7788307885182598541
+    second: Hit_Right Shadow 270_5
+  - first:
+      213: -390220508548917181
+    second: Hit_Right Shadow 270_6
+  - first:
+      213: 2961539532477829319
+    second: Hit_Right Shadow 270_7
+  - first:
+      213: 1631868575052219794
+    second: Hit_Right Shadow 270_8
+  - first:
+      213: -3745653537079404935
+    second: Hit_Right Shadow 270_9
+  - first:
+      213: 5772705564948622496
+    second: Hit_Right Shadow 270_10
+  - first:
+      213: 3815795720595726813
+    second: Hit_Right Shadow 270_11
+  - first:
+      213: 6376071142805343052
+    second: Hit_Right Shadow 270_12
+  - first:
+      213: 2139828848835110606
+    second: Hit_Right Shadow 270_13
+  - first:
+      213: -6065226570056395818
+    second: Hit_Right Shadow 270_14
+  - first:
+      213: 9135951102284697080
+    second: Hit_Right Shadow 270_15
+  - first:
+      213: -5129370781937184995
+    second: Hit_Right Shadow 270_16
+  - first:
+      213: 8593358687658775025
+    second: Hit_Right Shadow 270_17
+  - first:
+      213: -2704506073377716790
+    second: Hit_Right Shadow 270_18
+  - first:
+      213: 1748265127625510285
+    second: Hit_Right Shadow 270_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1091
+        width: 151
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0361801ecfb676cc0800000000000000
+      internalID: -3717884233519720912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_1
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1090
+        width: 151
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027d5ffe951153780800000000000000
+      internalID: -8704031626847987936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_2
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1088
+        width: 148
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1da0528d70adfc0800000000000000
+      internalID: -3469451938019749434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_3
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1087
+        width: 147
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4932ba190700a5e20800000000000000
+      internalID: 3339982557128893332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 830
+        width: 145
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 247b67dfde8b81d80800000000000000
+      internalID: -8279664582621481150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_5
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 831
+        width: 141
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372415e1e3f5ae390800000000000000
+      internalID: -7788307885182598541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_6
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 831
+        width: 141
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3489ed3d388a59af0800000000000000
+      internalID: -390220508548917181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_7
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 831
+        width: 141
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c01e9d8380891920800000000000000
+      internalID: 2961539532477829319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_8
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 575
+        width: 141
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2954c10b2df85a610800000000000000
+      internalID: 1631868575052219794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_9
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 575
+        width: 141
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97652be04f3c40cc0800000000000000
+      internalID: -3745653537079404935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_10
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 573
+        width: 141
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aceeaf4025cc1050800000000000000
+      internalID: 5772705564948622496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_11
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 572
+        width: 141
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd1609dadfd64f430800000000000000
+      internalID: 3815795720595726813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_12
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 316
+        width: 141
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b08892cea5c7850800000000000000
+      internalID: 6376071142805343052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_13
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 315
+        width: 141
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec623fe200332bd10800000000000000
+      internalID: 2139828848835110606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_14
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 320
+        width: 141
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d31789c19cf3dba0800000000000000
+      internalID: -6065226570056395818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_15
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 323
+        width: 139
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd84098f1b69ce70800000000000000
+      internalID: 9135951102284697080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_16
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 67
+        width: 139
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1fcd5d4370d0d8b0800000000000000
+      internalID: -5129370781937184995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_17
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 67
+        width: 144
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f11b65623eb14770800000000000000
+      internalID: 8593358687658775025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_18
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 67
+        width: 151
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac54f6b2e0aa77ad0800000000000000
+      internalID: -2704506073377716790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Shadow 270_19
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 67
+        width: 151
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d4251fed5134810800000000000000
+      internalID: 1748265127625510285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hit_Right Shadow 270_0: -3717884233519720912
+      Hit_Right Shadow 270_1: -8704031626847987936
+      Hit_Right Shadow 270_10: 5772705564948622496
+      Hit_Right Shadow 270_11: 3815795720595726813
+      Hit_Right Shadow 270_12: 6376071142805343052
+      Hit_Right Shadow 270_13: 2139828848835110606
+      Hit_Right Shadow 270_14: -6065226570056395818
+      Hit_Right Shadow 270_15: 9135951102284697080
+      Hit_Right Shadow 270_16: -5129370781937184995
+      Hit_Right Shadow 270_17: 8593358687658775025
+      Hit_Right Shadow 270_18: -2704506073377716790
+      Hit_Right Shadow 270_19: 1748265127625510285
+      Hit_Right Shadow 270_2: -3469451938019749434
+      Hit_Right Shadow 270_3: 3339982557128893332
+      Hit_Right Shadow 270_4: -8279664582621481150
+      Hit_Right Shadow 270_5: -7788307885182598541
+      Hit_Right Shadow 270_6: -390220508548917181
+      Hit_Right Shadow 270_7: 2961539532477829319
+      Hit_Right Shadow 270_8: 1631868575052219794
+      Hit_Right Shadow 270_9: -3745653537079404935
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

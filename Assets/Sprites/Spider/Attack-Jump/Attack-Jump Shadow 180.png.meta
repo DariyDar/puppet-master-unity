@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: d4ef020023efe22439d45013d2d2e21f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 100637406868385592
+    second: Attack-Jump Shadow 180_0
+  - first:
+      213: 2247800493240989116
+    second: Attack-Jump Shadow 180_1
+  - first:
+      213: 104423612456038999
+    second: Attack-Jump Shadow 180_2
+  - first:
+      213: -7713337790346252471
+    second: Attack-Jump Shadow 180_3
+  - first:
+      213: 3174024269527479331
+    second: Attack-Jump Shadow 180_4
+  - first:
+      213: 6164265565665481933
+    second: Attack-Jump Shadow 180_5
+  - first:
+      213: 5741105844593949776
+    second: Attack-Jump Shadow 180_6
+  - first:
+      213: 5244706884612332995
+    second: Attack-Jump Shadow 180_7
+  - first:
+      213: -2384224636190049924
+    second: Attack-Jump Shadow 180_8
+  - first:
+      213: -5714907537648551642
+    second: Attack-Jump Shadow 180_9
+  - first:
+      213: 8048610264351286861
+    second: Attack-Jump Shadow 180_10
+  - first:
+      213: 3438957621374364969
+    second: Attack-Jump Shadow 180_11
+  - first:
+      213: -1139022718469117138
+    second: Attack-Jump Shadow 180_12
+  - first:
+      213: 8466269544970564154
+    second: Attack-Jump Shadow 180_13
+  - first:
+      213: 4863463812840884200
+    second: Attack-Jump Shadow 180_14
+  - first:
+      213: -2311549751861918581
+    second: Attack-Jump Shadow 180_15
+  - first:
+      213: -2774379684414844193
+    second: Attack-Jump Shadow 180_16
+  - first:
+      213: -2975694896085361863
+    second: Attack-Jump Shadow 180_17
+  - first:
+      213: 4414018512112102111
+    second: Attack-Jump Shadow 180_18
+  - first:
+      213: 7715838045711770339
+    second: Attack-Jump Shadow 180_19
+  - first:
+      213: 6085688345014042028
+    second: Attack-Jump Shadow 180_20
+  - first:
+      213: 5598409179962791729
+    second: Attack-Jump Shadow 180_21
+  - first:
+      213: -9182067164755504228
+    second: Attack-Jump Shadow 180_22
+  - first:
+      213: -8001143842109384952
+    second: Attack-Jump Shadow 180_23
+  - first:
+      213: 8999958238245244559
+    second: Attack-Jump Shadow 180_24
+  - first:
+      213: 4589785838079501852
+    second: Attack-Jump Shadow 180_25
+  - first:
+      213: 130945825095806739
+    second: Attack-Jump Shadow 180_26
+  - first:
+      213: 7379971507048797186
+    second: Attack-Jump Shadow 180_27
+  - first:
+      213: -5526764837626430831
+    second: Attack-Jump Shadow 180_28
+  - first:
+      213: -8842960865798625231
+    second: Attack-Jump Shadow 180_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1092
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83fa1873039856100800000000000000
+      internalID: 100637406868385592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1089
+        width: 129
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5b395a3aac13f10800000000000000
+      internalID: 2247800493240989116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_2
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1086
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752fa96e8bcf27100800000000000000
+      internalID: 104423612456038999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_3
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1090
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94fa0dd8528b4f490800000000000000
+      internalID: -7713337790346252471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_4
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 1092
+        width: 127
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32477a5a1466c0c20800000000000000
+      internalID: 3174024269527479331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_5
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1087
+        width: 128
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4d9ae4fdedb8550800000000000000
+      internalID: 6164265565665481933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_6
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 826
+        width: 128
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05cf0f419518caf40800000000000000
+      internalID: 5741105844593949776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 821
+        width: 129
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd1d58bf11f8c840800000000000000
+      internalID: 5244706884612332995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_8
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 822
+        width: 130
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c793827535889eed0800000000000000
+      internalID: -2384224636190049924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_9
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 828
+        width: 133
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62971469fd190b0b0800000000000000
+      internalID: -5714907537648551642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_10
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 835
+        width: 131
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46a83e546862bf60800000000000000
+      internalID: 8048610264351286861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_11
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 841
+        width: 130
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d24ab7cb1a9bf20800000000000000
+      internalID: 3438957621374364969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_12
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 587
+        width: 129
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b6c825fd06130f0800000000000000
+      internalID: -1139022718469117138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_13
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 587
+        width: 129
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32bda08b4b3e7570800000000000000
+      internalID: 8466269544970564154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_14
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 586
+        width: 129
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7095ee19e7e7340800000000000000
+      internalID: 4863463812840884200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_15
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 585
+        width: 129
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84c0af6fb9bbefd0800000000000000
+      internalID: -2311549751861918581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_16
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 585
+        width: 129
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd29466506c6f79d0800000000000000
+      internalID: -2774379684414844193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_17
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 587
+        width: 129
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b93e6024534b6d0800000000000000
+      internalID: -2975694896085361863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_18
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 330
+        width: 130
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdaa076437eb14d30800000000000000
+      internalID: 4414018512112102111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 321
+        width: 131
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2281382d9241b60800000000000000
+      internalID: 7715838045711770339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_20
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 309
+        width: 131
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cadfb427e45b47450800000000000000
+      internalID: 6085688345014042028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_21
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 302
+        width: 130
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137d7fecc7b81bd40800000000000000
+      internalID: 5598409179962791729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_22
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 300
+        width: 129
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9358f4ff8eb29080800000000000000
+      internalID: -9182067164755504228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_23
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 303
+        width: 130
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8071446411a36f090800000000000000
+      internalID: -8001143842109384952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_24
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 56
+        width: 129
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8e45f7755646ec70800000000000000
+      internalID: 8999958238245244559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_25
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 65
+        width: 129
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16e8d9e6e132bf30800000000000000
+      internalID: 4589785838079501852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_26
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 66
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31fe7adb88631d100800000000000000
+      internalID: 130945825095806739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_27
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 67
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204d5222cfcea6660800000000000000
+      internalID: 7379971507048797186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_28
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 68
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a382889acfc43b0800000000000000
+      internalID: -5526764837626430831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 180_29
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 69
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 138646fc1fd774580800000000000000
+      internalID: -8842960865798625231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Attack-Jump Shadow 180_0: 100637406868385592
+      Attack-Jump Shadow 180_1: 2247800493240989116
+      Attack-Jump Shadow 180_10: 8048610264351286861
+      Attack-Jump Shadow 180_11: 3438957621374364969
+      Attack-Jump Shadow 180_12: -1139022718469117138
+      Attack-Jump Shadow 180_13: 8466269544970564154
+      Attack-Jump Shadow 180_14: 4863463812840884200
+      Attack-Jump Shadow 180_15: -2311549751861918581
+      Attack-Jump Shadow 180_16: -2774379684414844193
+      Attack-Jump Shadow 180_17: -2975694896085361863
+      Attack-Jump Shadow 180_18: 4414018512112102111
+      Attack-Jump Shadow 180_19: 7715838045711770339
+      Attack-Jump Shadow 180_2: 104423612456038999
+      Attack-Jump Shadow 180_20: 6085688345014042028
+      Attack-Jump Shadow 180_21: 5598409179962791729
+      Attack-Jump Shadow 180_22: -9182067164755504228
+      Attack-Jump Shadow 180_23: -8001143842109384952
+      Attack-Jump Shadow 180_24: 8999958238245244559
+      Attack-Jump Shadow 180_25: 4589785838079501852
+      Attack-Jump Shadow 180_26: 130945825095806739
+      Attack-Jump Shadow 180_27: 7379971507048797186
+      Attack-Jump Shadow 180_28: -5526764837626430831
+      Attack-Jump Shadow 180_29: -8842960865798625231
+      Attack-Jump Shadow 180_3: -7713337790346252471
+      Attack-Jump Shadow 180_4: 3174024269527479331
+      Attack-Jump Shadow 180_5: 6164265565665481933
+      Attack-Jump Shadow 180_6: 5741105844593949776
+      Attack-Jump Shadow 180_7: 5244706884612332995
+      Attack-Jump Shadow 180_8: -2384224636190049924
+      Attack-Jump Shadow 180_9: -5714907537648551642
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

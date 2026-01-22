@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 75b78479a8e5e65428790038f08ac625
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5483120865944024188
+    second: Hit_Right Body 225_0
+  - first:
+      213: 1041266469256682049
+    second: Hit_Right Body 225_1
+  - first:
+      213: -8572136698906917380
+    second: Hit_Right Body 225_2
+  - first:
+      213: -9001553670681669839
+    second: Hit_Right Body 225_3
+  - first:
+      213: 8643302154726674857
+    second: Hit_Right Body 225_4
+  - first:
+      213: -3937754642910459010
+    second: Hit_Right Body 225_5
+  - first:
+      213: -2821673265055742656
+    second: Hit_Right Body 225_6
+  - first:
+      213: 5528711734627483453
+    second: Hit_Right Body 225_7
+  - first:
+      213: 5347354832542036974
+    second: Hit_Right Body 225_8
+  - first:
+      213: 4632956886367888069
+    second: Hit_Right Body 225_9
+  - first:
+      213: -3286312143738994659
+    second: Hit_Right Body 225_10
+  - first:
+      213: -5327212688915619728
+    second: Hit_Right Body 225_11
+  - first:
+      213: -6751378617964201175
+    second: Hit_Right Body 225_12
+  - first:
+      213: -2488232640673857760
+    second: Hit_Right Body 225_13
+  - first:
+      213: -4251892724474029643
+    second: Hit_Right Body 225_14
+  - first:
+      213: 3314907923036170298
+    second: Hit_Right Body 225_15
+  - first:
+      213: 7072445418592519025
+    second: Hit_Right Body 225_16
+  - first:
+      213: -4676387811186988251
+    second: Hit_Right Body 225_17
+  - first:
+      213: -2751114547843253103
+    second: Hit_Right Body 225_18
+  - first:
+      213: -6969754842816852884
+    second: Hit_Right Body 225_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hit_Right Body 225_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1085
+        width: 162
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48bcfdc8f9a08e3b0800000000000000
+      internalID: -5483120865944024188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_1
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1085
+        width: 163
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ad1904652537e00800000000000000
+      internalID: 1041266469256682049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_2
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1085
+        width: 163
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf54097e617a90980800000000000000
+      internalID: -8572136698906917380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_3
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 1085
+        width: 155
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13fc768f0ae041380800000000000000
+      internalID: -9001553670681669839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 829
+        width: 153
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a11adaf38d23f770800000000000000
+      internalID: 8643302154726674857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 829
+        width: 153
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b4da0f3094a59c0800000000000000
+      internalID: -3937754642910459010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_6
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 829
+        width: 153
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045c2248d1767d8d0800000000000000
+      internalID: -2821673265055742656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_7
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 829
+        width: 153
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f3100c70ee9bc40800000000000000
+      internalID: 5528711734627483453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_8
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 573
+        width: 153
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3f2a183ee953a40800000000000000
+      internalID: 5347354832542036974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_9
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 573
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c268afddb19b4040800000000000000
+      internalID: 4632956886367888069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_10
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 573
+        width: 153
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d108263548ca462d0800000000000000
+      internalID: -3286312143738994659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_11
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 573
+        width: 153
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0702b32c840f116b0800000000000000
+      internalID: -5327212688915619728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_12
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 317
+        width: 153
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b7314dae84e42a0800000000000000
+      internalID: -6751378617964201175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_13
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 317
+        width: 153
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02f3a16b895087dd0800000000000000
+      internalID: -2488232640673857760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_14
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 317
+        width: 153
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b958a6381e3ef4c0800000000000000
+      internalID: -4251892724474029643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_15
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 317
+        width: 152
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38e2bf513be00e20800000000000000
+      internalID: 3314907923036170298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_16
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 61
+        width: 157
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173cb8403af562260800000000000000
+      internalID: 7072445418592519025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_17
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 61
+        width: 162
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52bab32ff022a1fb0800000000000000
+      internalID: -4676387811186988251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_18
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 61
+        width: 162
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19cb46f05e312d9d0800000000000000
+      internalID: -2751114547843253103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Right Body 225_19
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 61
+        width: 162
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6cc756d5e4764f90800000000000000
+      internalID: -6969754842816852884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hit_Right Body 225_0: -5483120865944024188
+      Hit_Right Body 225_1: 1041266469256682049
+      Hit_Right Body 225_10: -3286312143738994659
+      Hit_Right Body 225_11: -5327212688915619728
+      Hit_Right Body 225_12: -6751378617964201175
+      Hit_Right Body 225_13: -2488232640673857760
+      Hit_Right Body 225_14: -4251892724474029643
+      Hit_Right Body 225_15: 3314907923036170298
+      Hit_Right Body 225_16: 7072445418592519025
+      Hit_Right Body 225_17: -4676387811186988251
+      Hit_Right Body 225_18: -2751114547843253103
+      Hit_Right Body 225_19: -6969754842816852884
+      Hit_Right Body 225_2: -8572136698906917380
+      Hit_Right Body 225_3: -9001553670681669839
+      Hit_Right Body 225_4: 8643302154726674857
+      Hit_Right Body 225_5: -3937754642910459010
+      Hit_Right Body 225_6: -2821673265055742656
+      Hit_Right Body 225_7: 5528711734627483453
+      Hit_Right Body 225_8: 5347354832542036974
+      Hit_Right Body 225_9: 4632956886367888069
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: ffdce559d6583c642a53a7d71041f145
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4629163584839920095
+    second: Death2 Body 292_0
+  - first:
+      213: 3512128543638826689
+    second: Death2 Body 292_1
+  - first:
+      213: -7975201596945990022
+    second: Death2 Body 292_2
+  - first:
+      213: 3441200571240543668
+    second: Death2 Body 292_3
+  - first:
+      213: -2776461900674494900
+    second: Death2 Body 292_4
+  - first:
+      213: -1504280242984261834
+    second: Death2 Body 292_5
+  - first:
+      213: 5597306631146081800
+    second: Death2 Body 292_6
+  - first:
+      213: -4645810324296849513
+    second: Death2 Body 292_7
+  - first:
+      213: -868240905697184350
+    second: Death2 Body 292_8
+  - first:
+      213: 2069192272156861266
+    second: Death2 Body 292_9
+  - first:
+      213: 9087968765096647604
+    second: Death2 Body 292_10
+  - first:
+      213: -6650349027602729426
+    second: Death2 Body 292_11
+  - first:
+      213: 4497394705598900991
+    second: Death2 Body 292_12
+  - first:
+      213: -1738250241401606323
+    second: Death2 Body 292_13
+  - first:
+      213: 129858709734657551
+    second: Death2 Body 292_14
+  - first:
+      213: 654814159437033748
+    second: Death2 Body 292_15
+  - first:
+      213: 6216478342694033208
+    second: Death2 Body 292_16
+  - first:
+      213: -8375246444870407255
+    second: Death2 Body 292_17
+  - first:
+      213: -3010580071466689676
+    second: Death2 Body 292_18
+  - first:
+      213: 3532925480675164945
+    second: Death2 Body 292_19
+  - first:
+      213: 9090735394733223453
+    second: Death2 Body 292_20
+  - first:
+      213: -8074377571536887582
+    second: Death2 Body 292_21
+  - first:
+      213: 5429248764350956793
+    second: Death2 Body 292_22
+  - first:
+      213: -8984813024201771586
+    second: Death2 Body 292_23
+  - first:
+      213: 1176079926205620676
+    second: Death2 Body 292_24
+  - first:
+      213: -2781419115442536148
+    second: Death2 Body 292_25
+  - first:
+      213: 7616843914285307812
+    second: Death2 Body 292_26
+  - first:
+      213: -9175045838695321749
+    second: Death2 Body 292_27
+  - first:
+      213: -4460284092227268798
+    second: Death2 Body 292_28
+  - first:
+      213: 2021363706380424375
+    second: Death2 Body 292_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Death2 Body 292_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1085
+        width: 174
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9ae8901c71e3040800000000000000
+      internalID: 4629163584839920095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1085
+        width: 174
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce2a196d469db030800000000000000
+      internalID: 3512128543638826689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_2
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1085
+        width: 174
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ef7e9e664625190800000000000000
+      internalID: -7975201596945990022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_3
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1085
+        width: 174
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5f9a1ffa991cf20800000000000000
+      internalID: 3441200571240543668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_4
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 1085
+        width: 174
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4e04e59c960879d0800000000000000
+      internalID: -2776461900674494900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_5
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1085
+        width: 174
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 637e84ac619bf1be0800000000000000
+      internalID: -1504280242984261834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 829
+        width: 174
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80e8668a9b0adad40800000000000000
+      internalID: 5597306631146081800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_7
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 829
+        width: 174
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 797a176ef14c68fb0800000000000000
+      internalID: -4645810324296849513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_8
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 829
+        width: 174
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a5b4741f7363f3f0800000000000000
+      internalID: -868240905697184350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_9
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 829
+        width: 174
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 253a4e1986f37bc10800000000000000
+      internalID: 2069192272156861266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_10
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 829
+        width: 174
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb5e651173fe1e70800000000000000
+      internalID: 9087968765096647604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_11
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 829
+        width: 174
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26ff516bc635b3a0800000000000000
+      internalID: -6650349027602729426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_12
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 573
+        width: 174
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffae1f118a4f96e30800000000000000
+      internalID: 4497394705598900991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_13
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 573
+        width: 174
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f25867d9e70e7e0800000000000000
+      internalID: -1738250241401606323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_14
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 573
+        width: 174
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e89b8fec95dc100800000000000000
+      internalID: 129858709734657551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_15
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 573
+        width: 174
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 411f327320e561900800000000000000
+      internalID: 654814159437033748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_16
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 573
+        width: 174
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837df2acd1e554650800000000000000
+      internalID: 6216478342694033208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_17
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 573
+        width: 174
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab652b7bb525cb80800000000000000
+      internalID: -8375246444870407255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_18
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 317
+        width: 174
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b9b5030654836d0800000000000000
+      internalID: -3010580071466689676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_19
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 317
+        width: 174
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113c195a109770130800000000000000
+      internalID: 3532925480675164945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_20
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 317
+        width: 174
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ee42e3da7c82e70800000000000000
+      internalID: 9090735394733223453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_21
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 317
+        width: 180
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0a92ae06c02ff80800000000000000
+      internalID: -8074377571536887582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_22
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 316
+        width: 186
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f40e5c5cf0985b40800000000000000
+      internalID: 5429248764350956793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_23
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 315
+        width: 190
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb5762778288f4380800000000000000
+      internalID: -8984813024201771586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_24
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 57
+        width: 191
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c124f43676425010800000000000000
+      internalID: 1176079926205620676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_25
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 54
+        width: 191
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2101941d0a6669d0800000000000000
+      internalID: -2781419115442536148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_26
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 53
+        width: 191
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7529c2f2774b960800000000000000
+      internalID: 7616843914285307812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_27
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 53
+        width: 191
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6fa3a2db60bba080800000000000000
+      internalID: -9175045838695321749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_28
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 53
+        width: 191
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24fc77def33e912c0800000000000000
+      internalID: -4460284092227268798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Body 292_29
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 53
+        width: 191
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b41ca0d4935d0c10800000000000000
+      internalID: 2021363706380424375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Death2 Body 292_0: 4629163584839920095
+      Death2 Body 292_1: 3512128543638826689
+      Death2 Body 292_10: 9087968765096647604
+      Death2 Body 292_11: -6650349027602729426
+      Death2 Body 292_12: 4497394705598900991
+      Death2 Body 292_13: -1738250241401606323
+      Death2 Body 292_14: 129858709734657551
+      Death2 Body 292_15: 654814159437033748
+      Death2 Body 292_16: 6216478342694033208
+      Death2 Body 292_17: -8375246444870407255
+      Death2 Body 292_18: -3010580071466689676
+      Death2 Body 292_19: 3532925480675164945
+      Death2 Body 292_2: -7975201596945990022
+      Death2 Body 292_20: 9090735394733223453
+      Death2 Body 292_21: -8074377571536887582
+      Death2 Body 292_22: 5429248764350956793
+      Death2 Body 292_23: -8984813024201771586
+      Death2 Body 292_24: 1176079926205620676
+      Death2 Body 292_25: -2781419115442536148
+      Death2 Body 292_26: 7616843914285307812
+      Death2 Body 292_27: -9175045838695321749
+      Death2 Body 292_28: -4460284092227268798
+      Death2 Body 292_29: 2021363706380424375
+      Death2 Body 292_3: 3441200571240543668
+      Death2 Body 292_4: -2776461900674494900
+      Death2 Body 292_5: -1504280242984261834
+      Death2 Body 292_6: 5597306631146081800
+      Death2 Body 292_7: -4645810324296849513
+      Death2 Body 292_8: -868240905697184350
+      Death2 Body 292_9: 2069192272156861266
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

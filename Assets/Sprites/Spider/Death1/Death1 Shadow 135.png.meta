@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 616fb959919cbbb44a995388173a74da
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3717581697021975873
+    second: Death1 Shadow 135_0
+  - first:
+      213: 716817574279065118
+    second: Death1 Shadow 135_1
+  - first:
+      213: -963377557916659027
+    second: Death1 Shadow 135_2
+  - first:
+      213: -2240325063131584267
+    second: Death1 Shadow 135_3
+  - first:
+      213: -4157739558184307226
+    second: Death1 Shadow 135_4
+  - first:
+      213: 5194753946369474970
+    second: Death1 Shadow 135_5
+  - first:
+      213: -2523716027483260619
+    second: Death1 Shadow 135_6
+  - first:
+      213: -2410423887178858930
+    second: Death1 Shadow 135_7
+  - first:
+      213: -6731409060316889339
+    second: Death1 Shadow 135_8
+  - first:
+      213: -5065005873852156471
+    second: Death1 Shadow 135_9
+  - first:
+      213: -2068278800311402138
+    second: Death1 Shadow 135_10
+  - first:
+      213: 8048704998005327303
+    second: Death1 Shadow 135_11
+  - first:
+      213: -6798083118620433162
+    second: Death1 Shadow 135_12
+  - first:
+      213: -2775958567282527235
+    second: Death1 Shadow 135_13
+  - first:
+      213: 461611706237914004
+    second: Death1 Shadow 135_14
+  - first:
+      213: 5099804918250128573
+    second: Death1 Shadow 135_15
+  - first:
+      213: 2167041095447174813
+    second: Death1 Shadow 135_16
+  - first:
+      213: 4168986881500390054
+    second: Death1 Shadow 135_17
+  - first:
+      213: 1805844614642269833
+    second: Death1 Shadow 135_18
+  - first:
+      213: -2066114649726484279
+    second: Death1 Shadow 135_19
+  - first:
+      213: 6823492655162233600
+    second: Death1 Shadow 135_20
+  - first:
+      213: 7222833268783705408
+    second: Death1 Shadow 135_21
+  - first:
+      213: -3909453904167239631
+    second: Death1 Shadow 135_22
+  - first:
+      213: -6279524490658893544
+    second: Death1 Shadow 135_23
+  - first:
+      213: -5533351162014372215
+    second: Death1 Shadow 135_24
+  - first:
+      213: 4671665447176420613
+    second: Death1 Shadow 135_25
+  - first:
+      213: 1217573208680760790
+    second: Death1 Shadow 135_26
+  - first:
+      213: 826879382548561431
+    second: Death1 Shadow 135_27
+  - first:
+      213: -8385198790909616296
+    second: Death1 Shadow 135_28
+  - first:
+      213: 2497173636910323152
+    second: Death1 Shadow 135_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Death1 Shadow 135_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1087
+        width: 170
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d1d7a5bd0879330800000000000000
+      internalID: 3717581697021975873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1102
+        width: 129
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1e29a339c5a2f900800000000000000
+      internalID: 716817574279065118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_2
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1063
+        width: 135
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da25bcb173561a2f0800000000000000
+      internalID: -963377557916659027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_3
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 1055
+        width: 102
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f823ae8934c8e0e0800000000000000
+      internalID: -2240325063131584267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_4
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1070
+        width: 101
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5b5d586edbc46c0800000000000000
+      internalID: -4157739558184307226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_5
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 1085
+        width: 101
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9149e4f039771840800000000000000
+      internalID: 5194753946369474970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_6
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 831
+        width: 97
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53976ebe4a5f9fcd0800000000000000
+      internalID: -2523716027483260619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_7
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 830
+        width: 94
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e769ede347c8ed0800000000000000
+      internalID: -2410423887178858930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_8
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 829
+        width: 95
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f37f9cf1b3592a0800000000000000
+      internalID: -6731409060316889339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_9
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 826
+        width: 95
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c576c74efb75b9b0800000000000000
+      internalID: -5065005873852156471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_10
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 828
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661c7faa36ffb43e0800000000000000
+      internalID: -2068278800311402138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_11
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 836
+        width: 98
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5c4044d8eb2bf60800000000000000
+      internalID: 8048704998005327303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_12
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 582
+        width: 96
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4ac01eb6b58a1a0800000000000000
+      internalID: -6798083118620433162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_13
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 583
+        width: 96
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df33ce50460d979d0800000000000000
+      internalID: -2775958567282527235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_14
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 584
+        width: 93
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b097ea669f76600800000000000000
+      internalID: 461611706237914004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_15
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 585
+        width: 96
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db4c610ad8526c640800000000000000
+      internalID: 5099804918250128573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_16
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 586
+        width: 97
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e5dc31560e21e10800000000000000
+      internalID: 2167041095447174813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_17
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 587
+        width: 98
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a228110b773bd930800000000000000
+      internalID: 4168986881500390054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 331
+        width: 98
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98efd47fb16af0910800000000000000
+      internalID: 1805844614642269833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_19
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 331
+        width: 98
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c082dd3cafa353e0800000000000000
+      internalID: -2066114649726484279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_20
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 332
+        width: 99
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0039e6eda6ae1be50800000000000000
+      internalID: 6823492655162233600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_21
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 333
+        width: 98
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04de9b9f698ac3460800000000000000
+      internalID: 7222833268783705408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_22
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 334
+        width: 98
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13009582364deb9c0800000000000000
+      internalID: -3909453904167239631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_23
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 335
+        width: 99
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81139effeb5aad8a0800000000000000
+      internalID: -6279524490658893544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_24
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 80
+        width: 101
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e63a26f669533b0800000000000000
+      internalID: -5533351162014372215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_25
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 80
+        width: 102
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50dba6009f615d040800000000000000
+      internalID: 4671665447176420613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_26
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 80
+        width: 102
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d5037fd160b5e010800000000000000
+      internalID: 1217573208680760790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_27
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 80
+        width: 102
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71eb6ecda6aa97b00800000000000000
+      internalID: 826879382548561431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_28
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 79
+        width: 102
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f1cc8502ac1ab80800000000000000
+      internalID: -8385198790909616296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1 Shadow 135_29
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 79
+        width: 103
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d59282313eb7a220800000000000000
+      internalID: 2497173636910323152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Death1 Shadow 135_0: 3717581697021975873
+      Death1 Shadow 135_1: 716817574279065118
+      Death1 Shadow 135_10: -2068278800311402138
+      Death1 Shadow 135_11: 8048704998005327303
+      Death1 Shadow 135_12: -6798083118620433162
+      Death1 Shadow 135_13: -2775958567282527235
+      Death1 Shadow 135_14: 461611706237914004
+      Death1 Shadow 135_15: 5099804918250128573
+      Death1 Shadow 135_16: 2167041095447174813
+      Death1 Shadow 135_17: 4168986881500390054
+      Death1 Shadow 135_18: 1805844614642269833
+      Death1 Shadow 135_19: -2066114649726484279
+      Death1 Shadow 135_2: -963377557916659027
+      Death1 Shadow 135_20: 6823492655162233600
+      Death1 Shadow 135_21: 7222833268783705408
+      Death1 Shadow 135_22: -3909453904167239631
+      Death1 Shadow 135_23: -6279524490658893544
+      Death1 Shadow 135_24: -5533351162014372215
+      Death1 Shadow 135_25: 4671665447176420613
+      Death1 Shadow 135_26: 1217573208680760790
+      Death1 Shadow 135_27: 826879382548561431
+      Death1 Shadow 135_28: -8385198790909616296
+      Death1 Shadow 135_29: 2497173636910323152
+      Death1 Shadow 135_3: -2240325063131584267
+      Death1 Shadow 135_4: -4157739558184307226
+      Death1 Shadow 135_5: 5194753946369474970
+      Death1 Shadow 135_6: -2523716027483260619
+      Death1 Shadow 135_7: -2410423887178858930
+      Death1 Shadow 135_8: -6731409060316889339
+      Death1 Shadow 135_9: -5065005873852156471
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 98d76747989dbff44ac8f6f958b214de
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1653854369160225221
+    second: Attack-Jump Body 225_0
+  - first:
+      213: 3362220052339045586
+    second: Attack-Jump Body 225_1
+  - first:
+      213: 7118499116126375824
+    second: Attack-Jump Body 225_2
+  - first:
+      213: -2008869520713197116
+    second: Attack-Jump Body 225_3
+  - first:
+      213: -8834806026823349205
+    second: Attack-Jump Body 225_4
+  - first:
+      213: -8980027561244190870
+    second: Attack-Jump Body 225_5
+  - first:
+      213: 2746123345259987488
+    second: Attack-Jump Body 225_6
+  - first:
+      213: 6976447832580491737
+    second: Attack-Jump Body 225_7
+  - first:
+      213: 760005923496891758
+    second: Attack-Jump Body 225_8
+  - first:
+      213: 8085687668226884600
+    second: Attack-Jump Body 225_9
+  - first:
+      213: 6649993318330367128
+    second: Attack-Jump Body 225_10
+  - first:
+      213: 1115987386887561556
+    second: Attack-Jump Body 225_11
+  - first:
+      213: 6570684113837654700
+    second: Attack-Jump Body 225_12
+  - first:
+      213: 6017624359511658820
+    second: Attack-Jump Body 225_13
+  - first:
+      213: -2717234241129634587
+    second: Attack-Jump Body 225_14
+  - first:
+      213: 6590039922280642532
+    second: Attack-Jump Body 225_15
+  - first:
+      213: 5861181101678415443
+    second: Attack-Jump Body 225_16
+  - first:
+      213: 5131187665643651787
+    second: Attack-Jump Body 225_17
+  - first:
+      213: 867029164004333012
+    second: Attack-Jump Body 225_18
+  - first:
+      213: 4041765265162578866
+    second: Attack-Jump Body 225_19
+  - first:
+      213: -2926335044099786643
+    second: Attack-Jump Body 225_20
+  - first:
+      213: 410190348805123525
+    second: Attack-Jump Body 225_21
+  - first:
+      213: -5558648339956611554
+    second: Attack-Jump Body 225_22
+  - first:
+      213: -6992331847942536479
+    second: Attack-Jump Body 225_23
+  - first:
+      213: -414040567761403966
+    second: Attack-Jump Body 225_24
+  - first:
+      213: 6732369905223699484
+    second: Attack-Jump Body 225_25
+  - first:
+      213: 3759027646278621851
+    second: Attack-Jump Body 225_26
+  - first:
+      213: -9039716599023148475
+    second: Attack-Jump Body 225_27
+  - first:
+      213: -2300354011728757014
+    second: Attack-Jump Body 225_28
+  - first:
+      213: -2493957339743835506
+    second: Attack-Jump Body 225_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1085
+        width: 162
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1e50849cba3f610800000000000000
+      internalID: 1653854369160225221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1083
+        width: 162
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d43d54e25109ae20800000000000000
+      internalID: 3362220052339045586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_2
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1082
+        width: 163
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f05ae0b3df9c260800000000000000
+      internalID: 7118499116126375824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_3
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1083
+        width: 162
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9d7c970df0f14e0800000000000000
+      internalID: -2008869520713197116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_4
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1094
+        width: 152
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2cc6b73ab6746580800000000000000
+      internalID: -8834806026823349205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_5
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 1109
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6792d2e288806380800000000000000
+      internalID: -8980027561244190870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_6
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 865
+        width: 129
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02201a702a03c1620800000000000000
+      internalID: 2746123345259987488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 862
+        width: 124
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d90107475251d060800000000000000
+      internalID: 6976447832580491737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_8
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 845
+        width: 126
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6599395c551c8a00800000000000000
+      internalID: 760005923496891758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_9
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 817
+        width: 146
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f38b6d2812263070800000000000000
+      internalID: 8085687668226884600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_10
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 828
+        width: 151
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c7dc990b5894c50800000000000000
+      internalID: 6649993318330367128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_11
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 835
+        width: 151
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 451ef399d98cc7f00800000000000000
+      internalID: 1115987386887561556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_12
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 582
+        width: 151
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca288987362cf2b50800000000000000
+      internalID: 6570684113837654700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_13
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 581
+        width: 151
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4411e64e875e28350800000000000000
+      internalID: 6017624359511658820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_14
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 581
+        width: 151
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e4a0fdaad17a4ad0800000000000000
+      internalID: -2717234241129634587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_15
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 580
+        width: 151
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e73e2fc466847b50800000000000000
+      internalID: 6590039922280642532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_16
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 580
+        width: 151
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e46c97829175150800000000000000
+      internalID: 5861181101678415443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_17
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 581
+        width: 151
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc24e86eef3a53740800000000000000
+      internalID: 5131187665643651787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_18
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 324
+        width: 150
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d5d1625e6e480c00800000000000000
+      internalID: 867029164004333012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_19
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 316
+        width: 151
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb278f281c371830800000000000000
+      internalID: 4041765265162578866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_20
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 304
+        width: 153
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68b7a228c19367d0800000000000000
+      internalID: -2926335044099786643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_21
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 298
+        width: 164
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cda2dee2f941b500800000000000000
+      internalID: 410190348805123525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_22
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 322
+        width: 157
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16429929c6bbd2b0800000000000000
+      internalID: -5558648339956611554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_23
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 327
+        width: 151
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e20cb33b3f36fe90800000000000000
+      internalID: -6992331847942536479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_24
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 73
+        width: 154
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cffafb1c48014af0800000000000000
+      internalID: -414040567761403966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_25
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 68
+        width: 162
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c836952ce2e6d50800000000000000
+      internalID: 6732369905223699484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_26
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 60
+        width: 162
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9a5f456abfba2430800000000000000
+      internalID: 3759027646278621851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_27
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 61
+        width: 162
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542e50dc5a97c8280800000000000000
+      internalID: -9039716599023148475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_28
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 61
+        width: 162
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee3341d6308310e0800000000000000
+      internalID: -2300354011728757014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Body 225_29
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 62
+        width: 162
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a2797530fa36dd0800000000000000
+      internalID: -2493957339743835506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Attack-Jump Body 225_0: 1653854369160225221
+      Attack-Jump Body 225_1: 3362220052339045586
+      Attack-Jump Body 225_10: 6649993318330367128
+      Attack-Jump Body 225_11: 1115987386887561556
+      Attack-Jump Body 225_12: 6570684113837654700
+      Attack-Jump Body 225_13: 6017624359511658820
+      Attack-Jump Body 225_14: -2717234241129634587
+      Attack-Jump Body 225_15: 6590039922280642532
+      Attack-Jump Body 225_16: 5861181101678415443
+      Attack-Jump Body 225_17: 5131187665643651787
+      Attack-Jump Body 225_18: 867029164004333012
+      Attack-Jump Body 225_19: 4041765265162578866
+      Attack-Jump Body 225_2: 7118499116126375824
+      Attack-Jump Body 225_20: -2926335044099786643
+      Attack-Jump Body 225_21: 410190348805123525
+      Attack-Jump Body 225_22: -5558648339956611554
+      Attack-Jump Body 225_23: -6992331847942536479
+      Attack-Jump Body 225_24: -414040567761403966
+      Attack-Jump Body 225_25: 6732369905223699484
+      Attack-Jump Body 225_26: 3759027646278621851
+      Attack-Jump Body 225_27: -9039716599023148475
+      Attack-Jump Body 225_28: -2300354011728757014
+      Attack-Jump Body 225_29: -2493957339743835506
+      Attack-Jump Body 225_3: -2008869520713197116
+      Attack-Jump Body 225_4: -8834806026823349205
+      Attack-Jump Body 225_5: -8980027561244190870
+      Attack-Jump Body 225_6: 2746123345259987488
+      Attack-Jump Body 225_7: 6976447832580491737
+      Attack-Jump Body 225_8: 760005923496891758
+      Attack-Jump Body 225_9: 8085687668226884600
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

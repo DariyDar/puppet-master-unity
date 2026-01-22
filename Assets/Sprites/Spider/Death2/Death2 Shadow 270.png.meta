@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 3053084d1965e434da281eb7ffa529f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7213135065564360765
+    second: Death2 Shadow 270_0
+  - first:
+      213: 6493100007910259834
+    second: Death2 Shadow 270_1
+  - first:
+      213: 5533168600265761034
+    second: Death2 Shadow 270_2
+  - first:
+      213: -5483808847459580479
+    second: Death2 Shadow 270_3
+  - first:
+      213: 526961226194028902
+    second: Death2 Shadow 270_4
+  - first:
+      213: -5463366958362906321
+    second: Death2 Shadow 270_5
+  - first:
+      213: 7302140251914523168
+    second: Death2 Shadow 270_6
+  - first:
+      213: 5369510528066205138
+    second: Death2 Shadow 270_7
+  - first:
+      213: -2730369438108183642
+    second: Death2 Shadow 270_8
+  - first:
+      213: -7286728934501215842
+    second: Death2 Shadow 270_9
+  - first:
+      213: 5814537491932686537
+    second: Death2 Shadow 270_10
+  - first:
+      213: 3737671758017493515
+    second: Death2 Shadow 270_11
+  - first:
+      213: 7653836629009813344
+    second: Death2 Shadow 270_12
+  - first:
+      213: -1286527183502483934
+    second: Death2 Shadow 270_13
+  - first:
+      213: -8588064433654360685
+    second: Death2 Shadow 270_14
+  - first:
+      213: 2809635636198445858
+    second: Death2 Shadow 270_15
+  - first:
+      213: 2556250044144698480
+    second: Death2 Shadow 270_16
+  - first:
+      213: 4706655172282152548
+    second: Death2 Shadow 270_17
+  - first:
+      213: 2754552922948698419
+    second: Death2 Shadow 270_18
+  - first:
+      213: -3266115744045179261
+    second: Death2 Shadow 270_19
+  - first:
+      213: -8798851068887432095
+    second: Death2 Shadow 270_20
+  - first:
+      213: 1252367463187503788
+    second: Death2 Shadow 270_21
+  - first:
+      213: 5043540623952444460
+    second: Death2 Shadow 270_22
+  - first:
+      213: -6808714196777948633
+    second: Death2 Shadow 270_23
+  - first:
+      213: 4454540098155359891
+    second: Death2 Shadow 270_24
+  - first:
+      213: 7580413729773645587
+    second: Death2 Shadow 270_25
+  - first:
+      213: -4680527534000389534
+    second: Death2 Shadow 270_26
+  - first:
+      213: -1500930736801674531
+    second: Death2 Shadow 270_27
+  - first:
+      213: -4178921825841614589
+    second: Death2 Shadow 270_28
+  - first:
+      213: -3378760361541995906
+    second: Death2 Shadow 270_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Death2 Shadow 270_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1091
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30b0e310243a1460800000000000000
+      internalID: 7213135065564360765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_1
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1091
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7cb3962e002c1a50800000000000000
+      internalID: 6493100007910259834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_2
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1091
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01af25a683c9cc40800000000000000
+      internalID: 5533168600265761034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_3
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1091
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5070f58e895e3b0800000000000000
+      internalID: -5483808847459580479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_4
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1091
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66903b97174205700800000000000000
+      internalID: 526961226194028902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_5
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 1091
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f213c2192b83e24b0800000000000000
+      internalID: -5463366958362906321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_6
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 835
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0225277eed9665560800000000000000
+      internalID: 7302140251914523168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_7
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 835
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d53b1b5065548a40800000000000000
+      internalID: 5369510528066205138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_8
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 835
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a39aff4677cb1ad0800000000000000
+      internalID: -2730369438108183642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_9
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 835
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e919e7c04a650ea90800000000000000
+      internalID: -7286728934501215842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_10
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 835
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8a6dbca0361b050800000000000000
+      internalID: 5814537491932686537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_11
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 835
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0a74af29a0eed330800000000000000
+      internalID: 3737671758017493515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_12
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 579
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06fc001ccd3e73a60800000000000000
+      internalID: 7653836629009813344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_13
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 579
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e5379c756552ee0800000000000000
+      internalID: -1286527183502483934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_14
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 579
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3959ddb26e011d880800000000000000
+      internalID: -8588064433654360685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_15
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 579
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22313eb99b4ddf620800000000000000
+      internalID: 2809635636198445858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_16
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 579
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074425e1fdf997320800000000000000
+      internalID: 2556250044144698480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_17
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 579
+        width: 151
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 466f12831f5615140800000000000000
+      internalID: 4706655172282152548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_18
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 323
+        width: 151
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3310f570a432a3620800000000000000
+      internalID: 2754552922948698419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_19
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 323
+        width: 151
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e50e0190d6ca2d0800000000000000
+      internalID: -3266115744045179261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_20
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 323
+        width: 151
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1640667329334e580800000000000000
+      internalID: -8798851068887432095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_21
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 322
+        width: 158
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa5c8b829d416110800000000000000
+      internalID: 1252367463187503788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_22
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 319
+        width: 163
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2cffe4c9714ef540800000000000000
+      internalID: 5043540623952444460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_23
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 315
+        width: 166
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a24eb13869281a0800000000000000
+      internalID: -6808714196777948633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_24
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 55
+        width: 167
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ea84c3e94b1dd30800000000000000
+      internalID: 4454540098155359891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_25
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 52
+        width: 167
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31fe6addf1a033960800000000000000
+      internalID: 7580413729773645587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_26
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 51
+        width: 167
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 262c87e910d6b0fb0800000000000000
+      internalID: -4680527534000389534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_27
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 51
+        width: 167
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dda8878727f9b2be0800000000000000
+      internalID: -1500930736801674531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_28
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 51
+        width: 167
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30175928dbc7106c0800000000000000
+      internalID: -4178921825841614589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2 Shadow 270_29
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 51
+        width: 167
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e727e154a5b3c11d0800000000000000
+      internalID: -3378760361541995906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Death2 Shadow 270_0: 7213135065564360765
+      Death2 Shadow 270_1: 6493100007910259834
+      Death2 Shadow 270_10: 5814537491932686537
+      Death2 Shadow 270_11: 3737671758017493515
+      Death2 Shadow 270_12: 7653836629009813344
+      Death2 Shadow 270_13: -1286527183502483934
+      Death2 Shadow 270_14: -8588064433654360685
+      Death2 Shadow 270_15: 2809635636198445858
+      Death2 Shadow 270_16: 2556250044144698480
+      Death2 Shadow 270_17: 4706655172282152548
+      Death2 Shadow 270_18: 2754552922948698419
+      Death2 Shadow 270_19: -3266115744045179261
+      Death2 Shadow 270_2: 5533168600265761034
+      Death2 Shadow 270_20: -8798851068887432095
+      Death2 Shadow 270_21: 1252367463187503788
+      Death2 Shadow 270_22: 5043540623952444460
+      Death2 Shadow 270_23: -6808714196777948633
+      Death2 Shadow 270_24: 4454540098155359891
+      Death2 Shadow 270_25: 7580413729773645587
+      Death2 Shadow 270_26: -4680527534000389534
+      Death2 Shadow 270_27: -1500930736801674531
+      Death2 Shadow 270_28: -4178921825841614589
+      Death2 Shadow 270_29: -3378760361541995906
+      Death2 Shadow 270_3: -5483808847459580479
+      Death2 Shadow 270_4: 526961226194028902
+      Death2 Shadow 270_5: -5463366958362906321
+      Death2 Shadow 270_6: 7302140251914523168
+      Death2 Shadow 270_7: 5369510528066205138
+      Death2 Shadow 270_8: -2730369438108183642
+      Death2 Shadow 270_9: -7286728934501215842
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

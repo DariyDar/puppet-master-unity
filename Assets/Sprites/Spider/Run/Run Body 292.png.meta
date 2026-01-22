@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 0d463c0aa4c802e47932b1fb0e7d7c68
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1893598498393016611
+    second: Run Body 292_0
+  - first:
+      213: 6775328267627195523
+    second: Run Body 292_1
+  - first:
+      213: 9017420271278460300
+    second: Run Body 292_2
+  - first:
+      213: -6885549236197479627
+    second: Run Body 292_3
+  - first:
+      213: -4084726236796999197
+    second: Run Body 292_4
+  - first:
+      213: 7449047047878935338
+    second: Run Body 292_5
+  - first:
+      213: 6811589074379664680
+    second: Run Body 292_6
+  - first:
+      213: 791269718743809706
+    second: Run Body 292_7
+  - first:
+      213: 3075831416986720060
+    second: Run Body 292_8
+  - first:
+      213: 6908019581179445816
+    second: Run Body 292_9
+  - first:
+      213: 1985633733987910490
+    second: Run Body 292_10
+  - first:
+      213: 5771240916881031052
+    second: Run Body 292_11
+  - first:
+      213: 617665923778487620
+    second: Run Body 292_12
+  - first:
+      213: -1879229932455603368
+    second: Run Body 292_13
+  - first:
+      213: -7595338205024460074
+    second: Run Body 292_14
+  - first:
+      213: -3875695030689564636
+    second: Run Body 292_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Run Body 292_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 831
+        width: 146
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6321cc23698b5e0800000000000000
+      internalID: -1893598498393016611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_1
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 832
+        width: 159
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ce494892dc60e50800000000000000
+      internalID: 6775328267627195523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_2
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 832
+        width: 172
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d85fbd5ff442d70800000000000000
+      internalID: 9017420271278460300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 832
+        width: 179
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53bacfc637d9170a0800000000000000
+      internalID: -6885549236197479627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 577
+        width: 183
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e92ff221232057c0800000000000000
+      internalID: -4084726236796999197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_5
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 579
+        width: 178
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a230ff3c2d4506760800000000000000
+      internalID: 7449047047878935338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_6
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 582
+        width: 166
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82de45e7c20a78e50800000000000000
+      internalID: 6811589074379664680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_7
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 584
+        width: 157
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae7f3bed972bfa00800000000000000
+      internalID: 791269718743809706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_8
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 329
+        width: 147
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c37da76906c8faa20800000000000000
+      internalID: 3075831416986720060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_9
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 329
+        width: 128
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832c4a575373edf50800000000000000
+      internalID: 6908019581179445816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_10
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 328
+        width: 118
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a53c1685c536e8b10800000000000000
+      internalID: 1985633733987910490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_11
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 323
+        width: 114
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8fb4eb5901971050800000000000000
+      internalID: 5771240916881031052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_12
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 65
+        width: 115
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4452ea892e3629800800000000000000
+      internalID: 617665923778487620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_13
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 64
+        width: 121
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853d3b04552abe5e0800000000000000
+      internalID: -1879229932455603368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_14
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 63
+        width: 136
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d26094f420f79690800000000000000
+      internalID: -7595338205024460074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Body 292_15
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 63
+        width: 146
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428700667e3c63ac0800000000000000
+      internalID: -3875695030689564636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Run Body 292_0: -1893598498393016611
+      Run Body 292_1: 6775328267627195523
+      Run Body 292_10: 1985633733987910490
+      Run Body 292_11: 5771240916881031052
+      Run Body 292_12: 617665923778487620
+      Run Body 292_13: -1879229932455603368
+      Run Body 292_14: -7595338205024460074
+      Run Body 292_15: -3875695030689564636
+      Run Body 292_2: 9017420271278460300
+      Run Body 292_3: -6885549236197479627
+      Run Body 292_4: -4084726236796999197
+      Run Body 292_5: 7449047047878935338
+      Run Body 292_6: 6811589074379664680
+      Run Body 292_7: 791269718743809706
+      Run Body 292_8: 3075831416986720060
+      Run Body 292_9: 6908019581179445816
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

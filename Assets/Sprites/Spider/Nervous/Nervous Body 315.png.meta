@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: d24f632483e54fc40a72b2416610016d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3635867451882637774
+    second: Nervous Body 315_0
+  - first:
+      213: -8285182943873309531
+    second: Nervous Body 315_1
+  - first:
+      213: 4500956388347279755
+    second: Nervous Body 315_2
+  - first:
+      213: 4312909876267520172
+    second: Nervous Body 315_3
+  - first:
+      213: -1714607348725427053
+    second: Nervous Body 315_4
+  - first:
+      213: 2433046859191737316
+    second: Nervous Body 315_5
+  - first:
+      213: -8597703216080279430
+    second: Nervous Body 315_6
+  - first:
+      213: -876915063212152993
+    second: Nervous Body 315_7
+  - first:
+      213: 8840012629991354860
+    second: Nervous Body 315_8
+  - first:
+      213: 5585585402291889538
+    second: Nervous Body 315_9
+  - first:
+      213: 1644710257323044664
+    second: Nervous Body 315_10
+  - first:
+      213: 2168949165133510285
+    second: Nervous Body 315_11
+  - first:
+      213: 4469937193592874434
+    second: Nervous Body 315_12
+  - first:
+      213: 4149088989226915357
+    second: Nervous Body 315_13
+  - first:
+      213: -8870535181892449753
+    second: Nervous Body 315_14
+  - first:
+      213: -6478076409530424926
+    second: Nervous Body 315_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nervous Body 315_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 820
+        width: 170
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec98edf0f22357230800000000000000
+      internalID: 3635867451882637774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_1
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 820
+        width: 170
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a46e43620e150d80800000000000000
+      internalID: -8285182943873309531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_2
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 820
+        width: 170
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b89f6f4fcfb967e30800000000000000
+      internalID: 4500956388347279755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_3
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 820
+        width: 170
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca013338ea88adb30800000000000000
+      internalID: 4312909876267520172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_4
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 564
+        width: 170
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39452f163bd7438e0800000000000000
+      internalID: -1714607348725427053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_5
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 564
+        width: 170
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ebd0044a3be3c120800000000000000
+      internalID: 2433046859191737316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_6
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 564
+        width: 170
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a782d414a72dea880800000000000000
+      internalID: -8597703216080279430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_7
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 564
+        width: 170
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f57ec07656294d3f0800000000000000
+      internalID: -876915063212152993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_8
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 308
+        width: 170
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce1f99c86a80eaa70800000000000000
+      internalID: 8840012629991354860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_9
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 308
+        width: 170
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2852736645cf38d40800000000000000
+      internalID: 5585585402291889538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_10
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 308
+        width: 170
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f6e26d34f23d610800000000000000
+      internalID: 1644710257323044664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_11
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 308
+        width: 170
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86b9ab26c7a91e10800000000000000
+      internalID: 2168949165133510285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 52
+        width: 170
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5e860e138680e30800000000000000
+      internalID: 4469937193592874434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_13
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 52
+        width: 170
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16da50f376849930800000000000000
+      internalID: 4149088989226915357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_14
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 52
+        width: 170
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a02bb004785e480800000000000000
+      internalID: -8870535181892449753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervous Body 315_15
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 52
+        width: 170
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1e91ee3df3916a0800000000000000
+      internalID: -6478076409530424926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nervous Body 315_0: 3635867451882637774
+      Nervous Body 315_1: -8285182943873309531
+      Nervous Body 315_10: 1644710257323044664
+      Nervous Body 315_11: 2168949165133510285
+      Nervous Body 315_12: 4469937193592874434
+      Nervous Body 315_13: 4149088989226915357
+      Nervous Body 315_14: -8870535181892449753
+      Nervous Body 315_15: -6478076409530424926
+      Nervous Body 315_2: 4500956388347279755
+      Nervous Body 315_3: 4312909876267520172
+      Nervous Body 315_4: -1714607348725427053
+      Nervous Body 315_5: 2433046859191737316
+      Nervous Body 315_6: -8597703216080279430
+      Nervous Body 315_7: -876915063212152993
+      Nervous Body 315_8: 8840012629991354860
+      Nervous Body 315_9: 5585585402291889538
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

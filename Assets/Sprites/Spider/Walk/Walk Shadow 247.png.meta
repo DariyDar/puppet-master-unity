@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: c6f3b6878a546004194bf2c8b670f7fb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -36248135196685423
+    second: Walk Shadow 247_0
+  - first:
+      213: 6841739126384434140
+    second: Walk Shadow 247_1
+  - first:
+      213: 5057602627131358279
+    second: Walk Shadow 247_2
+  - first:
+      213: 7934940425038639413
+    second: Walk Shadow 247_3
+  - first:
+      213: -7071602518324464438
+    second: Walk Shadow 247_4
+  - first:
+      213: 2898682354677808039
+    second: Walk Shadow 247_5
+  - first:
+      213: -2376694386335586967
+    second: Walk Shadow 247_6
+  - first:
+      213: -4256498803951835863
+    second: Walk Shadow 247_7
+  - first:
+      213: 271861506939127299
+    second: Walk Shadow 247_8
+  - first:
+      213: -315967609243045808
+    second: Walk Shadow 247_9
+  - first:
+      213: -43944373256735508
+    second: Walk Shadow 247_10
+  - first:
+      213: -2372363966177672399
+    second: Walk Shadow 247_11
+  - first:
+      213: -1434588291250774663
+    second: Walk Shadow 247_12
+  - first:
+      213: -4711449594065720697
+    second: Walk Shadow 247_13
+  - first:
+      213: -1383543394297892841
+    second: Walk Shadow 247_14
+  - first:
+      213: -5126449135770897401
+    second: Walk Shadow 247_15
+  - first:
+      213: 6754087159475657738
+    second: Walk Shadow 247_16
+  - first:
+      213: -9071031333675508061
+    second: Walk Shadow 247_17
+  - first:
+      213: 6522618539896914991
+    second: Walk Shadow 247_18
+  - first:
+      213: 6733479297089855390
+    second: Walk Shadow 247_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Walk Shadow 247_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1091
+        width: 142
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19bc4d953883f7ff0800000000000000
+      internalID: -36248135196685423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_1
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 1093
+        width: 137
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb19028c7db2fe50800000000000000
+      internalID: 6841739126384434140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_2
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1094
+        width: 137
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c3f350bc6303640800000000000000
+      internalID: 5057602627131358279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_3
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 1095
+        width: 138
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 531b05486429e1e60800000000000000
+      internalID: 7934940425038639413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 841
+        width: 144
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4338ef9fe9cdd90800000000000000
+      internalID: -7071602518324464438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 843
+        width: 146
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab73436e303a3820800000000000000
+      internalID: 2898682354677808039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_6
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 844
+        width: 147
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9656dc24c09440fd0800000000000000
+      internalID: -2376694386335586967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_7
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 845
+        width: 149
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9256393c3e0ede4c0800000000000000
+      internalID: -4256498803951835863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_8
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 589
+        width: 155
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3068535a998d5c300800000000000000
+      internalID: 271861506939127299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_9
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 587
+        width: 159
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050f98a22257d9bf0800000000000000
+      internalID: -315967609243045808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_10
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 583
+        width: 167
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce4b72a43d0e36ff0800000000000000
+      internalID: -43944373256735508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_11
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 578
+        width: 171
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1330b06ca8ba31fd0800000000000000
+      internalID: -2372363966177672399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_12
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 321
+        width: 170
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97d1015cc81571ce0800000000000000
+      internalID: -1434588291250774663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_13
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 321
+        width: 169
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78aed887e819d9eb0800000000000000
+      internalID: -4711449594065720697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_14
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 321
+        width: 160
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710398bfc9aaccce0800000000000000
+      internalID: -1383543394297892841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_15
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 321
+        width: 151
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 704744f0ca13bd8b0800000000000000
+      internalID: -5126449135770897401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_16
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 66
+        width: 148
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0cd292ac765bbd50800000000000000
+      internalID: 6754087159475657738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_17
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 67
+        width: 141
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ae55d9ff093d1280800000000000000
+      internalID: -9071031333675508061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_18
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 67
+        width: 141
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f24cee3f00ff48a50800000000000000
+      internalID: 6522618539896914991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 247_19
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 67
+        width: 142
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9fdc75cebf127d50800000000000000
+      internalID: 6733479297089855390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Walk Shadow 247_0: -36248135196685423
+      Walk Shadow 247_1: 6841739126384434140
+      Walk Shadow 247_10: -43944373256735508
+      Walk Shadow 247_11: -2372363966177672399
+      Walk Shadow 247_12: -1434588291250774663
+      Walk Shadow 247_13: -4711449594065720697
+      Walk Shadow 247_14: -1383543394297892841
+      Walk Shadow 247_15: -5126449135770897401
+      Walk Shadow 247_16: 6754087159475657738
+      Walk Shadow 247_17: -9071031333675508061
+      Walk Shadow 247_18: 6522618539896914991
+      Walk Shadow 247_19: 6733479297089855390
+      Walk Shadow 247_2: 5057602627131358279
+      Walk Shadow 247_3: 7934940425038639413
+      Walk Shadow 247_4: -7071602518324464438
+      Walk Shadow 247_5: 2898682354677808039
+      Walk Shadow 247_6: -2376694386335586967
+      Walk Shadow 247_7: -4256498803951835863
+      Walk Shadow 247_8: 271861506939127299
+      Walk Shadow 247_9: -315967609243045808
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

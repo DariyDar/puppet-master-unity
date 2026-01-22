@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 8822c616e76f7df479290ad79cedb255
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1525040021990000139
+    second: Attack-Jump Shadow 315_0
+  - first:
+      213: -5058429254843536458
+    second: Attack-Jump Shadow 315_1
+  - first:
+      213: -38170420293112562
+    second: Attack-Jump Shadow 315_2
+  - first:
+      213: -933626391652974599
+    second: Attack-Jump Shadow 315_3
+  - first:
+      213: 2065527623752754642
+    second: Attack-Jump Shadow 315_4
+  - first:
+      213: -3122728558631033708
+    second: Attack-Jump Shadow 315_5
+  - first:
+      213: 2119061318485084818
+    second: Attack-Jump Shadow 315_6
+  - first:
+      213: -1684637869889684437
+    second: Attack-Jump Shadow 315_7
+  - first:
+      213: -7415711516362233308
+    second: Attack-Jump Shadow 315_8
+  - first:
+      213: -3003529904774319402
+    second: Attack-Jump Shadow 315_9
+  - first:
+      213: 8725120669335973721
+    second: Attack-Jump Shadow 315_10
+  - first:
+      213: -59006042422916185
+    second: Attack-Jump Shadow 315_11
+  - first:
+      213: 8180975196401696963
+    second: Attack-Jump Shadow 315_12
+  - first:
+      213: 482115325770827975
+    second: Attack-Jump Shadow 315_13
+  - first:
+      213: -5491417640135316594
+    second: Attack-Jump Shadow 315_14
+  - first:
+      213: 8689517293576974659
+    second: Attack-Jump Shadow 315_15
+  - first:
+      213: -7279438829382070812
+    second: Attack-Jump Shadow 315_16
+  - first:
+      213: -8072852219035592960
+    second: Attack-Jump Shadow 315_17
+  - first:
+      213: 8736797126689378431
+    second: Attack-Jump Shadow 315_18
+  - first:
+      213: 2807105867412549818
+    second: Attack-Jump Shadow 315_19
+  - first:
+      213: 881890940283210778
+    second: Attack-Jump Shadow 315_20
+  - first:
+      213: 3692254734045302463
+    second: Attack-Jump Shadow 315_21
+  - first:
+      213: -2330020896172580948
+    second: Attack-Jump Shadow 315_22
+  - first:
+      213: -6221598312076278592
+    second: Attack-Jump Shadow 315_23
+  - first:
+      213: -683280938271696541
+    second: Attack-Jump Shadow 315_24
+  - first:
+      213: -3300654424901867913
+    second: Attack-Jump Shadow 315_25
+  - first:
+      213: 2190258670251805193
+    second: Attack-Jump Shadow 315_26
+  - first:
+      213: -5293086259962899367
+    second: Attack-Jump Shadow 315_27
+  - first:
+      213: 6948113437811998214
+    second: Attack-Jump Shadow 315_28
+  - first:
+      213: 6525742802602535236
+    second: Attack-Jump Shadow 315_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1075
+        width: 169
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06c7fae1d70a2510800000000000000
+      internalID: 1525040021990000139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_1
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1078
+        width: 170
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb6b97b469dcc9b0800000000000000
+      internalID: -5058429254843536458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_2
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1079
+        width: 169
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d60897434687ff0800000000000000
+      internalID: -38170420293112562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_3
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1074
+        width: 170
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff389c4eb71b03f0800000000000000
+      internalID: -933626391652974599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_4
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 1063
+        width: 157
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d52a8f1e6a3aac10800000000000000
+      internalID: 2065527623752754642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_5
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 1061
+        width: 144
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49464dcbbe6d9a4d0800000000000000
+      internalID: -3122728558631033708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 804
+        width: 130
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29a0399ba0b686d10800000000000000
+      internalID: 2119061318485084818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_7
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 805
+        width: 121
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2cfd0e68c6fe98e0800000000000000
+      internalID: -1684637869889684437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_8
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 815
+        width: 129
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42aa47e7aa9161990800000000000000
+      internalID: -7415711516362233308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_9
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 822
+        width: 135
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d2f9a907715156d0800000000000000
+      internalID: -3003529904774319402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_10
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 825
+        width: 133
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f6036650bd51970800000000000000
+      internalID: 8725120669335973721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_11
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 827
+        width: 133
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abc7c9215e5e2ff0800000000000000
+      internalID: -59006042422916185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_12
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 572
+        width: 133
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c00ec1b899a88170800000000000000
+      internalID: 8180975196401696963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_13
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 573
+        width: 133
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c8875d9551d0b600800000000000000
+      internalID: 482115325770827975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_14
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 574
+        width: 133
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8bab6640c09ac3b0800000000000000
+      internalID: -5491417640135316594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_15
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 574
+        width: 132
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341f44180fd579870800000000000000
+      internalID: 8689517293576974659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_16
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 574
+        width: 133
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed0f7ae3fc3afa90800000000000000
+      internalID: -7279438829382070812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_17
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 574
+        width: 133
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 007d828bda777ff80800000000000000
+      internalID: -8072852219035592960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_18
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 317
+        width: 132
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7059fa72b65f3970800000000000000
+      internalID: 8736797126689378431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_19
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 317
+        width: 135
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab03a0ae9e7d4f620800000000000000
+      internalID: 2807105867412549818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_20
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 313
+        width: 141
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c4732432b1d3c00800000000000000
+      internalID: 881890940283210778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_21
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 297
+        width: 143
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe46034e168d3330800000000000000
+      internalID: 3692254734045302463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_22
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 286
+        width: 138
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caf5564075a1aafd0800000000000000
+      internalID: -2330020896172580948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_23
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 282
+        width: 140
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c406817c4178a9a0800000000000000
+      internalID: -6221598312076278592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_24
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 37
+        width: 152
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36915885b9f7486f0800000000000000
+      internalID: -683280938271696541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_25
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 53
+        width: 170
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7762765c948b132d0800000000000000
+      internalID: -3300654424901867913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_26
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 55
+        width: 170
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a0496f7ac556e10800000000000000
+      internalID: 2190258670251805193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_27
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 53
+        width: 169
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 954196d271e2b86b0800000000000000
+      internalID: -5293086259962899367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_28
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 52
+        width: 169
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ef6e7eb58ac6060800000000000000
+      internalID: 6948113437811998214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack-Jump Shadow 315_29
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 51
+        width: 170
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 449afac0188109a50800000000000000
+      internalID: 6525742802602535236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Attack-Jump Shadow 315_0: 1525040021990000139
+      Attack-Jump Shadow 315_1: -5058429254843536458
+      Attack-Jump Shadow 315_10: 8725120669335973721
+      Attack-Jump Shadow 315_11: -59006042422916185
+      Attack-Jump Shadow 315_12: 8180975196401696963
+      Attack-Jump Shadow 315_13: 482115325770827975
+      Attack-Jump Shadow 315_14: -5491417640135316594
+      Attack-Jump Shadow 315_15: 8689517293576974659
+      Attack-Jump Shadow 315_16: -7279438829382070812
+      Attack-Jump Shadow 315_17: -8072852219035592960
+      Attack-Jump Shadow 315_18: 8736797126689378431
+      Attack-Jump Shadow 315_19: 2807105867412549818
+      Attack-Jump Shadow 315_2: -38170420293112562
+      Attack-Jump Shadow 315_20: 881890940283210778
+      Attack-Jump Shadow 315_21: 3692254734045302463
+      Attack-Jump Shadow 315_22: -2330020896172580948
+      Attack-Jump Shadow 315_23: -6221598312076278592
+      Attack-Jump Shadow 315_24: -683280938271696541
+      Attack-Jump Shadow 315_25: -3300654424901867913
+      Attack-Jump Shadow 315_26: 2190258670251805193
+      Attack-Jump Shadow 315_27: -5293086259962899367
+      Attack-Jump Shadow 315_28: 6948113437811998214
+      Attack-Jump Shadow 315_29: 6525742802602535236
+      Attack-Jump Shadow 315_3: -933626391652974599
+      Attack-Jump Shadow 315_4: 2065527623752754642
+      Attack-Jump Shadow 315_5: -3122728558631033708
+      Attack-Jump Shadow 315_6: 2119061318485084818
+      Attack-Jump Shadow 315_7: -1684637869889684437
+      Attack-Jump Shadow 315_8: -7415711516362233308
+      Attack-Jump Shadow 315_9: -3003529904774319402
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

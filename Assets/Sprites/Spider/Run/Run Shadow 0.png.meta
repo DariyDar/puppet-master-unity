@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: eeaec437806584f4f99424a3ae9f38af
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4137178614311688755
+    second: Run Shadow 0_0
+  - first:
+      213: 456879414968809294
+    second: Run Shadow 0_1
+  - first:
+      213: -1663548191334715221
+    second: Run Shadow 0_2
+  - first:
+      213: 1781147721471347919
+    second: Run Shadow 0_3
+  - first:
+      213: -6598484847608700351
+    second: Run Shadow 0_4
+  - first:
+      213: 3719353276269679800
+    second: Run Shadow 0_5
+  - first:
+      213: 7257353069423961630
+    second: Run Shadow 0_6
+  - first:
+      213: -3350354894332076598
+    second: Run Shadow 0_7
+  - first:
+      213: 1032494894725624404
+    second: Run Shadow 0_8
+  - first:
+      213: 3322264471714074847
+    second: Run Shadow 0_9
+  - first:
+      213: -5885419813654845593
+    second: Run Shadow 0_10
+  - first:
+      213: 4205060207492042763
+    second: Run Shadow 0_11
+  - first:
+      213: -4994516565824146321
+    second: Run Shadow 0_12
+  - first:
+      213: 5961472788182058527
+    second: Run Shadow 0_13
+  - first:
+      213: -5211385912209011784
+    second: Run Shadow 0_14
+  - first:
+      213: -5420007646011394603
+    second: Run Shadow 0_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Run Shadow 0_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 819
+        width: 118
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a146ea7063a6930800000000000000
+      internalID: 4137178614311688755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 818
+        width: 118
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4777624869275600800000000000000
+      internalID: 456879414968809294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_2
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 816
+        width: 117
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba030ccdbb3e9e8e0800000000000000
+      internalID: -1663548191334715221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_3
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 813
+        width: 117
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcccbce6a68e7b810800000000000000
+      internalID: 1781147721471347919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 558
+        width: 116
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1426c7acdf87d64a0800000000000000
+      internalID: -6598484847608700351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 563
+        width: 115
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b45d3a491ccd9330800000000000000
+      internalID: 3719353276269679800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_6
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 571
+        width: 116
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e162b906a2c47b460800000000000000
+      internalID: 7257353069423961630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_7
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 576
+        width: 117
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd58db79f52181d0800000000000000
+      internalID: -3350354894332076598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_8
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 323
+        width: 117
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4527688e2a8245e00800000000000000
+      internalID: 1032494894725624404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_9
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 330
+        width: 118
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd01b665fed0b1e20800000000000000
+      internalID: 3322264471714074847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_10
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 333
+        width: 118
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 767ae0d9cd9c25ea0800000000000000
+      internalID: -5885419813654845593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_11
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 334
+        width: 118
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0091b6baff5b5a30800000000000000
+      internalID: 4205060207492042763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_12
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 75
+        width: 117
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f647f3d35a9efaab0800000000000000
+      internalID: -4994516565824146321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_13
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 68
+        width: 118
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16cfb56ae76bb250800000000000000
+      internalID: 5961472788182058527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_14
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 56
+        width: 118
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb8e4bbf107da7b0800000000000000
+      internalID: -5211385912209011784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Shadow 0_15
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 51
+        width: 118
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d5f69b23c348c4b0800000000000000
+      internalID: -5420007646011394603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Run Shadow 0_0: 4137178614311688755
+      Run Shadow 0_1: 456879414968809294
+      Run Shadow 0_10: -5885419813654845593
+      Run Shadow 0_11: 4205060207492042763
+      Run Shadow 0_12: -4994516565824146321
+      Run Shadow 0_13: 5961472788182058527
+      Run Shadow 0_14: -5211385912209011784
+      Run Shadow 0_15: -5420007646011394603
+      Run Shadow 0_2: -1663548191334715221
+      Run Shadow 0_3: 1781147721471347919
+      Run Shadow 0_4: -6598484847608700351
+      Run Shadow 0_5: 3719353276269679800
+      Run Shadow 0_6: 7257353069423961630
+      Run Shadow 0_7: -3350354894332076598
+      Run Shadow 0_8: 1032494894725624404
+      Run Shadow 0_9: 3322264471714074847
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

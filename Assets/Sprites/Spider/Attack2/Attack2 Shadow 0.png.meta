@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 26d1cd03c61082343b571fa08cc1819f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6876149814423095633
+    second: Attack2 Shadow 0_0
+  - first:
+      213: 8646423143080735038
+    second: Attack2 Shadow 0_1
+  - first:
+      213: 5438368839589507807
+    second: Attack2 Shadow 0_2
+  - first:
+      213: -7627014092257362888
+    second: Attack2 Shadow 0_3
+  - first:
+      213: 7962331345314982759
+    second: Attack2 Shadow 0_4
+  - first:
+      213: 2830933203981906919
+    second: Attack2 Shadow 0_5
+  - first:
+      213: 1398098380165418157
+    second: Attack2 Shadow 0_6
+  - first:
+      213: -5932623283237389258
+    second: Attack2 Shadow 0_7
+  - first:
+      213: -7841355687828630058
+    second: Attack2 Shadow 0_8
+  - first:
+      213: 7465619522844201693
+    second: Attack2 Shadow 0_9
+  - first:
+      213: -2244104944071930292
+    second: Attack2 Shadow 0_10
+  - first:
+      213: 4850223862075053303
+    second: Attack2 Shadow 0_11
+  - first:
+      213: 5990870731534526005
+    second: Attack2 Shadow 0_12
+  - first:
+      213: -2986679115307195317
+    second: Attack2 Shadow 0_13
+  - first:
+      213: -344388737272634556
+    second: Attack2 Shadow 0_14
+  - first:
+      213: 1079034390582421393
+    second: Attack2 Shadow 0_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 822
+        width: 129
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa671f8dc220390a0800000000000000
+      internalID: -6876149814423095633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_1
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 822
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e313b05b9044ef770800000000000000
+      internalID: 8646423143080735038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_2
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 822
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2394955a7f87b40800000000000000
+      internalID: 5438368839589507807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_3
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 822
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83cf91eb717672690800000000000000
+      internalID: -7627014092257362888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_4
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 566
+        width: 130
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b257d1c22ef7e60800000000000000
+      internalID: 7962331345314982759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_5
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 566
+        width: 130
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e3333600ce794720800000000000000
+      internalID: 2830933203981906919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_6
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 566
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac0fceb11b076310800000000000000
+      internalID: 1398098380165418157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_7
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 566
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c7c686e861bada0800000000000000
+      internalID: -5932623283237389258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_8
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 310
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d55c751c88ed2390800000000000000
+      internalID: -7841355687828630058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_9
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 310
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd29957c6653b9760800000000000000
+      internalID: 7465619522844201693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_10
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 310
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4e05e171765bd0e0800000000000000
+      internalID: -2244104944071930292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_11
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 310
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f45b1ca7e47f4340800000000000000
+      internalID: 4850223862075053303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_12
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 54
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53666687039d32350800000000000000
+      internalID: 5990870731534526005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_13
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 54
+        width: 129
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4469023b2f2d86d0800000000000000
+      internalID: -2986679115307195317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_14
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 54
+        width: 129
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4432832a44c783bf0800000000000000
+      internalID: -344388737272634556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2 Shadow 0_15
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 54
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197681faf0089fe00800000000000000
+      internalID: 1079034390582421393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Attack2 Shadow 0_0: -6876149814423095633
+      Attack2 Shadow 0_1: 8646423143080735038
+      Attack2 Shadow 0_10: -2244104944071930292
+      Attack2 Shadow 0_11: 4850223862075053303
+      Attack2 Shadow 0_12: 5990870731534526005
+      Attack2 Shadow 0_13: -2986679115307195317
+      Attack2 Shadow 0_14: -344388737272634556
+      Attack2 Shadow 0_15: 1079034390582421393
+      Attack2 Shadow 0_2: 5438368839589507807
+      Attack2 Shadow 0_3: -7627014092257362888
+      Attack2 Shadow 0_4: 7962331345314982759
+      Attack2 Shadow 0_5: 2830933203981906919
+      Attack2 Shadow 0_6: 1398098380165418157
+      Attack2 Shadow 0_7: -5932623283237389258
+      Attack2 Shadow 0_8: -7841355687828630058
+      Attack2 Shadow 0_9: 7465619522844201693
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

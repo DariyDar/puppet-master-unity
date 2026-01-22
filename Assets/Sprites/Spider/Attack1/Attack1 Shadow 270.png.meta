@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: a6df814efa0ae8b47aea5c826d7c7060
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7610690809146000024
+    second: Attack1 Shadow 270_0
+  - first:
+      213: 3262532369707072712
+    second: Attack1 Shadow 270_1
+  - first:
+      213: 2056589552258036014
+    second: Attack1 Shadow 270_2
+  - first:
+      213: -8593788762287833079
+    second: Attack1 Shadow 270_3
+  - first:
+      213: 6736200683396148629
+    second: Attack1 Shadow 270_4
+  - first:
+      213: 1572247861703195014
+    second: Attack1 Shadow 270_5
+  - first:
+      213: -2985654167211075631
+    second: Attack1 Shadow 270_6
+  - first:
+      213: -5461286996210242306
+    second: Attack1 Shadow 270_7
+  - first:
+      213: 3923721120351469289
+    second: Attack1 Shadow 270_8
+  - first:
+      213: -7577784104686507032
+    second: Attack1 Shadow 270_9
+  - first:
+      213: -3095388898353313861
+    second: Attack1 Shadow 270_10
+  - first:
+      213: -8103876150403222869
+    second: Attack1 Shadow 270_11
+  - first:
+      213: 8617529267770717188
+    second: Attack1 Shadow 270_12
+  - first:
+      213: -4859726669695581593
+    second: Attack1 Shadow 270_13
+  - first:
+      213: -1316180436723198051
+    second: Attack1 Shadow 270_14
+  - first:
+      213: 2432108350146301383
+    second: Attack1 Shadow 270_15
+  - first:
+      213: 8371750968047673165
+    second: Attack1 Shadow 270_16
+  - first:
+      213: -2254576739208107225
+    second: Attack1 Shadow 270_17
+  - first:
+      213: -187497390673620445
+    second: Attack1 Shadow 270_18
+  - first:
+      213: -8433790896552024341
+    second: Attack1 Shadow 270_19
+  - first:
+      213: 7637174406493123597
+    second: Attack1 Shadow 270_20
+  - first:
+      213: 7303601063528588584
+    second: Attack1 Shadow 270_21
+  - first:
+      213: 4518347629540604372
+    second: Attack1 Shadow 270_22
+  - first:
+      213: 3448338169656164681
+    second: Attack1 Shadow 270_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 835
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8924a7eb7fa9e9960800000000000000
+      internalID: 7610690809146000024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_1
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 835
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cc7a9497e7d64d20800000000000000
+      internalID: 3262532369707072712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_2
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 835
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21be1f2d497a8c10800000000000000
+      internalID: 2056589552258036014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_3
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 835
+        width: 151
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 900071d07aabcb880800000000000000
+      internalID: -8593788762287833079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_4
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 835
+        width: 147
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d2295e4dacb7d50800000000000000
+      internalID: 6736200683396148629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_5
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 835
+        width: 132
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689bfaf991fb1d510800000000000000
+      internalID: 1572247861703195014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_6
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 578
+        width: 129
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d718358a53d096d0800000000000000
+      internalID: -2985654167211075631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_7
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 578
+        width: 128
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efcad6e796c9534b0800000000000000
+      internalID: -5461286996210242306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_8
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 578
+        width: 133
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee3f38f19bd37630800000000000000
+      internalID: 3923721120351469289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_9
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 578
+        width: 141
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb2f8f618d46d690800000000000000
+      internalID: -7577784104686507032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_10
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 578
+        width: 133
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb786ff6238fa05d0800000000000000
+      internalID: -3095388898353313861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_11
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 578
+        width: 140
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba2b47fc39f398f80800000000000000
+      internalID: -8103876150403222869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_12
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 322
+        width: 121
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 404710f163d979770800000000000000
+      internalID: 8617529267770717188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 323
+        width: 113
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7628d438758ce8cb0800000000000000
+      internalID: -4859726669695581593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_14
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 323
+        width: 113
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d979bc0cddcfbbde0800000000000000
+      internalID: -1316180436723198051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_15
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 323
+        width: 113
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd4bb998a590c120800000000000000
+      internalID: 2432108350146301383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_16
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 323
+        width: 114
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f9386662f6e2470800000000000000
+      internalID: 8371750968047673165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_17
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 323
+        width: 120
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b64a4a66226b0e0800000000000000
+      internalID: -2254576739208107225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_18
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 67
+        width: 136
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3221698dd10e56df0800000000000000
+      internalID: -187497390673620445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_19
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 67
+        width: 148
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6e71d1dd725fa80800000000000000
+      internalID: -8433790896552024341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_20
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 67
+        width: 149
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d043ab2c8a1bcf960800000000000000
+      internalID: 7637174406493123597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_21
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 67
+        width: 151
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82569cc987a9b5560800000000000000
+      internalID: 7303601063528588584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_22
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 67
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9fe76da3564be30800000000000000
+      internalID: 4518347629540604372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1 Shadow 270_23
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 67
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 941c6c39b45fadf20800000000000000
+      internalID: 3448338169656164681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Attack1 Shadow 270_0: 7610690809146000024
+      Attack1 Shadow 270_1: 3262532369707072712
+      Attack1 Shadow 270_10: -3095388898353313861
+      Attack1 Shadow 270_11: -8103876150403222869
+      Attack1 Shadow 270_12: 8617529267770717188
+      Attack1 Shadow 270_13: -4859726669695581593
+      Attack1 Shadow 270_14: -1316180436723198051
+      Attack1 Shadow 270_15: 2432108350146301383
+      Attack1 Shadow 270_16: 8371750968047673165
+      Attack1 Shadow 270_17: -2254576739208107225
+      Attack1 Shadow 270_18: -187497390673620445
+      Attack1 Shadow 270_19: -8433790896552024341
+      Attack1 Shadow 270_2: 2056589552258036014
+      Attack1 Shadow 270_20: 7637174406493123597
+      Attack1 Shadow 270_21: 7303601063528588584
+      Attack1 Shadow 270_22: 4518347629540604372
+      Attack1 Shadow 270_23: 3448338169656164681
+      Attack1 Shadow 270_3: -8593788762287833079
+      Attack1 Shadow 270_4: 6736200683396148629
+      Attack1 Shadow 270_5: 1572247861703195014
+      Attack1 Shadow 270_6: -2985654167211075631
+      Attack1 Shadow 270_7: -5461286996210242306
+      Attack1 Shadow 270_8: 3923721120351469289
+      Attack1 Shadow 270_9: -7577784104686507032
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

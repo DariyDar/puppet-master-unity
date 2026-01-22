@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 18065721d9840ec429346a5b5cd4f880
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2283984347318975175
+    second: Hit_Left Body 292_0
+  - first:
+      213: -8949183061691590435
+    second: Hit_Left Body 292_1
+  - first:
+      213: 9202824626425611894
+    second: Hit_Left Body 292_2
+  - first:
+      213: 8127378120298527479
+    second: Hit_Left Body 292_3
+  - first:
+      213: 1910596641054725777
+    second: Hit_Left Body 292_4
+  - first:
+      213: 5428465960231415201
+    second: Hit_Left Body 292_5
+  - first:
+      213: -6827037515225233509
+    second: Hit_Left Body 292_6
+  - first:
+      213: 7827344196861600195
+    second: Hit_Left Body 292_7
+  - first:
+      213: 6142776666529798835
+    second: Hit_Left Body 292_8
+  - first:
+      213: -2788992366198736677
+    second: Hit_Left Body 292_9
+  - first:
+      213: 7335676254086860531
+    second: Hit_Left Body 292_10
+  - first:
+      213: -2306474178305927252
+    second: Hit_Left Body 292_11
+  - first:
+      213: -842965608623292861
+    second: Hit_Left Body 292_12
+  - first:
+      213: -3872179866125909725
+    second: Hit_Left Body 292_13
+  - first:
+      213: -5528483811019629180
+    second: Hit_Left Body 292_14
+  - first:
+      213: -8786294620042259673
+    second: Hit_Left Body 292_15
+  - first:
+      213: -985815113902245491
+    second: Hit_Left Body 292_16
+  - first:
+      213: 5710123348866340497
+    second: Hit_Left Body 292_17
+  - first:
+      213: 7131660188086565688
+    second: Hit_Left Body 292_18
+  - first:
+      213: 7791655399189149497
+    second: Hit_Left Body 292_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hit_Left Body 292_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1084
+        width: 174
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93500815658ad40e0800000000000000
+      internalID: -2283984347318975175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1085
+        width: 174
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd81ee19b6d1ec380800000000000000
+      internalID: -8949183061691590435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_2
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1085
+        width: 172
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676c0543d3007bf70800000000000000
+      internalID: 9202824626425611894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_3
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1085
+        width: 164
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fafca7f65f3ac070800000000000000
+      internalID: 8127378120298527479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 844
+        width: 162
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1961f13b58dc38a10800000000000000
+      internalID: 1910596641054725777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 848
+        width: 162
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ada4e29709c55b40800000000000000
+      internalID: 5428465960231415201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 848
+        width: 162
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b970cb41d8d7141a0800000000000000
+      internalID: -6827037515225233509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_7
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 848
+        width: 162
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1a6a4731050ac60800000000000000
+      internalID: 7827344196861600195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 592
+        width: 162
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba111715d68f3550800000000000000
+      internalID: 6142776666529798835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 592
+        width: 162
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8b27b38328b49d0800000000000000
+      internalID: -2788992366198736677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_10
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 592
+        width: 162
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe8d10efae8dc560800000000000000
+      internalID: 7335676254086860531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_11
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 592
+        width: 162
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca7d67e74f1cdffd0800000000000000
+      internalID: -2306474178305927252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 336
+        width: 162
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e3324ce3f2d44f0800000000000000
+      internalID: -842965608623292861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_13
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 336
+        width: 163
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321452d6de0434ac0800000000000000
+      internalID: -3872179866125909725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_14
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 336
+        width: 169
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d5da9d341e643b0800000000000000
+      internalID: -5528483811019629180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_15
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 334
+        width: 174
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7239478489fc01680800000000000000
+      internalID: -8786294620042259673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_16
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 66
+        width: 174
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8935a1806ea152f0800000000000000
+      internalID: -985815113902245491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_17
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 60
+        width: 174
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19697d8aeee6e3f40800000000000000
+      internalID: 5710123348866340497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_18
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 60
+        width: 174
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83bf1b9e72fb8f260800000000000000
+      internalID: 7131660188086565688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Left Body 292_19
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 60
+        width: 174
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9377ce8bd45812c60800000000000000
+      internalID: 7791655399189149497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hit_Left Body 292_0: -2283984347318975175
+      Hit_Left Body 292_1: -8949183061691590435
+      Hit_Left Body 292_10: 7335676254086860531
+      Hit_Left Body 292_11: -2306474178305927252
+      Hit_Left Body 292_12: -842965608623292861
+      Hit_Left Body 292_13: -3872179866125909725
+      Hit_Left Body 292_14: -5528483811019629180
+      Hit_Left Body 292_15: -8786294620042259673
+      Hit_Left Body 292_16: -985815113902245491
+      Hit_Left Body 292_17: 5710123348866340497
+      Hit_Left Body 292_18: 7131660188086565688
+      Hit_Left Body 292_19: 7791655399189149497
+      Hit_Left Body 292_2: 9202824626425611894
+      Hit_Left Body 292_3: 8127378120298527479
+      Hit_Left Body 292_4: 1910596641054725777
+      Hit_Left Body 292_5: 5428465960231415201
+      Hit_Left Body 292_6: -6827037515225233509
+      Hit_Left Body 292_7: 7827344196861600195
+      Hit_Left Body 292_8: 6142776666529798835
+      Hit_Left Body 292_9: -2788992366198736677
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

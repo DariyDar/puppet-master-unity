@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: a2604df69eba75547893acc255c95754
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1084060650240071984
+    second: Hit_Back Body 022_0
+  - first:
+      213: 8755233424019285924
+    second: Hit_Back Body 022_1
+  - first:
+      213: 7981738959550879093
+    second: Hit_Back Body 022_2
+  - first:
+      213: 4773397918790144745
+    second: Hit_Back Body 022_3
+  - first:
+      213: -7368284731872337670
+    second: Hit_Back Body 022_4
+  - first:
+      213: 3065634431971273109
+    second: Hit_Back Body 022_5
+  - first:
+      213: -3356030235131566676
+    second: Hit_Back Body 022_6
+  - first:
+      213: 7769890713537604413
+    second: Hit_Back Body 022_7
+  - first:
+      213: 5809306450902849631
+    second: Hit_Back Body 022_8
+  - first:
+      213: 4799597196869217906
+    second: Hit_Back Body 022_9
+  - first:
+      213: -5605137216291976627
+    second: Hit_Back Body 022_10
+  - first:
+      213: 2206935125885029218
+    second: Hit_Back Body 022_11
+  - first:
+      213: 8519490956066427649
+    second: Hit_Back Body 022_12
+  - first:
+      213: 7233972656766781160
+    second: Hit_Back Body 022_13
+  - first:
+      213: 1571590197987695412
+    second: Hit_Back Body 022_14
+  - first:
+      213: 9078701822090062624
+    second: Hit_Back Body 022_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hit_Back Body 022_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 815
+        width: 150
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d6267b0594a4f0f0800000000000000
+      internalID: -1084060650240071984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_1
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 815
+        width: 150
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7eb447966d08970800000000000000
+      internalID: 8755233424019285924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_2
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 840
+        width: 143
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5751ded6b45d4ce60800000000000000
+      internalID: 7981738959550879093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_3
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 840
+        width: 141
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e25319dd148e3240800000000000000
+      internalID: 4773397918790144745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_4
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 584
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0a0d043189eb990800000000000000
+      internalID: -7368284731872337670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_5
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 584
+        width: 141
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599aad006425b8a20800000000000000
+      internalID: 3065634431971273109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_6
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 584
+        width: 141
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca5238b384cfc61d0800000000000000
+      internalID: -3356030235131566676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_7
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 584
+        width: 141
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3be304ff6234db60800000000000000
+      internalID: 7769890713537604413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_8
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 328
+        width: 141
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f581375207dce9050800000000000000
+      internalID: 5809306450902849631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_9
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 328
+        width: 141
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ea950a8389b9240800000000000000
+      internalID: 4799597196869217906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_10
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 328
+        width: 141
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a4899266d8632b0800000000000000
+      internalID: -5605137216291976627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_11
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 328
+        width: 141
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b85bcddcb90ae10800000000000000
+      internalID: 2206935125885029218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 47
+        width: 148
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1031e77e2ef4b3670800000000000000
+      internalID: 8519490956066427649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_13
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 47
+        width: 150
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e60979ddcb346460800000000000000
+      internalID: 7233972656766781160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_14
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 47
+        width: 150
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43bda8b55f86fc510800000000000000
+      internalID: 1571590197987695412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Back Body 022_15
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 47
+        width: 150
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bae57c4370efd70800000000000000
+      internalID: 9078701822090062624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hit_Back Body 022_0: -1084060650240071984
+      Hit_Back Body 022_1: 8755233424019285924
+      Hit_Back Body 022_10: -5605137216291976627
+      Hit_Back Body 022_11: 2206935125885029218
+      Hit_Back Body 022_12: 8519490956066427649
+      Hit_Back Body 022_13: 7233972656766781160
+      Hit_Back Body 022_14: 1571590197987695412
+      Hit_Back Body 022_15: 9078701822090062624
+      Hit_Back Body 022_2: 7981738959550879093
+      Hit_Back Body 022_3: 4773397918790144745
+      Hit_Back Body 022_4: -7368284731872337670
+      Hit_Back Body 022_5: 3065634431971273109
+      Hit_Back Body 022_6: -3356030235131566676
+      Hit_Back Body 022_7: 7769890713537604413
+      Hit_Back Body 022_8: 5809306450902849631
+      Hit_Back Body 022_9: 4799597196869217906
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 078141c8efaca224b9ce774b9e8742ad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3955292778978975020
+    second: Walk Shadow 090_0
+  - first:
+      213: 5662900862084034968
+    second: Walk Shadow 090_1
+  - first:
+      213: 3195062773905374360
+    second: Walk Shadow 090_2
+  - first:
+      213: -3603045445918426647
+    second: Walk Shadow 090_3
+  - first:
+      213: -6518739887861317023
+    second: Walk Shadow 090_4
+  - first:
+      213: -3854381086533302938
+    second: Walk Shadow 090_5
+  - first:
+      213: 5068138521602196392
+    second: Walk Shadow 090_6
+  - first:
+      213: -2087270586710183006
+    second: Walk Shadow 090_7
+  - first:
+      213: 1494674226115696221
+    second: Walk Shadow 090_8
+  - first:
+      213: 4978435152332923307
+    second: Walk Shadow 090_9
+  - first:
+      213: -217939721892508112
+    second: Walk Shadow 090_10
+  - first:
+      213: 1267302725192029641
+    second: Walk Shadow 090_11
+  - first:
+      213: 8982019255983996795
+    second: Walk Shadow 090_12
+  - first:
+      213: 1442527671218537731
+    second: Walk Shadow 090_13
+  - first:
+      213: -5369895557435700871
+    second: Walk Shadow 090_14
+  - first:
+      213: 4631634354818078610
+    second: Walk Shadow 090_15
+  - first:
+      213: 825232504269235347
+    second: Walk Shadow 090_16
+  - first:
+      213: 8758087040066282715
+    second: Walk Shadow 090_17
+  - first:
+      213: 1768321707671485427
+    second: Walk Shadow 090_18
+  - first:
+      213: 4824359291341439394
+    second: Walk Shadow 090_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Walk Shadow 090_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1090
+        width: 159
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d26a4e6c2afb19c0800000000000000
+      internalID: -3955292778978975020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1090
+        width: 158
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891b5caa45aa69e40800000000000000
+      internalID: 5662900862084034968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_2
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 1090
+        width: 156
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c34b92aa4275c20800000000000000
+      internalID: 3195062773905374360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_3
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1090
+        width: 156
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e97176b1496ffdc0800000000000000
+      internalID: -3603045445918426647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_4
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 834
+        width: 151
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1624bd81c98c885a0800000000000000
+      internalID: -6518739887861317023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_5
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 834
+        width: 150
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665c23cb2dc728ac0800000000000000
+      internalID: -3854381086533302938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_6
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 834
+        width: 151
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3829c1225a55640800000000000000
+      internalID: 5068138521602196392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_7
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 834
+        width: 152
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3b401d5768803e0800000000000000
+      internalID: -2087270586710183006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_8
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 578
+        width: 152
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d56de8e1a462eb410800000000000000
+      internalID: 1494674226115696221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_9
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 578
+        width: 153
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba12f18e464f61540800000000000000
+      internalID: 4978435152332923307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_10
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 577
+        width: 154
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03e46264af8b9fcf0800000000000000
+      internalID: -217939721892508112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_11
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 576
+        width: 158
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c594f53d1d569110800000000000000
+      internalID: 1267302725192029641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_12
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 320
+        width: 158
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ff4aeacea86ac70800000000000000
+      internalID: 8982019255983996795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_13
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 320
+        width: 157
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30507ad2643e40410800000000000000
+      internalID: 1442527671218537731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_14
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 321
+        width: 149
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 979c812017c4a75b0800000000000000
+      internalID: -5369895557435700871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_15
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 322
+        width: 151
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2975d6008eed64040800000000000000
+      internalID: 4631634354818078610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_16
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 66
+        width: 152
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 394e2122790d37b00800000000000000
+      internalID: 825232504269235347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_17
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 66
+        width: 155
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd46a17b2c9fa8970800000000000000
+      internalID: 8758087040066282715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_18
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 66
+        width: 158
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fbfe5269375a8810800000000000000
+      internalID: 1768321707671485427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Shadow 090_19
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 66
+        width: 159
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a10345073193f240800000000000000
+      internalID: 4824359291341439394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Walk Shadow 090_0: -3955292778978975020
+      Walk Shadow 090_1: 5662900862084034968
+      Walk Shadow 090_10: -217939721892508112
+      Walk Shadow 090_11: 1267302725192029641
+      Walk Shadow 090_12: 8982019255983996795
+      Walk Shadow 090_13: 1442527671218537731
+      Walk Shadow 090_14: -5369895557435700871
+      Walk Shadow 090_15: 4631634354818078610
+      Walk Shadow 090_16: 825232504269235347
+      Walk Shadow 090_17: 8758087040066282715
+      Walk Shadow 090_18: 1768321707671485427
+      Walk Shadow 090_19: 4824359291341439394
+      Walk Shadow 090_2: 3195062773905374360
+      Walk Shadow 090_3: -3603045445918426647
+      Walk Shadow 090_4: -6518739887861317023
+      Walk Shadow 090_5: -3854381086533302938
+      Walk Shadow 090_6: 5068138521602196392
+      Walk Shadow 090_7: -2087270586710183006
+      Walk Shadow 090_8: 1494674226115696221
+      Walk Shadow 090_9: 4978435152332923307
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

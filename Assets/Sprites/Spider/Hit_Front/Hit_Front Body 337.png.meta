@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 79039211739877f44a4c25f483a885e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -884771455992754686
+    second: Hit_Front Body 337_0
+  - first:
+      213: 5514176357542412961
+    second: Hit_Front Body 337_1
+  - first:
+      213: 877018673113584640
+    second: Hit_Front Body 337_2
+  - first:
+      213: -1994452382577101955
+    second: Hit_Front Body 337_3
+  - first:
+      213: 3851214166338096379
+    second: Hit_Front Body 337_4
+  - first:
+      213: 2976255278579744389
+    second: Hit_Front Body 337_5
+  - first:
+      213: 197016755790090672
+    second: Hit_Front Body 337_6
+  - first:
+      213: -423233200271064485
+    second: Hit_Front Body 337_7
+  - first:
+      213: 6485738172821345245
+    second: Hit_Front Body 337_8
+  - first:
+      213: 6326743755627915073
+    second: Hit_Front Body 337_9
+  - first:
+      213: 3285468038595105534
+    second: Hit_Front Body 337_10
+  - first:
+      213: 3501560207203105787
+    second: Hit_Front Body 337_11
+  - first:
+      213: 5250179396615720296
+    second: Hit_Front Body 337_12
+  - first:
+      213: 4415407315248625111
+    second: Hit_Front Body 337_13
+  - first:
+      213: -6864647420728910331
+    second: Hit_Front Body 337_14
+  - first:
+      213: 8037650241269128602
+    second: Hit_Front Body 337_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hit_Front Body 337_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 821
+        width: 142
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e852a6c09a8b3f0800000000000000
+      internalID: -884771455992754686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 820
+        width: 142
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a24c2c8e2a468c40800000000000000
+      internalID: 5514176357542412961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 820
+        width: 145
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004d15826dbcb2c00800000000000000
+      internalID: 877018673113584640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_3
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 809
+        width: 146
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d737f0700284254e0800000000000000
+      internalID: -1994452382577101955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 549
+        width: 147
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfcc88231e2427530800000000000000
+      internalID: 3851214166338096379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 549
+        width: 147
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e70a03868cd4920800000000000000
+      internalID: 2976255278579744389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 549
+        width: 147
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b11baf02b1fbb200800000000000000
+      internalID: 197016755790090672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_7
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 549
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5201b095af502af0800000000000000
+      internalID: -423233200271064485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 293
+        width: 145
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd315395188f10a50800000000000000
+      internalID: 6485738172821345245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 307
+        width: 142
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1476f1bdceb1dc750800000000000000
+      internalID: 6326743755627915073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_10
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 308
+        width: 142
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef25c5126c3589d20800000000000000
+      internalID: 3285468038595105534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_11
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 308
+        width: 142
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfbfbf5d47a089030800000000000000
+      internalID: 3501560207203105787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 53
+        width: 142
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86dca5638526cd840800000000000000
+      internalID: 5250179396615720296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 53
+        width: 142
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d53e043f8da64d30800000000000000
+      internalID: 4415407315248625111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_14
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 52
+        width: 142
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ed6239a8fdbb0a0800000000000000
+      internalID: -6864647420728910331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Front Body 337_15
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 52
+        width: 142
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ddda32f487b8f60800000000000000
+      internalID: 8037650241269128602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hit_Front Body 337_0: -884771455992754686
+      Hit_Front Body 337_1: 5514176357542412961
+      Hit_Front Body 337_10: 3285468038595105534
+      Hit_Front Body 337_11: 3501560207203105787
+      Hit_Front Body 337_12: 5250179396615720296
+      Hit_Front Body 337_13: 4415407315248625111
+      Hit_Front Body 337_14: -6864647420728910331
+      Hit_Front Body 337_15: 8037650241269128602
+      Hit_Front Body 337_2: 877018673113584640
+      Hit_Front Body 337_3: -1994452382577101955
+      Hit_Front Body 337_4: 3851214166338096379
+      Hit_Front Body 337_5: 2976255278579744389
+      Hit_Front Body 337_6: 197016755790090672
+      Hit_Front Body 337_7: -423233200271064485
+      Hit_Front Body 337_8: 6485738172821345245
+      Hit_Front Body 337_9: 6326743755627915073
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
