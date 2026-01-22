@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     private PlayerInput playerInput;
     private InputAction moveAction;
+    private InputAction attackAction;
 
     // State
     private bool isMoving;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
         if (playerInput != null)
         {
             moveAction = playerInput.actions["Move"];
+            attackAction = playerInput.actions["Attack"];
         }
     }
 
@@ -49,6 +51,11 @@ public class PlayerController : MonoBehaviour
         {
             moveAction.Enable();
         }
+        if (attackAction != null)
+        {
+            attackAction.Enable();
+            attackAction.performed += OnAttack;
+        }
     }
 
     private void OnDisable()
@@ -57,6 +64,16 @@ public class PlayerController : MonoBehaviour
         {
             moveAction.Disable();
         }
+        if (attackAction != null)
+        {
+            attackAction.performed -= OnAttack;
+            attackAction.Disable();
+        }
+    }
+
+    private void OnAttack(InputAction.CallbackContext context)
+    {
+        Attack();
     }
 
     private void Update()
