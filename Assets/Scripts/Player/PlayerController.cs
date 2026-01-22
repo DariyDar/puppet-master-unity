@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastMoveDirection = Vector2.down;
 
     // Animation parameter hashes for performance
-    private static readonly int IsMoving = Animator.StringToHash("IsMoving");
-    private static readonly int MoveX = Animator.StringToHash("MoveX");
-    private static readonly int MoveY = Animator.StringToHash("MoveY");
+    private static readonly int AnimIsMoving = Animator.StringToHash("IsMoving");
+    private static readonly int AnimMoveX = Animator.StringToHash("MoveX");
+    private static readonly int AnimMoveY = Animator.StringToHash("MoveY");
 
     private void Awake()
     {
@@ -107,27 +107,27 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        Vector2 velocity = moveInput * moveSpeed;
-        rb.velocity = velocity;
+        Vector2 vel = moveInput * moveSpeed;
+        rb.linearVelocity = vel;
     }
 
     private void UpdateAnimation()
     {
         if (animator == null) return;
 
-        animator.SetBool(IsMoving, isMoving);
+        animator.SetBool(AnimIsMoving, isMoving);
 
         // Set direction for blend tree
         if (isMoving)
         {
-            animator.SetFloat(MoveX, moveInput.x);
-            animator.SetFloat(MoveY, moveInput.y);
+            animator.SetFloat(AnimMoveX, moveInput.x);
+            animator.SetFloat(AnimMoveY, moveInput.y);
         }
         else
         {
             // Keep last direction for idle
-            animator.SetFloat(MoveX, lastMoveDirection.x);
-            animator.SetFloat(MoveY, lastMoveDirection.y);
+            animator.SetFloat(AnimMoveX, lastMoveDirection.x);
+            animator.SetFloat(AnimMoveY, lastMoveDirection.y);
         }
     }
 
