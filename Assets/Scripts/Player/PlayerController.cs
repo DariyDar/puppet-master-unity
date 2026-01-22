@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         Vector2 velocity = moveInput * moveSpeed;
-        rb.linearVelocity = velocity;
+        rb.velocity = velocity;
     }
 
     private void UpdateAnimation()
