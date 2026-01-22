@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
 
     // Animation parameter hashes for performance
     private static readonly int AnimIsMoving = Animator.StringToHash("IsMoving");
-    private static readonly int AnimMoveX = Animator.StringToHash("MoveX");
-    private static readonly int AnimMoveY = Animator.StringToHash("MoveY");
 
     private void Awake()
     {
@@ -117,18 +115,27 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool(AnimIsMoving, isMoving);
 
-        // Set direction for blend tree
-        if (isMoving)
+        // Flip sprite based on horizontal direction
+        UpdateSpriteFlip();
+    }
+
+    private void UpdateSpriteFlip()
+    {
+        if (spriteRenderer == null) return;
+
+        // Get current direction (use last direction if not moving)
+        Vector2 dir = isMoving ? moveInput : lastMoveDirection;
+
+        // Flip sprite when moving left
+        if (dir.x < -0.1f)
         {
-            animator.SetFloat(AnimMoveX, moveInput.x);
-            animator.SetFloat(AnimMoveY, moveInput.y);
+            spriteRenderer.flipX = true;
         }
-        else
+        else if (dir.x > 0.1f)
         {
-            // Keep last direction for idle
-            animator.SetFloat(AnimMoveX, lastMoveDirection.x);
-            animator.SetFloat(AnimMoveY, lastMoveDirection.y);
+            spriteRenderer.flipX = false;
         }
+        // If moving only vertically, keep current flip state
     }
 
     /// <summary>
