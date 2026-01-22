@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     // Animation parameter hashes for performance
     private static readonly int AnimIsMoving = Animator.StringToHash("IsMoving");
+    private static readonly int AnimAttack = Animator.StringToHash("Attack");
 
     private void Awake()
     {
@@ -170,5 +171,16 @@ public class PlayerController : MonoBehaviour
     {
         get => moveSpeed;
         set => moveSpeed = value;
+    }
+
+    /// <summary>
+    /// Trigger attack animation
+    /// </summary>
+    public void Attack()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger(AnimAttack);
+        }
     }
 }

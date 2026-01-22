@@ -34,21 +34,24 @@ public class SpiderAnimatorSetup : EditorWindow
         // Step 1: Slice sprite sheets
         SliceSpriteSheet("Spider_Idle", 8);
         SliceSpriteSheet("Spider_Run", 5);
+        SliceSpriteSheet("Spider_Attack", 8);
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
         // Step 2: Create animation clips
-        AnimationClip idleClip = CreateAnimationClip("Spider_Idle", "Idle", 8, 10);
-        AnimationClip walkClip = CreateAnimationClip("Spider_Run", "Walk", 5, 12);
+        AnimationClip idleClip = CreateAnimationClip("Spider_Idle", "Idle", 8, 10, true);
+        AnimationClip walkClip = CreateAnimationClip("Spider_Run", "Walk", 5, 12, true);
+        AnimationClip attackClip = CreateAnimationClip("Spider_Attack", "Attack", 8, 12, false);
 
         // Step 3: Create Animator Controller
-        CreateAnimatorController(idleClip, walkClip);
+        CreateAnimatorController(idleClip, walkClip, attackClip);
 
         EditorUtility.DisplayDialog("Spider Animations Setup Complete",
             "Created animations from sprite sheets:\n\n" +
-            "- Idle animation (8 frames)\n" +
-            "- Walk animation (5 frames)\n" +
+            "- Idle animation (8 frames, looping)\n" +
+            "- Walk animation (5 frames, looping)\n" +
+            "- Attack animation (8 frames, plays once)\n" +
             "- SpiderAnimator.controller\n\n" +
             "Note: This version uses single-direction sprites.\n" +
             "The PlayerController will handle sprite flipping based on direction.\n\n" +
@@ -98,7 +101,7 @@ public class SpiderAnimatorSetup : EditorWindow
         Debug.Log($"[SpiderAnimatorSetup] Sliced {fileName} into {frameCount} frames");
     }
 
-    private static AnimationClip CreateAnimationClip(string spriteSheetName, string animName, int frameCount, int fps)
+    private static AnimationClip CreateAnimationClip(string spriteSheetName, string animName, int frameCount, int fps, bool loop)
     {
         string spritePath = $"{SpriteSheetsPath}/{spriteSheetName}.png";
 
@@ -148,9 +151,9 @@ public class SpiderAnimatorSetup : EditorWindow
 
         AnimationUtility.SetObjectReferenceCurve(clip, binding, keyframes);
 
-        // Make it loop
+        // Set loop mode
         AnimationClipSettings settings = AnimationUtility.GetAnimationClipSettings(clip);
-        settings.loopTime = true;
+        settings.loopTime = loop;
         AnimationUtility.SetAnimationClipSettings(clip, settings);
 
         // Save clip
@@ -166,7 +169,7 @@ public class SpiderAnimatorSetup : EditorWindow
         return clip;
     }
 
-    private static void CreateAnimatorController(AnimationClip idleClip, AnimationClip walkClip)
+    private static void CreateAnimatorController(AnimationClip idleClip, AnimationClip walkClip, AnimationClip attackClip)
     {
         string controllerPath = $"{AnimationsPath}/SpiderAnimator.controller";
 
@@ -180,6 +183,7 @@ public class SpiderAnimatorSetup : EditorWindow
 
         // Add parameters
         controller.AddParameter("IsMoving", AnimatorControllerParameterType.Bool);
+        controller.AddParameter("Attack", AnimatorControllerParameterType.Trigger);
 
         // Get state machine
         AnimatorStateMachine rootStateMachine = controller.layers[0].stateMachine;
@@ -191,10 +195,13 @@ public class SpiderAnimatorSetup : EditorWindow
         AnimatorState walkState = rootStateMachine.AddState("Walk", new Vector3(300, 200, 0));
         walkState.motion = walkClip;
 
+        AnimatorState attackState = rootStateMachine.AddState("Attack", new Vector3(500, 150, 0));
+        attackState.motion = attackClip;
+
         // Set default
         rootStateMachine.defaultState = idleState;
 
-        // Transitions
+        // Idle <-> Walk transitions
         AnimatorStateTransition toWalk = idleState.AddTransition(walkState);
         toWalk.AddCondition(AnimatorConditionMode.If, 0, "IsMoving");
         toWalk.hasExitTime = false;
@@ -205,7 +212,24 @@ public class SpiderAnimatorSetup : EditorWindow
         toIdle.hasExitTime = false;
         toIdle.duration = 0;
 
+        // Attack transitions (from any state)
+        AnimatorStateTransition idleToAttack = idleState.AddTransition(attackState);
+        idleToAttack.AddCondition(AnimatorConditionMode.If, 0, "Attack");
+        idleToAttack.hasExitTime = false;
+        idleToAttack.duration = 0;
+
+        AnimatorStateTransition walkToAttack = walkState.AddTransition(attackState);
+        walkToAttack.AddCondition(AnimatorConditionMode.If, 0, "Attack");
+        walkToAttack.hasExitTime = false;
+        walkToAttack.duration = 0;
+
+        // Attack -> Idle (after animation finishes)
+        AnimatorStateTransition attackToIdle = attackState.AddTransition(idleState);
+        attackToIdle.hasExitTime = true;
+        attackToIdle.exitTime = 1f;
+        attackToIdle.duration = 0;
+
         AssetDatabase.SaveAssets();
-        Debug.Log("[SpiderAnimatorSetup] Created SpiderAnimator.controller");
+        Debug.Log("[SpiderAnimatorSetup] Created SpiderAnimator.controller with Attack state");
     }
 }
