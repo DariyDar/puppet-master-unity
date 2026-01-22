@@ -85,6 +85,13 @@ public class GameManager : MonoBehaviour
         EventManager.Instance?.OnPlayerHealthChanged(currentHealth, maxHealth);
     }
 
+    public void SetHealth(int current, int max)
+    {
+        currentHealth = current;
+        maxHealth = max;
+        EventManager.Instance?.OnPlayerHealthChanged(currentHealth, maxHealth);
+    }
+
     public void AddXp(int amount)
     {
         currentXp += amount;
