@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         if (attackAction != null)
         {
             attackAction.Enable();
-            attackAction.performed += OnAttack;
+            attackAction.performed += OnAttackCallback;
         }
     }
 
@@ -66,12 +66,18 @@ public class PlayerController : MonoBehaviour
         }
         if (attackAction != null)
         {
-            attackAction.performed -= OnAttack;
+            attackAction.performed -= OnAttackCallback;
             attackAction.Disable();
         }
     }
 
-    private void OnAttack(InputAction.CallbackContext context)
+    private void OnAttackCallback(InputAction.CallbackContext context)
+    {
+        Attack();
+    }
+
+    // Called by PlayerInput component via SendMessage
+    public void OnAttack()
     {
         Attack();
     }
