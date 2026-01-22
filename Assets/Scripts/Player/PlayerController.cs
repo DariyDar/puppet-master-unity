@@ -197,13 +197,20 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Trigger attack animation
+    /// Trigger attack animation and deal damage
     /// </summary>
     public void Attack()
     {
         if (animator != null)
         {
             animator.SetTrigger(AnimAttack);
+        }
+
+        // Deal damage immediately (or use animation event for precise timing)
+        PlayerCombat combat = GetComponent<PlayerCombat>();
+        if (combat != null)
+        {
+            combat.DealDamage();
         }
     }
 }
