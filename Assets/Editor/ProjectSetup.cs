@@ -17,20 +17,47 @@ public class ProjectSetup : EditorWindow
         SetupTags();
         SetupPlayerInScene();
         SetupGameManager();
+        SetupResourceSpawner();
 
         AssetDatabase.SaveAssets();
         EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
 
         EditorUtility.DisplayDialog("Project Setup Complete",
             "Configured:\n\n" +
-            "- Layers: Enemy, Projectile, Pickup\n" +
+            "- Layers: Enemy, Projectile, Pickup, Player\n" +
             "- Tags: Player (assigned to Player object)\n" +
             "- Player: Added PlayerHealth, PlayerCombat\n" +
-            "- GameManager: Created if missing\n\n" +
+            "- GameManager: Created if missing\n" +
+            "- ResourceSpawner: Created if missing\n\n" +
             "You can now:\n" +
             "1. Create enemies via Tools > Create > Test Enemy\n" +
             "2. Press Play to test",
             "OK");
+    }
+
+    [MenuItem("Tools/Project Setup/Setup Resource Spawner")]
+    public static void SetupResourceSpawner()
+    {
+        ResourceSpawner existing = Object.FindFirstObjectByType<ResourceSpawner>();
+        if (existing != null)
+        {
+            Debug.Log("[ProjectSetup] ResourceSpawner already exists");
+            return;
+        }
+
+        // Add to GameManager object or create new
+        GameObject gmObject = GameObject.Find("GameManager");
+        if (gmObject != null)
+        {
+            gmObject.AddComponent<ResourceSpawner>();
+        }
+        else
+        {
+            GameObject spawner = new GameObject("ResourceSpawner");
+            spawner.AddComponent<ResourceSpawner>();
+        }
+
+        Debug.Log("[ProjectSetup] Created ResourceSpawner");
     }
 
     [MenuItem("Tools/Project Setup/Setup Layers")]
