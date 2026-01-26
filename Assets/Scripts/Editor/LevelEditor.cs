@@ -41,6 +41,7 @@ public class LevelEditor : EditorWindow
     private const float RESOURCE_SCALE = 0.33f;
     private const float DECORATION_SCALE = 1f;
     private const float TREE_SCALE = 1f;
+    private const float PIXEL_ART_PROP_SCALE = 5f;  // Scale for Pixel Art Top Down props
 
     // Additional paths for decorations
     private const string TREES_PATH = "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees";
@@ -986,6 +987,9 @@ public class LevelEditor : EditorWindow
         GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
         instance.transform.position = position;
 
+        // Scale up Pixel Art Top Down props (they are small by default)
+        instance.transform.localScale = Vector3.one * PIXEL_ART_PROP_SCALE;
+
         // Parent to Decorations if exists
         GameObject decorParent = GameObject.Find("Decorations");
         if (decorParent != null)
@@ -994,7 +998,7 @@ public class LevelEditor : EditorWindow
         }
 
         Selection.activeGameObject = instance;
-        Debug.Log($"[LevelEditor] Created {prefab.name} at {position}");
+        Debug.Log($"[LevelEditor] Created {prefab.name} at {position} (scale: {PIXEL_ART_PROP_SCALE}x)");
         return instance;
     }
 
@@ -1015,6 +1019,7 @@ public class LevelEditor : EditorWindow
         GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
         instance.name = "Storage";
         instance.transform.position = position;
+        instance.transform.localScale = Vector3.one * PIXEL_ART_PROP_SCALE;
         SafeSetTag(instance, "Storage");
 
         // Load open chest sprite for the Storage script
@@ -1059,12 +1064,14 @@ public class LevelEditor : EditorWindow
             storage = instance.AddComponent<Storage>();
         }
 
-        // Set sprites via SerializedObject
+        // Set sprites and interaction range via SerializedObject
         SerializedObject so = new SerializedObject(storage);
         SerializedProperty closedProp = so.FindProperty("chestClosed");
         SerializedProperty openProp = so.FindProperty("chestOpen");
+        SerializedProperty rangeProp = so.FindProperty("interactionRange");
         if (closedProp != null) closedProp.objectReferenceValue = closedSprite;
         if (openProp != null) openProp.objectReferenceValue = openSprite;
+        if (rangeProp != null) rangeProp.floatValue = 10f; // ~3 spider lengths
         so.ApplyModifiedProperties();
 
         // Parent to Player Buildings
@@ -1075,7 +1082,7 @@ public class LevelEditor : EditorWindow
         }
 
         Selection.activeGameObject = instance;
-        Debug.Log($"[LevelEditor] Created Storage (Chest) at {position}");
+        Debug.Log($"[LevelEditor] Created Storage (Chest) at {position} (scale: {PIXEL_ART_PROP_SCALE}x, range: 10)");
         return instance;
     }
 
@@ -1096,14 +1103,19 @@ public class LevelEditor : EditorWindow
         GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
         instance.name = "WorkBench";
         instance.transform.position = position;
+        instance.transform.localScale = Vector3.one * PIXEL_ART_PROP_SCALE;
         SafeSetTag(instance, "Building");
 
         // The prefab already has PropsAltar script with rune glow effect!
-        // Just need to make sure there's a collider for the player to trigger it
+        // Need to enlarge the trigger collider to match the scale
         BoxCollider2D col = instance.GetComponent<BoxCollider2D>();
         if (col != null)
         {
-            col.isTrigger = true; // Make sure it's a trigger for glow effect
+            col.isTrigger = true;
+            // Increase collider size for better trigger detection at larger scale
+            // Original size is small, we need a bigger trigger area
+            col.size = new Vector2(2f, 2f);
+            col.offset = new Vector2(0, 0.5f);
         }
 
         // Add Workbench script if not present (for game functionality)
@@ -1121,7 +1133,7 @@ public class LevelEditor : EditorWindow
         }
 
         Selection.activeGameObject = instance;
-        Debug.Log($"[LevelEditor] Created WorkBench (Altar with glow effect) at {position}");
+        Debug.Log($"[LevelEditor] Created WorkBench (Altar with glow effect) at {position} (scale: {PIXEL_ART_PROP_SCALE}x)");
         return instance;
     }
 

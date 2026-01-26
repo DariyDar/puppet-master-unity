@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 /// <summary>
 /// Storage building (chest) where player deposits collected resources.
-/// - Opens when player approaches with resources
+/// - Opens when player approaches with resources (from ~3 spider lengths away)
 /// - Resources fly from player to chest with arc trajectory
 /// - Closes when player has no resources or leaves
 /// </summary>
@@ -24,9 +24,9 @@ public class Storage : BuildingBase
     [SerializeField] private Sprite woodSprite;
 
     [Header("Flying Effect Settings")]
-    [SerializeField] private float flyDuration = 0.6f;      // How long resource takes to fly to chest
-    [SerializeField] private float arcHeight = 1.5f;        // Height of the arc
-    [SerializeField] private float resourceScale = 0.5f;    // Scale of flying resource sprites
+    [SerializeField] private float flyDuration = 0.8f;      // How long resource takes to fly to chest
+    [SerializeField] private float arcHeight = 3f;          // Height of the arc (bigger for longer distances)
+    [SerializeField] private float resourceScale = 1.5f;    // Scale of flying resource sprites (bigger to be visible)
 
     [Header("Effects")]
     [SerializeField] private AudioClip depositSound;
@@ -42,6 +42,9 @@ public class Storage : BuildingBase
     {
         base.Awake();
         buildingName = "Storage";
+
+        // Set large interaction range (~3 spider lengths, spider radius is ~2.5)
+        interactionRange = 10f;
 
         // Set initial closed state (spriteRenderer inherited from BuildingBase)
         if (chestClosed != null && spriteRenderer != null)
@@ -63,12 +66,59 @@ public class Storage : BuildingBase
 
     private void LoadResourceSprites()
     {
+        // Try to load from Resources folder
         if (goldSprite == null)
             goldSprite = Resources.Load<Sprite>("Sprites/Resources/Gold");
         if (meatSprite == null)
             meatSprite = Resources.Load<Sprite>("Sprites/Resources/Meat");
         if (woodSprite == null)
             woodSprite = Resources.Load<Sprite>("Sprites/Resources/Wood");
+
+        // Create fallback colored sprites if none found
+        if (goldSprite == null)
+            goldSprite = CreateColoredSprite(new Color(1f, 0.85f, 0f)); // Gold
+        if (meatSprite == null)
+            meatSprite = CreateColoredSprite(new Color(0.9f, 0.3f, 0.3f)); // Red meat
+        if (woodSprite == null)
+            woodSprite = CreateColoredSprite(new Color(0.6f, 0.4f, 0.2f)); // Brown wood
+    }
+
+    /// <summary>
+    /// Create a simple colored circle sprite as fallback.
+    /// </summary>
+    private Sprite CreateColoredSprite(Color color)
+    {
+        int size = 32;
+        Texture2D tex = new Texture2D(size, size);
+        Color[] pixels = new Color[size * size];
+
+        // Draw a filled circle
+        Vector2 center = new Vector2(size / 2f, size / 2f);
+        float radius = size / 2f - 2f;
+
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                float dist = Vector2.Distance(new Vector2(x, y), center);
+                if (dist <= radius)
+                {
+                    // Add some shading
+                    float shade = 1f - (dist / radius) * 0.3f;
+                    pixels[y * size + x] = new Color(color.r * shade, color.g * shade, color.b * shade, 1f);
+                }
+                else
+                {
+                    pixels[y * size + x] = Color.clear;
+                }
+            }
+        }
+
+        tex.SetPixels(pixels);
+        tex.Apply();
+        tex.filterMode = FilterMode.Point;
+
+        return Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), 32f);
     }
 
     protected override void Update()

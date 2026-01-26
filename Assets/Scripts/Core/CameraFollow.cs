@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
 {
     [Header("Target")]
     [SerializeField] private Transform target;
+    [SerializeField] private bool autoFindPlayer = true;
 
     [Header("Settings")]
     [SerializeField] private float smoothSpeed = 5f;
@@ -19,8 +20,32 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float minY = -50f;
     [SerializeField] private float maxY = 50f;
 
+    private void Start()
+    {
+        if (target == null && autoFindPlayer)
+        {
+            FindPlayer();
+        }
+    }
+
+    private void FindPlayer()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            target = player.transform;
+            Debug.Log("[CameraFollow] Auto-found player target");
+        }
+    }
+
     private void LateUpdate()
     {
+        // Try to find player if target is null
+        if (target == null && autoFindPlayer)
+        {
+            FindPlayer();
+        }
+
         if (target == null) return;
 
         Vector3 desiredPosition = target.position + offset;
