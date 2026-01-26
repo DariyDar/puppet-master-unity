@@ -17,10 +17,11 @@ public class EventManager : MonoBehaviour
 
     // Resource events
     public event Action<string, int> ResourceCollected;      // type, amount
-    public event Action<int> SoulCollected;                  // amount
+    public event Action<int> SkullCollected;                 // amount
     public event Action CargoFull;
     public event Action<int> CargoDeposited;                 // totalAmount
-    public event Action<int, int, int, int> StorageUpdated;  // meat, wood, gold, souls
+    public event Action<int, int, int, int> StorageUpdated;  // skulls, meat, wood, gold
+    public event Action<int, int, int> ResourceDeposited;    // meat, wood, gold
 
     // Army events
     public event Action<int, int> ArmyUpdated;               // count, limit
@@ -32,9 +33,20 @@ public class EventManager : MonoBehaviour
     public event Action<GameObject> EnemyDied;               // enemy
     public event Action<GameObject, int> EnemyDamaged;       // enemy, damage
 
+    // Skull Collection events
+    public event Action<HumanEnemy> SkullCollectionStarted;  // target corpse
+    public event Action<float> SkullCollectionProgress;      // progress 0-1
+    public event Action<int> SkullCollectionCompleted;       // skulls collected
+    public event Action SkullCollectionCanceled;
+
     // Building events
     public event Action<string, bool> BuildingInRange;       // buildingType, inRange
     public event Action<string> BuildingInteract;            // buildingType
+    public event Action<GameObject> BuildingDestroyed;       // building
+    public event Action<GameObject> CastleDestroyed;         // castle (zone liberation)
+
+    // Farm events
+    public event Action<string> FarmPurchased;               // farmType: "meat", "wood", "gold"
 
     // UI events
     public event Action<string, object> OpenModal;           // modalType, data
@@ -86,9 +98,9 @@ public class EventManager : MonoBehaviour
         ResourceCollected?.Invoke(type, amount);
     }
 
-    public void OnSoulCollected(int amount)
+    public void OnSkullCollected(int amount)
     {
-        SoulCollected?.Invoke(amount);
+        SkullCollected?.Invoke(amount);
     }
 
     public void OnCargoFull()
@@ -101,9 +113,14 @@ public class EventManager : MonoBehaviour
         CargoDeposited?.Invoke(totalAmount);
     }
 
-    public void OnStorageUpdated(int meat, int wood, int gold, int souls)
+    public void OnStorageUpdated(int skulls, int meat, int wood, int gold)
     {
-        StorageUpdated?.Invoke(meat, wood, gold, souls);
+        StorageUpdated?.Invoke(skulls, meat, wood, gold);
+    }
+
+    public void OnResourceDeposited(int meat, int wood, int gold)
+    {
+        ResourceDeposited?.Invoke(meat, wood, gold);
     }
 
     #endregion
@@ -146,6 +163,30 @@ public class EventManager : MonoBehaviour
 
     #endregion
 
+    #region Skull Collection Event Triggers
+
+    public void OnSkullCollectionStarted(HumanEnemy target)
+    {
+        SkullCollectionStarted?.Invoke(target);
+    }
+
+    public void OnSkullCollectionProgress(float progress)
+    {
+        SkullCollectionProgress?.Invoke(progress);
+    }
+
+    public void OnSkullCollectionCompleted(int skullsCollected)
+    {
+        SkullCollectionCompleted?.Invoke(skullsCollected);
+    }
+
+    public void OnSkullCollectionCanceled()
+    {
+        SkullCollectionCanceled?.Invoke();
+    }
+
+    #endregion
+
     #region Building Event Triggers
 
     public void OnBuildingInRange(string buildingType, bool inRange)
@@ -156,6 +197,23 @@ public class EventManager : MonoBehaviour
     public void OnBuildingInteract(string buildingType)
     {
         BuildingInteract?.Invoke(buildingType);
+    }
+
+    public void OnBuildingDestroyed(GameObject building)
+    {
+        BuildingDestroyed?.Invoke(building);
+    }
+
+    public void OnCastleDestroyed(GameObject castle)
+    {
+        CastleDestroyed?.Invoke(castle);
+        Debug.Log($"[EventManager] Castle destroyed! Zone liberated: {castle.name}");
+    }
+
+    public void OnFarmPurchased(string farmType)
+    {
+        FarmPurchased?.Invoke(farmType);
+        Debug.Log($"[EventManager] Farm purchased: {farmType}");
     }
 
     #endregion

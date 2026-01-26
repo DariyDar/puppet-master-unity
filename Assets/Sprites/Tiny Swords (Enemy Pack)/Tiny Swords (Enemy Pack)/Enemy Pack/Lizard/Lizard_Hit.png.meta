@@ -119,19 +119,19 @@ TextureImporter:
       name: Lizard_Hit_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 39
-        width: 79
-        height: 127
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5e6ee6178332bd4c0800000000000000
+      spriteID: ffc1053862d13894bafe994bfc61fa96
       internalID: -4261773897047808283
       vertices: []
       indices: 
@@ -141,20 +141,64 @@ TextureImporter:
       name: Lizard_Hit_1
       rect:
         serializedVersion: 2
-        x: 237
-        y: 39
-        width: 82
-        height: 124
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c22fde0ddb2d02b10800000000000000
+      spriteID: 5046b1bc59c59bc449f46502e11dd966
       internalID: 1954793950974702124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Hit_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afb8c53f3df11e47895fad0d6c9f1c4
+      internalID: -576382082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Hit_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83e676cc5ff0494cb678301c1909e9f
+      internalID: 977833818
       vertices: []
       indices: 
       edges: []
@@ -163,7 +207,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b6212c800efeeca49a3084b5338a92d1
     internalID: 0
     vertices: []
     indices: 

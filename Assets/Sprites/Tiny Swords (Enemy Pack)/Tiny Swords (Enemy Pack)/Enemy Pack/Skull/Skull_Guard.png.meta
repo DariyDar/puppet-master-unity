@@ -134,19 +134,19 @@ TextureImporter:
       name: Skull_Guard_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 61
-        width: 68
-        height: 69
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 20900003c4854af30800000000000000
+      spriteID: 645f9d6253652a446be1090aa3cc5325
       internalID: 4585887404816075010
       vertices: []
       indices: 
@@ -156,19 +156,19 @@ TextureImporter:
       name: Skull_Guard_1
       rect:
         serializedVersion: 2
-        x: 247
-        y: 61
-        width: 68
-        height: 69
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 84c18a0f8150f3410800000000000000
+      spriteID: a22595a5bf9e2f24ea8882418d637e5e
       internalID: 1458890408966233160
       vertices: []
       indices: 
@@ -178,19 +178,19 @@ TextureImporter:
       name: Skull_Guard_2
       rect:
         serializedVersion: 2
-        x: 439
-        y: 61
-        width: 68
-        height: 68
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1080d5d7f498cf310800000000000000
+      spriteID: 3d50d334d81835845adfeeff693e0c21
       internalID: 1440176955350386689
       vertices: []
       indices: 
@@ -200,86 +200,20 @@ TextureImporter:
       name: Skull_Guard_3
       rect:
         serializedVersion: 2
-        x: 631
-        y: 61
-        width: 68
-        height: 67
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d32d12dd5985c72b0800000000000000
+      spriteID: 44a5c21ca16f0e046a204a8d561b3c2d
       internalID: -5585492037162905027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skull_Guard_4
-      rect:
-        serializedVersion: 2
-        x: 823
-        y: 61
-        width: 68
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d76af43c389fd540800000000000000
-      internalID: 5034910292777789398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skull_Guard_5
-      rect:
-        serializedVersion: 2
-        x: 1015
-        y: 61
-        width: 68
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eeb66f9861b334fc0800000000000000
-      internalID: -3511898316428907538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skull_Guard_6
-      rect:
-        serializedVersion: 2
-        x: 1207
-        y: 61
-        width: 68
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 444d723feffba8e30800000000000000
-      internalID: 4506625478859674692
       vertices: []
       indices: 
       edges: []
@@ -288,7 +222,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b75de76bd0041304a9d4f5471d0054a9
     internalID: 0
     vertices: []
     indices: 

@@ -8,10 +8,10 @@ public class ResourcePickup : MonoBehaviour
 {
     public enum ResourceType
     {
-        Meat,
-        Wood,
-        Gold,
-        Soul
+        Meat,       // From sheep
+        Wood,       // From destroyed buildings
+        Gold,       // From gold mines
+        Skull       // From killed humans (1 per enemy)
     }
 
     [Header("Resource Settings")]
@@ -31,7 +31,6 @@ public class ResourcePickup : MonoBehaviour
 
     private Transform player;
     private Vector3 startPosition;
-    private bool isBeingMagneted;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -73,12 +72,10 @@ public class ResourcePickup : MonoBehaviour
         // Check magnet
         if (distToPlayer <= magnetRadius)
         {
-            isBeingMagneted = true;
             MoveTowardsPlayer();
         }
         else
         {
-            isBeingMagneted = false;
             // Bob animation when idle
             if (rb == null || rb.linearVelocity.magnitude < 0.1f)
             {
@@ -135,8 +132,8 @@ public class ResourcePickup : MonoBehaviour
                 case ResourceType.Gold:
                     success = GameManager.Instance.AddToCargo("gold", amount);
                     break;
-                case ResourceType.Soul:
-                    GameManager.Instance.AddSoul(amount);
+                case ResourceType.Skull:
+                    GameManager.Instance.AddSkull(amount);
                     success = true;
                     break;
             }

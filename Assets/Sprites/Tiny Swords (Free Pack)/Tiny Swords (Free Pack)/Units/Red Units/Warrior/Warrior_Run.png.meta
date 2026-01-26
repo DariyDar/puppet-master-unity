@@ -131,19 +131,19 @@ TextureImporter:
       name: Warrior_Run_0
       rect:
         serializedVersion: 2
-        x: 61
-        y: 54
-        width: 78
-        height: 86
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5dedc3a79c0aef9f0800000000000000
+      spriteID: 21151646b276ff446a649bd90bbac92a
       internalID: -432731726981308715
       vertices: []
       indices: 
@@ -153,19 +153,19 @@ TextureImporter:
       name: Warrior_Run_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 54
-        width: 69
-        height: 93
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 995a9527b52bba670800000000000000
+      spriteID: b456e623b7105ce4782c8a4b75abad6b
       internalID: 8551124423323264409
       vertices: []
       indices: 
@@ -175,19 +175,19 @@ TextureImporter:
       name: Warrior_Run_2
       rect:
         serializedVersion: 2
-        x: 448
-        y: 54
-        width: 69
-        height: 93
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e5f447d376e66a880800000000000000
+      spriteID: b867c0f3ee451e141b38332b00b8aca1
       internalID: -8600065048725663906
       vertices: []
       indices: 
@@ -197,19 +197,19 @@ TextureImporter:
       name: Warrior_Run_3
       rect:
         serializedVersion: 2
-        x: 637
-        y: 54
-        width: 78
-        height: 87
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4fb0b96b2e9dbfc20800000000000000
+      spriteID: 6d50dc43d0a49504f972cd3a1dd93cc4
       internalID: 3241423924572654580
       vertices: []
       indices: 
@@ -219,19 +219,19 @@ TextureImporter:
       name: Warrior_Run_4
       rect:
         serializedVersion: 2
-        x: 820
-        y: 54
-        width: 95
-        height: 93
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1938e1d550d9d1fa0800000000000000
+      spriteID: c34024c9d484a1149a7ee9835e5bf191
       internalID: -5828329696384875631
       vertices: []
       indices: 
@@ -241,19 +241,19 @@ TextureImporter:
       name: Warrior_Run_5
       rect:
         serializedVersion: 2
-        x: 1013
-        y: 54
-        width: 90
-        height: 91
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e912a355824911c10800000000000000
+      spriteID: b29e3b67358a1a4439fd725c901dee54
       internalID: 2022560608615539102
       vertices: []
       indices: 
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 64de53d8b93182c489d7ae77f193da71
     internalID: 0
     vertices: []
     indices: 

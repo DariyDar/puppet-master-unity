@@ -131,19 +131,19 @@ TextureImporter:
       name: Archer_Idle_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 55
-        width: 72
-        height: 90
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 60d17d9a09f08b460800000000000000
+      spriteID: 638cb94f0bc0cf44995eeccfeb8264ce
       internalID: 7257567913506708742
       vertices: []
       indices: 
@@ -153,19 +153,19 @@ TextureImporter:
       name: Archer_Idle_1
       rect:
         serializedVersion: 2
-        x: 248
-        y: 55
-        width: 73
-        height: 90
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3cc4909099a8e1190800000000000000
+      spriteID: 35975e3e93e52b84bbb5edcfcb3ed878
       internalID: -7989796299022447421
       vertices: []
       indices: 
@@ -175,19 +175,19 @@ TextureImporter:
       name: Archer_Idle_2
       rect:
         serializedVersion: 2
-        x: 439
-        y: 55
-        width: 74
-        height: 90
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 617ed9923c2463b60800000000000000
+      spriteID: 7e94d776fba3e854ea6748d04f6f0b32
       internalID: 7725435616784934678
       vertices: []
       indices: 
@@ -197,19 +197,19 @@ TextureImporter:
       name: Archer_Idle_3
       rect:
         serializedVersion: 2
-        x: 632
-        y: 55
-        width: 73
-        height: 91
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 94605ac9109fd0ee0800000000000000
+      spriteID: 048d212ae82867445a88d654717b578f
       internalID: -1293103732667120055
       vertices: []
       indices: 
@@ -219,19 +219,19 @@ TextureImporter:
       name: Archer_Idle_4
       rect:
         serializedVersion: 2
-        x: 825
-        y: 55
-        width: 72
-        height: 90
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 36fc4bca1a040f500800000000000000
+      spriteID: 24f5f816c9941de49a3c739d18f903aa
       internalID: 427913027731640163
       vertices: []
       indices: 
@@ -241,19 +241,19 @@ TextureImporter:
       name: Archer_Idle_5
       rect:
         serializedVersion: 2
-        x: 1017
-        y: 55
-        width: 72
-        height: 88
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a8b56eb1446a87280800000000000000
+      spriteID: e101c8a2fbfa2e9419aeb80af0809488
       internalID: -9045297040117572726
       vertices: []
       indices: 
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 786b56ea1448e844ab04a24fc2df48af
     internalID: 0
     vertices: []
     indices: 

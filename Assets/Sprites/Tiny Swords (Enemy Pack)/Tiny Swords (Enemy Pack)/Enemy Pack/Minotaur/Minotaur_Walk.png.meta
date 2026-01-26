@@ -137,19 +137,19 @@ TextureImporter:
       name: Minotaur_Walk_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 105
-        width: 154
-        height: 132
+        x: 0
+        y: 0
+        width: 320
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4ef5b4d06c83b0350800000000000000
+      spriteID: 670d95646a8c64848b69bde9efe05323
       internalID: 5983938953169559524
       vertices: []
       indices: 
@@ -159,19 +159,19 @@ TextureImporter:
       name: Minotaur_Walk_1
       rect:
         serializedVersion: 2
-        x: 373
-        y: 105
-        width: 157
-        height: 133
+        x: 320
+        y: 0
+        width: 320
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 47abcf9c3cdfc16e0800000000000000
+      spriteID: c18cdb7db51e52942992c54ea1962532
       internalID: -1865337128288994700
       vertices: []
       indices: 
@@ -181,19 +181,19 @@ TextureImporter:
       name: Minotaur_Walk_2
       rect:
         serializedVersion: 2
-        x: 692
-        y: 105
-        width: 158
-        height: 132
+        x: 640
+        y: 0
+        width: 320
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8ec083a6e543e6730800000000000000
+      spriteID: 14a2777dd9b9a9544a6ecb0b41a4da9a
       internalID: 3994187499637837032
       vertices: []
       indices: 
@@ -203,19 +203,19 @@ TextureImporter:
       name: Minotaur_Walk_3
       rect:
         serializedVersion: 2
-        x: 1016
-        y: 105
-        width: 152
-        height: 130
+        x: 960
+        y: 0
+        width: 320
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9ee7331a1379d71a0800000000000000
+      spriteID: e5658285d6e4f3e4c9320855d61a2ce4
       internalID: -6810120822100623639
       vertices: []
       indices: 
@@ -225,19 +225,19 @@ TextureImporter:
       name: Minotaur_Walk_4
       rect:
         serializedVersion: 2
-        x: 1338
-        y: 105
-        width: 149
-        height: 133
+        x: 1280
+        y: 0
+        width: 320
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5c618a490db68dee0800000000000000
+      spriteID: a36ca3db18df24140a7b6a0e4be2ed34
       internalID: -1236119554121787707
       vertices: []
       indices: 
@@ -247,19 +247,19 @@ TextureImporter:
       name: Minotaur_Walk_5
       rect:
         serializedVersion: 2
-        x: 1660
-        y: 105
-        width: 146
-        height: 134
+        x: 1600
+        y: 0
+        width: 320
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 24d6cd1de539add20800000000000000
+      spriteID: 6f2e2598fc3aeaf47b898f76745eb27d
       internalID: 3304115312086773058
       vertices: []
       indices: 
@@ -269,19 +269,19 @@ TextureImporter:
       name: Minotaur_Walk_6
       rect:
         serializedVersion: 2
-        x: 1981
-        y: 105
-        width: 146
-        height: 133
+        x: 1920
+        y: 0
+        width: 320
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8d4ed47d66f4026a0800000000000000
+      spriteID: a464c010e89ebe649a55654e781a8b1b
       internalID: -6476088961041308456
       vertices: []
       indices: 
@@ -291,19 +291,19 @@ TextureImporter:
       name: Minotaur_Walk_7
       rect:
         serializedVersion: 2
-        x: 2297
-        y: 105
-        width: 151
-        height: 130
+        x: 2240
+        y: 0
+        width: 320
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3e2e8b2bd40c4f5f0800000000000000
+      spriteID: 2783c3309d6f36843bbd1629eccec025
       internalID: -723742200156331293
       vertices: []
       indices: 
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

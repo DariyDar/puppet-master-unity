@@ -131,19 +131,19 @@ TextureImporter:
       name: Gnoll_Idle_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 56
-        width: 97
-        height: 77
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b0cf41ce7d9364df0800000000000000
+      spriteID: 4a8db351404d6ab40848b35de1ae982e
       internalID: -196405934202487797
       vertices: []
       indices: 
@@ -153,19 +153,19 @@ TextureImporter:
       name: Gnoll_Idle_1
       rect:
         serializedVersion: 2
-        x: 237
-        y: 56
-        width: 101
-        height: 77
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4f57e8ba575165770800000000000000
+      spriteID: 781cd73dfb0960b4c86257d1dad35a53
       internalID: 8599084133644137972
       vertices: []
       indices: 
@@ -175,19 +175,19 @@ TextureImporter:
       name: Gnoll_Idle_2
       rect:
         serializedVersion: 2
-        x: 424
-        y: 56
-        width: 106
-        height: 75
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c6711badfaf5506b0800000000000000
+      spriteID: df877dcaa2598954e9a45856792422df
       internalID: -5330749375030159508
       vertices: []
       indices: 
@@ -197,19 +197,19 @@ TextureImporter:
       name: Gnoll_Idle_3
       rect:
         serializedVersion: 2
-        x: 617
-        y: 56
-        width: 105
-        height: 73
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 663b651a6032e9200800000000000000
+      spriteID: 3e6506e907d3a7742aca022ad361c5d6
       internalID: 188626745779729254
       vertices: []
       indices: 
@@ -219,19 +219,19 @@ TextureImporter:
       name: Gnoll_Idle_4
       rect:
         serializedVersion: 2
-        x: 815
-        y: 56
-        width: 99
-        height: 75
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 09dc41e84e2f18390800000000000000
+      spriteID: 2d73e6cf2480e5843bae4ee6ee99b87f
       internalID: -7817700414688277104
       vertices: []
       indices: 
@@ -241,19 +241,19 @@ TextureImporter:
       name: Gnoll_Idle_5
       rect:
         serializedVersion: 2
-        x: 1009
-        y: 56
-        width: 97
-        height: 76
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bdc48b4dc11926530800000000000000
+      spriteID: 1e0f07a6c23aa984580a6c5345670c2f
       internalID: 3846796584741784795
       vertices: []
       indices: 
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: fce735b83f3ed56448e6507e0f0b09b6
     internalID: 0
     vertices: []
     indices: 

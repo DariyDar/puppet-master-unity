@@ -137,19 +137,19 @@ TextureImporter:
       name: Gnome_Idle_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 64
-        width: 79
-        height: 72
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 27971904052aafd00800000000000000
+      spriteID: 987a3411feb4ba146b6db9bc9ef07273
       internalID: 1007295932235086194
       vertices: []
       indices: 
@@ -159,19 +159,19 @@ TextureImporter:
       name: Gnome_Idle_1
       rect:
         serializedVersion: 2
-        x: 243
-        y: 64
-        width: 79
-        height: 71
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a8fb949f79da056a0800000000000000
+      spriteID: 63b449818dbff6b4f9ec016a56e16bb5
       internalID: -6462474597042634870
       vertices: []
       indices: 
@@ -181,19 +181,19 @@ TextureImporter:
       name: Gnome_Idle_2
       rect:
         serializedVersion: 2
-        x: 436
-        y: 64
-        width: 78
-        height: 70
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1aafe3cb137559b20800000000000000
+      spriteID: eb9a72ebf75380546a4bffaffa05091a
       internalID: 3140512186284047009
       vertices: []
       indices: 
@@ -203,19 +203,19 @@ TextureImporter:
       name: Gnome_Idle_3
       rect:
         serializedVersion: 2
-        x: 628
-        y: 64
-        width: 78
-        height: 69
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: be96aea0c6cd67980800000000000000
+      spriteID: 3bf05f674fcbbc4498309bb54db84305
       internalID: -8541397286663853589
       vertices: []
       indices: 
@@ -225,19 +225,19 @@ TextureImporter:
       name: Gnome_Idle_4
       rect:
         serializedVersion: 2
-        x: 819
-        y: 64
-        width: 79
-        height: 70
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 92e2fd19668800f40800000000000000
+      spriteID: a3321bf49f77f104598b281753d33efe
       internalID: 5692699903111671337
       vertices: []
       indices: 
@@ -247,19 +247,19 @@ TextureImporter:
       name: Gnome_Idle_5
       rect:
         serializedVersion: 2
-        x: 1010
-        y: 64
-        width: 80
-        height: 71
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a2bc0feecfd2eb970800000000000000
+      spriteID: aa1a8f1d8f23e974a8fcda6ff1293dbd
       internalID: 8772499688528071466
       vertices: []
       indices: 
@@ -269,19 +269,19 @@ TextureImporter:
       name: Gnome_Idle_6
       rect:
         serializedVersion: 2
-        x: 1202
-        y: 64
-        width: 80
-        height: 71
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6322008740a1ea980800000000000000
+      spriteID: 8a6fae83cfead744dace868f43031528
       internalID: -8525848438070304202
       vertices: []
       indices: 
@@ -291,19 +291,19 @@ TextureImporter:
       name: Gnome_Idle_7
       rect:
         serializedVersion: 2
-        x: 1395
-        y: 64
-        width: 79
-        height: 72
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e7bbb1b90941a5ec0800000000000000
+      spriteID: 7697e92592ffa8d4a87eee117bedecfb
       internalID: -3577524342682305666
       vertices: []
       indices: 
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b573cfdde2b4eeb42b8480754f0857af
     internalID: 0
     vertices: []
     indices: 

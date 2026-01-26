@@ -137,19 +137,19 @@ TextureImporter:
       name: Gnoll_Walk_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 56
-        width: 101
-        height: 81
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c749295534b12cd10800000000000000
+      spriteID: 5a58dee98e7077e418045f9590e5cb0f
       internalID: 2144306348594205820
       vertices: []
       indices: 
@@ -159,19 +159,19 @@ TextureImporter:
       name: Gnoll_Walk_1
       rect:
         serializedVersion: 2
-        x: 235
-        y: 56
-        width: 100
-        height: 78
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2464d55b72694e140800000000000000
+      spriteID: 33d0795993a085841a63f37d4a0de785
       internalID: 4748085004446025282
       vertices: []
       indices: 
@@ -181,19 +181,19 @@ TextureImporter:
       name: Gnoll_Walk_2
       rect:
         serializedVersion: 2
-        x: 425
-        y: 56
-        width: 89
-        height: 76
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7f3f42edecb2f2d50800000000000000
+      spriteID: a966dbd4a15563f4c8eb2dba700f4dc6
       internalID: 6714633736922919927
       vertices: []
       indices: 
@@ -203,19 +203,19 @@ TextureImporter:
       name: Gnoll_Walk_3
       rect:
         serializedVersion: 2
-        x: 627
-        y: 56
-        width: 78
-        height: 78
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8d3d357493ba55ea0800000000000000
+      spriteID: 9d4063b4941d6084ab8428b9079fab60
       internalID: -5884609075591523368
       vertices: []
       indices: 
@@ -225,19 +225,19 @@ TextureImporter:
       name: Gnoll_Walk_4
       rect:
         serializedVersion: 2
-        x: 819
-        y: 56
-        width: 80
-        height: 81
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 076d5350612d5cfe0800000000000000
+      spriteID: 1c5ea6695bd0ae74490313e171227c2d
       internalID: -1169297536214247824
       vertices: []
       indices: 
@@ -247,19 +247,19 @@ TextureImporter:
       name: Gnoll_Walk_5
       rect:
         serializedVersion: 2
-        x: 1005
-        y: 56
-        width: 84
-        height: 78
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 81207fb45983e5a00800000000000000
+      spriteID: 65c5e129c55a8f040af8704359379c13
       internalID: 747096802065842712
       vertices: []
       indices: 
@@ -269,19 +269,19 @@ TextureImporter:
       name: Gnoll_Walk_6
       rect:
         serializedVersion: 2
-        x: 1199
-        y: 56
-        width: 83
-        height: 76
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 294b6f03035d3e1f0800000000000000
+      spriteID: 58e33c6e609be1445b10a563c61d23ec
       internalID: -1016734687898979182
       vertices: []
       indices: 
@@ -291,19 +291,19 @@ TextureImporter:
       name: Gnoll_Walk_7
       rect:
         serializedVersion: 2
-        x: 1395
-        y: 56
-        width: 96
-        height: 78
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9b32e14d9f226c760800000000000000
+      spriteID: aa6ff02d373ab2341a8ec1399a798931
       internalID: 7477702687696233401
       vertices: []
       indices: 
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bd8eaffe3b365874cbda1dfcc50bf8b1
     internalID: 0
     vertices: []
     indices: 

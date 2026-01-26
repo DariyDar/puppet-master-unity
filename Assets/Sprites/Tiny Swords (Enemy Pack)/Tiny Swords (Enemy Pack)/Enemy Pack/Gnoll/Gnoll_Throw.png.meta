@@ -137,19 +137,19 @@ TextureImporter:
       name: Gnoll_Throw_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 56
-        width: 100
-        height: 71
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f409d766b35835e20800000000000000
+      spriteID: 4f0b2c2ca3597764c9ed98b6c4886330
       internalID: 3338158238980739151
       vertices: []
       indices: 
@@ -159,19 +159,19 @@ TextureImporter:
       name: Gnoll_Throw_1
       rect:
         serializedVersion: 2
-        x: 242
-        y: 56
-        width: 77
-        height: 92
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e1f9cf0aeac2f43e0800000000000000
+      spriteID: 9e2c4bd03fd2ebc4bb26c76b42610728
       internalID: -2067384575402926306
       vertices: []
       indices: 
@@ -181,19 +181,19 @@ TextureImporter:
       name: Gnoll_Throw_2
       rect:
         serializedVersion: 2
-        x: 417
-        y: 56
-        width: 85
-        height: 107
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0465084546375cdf0800000000000000
+      spriteID: 0de413d09b118eb4ab07f89c58c7fa27
       internalID: -160595336950163904
       vertices: []
       indices: 
@@ -203,19 +203,19 @@ TextureImporter:
       name: Gnoll_Throw_3
       rect:
         serializedVersion: 2
-        x: 604
-        y: 56
-        width: 90
-        height: 112
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1424303bddaccf8c0800000000000000
+      spriteID: 7f151b07c568b7343a1b7e605551b76f
       internalID: -3964070518452960703
       vertices: []
       indices: 
@@ -225,19 +225,19 @@ TextureImporter:
       name: Gnoll_Throw_4
       rect:
         serializedVersion: 2
-        x: 785
-        y: 56
-        width: 104
-        height: 110
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: af65da54e9d9224f0800000000000000
+      spriteID: 138da2e987220444e941cba5af4e2314
       internalID: -854947676147591430
       vertices: []
       indices: 
@@ -247,19 +247,19 @@ TextureImporter:
       name: Gnoll_Throw_5
       rect:
         serializedVersion: 2
-        x: 1009
-        y: 56
-        width: 96
-        height: 80
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a9b9988caf75a2400800000000000000
+      spriteID: 46e79fd24456d134387c4dde2613e6ae
       internalID: 300149059791461274
       vertices: []
       indices: 
@@ -269,19 +269,19 @@ TextureImporter:
       name: Gnoll_Throw_6
       rect:
         serializedVersion: 2
-        x: 1194
-        y: 56
-        width: 102
-        height: 85
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 51bbfc06d8f14f1f0800000000000000
+      spriteID: 231e4e5d1f70a174f986380959b0fc99
       internalID: -1012149324176442603
       vertices: []
       indices: 
@@ -291,19 +291,19 @@ TextureImporter:
       name: Gnoll_Throw_7
       rect:
         serializedVersion: 2
-        x: 1398
-        y: 56
-        width: 84
-        height: 73
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ab853b094d34ad0d0800000000000000
+      spriteID: 34d5985d445b60f43a400ec97e680dea
       internalID: -3397328388657817414
       vertices: []
       indices: 
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3522e70daea3cd946a61a377eaff4d17
     internalID: 0
     vertices: []
     indices: 

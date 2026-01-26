@@ -15,6 +15,9 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private PlayerController playerController;
 
+    // Tier system
+    private float damageMultiplier = 1f;
+    private float baseDamage;
     private float lastAttackTime;
 
     private void Awake()
@@ -30,6 +33,9 @@ public class PlayerCombat : MonoBehaviour
             point.transform.localPosition = new Vector3(1f, 0, 0);
             attackPoint = point.transform;
         }
+
+        // Store base damage
+        baseDamage = attackDamage;
     }
 
     private void Update()
@@ -126,5 +132,24 @@ public class PlayerCombat : MonoBehaviour
     {
         get => attackDamage;
         set => attackDamage = value;
+    }
+
+    /// <summary>
+    /// Set damage multiplier (from tier system).
+    /// </summary>
+    public void SetDamageMultiplier(float multiplier)
+    {
+        damageMultiplier = multiplier;
+        attackDamage = Mathf.RoundToInt(baseDamage * damageMultiplier);
+        Debug.Log($"[PlayerCombat] Damage multiplier set to {multiplier}x, damage is now {attackDamage}");
+    }
+
+    /// <summary>
+    /// Set base damage (from UpgradeSystem).
+    /// </summary>
+    public void SetDamage(float damage)
+    {
+        baseDamage = damage;
+        attackDamage = Mathf.RoundToInt(baseDamage * damageMultiplier);
     }
 }

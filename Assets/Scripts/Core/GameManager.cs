@@ -16,10 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int xpToNextLevel = 100;
 
     [Header("Resources")]
-    [SerializeField] private int meat = 0;
-    [SerializeField] private int wood = 0;
-    [SerializeField] private int gold = 0;
-    [SerializeField] private int souls = 0;
+    [SerializeField] private int skulls = 0;     // From killed humans (1 per enemy)
+    [SerializeField] private int meat = 0;       // From sheep
+    [SerializeField] private int wood = 0;       // From destroyed buildings
+    [SerializeField] private int gold = 0;       // From gold mines
 
     [Header("Cargo")]
     [SerializeField] private int cargoMeat = 0;
@@ -38,10 +38,10 @@ public class GameManager : MonoBehaviour
     public int CurrentXp => currentXp;
     public int XpToNextLevel => xpToNextLevel;
 
+    public int Skulls => skulls;
     public int Meat => meat;
     public int Wood => wood;
     public int Gold => gold;
-    public int Souls => souls;
 
     public int CargoMeat => cargoMeat;
     public int CargoWood => cargoWood;
@@ -156,14 +156,17 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-    public void DepositCargo()
+    public bool DepositCargo()
     {
-        if (CurrentCargo <= 0) return;
+        if (CurrentCargo <= 0) return false;
 
         meat += cargoMeat;
         wood += cargoWood;
         gold += cargoGold;
 
+        int depositedMeat = cargoMeat;
+        int depositedWood = cargoWood;
+        int depositedGold = cargoGold;
         int totalDeposited = CurrentCargo;
 
         cargoMeat = 0;
@@ -171,29 +174,43 @@ public class GameManager : MonoBehaviour
         cargoGold = 0;
 
         EventManager.Instance?.OnCargoDeposited(totalDeposited);
-        EventManager.Instance?.OnStorageUpdated(meat, wood, gold, souls);
+        EventManager.Instance?.OnStorageUpdated(skulls, meat, wood, gold);
+
+        Debug.Log($"[GameManager] Deposited to storage: Meat={depositedMeat}, Wood={depositedWood}, Gold={depositedGold}");
+        return true;
     }
 
-    public void AddSoul(int amount = 1)
+    public void AddSkull(int amount = 1)
     {
-        souls += amount;
-        EventManager.Instance?.OnSoulCollected(amount);
+        skulls += amount;
+        EventManager.Instance?.OnSkullCollected(amount);
     }
 
-    public bool SpendResources(int meatCost, int woodCost, int goldCost = 0, int soulsCost = 0)
+    /// <summary>
+    /// Spend resources. Order: skulls, meat, wood, gold.
+    /// </summary>
+    public bool SpendResources(int skullsCost, int meatCost, int woodCost, int goldCost = 0)
     {
-        if (meat < meatCost || wood < woodCost || gold < goldCost || souls < soulsCost)
+        if (skulls < skullsCost || meat < meatCost || wood < woodCost || gold < goldCost)
         {
             return false;
         }
 
+        skulls -= skullsCost;
         meat -= meatCost;
         wood -= woodCost;
         gold -= goldCost;
-        souls -= soulsCost;
 
-        EventManager.Instance?.OnStorageUpdated(meat, wood, gold, souls);
+        EventManager.Instance?.OnStorageUpdated(skulls, meat, wood, gold);
         return true;
+    }
+
+    /// <summary>
+    /// Check if player can afford specified costs.
+    /// </summary>
+    public bool CanAfford(int skullsCost, int meatCost, int woodCost, int goldCost = 0)
+    {
+        return skulls >= skullsCost && meat >= meatCost && wood >= woodCost && gold >= goldCost;
     }
 
     #endregion
@@ -211,6 +228,97 @@ public class GameManager : MonoBehaviour
         return armyCount < armyLimit;
     }
 
+    /// <summary>
+    /// Set army limit (from UpgradeSystem).
+    /// </summary>
+    public void SetArmyLimit(int limit)
+    {
+        armyLimit = limit;
+        EventManager.Instance?.OnArmyUpdated(armyCount, armyLimit);
+    }
+
+    /// <summary>
+    /// Set cargo capacity (from UpgradeSystem).
+    /// </summary>
+    public void SetCargoCapacity(int capacity)
+    {
+        cargoCapacity = capacity;
+    }
+
+    #endregion
+
+    #region Cargo Methods (per ResourceMagnet)
+
+    /// <summary>
+    /// Add meat to cargo.
+    /// </summary>
+    public void AddCargoMeat(int amount)
+    {
+        int spaceLeft = cargoCapacity - CurrentCargo;
+        if (spaceLeft <= 0)
+        {
+            EventManager.Instance?.OnCargoFull();
+            return;
+        }
+        cargoMeat += Mathf.Min(amount, spaceLeft);
+        EventManager.Instance?.OnResourceCollected("Meat", amount);
+    }
+
+    /// <summary>
+    /// Add wood to cargo.
+    /// </summary>
+    public void AddCargoWood(int amount)
+    {
+        int spaceLeft = cargoCapacity - CurrentCargo;
+        if (spaceLeft <= 0)
+        {
+            EventManager.Instance?.OnCargoFull();
+            return;
+        }
+        cargoWood += Mathf.Min(amount, spaceLeft);
+        EventManager.Instance?.OnResourceCollected("Wood", amount);
+    }
+
+    /// <summary>
+    /// Add gold to cargo.
+    /// </summary>
+    public void AddCargoGold(int amount)
+    {
+        int spaceLeft = cargoCapacity - CurrentCargo;
+        if (spaceLeft <= 0)
+        {
+            EventManager.Instance?.OnCargoFull();
+            return;
+        }
+        cargoGold += Mathf.Min(amount, spaceLeft);
+        EventManager.Instance?.OnResourceCollected("Gold", amount);
+    }
+
+    #endregion
+
+    #region XP Methods (per UpgradeSystem)
+
+    /// <summary>
+    /// Add XP with bonus from upgrades.
+    /// </summary>
+    public void AddXP(int amount)
+    {
+        // Apply XP bonus from UpgradeSystem if available
+        float multiplier = 1f;
+        if (UpgradeSystem.Instance != null)
+        {
+            multiplier = UpgradeSystem.Instance.GetXPBonusMultiplier();
+        }
+
+        int finalAmount = Mathf.RoundToInt(amount * multiplier);
+        AddXp(finalAmount);
+    }
+
+    /// <summary>
+    /// Get current player level (alias for QuestSystem compatibility).
+    /// </summary>
+    public int PlayerLevel => level;
+
     #endregion
 
     #region Save/Load
@@ -223,10 +331,10 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentXp", currentXp);
         PlayerPrefs.SetInt("XpToNextLevel", xpToNextLevel);
 
+        PlayerPrefs.SetInt("Skulls", skulls);
         PlayerPrefs.SetInt("Meat", meat);
         PlayerPrefs.SetInt("Wood", wood);
         PlayerPrefs.SetInt("Gold", gold);
-        PlayerPrefs.SetInt("Souls", souls);
 
         PlayerPrefs.Save();
         Debug.Log("Game saved!");
@@ -242,10 +350,10 @@ public class GameManager : MonoBehaviour
         currentXp = PlayerPrefs.GetInt("CurrentXp", 0);
         xpToNextLevel = PlayerPrefs.GetInt("XpToNextLevel", 100);
 
+        skulls = PlayerPrefs.GetInt("Skulls", 0);
         meat = PlayerPrefs.GetInt("Meat", 0);
         wood = PlayerPrefs.GetInt("Wood", 0);
         gold = PlayerPrefs.GetInt("Gold", 0);
-        souls = PlayerPrefs.GetInt("Souls", 0);
 
         Debug.Log("Game loaded!");
     }
@@ -260,10 +368,10 @@ public class GameManager : MonoBehaviour
         currentXp = 0;
         xpToNextLevel = 100;
 
+        skulls = 0;
         meat = 0;
         wood = 0;
         gold = 0;
-        souls = 0;
 
         cargoMeat = 0;
         cargoWood = 0;

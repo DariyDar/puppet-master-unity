@@ -1,0 +1,437 @@
+fileFormatVersion: 2
+guid: 4da46202f3a82a1429a433edca148168
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7393824619407222304
+    second: TX Plant_0
+  - first:
+      213: -4181601160242843456
+    second: TX Plant_1
+  - first:
+      213: 6212027134239493093
+    second: TX Plant_2
+  - first:
+      213: 8387603877276295833
+    second: TX Plant_3
+  - first:
+      213: 8229732441688533532
+    second: TX Plant_4
+  - first:
+      213: 3793301123250259786
+    second: TX Plant_5
+  - first:
+      213: 1149584892168664425
+    second: TX Plant_6
+  - first:
+      213: 7718867192508710523
+    second: TX Plant_7
+  - first:
+      213: 8743813339972885927
+    second: TX Plant_8
+  - first:
+      213: -4067435459396679998
+    second: TX Plant_9
+  - first:
+      213: 6355068571657321531
+    second: TX Plant_10
+  - first:
+      213: 8308598747488745580
+    second: TX Plant_11
+  - first:
+      213: 5474419559731158034
+    second: TX Plant_12
+  - first:
+      213: -813630121160539150
+    second: TX Plant_13
+  - first:
+      213: 3084262300659187285
+    second: TX Plant_14
+  - first:
+      213: 4887785052923593483
+    second: TX Plant_15
+  - first:
+      213: -669106929187006681
+    second: TX Plant_16
+  - first:
+      213: 1588864095992348336
+    second: TX Plant_17
+  - first:
+      213: 285865371628332569
+    second: TX Plant_18
+  - first:
+      213: -5677458682547464731
+    second: TX Plant_19
+  - first:
+      213: -5840665122637402067
+    second: TX Plant_20
+  - first:
+      213: -5343987475862678200
+    second: TX Plant_21
+  - first:
+      213: -618045075276401279
+    second: TX Plant_22
+  - first:
+      213: 2652889518907116015
+    second: TX Plant_23
+  - first:
+      213: 3187836368505657787
+    second: TX Plant_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tree_pine_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a596f83ba5fa54ab4d898d14779b83
+      internalID: 1286724602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_pine_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4952a2c879228cc4daceef310d1e382e
+      internalID: -1933120830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_oak
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 368
+        width: 80
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e965c9d698f194a926997c23ae1e36
+      internalID: -1334198691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bush_small
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8cf81db4b16e38439ec86fed2672cd2
+      internalID: -1360621070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bush_large
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d334f00950f164e8921f268fd3b688
+      internalID: 709473445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302ca9418adc04948a473ce50f33bddc
+      internalID: -1034015329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 288
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2177249b894fd6940a45e644722b4e65
+      internalID: 1353476165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flower_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c6e590d4cd31d43a7695f68cd67bcd
+      internalID: -612622466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flower_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 288
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f634e4729f7e334a816e9cc7f5e106a
+      internalID: -954610956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7efc6028a43b7794c96f11ca6c1fb48d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TX Plant_0: 7393824619407222304
+      TX Plant_1: -4181601160242843456
+      TX Plant_10: 6355068571657321531
+      TX Plant_11: 8308598747488745580
+      TX Plant_12: 5474419559731158034
+      TX Plant_13: -813630121160539150
+      TX Plant_14: 3084262300659187285
+      TX Plant_15: 4887785052923593483
+      TX Plant_16: -669106929187006681
+      TX Plant_17: 1588864095992348336
+      TX Plant_18: 285865371628332569
+      TX Plant_19: -5677458682547464731
+      TX Plant_2: 6212027134239493093
+      TX Plant_20: -5840665122637402067
+      TX Plant_21: -5343987475862678200
+      TX Plant_22: -618045075276401279
+      TX Plant_23: 2652889518907116015
+      TX Plant_24: 3187836368505657787
+      TX Plant_3: 8387603877276295833
+      TX Plant_4: 8229732441688533532
+      TX Plant_5: 3793301123250259786
+      TX Plant_6: 1149584892168664425
+      TX Plant_7: 7718867192508710523
+      TX Plant_8: 8743813339972885927
+      TX Plant_9: -4067435459396679998
+      bush_large: 709473445
+      bush_small: -1360621070
+      flower_1: -612622466
+      flower_2: -954610956
+      grass_1: -1034015329
+      grass_2: 1353476165
+      tree_oak: -1334198691
+      tree_pine_1: 1286724602
+      tree_pine_2: -1933120830
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

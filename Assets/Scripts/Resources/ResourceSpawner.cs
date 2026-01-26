@@ -6,10 +6,10 @@ using UnityEngine;
 public class ResourceSpawner : MonoBehaviour
 {
     [Header("Prefabs")]
-    [SerializeField] private GameObject meatPrefab;
-    [SerializeField] private GameObject woodPrefab;
-    [SerializeField] private GameObject goldPrefab;
-    [SerializeField] private GameObject soulPrefab;
+    [SerializeField] private GameObject meatPrefab;     // From sheep
+    [SerializeField] private GameObject woodPrefab;     // From destroyed buildings
+    [SerializeField] private GameObject goldPrefab;     // From gold mines
+    [SerializeField] private GameObject skullPrefab;    // From killed humans (1 per enemy)
 
     [Header("Spawn Settings")]
     [SerializeField] private float spawnRadius = 0.5f;
@@ -152,7 +152,7 @@ public class ResourceSpawner : MonoBehaviour
             case ResourcePickup.ResourceType.Meat: return meatPrefab;
             case ResourcePickup.ResourceType.Wood: return woodPrefab;
             case ResourcePickup.ResourceType.Gold: return goldPrefab;
-            case ResourcePickup.ResourceType.Soul: return soulPrefab;
+            case ResourcePickup.ResourceType.Skull: return skullPrefab;
             default: return null;
         }
     }
@@ -161,10 +161,10 @@ public class ResourceSpawner : MonoBehaviour
     {
         switch (type)
         {
-            case ResourcePickup.ResourceType.Meat: return new Color(0.8f, 0.2f, 0.2f); // Red
-            case ResourcePickup.ResourceType.Wood: return new Color(0.6f, 0.4f, 0.2f); // Brown
-            case ResourcePickup.ResourceType.Gold: return new Color(1f, 0.85f, 0f);    // Gold
-            case ResourcePickup.ResourceType.Soul: return new Color(0.5f, 0f, 1f);     // Purple
+            case ResourcePickup.ResourceType.Meat: return new Color(0.8f, 0.2f, 0.2f);     // Red (meat)
+            case ResourcePickup.ResourceType.Wood: return new Color(0.6f, 0.4f, 0.2f);     // Brown (wood)
+            case ResourcePickup.ResourceType.Gold: return new Color(1f, 0.85f, 0f);        // Gold
+            case ResourcePickup.ResourceType.Skull: return new Color(0.9f, 0.9f, 0.8f);    // Bone white
             default: return Color.white;
         }
     }
@@ -175,18 +175,54 @@ public class ResourceSpawner : MonoBehaviour
         if (rand < 0.4f) return ResourcePickup.ResourceType.Meat;
         if (rand < 0.7f) return ResourcePickup.ResourceType.Wood;
         if (rand < 0.9f) return ResourcePickup.ResourceType.Gold;
-        return ResourcePickup.ResourceType.Soul;
+        return ResourcePickup.ResourceType.Skull;
     }
 
     private int GetRandomAmount(ResourcePickup.ResourceType type)
     {
         switch (type)
         {
-            case ResourcePickup.ResourceType.Meat: return Random.Range(1, 4);
-            case ResourcePickup.ResourceType.Wood: return Random.Range(1, 3);
+            case ResourcePickup.ResourceType.Meat: return Random.Range(1, 3);
+            case ResourcePickup.ResourceType.Wood: return Random.Range(1, 4);
             case ResourcePickup.ResourceType.Gold: return Random.Range(1, 2);
-            case ResourcePickup.ResourceType.Soul: return 1;
+            case ResourcePickup.ResourceType.Skull: return 1;  // Always 1 skull per enemy
             default: return 1;
         }
     }
+
+    #region Specific Resource Spawning
+
+    /// <summary>
+    /// Spawn a skull when a human enemy is killed (always 1).
+    /// </summary>
+    public void SpawnSkull(Vector3 position)
+    {
+        SpawnResource(ResourcePickup.ResourceType.Skull, 1, position);
+    }
+
+    /// <summary>
+    /// Spawn meat when a sheep is killed.
+    /// </summary>
+    public void SpawnMeat(Vector3 position, int amount = 1)
+    {
+        SpawnResource(ResourcePickup.ResourceType.Meat, amount, position);
+    }
+
+    /// <summary>
+    /// Spawn wood when a building is destroyed.
+    /// </summary>
+    public void SpawnWood(Vector3 position, int amount = 1)
+    {
+        SpawnResource(ResourcePickup.ResourceType.Wood, amount, position);
+    }
+
+    /// <summary>
+    /// Spawn gold from gold mines.
+    /// </summary>
+    public void SpawnGold(Vector3 position, int amount = 1)
+    {
+        SpawnResource(ResourcePickup.ResourceType.Gold, amount, position);
+    }
+
+    #endregion
 }

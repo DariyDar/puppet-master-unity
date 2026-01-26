@@ -137,19 +137,19 @@ TextureImporter:
       name: Bear_Idle_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 78
-        width: 117
-        height: 94
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8394539a677f2f750800000000000000
+      spriteID: 6929e4b4547a20542b6eb3cfca848929
       internalID: 6337399714680752440
       vertices: []
       indices: 
@@ -159,19 +159,19 @@ TextureImporter:
       name: Bear_Idle_1
       rect:
         serializedVersion: 2
-        x: 326
-        y: 78
-        width: 118
-        height: 93
+        x: 256
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b63abc0bd4ae50db0800000000000000
+      spriteID: f4397a929cf714b40be17b1195086187
       internalID: -4826193806258101397
       vertices: []
       indices: 
@@ -181,19 +181,19 @@ TextureImporter:
       name: Bear_Idle_2
       rect:
         serializedVersion: 2
-        x: 582
-        y: 78
-        width: 118
-        height: 92
+        x: 512
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7f7d9f6c9e52f4c20800000000000000
+      spriteID: 162b35205837b5340ab2d275697ae66d
       internalID: 3192812346824841207
       vertices: []
       indices: 
@@ -203,19 +203,19 @@ TextureImporter:
       name: Bear_Idle_3
       rect:
         serializedVersion: 2
-        x: 835
-        y: 78
-        width: 121
-        height: 91
+        x: 768
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c52713dfc551d6dd0800000000000000
+      spriteID: 2e5062a849902ca4db6cf72282fa671b
       internalID: -2491311529736965540
       vertices: []
       indices: 
@@ -225,19 +225,19 @@ TextureImporter:
       name: Bear_Idle_4
       rect:
         serializedVersion: 2
-        x: 1091
-        y: 78
-        width: 121
-        height: 91
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3aa7b1679e2351450800000000000000
+      spriteID: ddf04af643be3f94f84c6cdd043a9e30
       internalID: 6058804851987151523
       vertices: []
       indices: 
@@ -247,19 +247,19 @@ TextureImporter:
       name: Bear_Idle_5
       rect:
         serializedVersion: 2
-        x: 1350
-        y: 78
-        width: 118
-        height: 93
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 065d8b6175c211cc0800000000000000
+      spriteID: cca9561c4f7d2ed47a799c0f9a391ff5
       internalID: -3742161062813182624
       vertices: []
       indices: 
@@ -269,19 +269,19 @@ TextureImporter:
       name: Bear_Idle_6
       rect:
         serializedVersion: 2
-        x: 1608
-        y: 78
-        width: 116
-        height: 94
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 32275b644c1e932b0800000000000000
+      spriteID: 0269af5477d21a74d95a4715620dfa1c
       internalID: -5604200028169735645
       vertices: []
       indices: 
@@ -291,19 +291,19 @@ TextureImporter:
       name: Bear_Idle_7
       rect:
         serializedVersion: 2
-        x: 1864
-        y: 78
-        width: 116
-        height: 94
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4af247a736afb5b10800000000000000
+      spriteID: 7a2b8e43dfac8154881e9d9f475c1039
       internalID: 1971444567067864996
       vertices: []
       indices: 
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 54ea517b5db9df04db2823f80d58c4b9
     internalID: 0
     vertices: []
     indices: 

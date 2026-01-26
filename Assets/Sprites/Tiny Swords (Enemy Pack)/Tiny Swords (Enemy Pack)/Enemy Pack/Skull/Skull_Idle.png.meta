@@ -137,19 +137,19 @@ TextureImporter:
       name: Skull_Idle_0
       rect:
         serializedVersion: 2
-        x: 60
-        y: 61
-        width: 71
-        height: 75
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ed00aff3d360ec950800000000000000
+      spriteID: 5ff76c2ef36a71e4b8c301faaa9a38fe
       internalID: 6471116574714101982
       vertices: []
       indices: 
@@ -159,19 +159,19 @@ TextureImporter:
       name: Skull_Idle_1
       rect:
         serializedVersion: 2
-        x: 252
-        y: 61
-        width: 71
-        height: 75
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a0b40f37bc10f63b0800000000000000
+      spriteID: 2130e0c11c3d78f45afc3f305935f5d2
       internalID: -5517189045170451702
       vertices: []
       indices: 
@@ -181,19 +181,19 @@ TextureImporter:
       name: Skull_Idle_2
       rect:
         serializedVersion: 2
-        x: 444
-        y: 61
-        width: 72
-        height: 74
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f247fac4cf26c8ac0800000000000000
+      spriteID: 6a5cad85c95706a498b03cdc3ebc0183
       internalID: -3851594745550769105
       vertices: []
       indices: 
@@ -203,19 +203,19 @@ TextureImporter:
       name: Skull_Idle_3
       rect:
         serializedVersion: 2
-        x: 635
-        y: 61
-        width: 74
-        height: 73
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 68df29b4b0c59c8f0800000000000000
+      spriteID: e18a3bb9a4c705844b6b24f5cea173e4
       internalID: -519783078402261626
       vertices: []
       indices: 
@@ -225,19 +225,19 @@ TextureImporter:
       name: Skull_Idle_4
       rect:
         serializedVersion: 2
-        x: 826
-        y: 61
-        width: 76
-        height: 73
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 49d23a36e8da67be0800000000000000
+      spriteID: e3c0eead1be982c4fae8f25f75d4ab5c
       internalID: -1479804600476029548
       vertices: []
       indices: 
@@ -247,19 +247,19 @@ TextureImporter:
       name: Skull_Idle_5
       rect:
         serializedVersion: 2
-        x: 1018
-        y: 61
-        width: 75
-        height: 73
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5062ad2ba78189600800000000000000
+      spriteID: 77ceb14bb9f4fdc469d472fcd29caed2
       internalID: 475156675953305093
       vertices: []
       indices: 
@@ -269,19 +269,19 @@ TextureImporter:
       name: Skull_Idle_6
       rect:
         serializedVersion: 2
-        x: 1211
-        y: 61
-        width: 73
-        height: 73
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4d2b66048aedfae30800000000000000
+      spriteID: dca7d58da4aedaf4e94d58a85a760da1
       internalID: 4517073765492241108
       vertices: []
       indices: 
@@ -291,19 +291,19 @@ TextureImporter:
       name: Skull_Idle_7
       rect:
         serializedVersion: 2
-        x: 1404
-        y: 61
-        width: 71
-        height: 74
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5a4ce26704163b6b0800000000000000
+      spriteID: b4e32d78d14ee2b4a8199dbf6b867314
       internalID: -5281771008486882139
       vertices: []
       indices: 
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 71917adac931a3745bb63623e5470d6b
     internalID: 0
     vertices: []
     indices: 

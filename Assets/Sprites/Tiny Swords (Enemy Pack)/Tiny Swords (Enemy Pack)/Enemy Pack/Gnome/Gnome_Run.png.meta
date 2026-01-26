@@ -131,19 +131,19 @@ TextureImporter:
       name: Gnome_Run_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 64
-        width: 86
-        height: 68
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 411d4ef7e5f615910800000000000000
+      spriteID: 50f85dffce32a1344a8649cf10646f76
       internalID: 1824361775725072660
       vertices: []
       indices: 
@@ -153,19 +153,19 @@ TextureImporter:
       name: Gnome_Run_1
       rect:
         serializedVersion: 2
-        x: 240
-        y: 64
-        width: 82
-        height: 72
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2076dcad273812680800000000000000
+      spriteID: 5d500a99770d63347b4a9db77ba46891
       internalID: -8781593269075351806
       vertices: []
       indices: 
@@ -175,19 +175,19 @@ TextureImporter:
       name: Gnome_Run_2
       rect:
         serializedVersion: 2
-        x: 435
-        y: 64
-        width: 74
-        height: 71
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7305a136df2b15e70800000000000000
+      spriteID: d5c8b7e5fc298d949903709fe1a2cfb3
       internalID: 9102253123251621943
       vertices: []
       indices: 
@@ -197,19 +197,19 @@ TextureImporter:
       name: Gnome_Run_3
       rect:
         serializedVersion: 2
-        x: 619
-        y: 64
-        width: 86
-        height: 68
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 23431c3f20cb9d6a0800000000000000
+      spriteID: d8377466cb67d1b4ba0dd4344a9ac1ab
       internalID: -6423896672601820110
       vertices: []
       indices: 
@@ -219,19 +219,19 @@ TextureImporter:
       name: Gnome_Run_4
       rect:
         serializedVersion: 2
-        x: 816
-        y: 64
-        width: 82
-        height: 72
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 240993ecb5f24a450800000000000000
+      spriteID: 59871e4fb8b4c654f95575de00b773b0
       internalID: 6099051866714902594
       vertices: []
       indices: 
@@ -241,19 +241,19 @@ TextureImporter:
       name: Gnome_Run_5
       rect:
         serializedVersion: 2
-        x: 1011
-        y: 64
-        width: 74
-        height: 71
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1cc1143906ce380c0800000000000000
+      spriteID: 40e03671ac638b44d8bcc012d9fdb70f
       internalID: -4574552896946758463
       vertices: []
       indices: 
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6bf52df5a1f19cd4f8e580ad58f5a0cd
     internalID: 0
     vertices: []
     indices: 

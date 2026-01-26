@@ -137,19 +137,19 @@ TextureImporter:
       name: Pawn_Idle_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 56
-        width: 54
-        height: 73
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2901a878497917da0800000000000000
+      spriteID: 5e3ce39f4b8ad81418002e1472cc710a
       internalID: -5948806968594788206
       vertices: []
       indices: 
@@ -159,19 +159,19 @@ TextureImporter:
       name: Pawn_Idle_1
       rect:
         serializedVersion: 2
-        x: 262
-        y: 56
-        width: 54
-        height: 74
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dfc9177700ef00ac0800000000000000
+      spriteID: d761df30dbf68e64d8cf600573f341c8
       internalID: -3890830800090718979
       vertices: []
       indices: 
@@ -181,19 +181,19 @@ TextureImporter:
       name: Pawn_Idle_2
       rect:
         serializedVersion: 2
-        x: 455
-        y: 56
-        width: 54
-        height: 76
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0ba6a6c277eeabf40800000000000000
+      spriteID: b27da23a784673044ab9144b702511a6
       internalID: 5745166470278179504
       vertices: []
       indices: 
@@ -203,19 +203,19 @@ TextureImporter:
       name: Pawn_Idle_3
       rect:
         serializedVersion: 2
-        x: 648
-        y: 56
-        width: 54
-        height: 76
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8ba1fa5ea0720e6a0800000000000000
+      spriteID: 72d9e1cf49317fb45aa5c2f0fb330924
       internalID: -6422090140873712968
       vertices: []
       indices: 
@@ -225,19 +225,19 @@ TextureImporter:
       name: Pawn_Idle_4
       rect:
         serializedVersion: 2
-        x: 838
-        y: 56
-        width: 54
-        height: 75
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 18f064ff2983bcb60800000000000000
+      spriteID: 9ec7254fb66c48d4c81cdd5db379d617
       internalID: 7767364186329714561
       vertices: []
       indices: 
@@ -247,19 +247,19 @@ TextureImporter:
       name: Pawn_Idle_5
       rect:
         serializedVersion: 2
-        x: 1028
-        y: 56
-        width: 54
-        height: 75
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e4613822926f4f1b0800000000000000
+      spriteID: 88e08385af2072b4d9fe5ab5b42c2cde
       internalID: -5623599378145798578
       vertices: []
       indices: 
@@ -269,19 +269,19 @@ TextureImporter:
       name: Pawn_Idle_6
       rect:
         serializedVersion: 2
-        x: 1219
-        y: 56
-        width: 53
-        height: 76
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 132bb3152f8de75b0800000000000000
+      spriteID: d37827a3f50cb294fb08dcaca884c96f
       internalID: -5368615170522500559
       vertices: []
       indices: 
@@ -291,19 +291,19 @@ TextureImporter:
       name: Pawn_Idle_7
       rect:
         serializedVersion: 2
-        x: 1410
-        y: 56
-        width: 55
-        height: 75
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 90029693cc56cfb40800000000000000
+      spriteID: 0c4e1f37ec2e5a140bc1b90b8aa2008d
       internalID: 5475363174786605065
       vertices: []
       indices: 
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4183590e36621a0489591729c76e9ac5
     internalID: 0
     vertices: []
     indices: 

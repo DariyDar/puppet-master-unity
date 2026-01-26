@@ -11,6 +11,93 @@ TextureImporter:
   - first:
       213: -7266184672885777087
     second: Tilemap_Elevation_2
+  - first:
+      213: 4245220627508244048
+    second: Tilemap_Elevation_3
+  - first:
+      213: -685175629066343069
+    second: Tilemap_Elevation_4
+  - first:
+      213: -4654887788466143654
+    second: Tilemap_Elevation_5
+  - first:
+      213: -8558233551577444259
+    second: Tilemap_Elevation_6
+  - first:
+      213: -1296938809680570585
+    second: Tilemap_Elevation_7
+  - first:
+      213: -6692420677221554802
+    second: Tilemap_Elevation_8
+  - first:
+      213: 6308408067342562694
+    second: Tilemap_Elevation_9
+  - first:
+      213: 1532932410176947099
+    second: Tilemap_Elevation_10
+  - first:
+      213: 8420004182750608991
+    second: Tilemap_Elevation_11
+  - first:
+      213: -5720546815411799269
+    second: Tilemap_Elevation_12
+  - first:
+      213: 3371675096977387466
+    second: Tilemap_Elevation_13
+  - first:
+      213: -8565411371005629672
+    second: Tilemap_Elevation_14
+  - first:
+      213: 2861686412320191903
+    second: Tilemap_Elevation_15
+  - first:
+      213: 89221879462915792
+    second: Tilemap_Elevation_16
+  - first:
+      213: -2387911959686776030
+    second: Tilemap_Elevation_17
+  - first:
+      213: -5006647723484973384
+    second: Tilemap_Elevation_18
+  - first:
+      213: 1376007022053468612
+    second: Tilemap_Elevation_19
+  - first:
+      213: 1064443227662899460
+    second: Tilemap_Elevation_20
+  - first:
+      213: 1983276805980917155
+    second: Tilemap_Elevation_21
+  - first:
+      213: -2204832609177297628
+    second: Tilemap_Elevation_22
+  - first:
+      213: 1202513350989797504
+    second: Tilemap_Elevation_23
+  - first:
+      213: 6714464367384316308
+    second: Tilemap_Elevation_24
+  - first:
+      213: 460325132921744649
+    second: Tilemap_Elevation_25
+  - first:
+      213: -4354540964927743204
+    second: Tilemap_Elevation_26
+  - first:
+      213: 2684826482704735071
+    second: Tilemap_Elevation_27
+  - first:
+      213: 6584553252294872189
+    second: Tilemap_Elevation_28
+  - first:
+      213: 1980959851732867252
+    second: Tilemap_Elevation_29
+  - first:
+      213: -4720393132884537774
+    second: Tilemap_Elevation_30
+  - first:
+      213: -8700664367524864314
+    second: Tilemap_Elevation_31
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +165,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -123,11 +210,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 255
-        width: 256
-        height: 257
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -144,12 +231,12 @@ TextureImporter:
       name: Tilemap_Elevation_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 127
-        width: 256
-        height: 130
+        x: 64
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -166,12 +253,12 @@ TextureImporter:
       name: Tilemap_Elevation_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 65
+        x: 128
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,6 +267,644 @@ TextureImporter:
       bones: []
       spriteID: 14d5144b983592b90800000000000000
       internalID: -7266184672885777087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e2ac72bad0aea30800000000000000
+      internalID: 4245220627508244048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36deeb44564cd76f0800000000000000
+      internalID: -685175629066343069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5efb231834866fb0800000000000000
+      internalID: -4654887788466143654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d509565adeb0b3980800000000000000
+      internalID: -8558233551577444259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72752992609500ee0800000000000000
+      internalID: -1296938809680570585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e85eabe1adebf13a0800000000000000
+      internalID: -6692420677221554802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6857920c6b7fb8750800000000000000
+      internalID: 6308408067342562694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b93c74db7e1164510800000000000000
+      internalID: 1532932410176947099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e3720713dd9d470800000000000000
+      internalID: 8420004182750608991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b336aeaf88c90b0800000000000000
+      internalID: -5720546815411799269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf2e5503a89ace20800000000000000
+      internalID: 3371675096977387466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b2e145dbb812980800000000000000
+      internalID: -8565411371005629672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9538e051a0c6b720800000000000000
+      internalID: 2861686412320191903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0de649f93dafc3100800000000000000
+      internalID: 89221879462915792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b76ff69be6cded0800000000000000
+      internalID: -2387911959686776030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b6f82efb60d48ab0800000000000000
+      internalID: -5006647723484973384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9a0fd981f881310800000000000000
+      internalID: 1376007022053468612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409da64d979a5ce00800000000000000
+      internalID: 1064443227662899460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_21
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad83c74fb3068b10800000000000000
+      internalID: 1983276805980917155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42d1ac47c6cd661e0800000000000000
+      internalID: -2204832609177297628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_23
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0885963858f20b010800000000000000
+      internalID: 1202513350989797504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499c5f274c19e2d50800000000000000
+      internalID: 6714464367384316308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90d2cfcf447636600800000000000000
+      internalID: 460325132921744649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b589150109193c0800000000000000
+      internalID: -4354540964927743204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b5d21167b624520800000000000000
+      internalID: 2684826482704735071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ccda7eb48016b50800000000000000
+      internalID: 6584553252294872189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_29
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b819d45d78cd7b10800000000000000
+      internalID: 1980959851732867252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_30
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e4932947bcd7eb0800000000000000
+      internalID: -4720393132884537774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_Elevation_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce18c71bd7014780800000000000000
+      internalID: -8700664367524864314
       vertices: []
       indices: 
       edges: []
@@ -200,7 +925,36 @@ TextureImporter:
     nameFileIdTable:
       Tilemap_Elevation_0: -1913826389900762773
       Tilemap_Elevation_1: -3729094827456700806
+      Tilemap_Elevation_10: 1532932410176947099
+      Tilemap_Elevation_11: 8420004182750608991
+      Tilemap_Elevation_12: -5720546815411799269
+      Tilemap_Elevation_13: 3371675096977387466
+      Tilemap_Elevation_14: -8565411371005629672
+      Tilemap_Elevation_15: 2861686412320191903
+      Tilemap_Elevation_16: 89221879462915792
+      Tilemap_Elevation_17: -2387911959686776030
+      Tilemap_Elevation_18: -5006647723484973384
+      Tilemap_Elevation_19: 1376007022053468612
       Tilemap_Elevation_2: -7266184672885777087
+      Tilemap_Elevation_20: 1064443227662899460
+      Tilemap_Elevation_21: 1983276805980917155
+      Tilemap_Elevation_22: -2204832609177297628
+      Tilemap_Elevation_23: 1202513350989797504
+      Tilemap_Elevation_24: 6714464367384316308
+      Tilemap_Elevation_25: 460325132921744649
+      Tilemap_Elevation_26: -4354540964927743204
+      Tilemap_Elevation_27: 2684826482704735071
+      Tilemap_Elevation_28: 6584553252294872189
+      Tilemap_Elevation_29: 1980959851732867252
+      Tilemap_Elevation_3: 4245220627508244048
+      Tilemap_Elevation_30: -4720393132884537774
+      Tilemap_Elevation_31: -8700664367524864314
+      Tilemap_Elevation_4: -685175629066343069
+      Tilemap_Elevation_5: -4654887788466143654
+      Tilemap_Elevation_6: -8558233551577444259
+      Tilemap_Elevation_7: -1296938809680570585
+      Tilemap_Elevation_8: -6692420677221554802
+      Tilemap_Elevation_9: 6308408067342562694
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

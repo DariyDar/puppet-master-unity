@@ -119,19 +119,19 @@ TextureImporter:
       name: Gnoll_Hit_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 56
-        width: 99
-        height: 100
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2fc6c4191c7bbf110800000000000000
+      spriteID: 2c2f47693401b0c41bbd8c3b762a502a
       internalID: 1295831359793425650
       vertices: []
       indices: 
@@ -141,20 +141,64 @@ TextureImporter:
       name: Gnoll_Hit_1
       rect:
         serializedVersion: 2
-        x: 228
-        y: 56
-        width: 96
-        height: 100
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0a58dd1fabe660fb0800000000000000
+      spriteID: 8b71661efadf5e84eb80144b37d4a87d
       internalID: -4681933013404252768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gnoll_Hit_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9b1bccf16c11b41bae01538ce4b438
+      internalID: 996691718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gnoll_Hit_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ef93b18ad0378409df1bb9e6834ea8
+      internalID: 571601436
       vertices: []
       indices: 
       edges: []
@@ -163,7 +207,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3f12d13ad91bd0249acd2c6bb187fc72
     internalID: 0
     vertices: []
     indices: 

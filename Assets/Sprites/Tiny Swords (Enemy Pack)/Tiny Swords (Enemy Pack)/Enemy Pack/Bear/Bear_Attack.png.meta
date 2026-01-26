@@ -167,19 +167,19 @@ TextureImporter:
       name: Bear_Attack_0
       rect:
         serializedVersion: 2
-        x: 541
-        y: 78
-        width: 160
-        height: 136
+        x: 0
+        y: 0
+        width: 256
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e9b9cd5111d9a0480800000000000000
+      spriteID: bfa200dce5c8f614e921f74d198e89e5
       internalID: -8932154214229173346
       vertices: []
       indices: 
@@ -189,19 +189,19 @@ TextureImporter:
       name: Bear_Attack_1
       rect:
         serializedVersion: 2
-        x: 796
-        y: 78
-        width: 141
-        height: 147
+        x: 256
+        y: 0
+        width: 256
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ebe8d86342816cc10800000000000000
+      spriteID: 91d98cb8685c20a4aa38ca019ad1be7f
       internalID: 2073371222263828158
       vertices: []
       indices: 
@@ -211,19 +211,19 @@ TextureImporter:
       name: Bear_Attack_2
       rect:
         serializedVersion: 2
-        x: 1051
-        y: 78
-        width: 142
-        height: 149
+        x: 512
+        y: 0
+        width: 256
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e04d9bb6174d9570800000000000000
+      spriteID: 5bc7650eff9830f4d836e7e77248e3d9
       internalID: 8475008236743639273
       vertices: []
       indices: 
@@ -233,19 +233,19 @@ TextureImporter:
       name: Bear_Attack_3
       rect:
         serializedVersion: 2
-        x: 1307
-        y: 78
-        width: 142
-        height: 149
+        x: 768
+        y: 0
+        width: 256
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6a076d63c59dc6c00800000000000000
+      spriteID: e0a0343f82fdae44694108c92805457d
       internalID: 895329416020127910
       vertices: []
       indices: 
@@ -255,19 +255,19 @@ TextureImporter:
       name: Bear_Attack_4
       rect:
         serializedVersion: 2
-        x: 1687
-        y: 201
-        width: 11
-        height: 11
+        x: 1024
+        y: 0
+        width: 256
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9857ac371a3cb0910800000000000000
+      spriteID: a8237e0c0cddd514aa39f0aba96829a5
       internalID: 1804751173891814793
       vertices: []
       indices: 
@@ -277,19 +277,19 @@ TextureImporter:
       name: Bear_Attack_5
       rect:
         serializedVersion: 2
-        x: 1698
-        y: 194
-        width: 14
-        height: 15
+        x: 1280
+        y: 0
+        width: 256
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9b26317fadc97a190800000000000000
+      spriteID: 0fd56a4924d91c0409f2ddc6e692de92
       internalID: -7951214152837274951
       vertices: []
       indices: 
@@ -299,19 +299,19 @@ TextureImporter:
       name: Bear_Attack_6
       rect:
         serializedVersion: 2
-        x: 67
-        y: 78
-        width: 121
-        height: 91
+        x: 1536
+        y: 0
+        width: 256
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 141d0a8e2d4c2ed30800000000000000
+      spriteID: 5c98ff4a9423d014096e5a24fa2aa11d
       internalID: 4459342991175242049
       vertices: []
       indices: 
@@ -321,19 +321,19 @@ TextureImporter:
       name: Bear_Attack_7
       rect:
         serializedVersion: 2
-        x: 322
-        y: 78
-        width: 117
-        height: 103
+        x: 1792
+        y: 0
+        width: 256
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f14c1b8605b2d8cb0800000000000000
+      spriteID: 07e089062905f2a4b852c4af79284232
       internalID: -4860180798509038561
       vertices: []
       indices: 
@@ -343,218 +343,20 @@ TextureImporter:
       name: Bear_Attack_8
       rect:
         serializedVersion: 2
-        x: 1566
-        y: 122
-        width: 39
-        height: 61
+        x: 2048
+        y: 0
+        width: 256
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bd82422ade5cd6da0800000000000000
+      spriteID: 53f30d0d9385d09449dae9f81a1c79ee
       internalID: -5949881908268357413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bear_Attack_9
-      rect:
-        serializedVersion: 2
-        x: 1570
-        y: 160
-        width: 16
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6bc913d9bf8fcafd0800000000000000
-      internalID: -2329213147699635018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bear_Attack_10
-      rect:
-        serializedVersion: 2
-        x: 1607
-        y: 58
-        width: 154
-        height: 132
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c5498612b469b0330800000000000000
-      internalID: 3678198770105357404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bear_Attack_11
-      rect:
-        serializedVersion: 2
-        x: 1869
-        y: 70
-        width: 138
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb81bdbdd09864370800000000000000
-      internalID: 8306477255347607742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bear_Attack_12
-      rect:
-        serializedVersion: 2
-        x: 2121
-        y: 68
-        width: 140
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8e0eb790aaa16e880800000000000000
-      internalID: -8582142722302025496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bear_Attack_13
-      rect:
-        serializedVersion: 2
-        x: 1991
-        y: 71
-        width: 25
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42b034ccbaec2dee0800000000000000
-      internalID: -1237699710311789788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bear_Attack_14
-      rect:
-        serializedVersion: 2
-        x: 2256
-        y: 89
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a6246290a1ebe6190800000000000000
-      internalID: -7967221671739899286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bear_Attack_15
-      rect:
-        serializedVersion: 2
-        x: 2265
-        y: 98
-        width: 6
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc000f01f47228e90800000000000000
-      internalID: -7025009248204488500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bear_Attack_16
-      rect:
-        serializedVersion: 2
-        x: 2260
-        y: 84
-        width: 7
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f61288fc46913120800000000000000
-      internalID: 2391858134441400050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bear_Attack_17
-      rect:
-        serializedVersion: 2
-        x: 1971
-        y: 64
-        width: 18
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d857eb6841b6779b0800000000000000
-      internalID: -5082475918560168563
       vertices: []
       indices: 
       edges: []
@@ -563,7 +365,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6f7421a28d44f57418a6eba8c7de3750
     internalID: 0
     vertices: []
     indices: 

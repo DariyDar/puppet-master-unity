@@ -146,19 +146,19 @@ TextureImporter:
       name: Minotaur_Guard_0
       rect:
         serializedVersion: 2
-        x: 103
-        y: 104
-        width: 139
-        height: 115
+        x: 0
+        y: 0
+        width: 320
+        height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 78172db860efdb810800000000000000
+      spriteID: 31d12ea085878224197cee9bf868d99a
       internalID: 1782860331577667975
       vertices: []
       indices: 
@@ -168,19 +168,19 @@ TextureImporter:
       name: Minotaur_Guard_1
       rect:
         serializedVersion: 2
-        x: 423
-        y: 104
-        width: 139
-        height: 114
+        x: 320
+        y: 0
+        width: 320
+        height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e44bbf04344f21e20800000000000000
+      spriteID: cec6270c532a5664c88a32798608e5ac
       internalID: 3319984445015700558
       vertices: []
       indices: 
@@ -190,19 +190,19 @@ TextureImporter:
       name: Minotaur_Guard_2
       rect:
         serializedVersion: 2
-        x: 743
-        y: 103
-        width: 139
-        height: 114
+        x: 640
+        y: 0
+        width: 320
+        height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 60615b79a88c0cac0800000000000000
+      spriteID: 77995a921801db64b86b62cfa5a27bf0
       internalID: -3836846384943393274
       vertices: []
       indices: 
@@ -212,174 +212,20 @@ TextureImporter:
       name: Minotaur_Guard_3
       rect:
         serializedVersion: 2
-        x: 1063
-        y: 102
-        width: 140
-        height: 115
+        x: 960
+        y: 0
+        width: 320
+        height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 77f1ee305dd324180800000000000000
+      spriteID: 883cd5f1cd0e66041bbef6ff6cd4ae47
       internalID: -9132669109250678921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minotaur_Guard_4
-      rect:
-        serializedVersion: 2
-        x: 1383
-        y: 102
-        width: 141
-        height: 115
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f44ac05157767a00800000000000000
-      internalID: 753921178762626291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minotaur_Guard_5
-      rect:
-        serializedVersion: 2
-        x: 1703
-        y: 102
-        width: 141
-        height: 115
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17a4f4bbec9928b70800000000000000
-      internalID: 8899844926822369905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minotaur_Guard_6
-      rect:
-        serializedVersion: 2
-        x: 2023
-        y: 102
-        width: 141
-        height: 115
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5613c3f8bd28931b0800000000000000
-      internalID: -5676361975811264155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minotaur_Guard_7
-      rect:
-        serializedVersion: 2
-        x: 2342
-        y: 102
-        width: 141
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b408df916acaae6d0800000000000000
-      internalID: -2960363975642087349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minotaur_Guard_8
-      rect:
-        serializedVersion: 2
-        x: 2662
-        y: 103
-        width: 140
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6e668515b3a5e2080800000000000000
-      internalID: -9210324977111767322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minotaur_Guard_9
-      rect:
-        serializedVersion: 2
-        x: 2982
-        y: 104
-        width: 140
-        height: 115
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c7906eb0a9e65380800000000000000
-      internalID: -8982735530145835071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minotaur_Guard_10
-      rect:
-        serializedVersion: 2
-        x: 3303
-        y: 104
-        width: 139
-        height: 115
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f364f0a037dd3360800000000000000
-      internalID: 7151108387192988659
       vertices: []
       indices: 
       edges: []
@@ -388,7 +234,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
