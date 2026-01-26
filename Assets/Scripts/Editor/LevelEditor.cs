@@ -51,7 +51,10 @@ public class LevelEditor : EditorWindow
 
     // Tab state
     private int selectedTab = 0;
-    private readonly string[] tabNames = { "Player & Core", "Enemies", "Buildings", "Resources", "Decorations", "Tilemap", "Tools" };
+    private readonly string[] tabNames = { "Player & Core", "Enemies", "Buildings", "Resources", "Decorations", "Cemetery Props", "Tilemap", "Tools" };
+
+    // Pixel Art Top Down prefabs path
+    private const string PIXEL_ART_PREFABS = "Assets/Cainos/Pixel Art Top Down - Basic/Prefab";
 
     // Scroll positions for each tab
     private Vector2 scrollPosition;
@@ -91,8 +94,9 @@ public class LevelEditor : EditorWindow
             case 2: DrawBuildingsTab(); break;
             case 3: DrawResourcesTab(); break;
             case 4: DrawDecorationsTab(); break;
-            case 5: DrawTilemapTab(); break;
-            case 6: DrawToolsTab(); break;
+            case 5: DrawCemeteryPropsTab(); break;
+            case 6: DrawTilemapTab(); break;
+            case 7: DrawToolsTab(); break;
         }
 
         EditorGUILayout.EndScrollView();
@@ -711,6 +715,414 @@ public class LevelEditor : EditorWindow
 
         EditorGUILayout.Space(10);
         EditorGUILayout.HelpBox("For ground/terrain, use Unity's built-in Tilemap system:\nWindow > 2D > Tile Palette", MessageType.Info);
+    }
+
+    #endregion
+
+    #region Tab: Cemetery Props (Pixel Art Top Down)
+
+    private void DrawCemeteryPropsTab()
+    {
+        EditorGUILayout.HelpBox(
+            "Pixel Art Top Down - Cemetery/Graveyard themed props.\n" +
+            "Some props have special effects (altar glows when player approaches).\n" +
+            "These are prefabs - all effects are preserved!",
+            MessageType.Info);
+
+        EditorGUILayout.Space(5);
+
+        // Game Buildings - Storage & WorkBench
+        GUI.backgroundColor = Color.cyan;
+        GUILayout.Label("Game Buildings", EditorStyles.boldLabel);
+        GUI.backgroundColor = Color.white;
+
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Storage (Chest)", "Props/PF Props - Chest 01.prefab", true);
+        DrawPrefabButtonWithPreview("WorkBench (Altar)", "Props/PF Props - Altar 01.prefab", true);
+        GUILayout.FlexibleSpace();
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.HelpBox(
+            "Storage: Opens when spider approaches with resources. Resources fly into chest.\n" +
+            "WorkBench: Runes glow when player approaches. Use for crafting/upgrades.",
+            MessageType.None);
+
+        EditorGUILayout.Space(10);
+
+        // Cemetery Props
+        GUILayout.Label("Gravestones & Coffins", EditorStyles.boldLabel);
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Grave 1", "Props/PF Props - Gravestone 01.prefab");
+        DrawPrefabButtonWithPreview("Grave 2", "Props/PF Props - Gravestone 02.prefab");
+        DrawPrefabButtonWithPreview("Grave 3", "Props/PF Props - Gravestone 03.prefab");
+        DrawPrefabButtonWithPreview("Coffin H", "Props/PF Props - Stone Coffin 01 H.prefab");
+        DrawPrefabButtonWithPreview("Coffin V", "Props/PF Props - Stone Coffin 01 V.prefab");
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(5);
+
+        // Pillars and Ruins
+        GUILayout.Label("Pillars & Ruins", EditorStyles.boldLabel);
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Pillar 1", "Props/PF Props - Pillar 01.prefab");
+        DrawPrefabButtonWithPreview("Pillar 2", "Props/PF Props - Pillar 02.prefab");
+        DrawPrefabButtonWithPreview("Rune Pillar", "Props/PF Props - Rune Pillar X3.prefab");
+        DrawPrefabButtonWithPreview("Rune Short", "Props/PF Props - Rune Pillar X2.prefab");
+        DrawPrefabButtonWithPreview("Broken", "Props/PF Props - Rune Pillar Broken.prefab");
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(5);
+
+        // Gates and Structures
+        GUILayout.Label("Gates & Structures", EditorStyles.boldLabel);
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Gate 1", "Props/PF Struct - Gate 01.prefab");
+        DrawPrefabButtonWithPreview("Gate 2", "Props/PF Struct - Gate 02.prefab");
+        DrawPrefabButtonWithPreview("Wood Gate", "Props/PF Props - Wooden Gate 01.prefab");
+        DrawPrefabButtonWithPreview("Wood Open", "Props/PF Props - Wooden Gate 01 Opened.prefab");
+        GUILayout.FlexibleSpace();
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(5);
+
+        // Stones and Decorations
+        GUILayout.Label("Stones & Rubble", EditorStyles.boldLabel);
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Stone 1", "Props/PF Props - Stone 01.prefab");
+        DrawPrefabButtonWithPreview("Stone 2", "Props/PF Props - Stone 02.prefab");
+        DrawPrefabButtonWithPreview("Stone 3", "Props/PF Props - Stone 03.prefab");
+        DrawPrefabButtonWithPreview("Brick 1", "Props/PF Props - Brick 01.prefab");
+        DrawPrefabButtonWithPreview("Brick 2", "Props/PF Props - Brick 02.prefab");
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Stone 4", "Props/PF Props - Stone 04.prefab");
+        DrawPrefabButtonWithPreview("Stone 5", "Props/PF Props - Stone 05.prefab");
+        DrawPrefabButtonWithPreview("Stone 6", "Props/PF Props - Stone 06.prefab");
+        DrawPrefabButtonWithPreview("Cube", "Props/PF Props - Stone Cube 01.prefab");
+        GUILayout.FlexibleSpace();
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(5);
+
+        // Functional Props
+        GUILayout.Label("Containers & Objects", EditorStyles.boldLabel);
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Chest Open", "Props/PF Props - Chest 01 Open.prefab");
+        DrawPrefabButtonWithPreview("Barrel", "Props/PF Props - Barrel 01.prefab");
+        DrawPrefabButtonWithPreview("Crate 1", "Props/PF Props - Crate 01.prefab");
+        DrawPrefabButtonWithPreview("Crate 2", "Props/PF Props - Crate 02.prefab");
+        DrawPrefabButtonWithPreview("Well", "Props/PF Props - Well 01.prefab");
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(5);
+
+        // Furniture
+        GUILayout.Label("Furniture & Signs", EditorStyles.boldLabel);
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Bench E", "Props/PF Props - Stone Bench 01 E.prefab");
+        DrawPrefabButtonWithPreview("Bench S", "Props/PF Props - Stone Bench 01 S.prefab");
+        DrawPrefabButtonWithPreview("Bench W", "Props/PF Props - Stone Bench 01 W.prefab");
+        DrawPrefabButtonWithPreview("Statue", "Props/PF Props - Statue 01.prefab");
+        DrawPrefabButtonWithPreview("Lantern", "Props/PF Props - Stone Lantern 01.prefab");
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Pot 1", "Props/PF Props - Pot 01.prefab");
+        DrawPrefabButtonWithPreview("Pot 2", "Props/PF Props - Pot 02.prefab");
+        DrawPrefabButtonWithPreview("Pot 3", "Props/PF Props - Pot 03.prefab");
+        DrawPrefabButtonWithPreview("Sign E", "Props/PF Props - Road Sign 01 E.prefab");
+        DrawPrefabButtonWithPreview("Sign W", "Props/PF Props - Road Sign 01 W.prefab");
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(5);
+
+        // Plants
+        GUILayout.Label("Plants & Trees", EditorStyles.boldLabel);
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Tree 1", "Plant/PF Plant - Tree 01.prefab");
+        DrawPrefabButtonWithPreview("Tree 2", "Plant/PF Plant - Tree 02.prefab");
+        DrawPrefabButtonWithPreview("Tree 3", "Plant/PF Plant - Tree 03.prefab");
+        DrawPrefabButtonWithPreview("Flower", "Plant/PF Plant - Flower 01.prefab");
+        GUILayout.FlexibleSpace();
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        DrawPrefabButtonWithPreview("Bush 1", "Plant/PF Plant - Bush 01.prefab");
+        DrawPrefabButtonWithPreview("Bush 2", "Plant/PF Plant - Bush 02.prefab");
+        DrawPrefabButtonWithPreview("Bush 3", "Plant/PF Plant - Bush 03.prefab");
+        DrawPrefabButtonWithPreview("Bush 4", "Plant/PF Plant - Bush 04.prefab");
+        DrawPrefabButtonWithPreview("Bush 5", "Plant/PF Plant - Bush 05.prefab");
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(10);
+
+        // Presets
+        GUILayout.Label("Cemetery Presets", EditorStyles.boldLabel);
+
+        if (GUILayout.Button("Graveyard Cluster (3 graves + stones)", GUILayout.Height(25)))
+        {
+            Vector3 center = GetSpawnPosition();
+            CreatePrefabInstance("Props/PF Props - Gravestone 01.prefab", center);
+            CreatePrefabInstance("Props/PF Props - Gravestone 02.prefab", center + new Vector3(2, 0.5f, 0));
+            CreatePrefabInstance("Props/PF Props - Gravestone 03.prefab", center + new Vector3(-2, -0.3f, 0));
+            CreatePrefabInstance("Props/PF Props - Stone 01.prefab", center + new Vector3(1, -1, 0));
+            CreatePrefabInstance("Props/PF Props - Stone 02.prefab", center + new Vector3(-1.5f, 1, 0));
+        }
+
+        if (GUILayout.Button("Spider Base (Storage + WorkBench + Pillars)", GUILayout.Height(25)))
+        {
+            Vector3 center = GetSpawnPosition();
+            CreateStorageFromPrefab(center);
+            CreateWorkBenchFromPrefab(center + new Vector3(4, 0, 0));
+            CreatePrefabInstance("Props/PF Props - Rune Pillar X3.prefab", center + new Vector3(-3, 2, 0));
+            CreatePrefabInstance("Props/PF Props - Rune Pillar X3.prefab", center + new Vector3(7, 2, 0));
+            CreatePrefabInstance("Props/PF Props - Stone Lantern 01.prefab", center + new Vector3(0, 3, 0));
+            CreatePrefabInstance("Props/PF Props - Stone Lantern 01.prefab", center + new Vector3(4, 3, 0));
+        }
+
+        if (GUILayout.Button("Ruined Temple Area", GUILayout.Height(25)))
+        {
+            Vector3 center = GetSpawnPosition();
+            CreatePrefabInstance("Props/PF Props - Altar 01.prefab", center);
+            CreatePrefabInstance("Props/PF Props - Pillar 01.prefab", center + new Vector3(-3, 1, 0));
+            CreatePrefabInstance("Props/PF Props - Pillar 02.prefab", center + new Vector3(3, 1, 0));
+            CreatePrefabInstance("Props/PF Props - Rune Pillar Broken.prefab", center + new Vector3(-2, -2, 0));
+            CreatePrefabInstance("Props/PF Props - Brick 01.prefab", center + new Vector3(2, -2, 0));
+            CreatePrefabInstance("Props/PF Props - Brick 02.prefab", center + new Vector3(0, -3, 0));
+        }
+    }
+
+    /// <summary>
+    /// Draws a button that spawns a prefab from Pixel Art Top Down pack.
+    /// </summary>
+    private void DrawPrefabButtonWithPreview(string label, string prefabRelativePath, bool isGameBuilding = false)
+    {
+        string fullPath = $"{PIXEL_ART_PREFABS}/{prefabRelativePath}";
+        Texture2D preview = GetPrefabPreviewTexture(fullPath);
+
+        float buttonSize = isGameBuilding ? BUTTON_SIZE : BUTTON_SIZE_SMALL;
+
+        EditorGUILayout.BeginVertical(GUILayout.Width(buttonSize + 10));
+
+        GUIContent content = preview != null
+            ? new GUIContent(preview, label)
+            : new GUIContent(label);
+
+        if (GUILayout.Button(content, GUILayout.Width(buttonSize), GUILayout.Height(buttonSize)))
+        {
+            if (isGameBuilding && prefabRelativePath.Contains("Chest"))
+            {
+                CreateStorageFromPrefab(GetSpawnPosition());
+            }
+            else if (isGameBuilding && prefabRelativePath.Contains("Altar"))
+            {
+                CreateWorkBenchFromPrefab(GetSpawnPosition());
+            }
+            else
+            {
+                CreatePrefabInstance(prefabRelativePath, GetSpawnPosition());
+            }
+        }
+
+        GUIStyle centeredStyle = new GUIStyle(EditorStyles.miniLabel);
+        centeredStyle.alignment = TextAnchor.MiddleCenter;
+        centeredStyle.fontSize = 9;
+        GUILayout.Label(label, centeredStyle, GUILayout.Width(buttonSize));
+
+        EditorGUILayout.EndVertical();
+    }
+
+    /// <summary>
+    /// Gets preview texture for a prefab.
+    /// </summary>
+    private Texture2D GetPrefabPreviewTexture(string prefabPath)
+    {
+        string cacheKey = $"prefab_{prefabPath}";
+
+        if (previewCache.TryGetValue(cacheKey, out Texture2D cached) && cached != null)
+            return cached;
+
+        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+        if (prefab != null)
+        {
+            // Get Unity's built-in preview
+            Texture2D preview = AssetPreview.GetAssetPreview(prefab);
+            if (preview != null)
+            {
+                previewCache[cacheKey] = preview;
+                return preview;
+            }
+            // Try to get from sprite renderer
+            SpriteRenderer sr = prefab.GetComponent<SpriteRenderer>();
+            if (sr != null && sr.sprite != null)
+            {
+                preview = ExtractSpritePreview(sr.sprite, 48);
+                if (preview != null)
+                {
+                    previewCache[cacheKey] = preview;
+                    return preview;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Creates a prefab instance at position.
+    /// </summary>
+    public static GameObject CreatePrefabInstance(string prefabRelativePath, Vector3 position)
+    {
+        string fullPath = $"{PIXEL_ART_PREFABS}/{prefabRelativePath}";
+        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(fullPath);
+
+        if (prefab == null)
+        {
+            Debug.LogError($"[LevelEditor] Prefab not found: {fullPath}");
+            return null;
+        }
+
+        GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+        instance.transform.position = position;
+
+        // Parent to Decorations if exists
+        GameObject decorParent = GameObject.Find("Decorations");
+        if (decorParent != null)
+        {
+            instance.transform.SetParent(decorParent.transform);
+        }
+
+        Selection.activeGameObject = instance;
+        Debug.Log($"[LevelEditor] Created {prefab.name} at {position}");
+        return instance;
+    }
+
+    /// <summary>
+    /// Creates Storage (Chest) with the Storage script from prefab.
+    /// </summary>
+    public static GameObject CreateStorageFromPrefab(Vector3 position)
+    {
+        string prefabPath = $"{PIXEL_ART_PREFABS}/Props/PF Props - Chest 01.prefab";
+        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+
+        if (prefab == null)
+        {
+            Debug.LogError($"[LevelEditor] Chest prefab not found: {prefabPath}");
+            return CreateStorage(position); // Fallback to old method
+        }
+
+        GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+        instance.name = "Storage";
+        instance.transform.position = position;
+        SafeSetTag(instance, "Storage");
+
+        // Load open chest sprite for the Storage script
+        string openPrefabPath = $"{PIXEL_ART_PREFABS}/Props/PF Props - Chest 01 Open.prefab";
+        GameObject openPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(openPrefabPath);
+        Sprite openSprite = null;
+        Sprite closedSprite = null;
+
+        SpriteRenderer sr = instance.GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            closedSprite = sr.sprite;
+        }
+
+        if (openPrefab != null)
+        {
+            SpriteRenderer openSr = openPrefab.GetComponent<SpriteRenderer>();
+            if (openSr != null)
+            {
+                openSprite = openSr.sprite;
+            }
+        }
+
+        // Make collider a trigger for interaction
+        BoxCollider2D col = instance.GetComponent<BoxCollider2D>();
+        if (col != null)
+        {
+            col.isTrigger = true;
+        }
+        else
+        {
+            col = instance.AddComponent<BoxCollider2D>();
+            col.isTrigger = true;
+            col.size = new Vector2(1f, 0.6f);
+            col.offset = new Vector2(0, 0.3f);
+        }
+
+        // Add Storage script
+        Storage storage = instance.GetComponent<Storage>();
+        if (storage == null)
+        {
+            storage = instance.AddComponent<Storage>();
+        }
+
+        // Set sprites via SerializedObject
+        SerializedObject so = new SerializedObject(storage);
+        SerializedProperty closedProp = so.FindProperty("chestClosed");
+        SerializedProperty openProp = so.FindProperty("chestOpen");
+        if (closedProp != null) closedProp.objectReferenceValue = closedSprite;
+        if (openProp != null) openProp.objectReferenceValue = openSprite;
+        so.ApplyModifiedProperties();
+
+        // Parent to Player Buildings
+        GameObject buildingsParent = GameObject.Find("Player Buildings");
+        if (buildingsParent != null)
+        {
+            instance.transform.SetParent(buildingsParent.transform);
+        }
+
+        Selection.activeGameObject = instance;
+        Debug.Log($"[LevelEditor] Created Storage (Chest) at {position}");
+        return instance;
+    }
+
+    /// <summary>
+    /// Creates WorkBench (Altar) from prefab, preserving the glow effect.
+    /// </summary>
+    public static GameObject CreateWorkBenchFromPrefab(Vector3 position)
+    {
+        string prefabPath = $"{PIXEL_ART_PREFABS}/Props/PF Props - Altar 01.prefab";
+        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+
+        if (prefab == null)
+        {
+            Debug.LogError($"[LevelEditor] Altar prefab not found: {prefabPath}");
+            return null;
+        }
+
+        GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+        instance.name = "WorkBench";
+        instance.transform.position = position;
+        SafeSetTag(instance, "Building");
+
+        // The prefab already has PropsAltar script with rune glow effect!
+        // Just need to make sure there's a collider for the player to trigger it
+        BoxCollider2D col = instance.GetComponent<BoxCollider2D>();
+        if (col != null)
+        {
+            col.isTrigger = true; // Make sure it's a trigger for glow effect
+        }
+
+        // Add Workbench script if not present (for game functionality)
+        Workbench wb = instance.GetComponent<Workbench>();
+        if (wb == null)
+        {
+            wb = instance.AddComponent<Workbench>();
+        }
+
+        // Parent to Player Buildings
+        GameObject buildingsParent = GameObject.Find("Player Buildings");
+        if (buildingsParent != null)
+        {
+            instance.transform.SetParent(buildingsParent.transform);
+        }
+
+        Selection.activeGameObject = instance;
+        Debug.Log($"[LevelEditor] Created WorkBench (Altar with glow effect) at {position}");
+        return instance;
     }
 
     private void DrawDecorationButtonWithPreview(string label, string decorationType)

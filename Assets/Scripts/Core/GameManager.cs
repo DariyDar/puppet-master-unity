@@ -180,6 +180,52 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// Deposit a single unit of a specific resource from cargo to storage.
+    /// Used by Storage for gradual deposit visual effect.
+    /// </summary>
+    public bool DepositSingleResource(string resourceType)
+    {
+        int amount = 1;
+        bool success = false;
+
+        switch (resourceType.ToLower())
+        {
+            case "meat":
+                if (cargoMeat >= amount)
+                {
+                    cargoMeat -= amount;
+                    meat += amount;
+                    success = true;
+                }
+                break;
+            case "wood":
+                if (cargoWood >= amount)
+                {
+                    cargoWood -= amount;
+                    wood += amount;
+                    success = true;
+                }
+                break;
+            case "gold":
+                if (cargoGold >= amount)
+                {
+                    cargoGold -= amount;
+                    gold += amount;
+                    success = true;
+                }
+                break;
+        }
+
+        if (success)
+        {
+            EventManager.Instance?.OnCargoDeposited(amount);
+            EventManager.Instance?.OnStorageUpdated(skulls, meat, wood, gold);
+        }
+
+        return success;
+    }
+
     public void AddSkull(int amount = 1)
     {
         skulls += amount;
