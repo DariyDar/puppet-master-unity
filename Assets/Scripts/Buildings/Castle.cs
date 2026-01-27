@@ -52,6 +52,14 @@ public class Castle : MonoBehaviour
     [SerializeField] private AudioClip destroySound;
     [SerializeField] private AudioClip liberationFanfare;
 
+    [Header("Respawn Settings")]
+    [Tooltip("If true, castle will respawn after being destroyed")]
+    [SerializeField] private bool canRespawn = true;
+    [Tooltip("Time in seconds before respawn (5 minutes default)")]
+    [SerializeField] private float respawnTime = 300f;
+    [Tooltip("Castle only respawns if player is farther than this distance")]
+    [SerializeField] private float playerSafeDistance = 500f;
+
     // State
     private Transform player;
     private int spawnCount = 0;
@@ -60,6 +68,16 @@ public class Castle : MonoBehaviour
     private bool isActivated;
     private bool hasLoggedMissingConfig;
     private List<GameObject> spawnedGuards = new List<GameObject>();
+
+    // Respawn state
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
+    private bool waitingForRespawn = false;
+    private float respawnTimer = 0f;
+    private Collider2D castleCollider;
+
+    // Resource storage (resources brought by Peasants)
+    private Dictionary<ResourcePickup.ResourceType, int> storedResources = new Dictionary<ResourcePickup.ResourceType, int>();
 
     // XP reward for destroying castle
     private int xpReward = 500;
@@ -76,10 +94,26 @@ public class Castle : MonoBehaviour
     {
         FindPlayer();
         lastSpawnTime = Time.time - spawnInterval; // Allow immediate first spawn
+
+        // Store original position for respawn
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+        castleCollider = GetComponent<Collider2D>();
     }
 
     private void Update()
     {
+        // Handle respawn logic
+        if (waitingForRespawn)
+        {
+            respawnTimer += Time.deltaTime;
+            if (respawnTimer >= respawnTime)
+            {
+                TryRespawn();
+            }
+            return;
+        }
+
         if (isDestroyed) return;
 
         FindPlayer();
@@ -100,6 +134,76 @@ public class Castle : MonoBehaviour
 
         // Update visual based on damage
         UpdateDamageVisual();
+    }
+
+    /// <summary>
+    /// Try to respawn the castle. Only succeeds if player is far enough away.
+    /// </summary>
+    private void TryRespawn()
+    {
+        FindPlayer();
+
+        if (player != null)
+        {
+            float distance = Vector2.Distance(originalPosition, player.position);
+            if (distance < playerSafeDistance)
+            {
+                // Player is too close - wait until they leave
+                return;
+            }
+        }
+
+        // Player is far enough - respawn!
+        Respawn();
+    }
+
+    /// <summary>
+    /// Respawn the castle at its original position with full health.
+    /// </summary>
+    private void Respawn()
+    {
+        Debug.Log("[Castle] Respawning castle!");
+
+        waitingForRespawn = false;
+        respawnTimer = 0f;
+
+        // Reset position
+        transform.position = originalPosition;
+        transform.rotation = originalRotation;
+
+        // Reset health
+        currentHealth = maxHealth;
+
+        // Reset spawn count
+        spawnCount = 0;
+        spawnedGuards.Clear();
+
+        // Reset state
+        isDestroyed = false;
+        isActivated = false;
+
+        // Reset visuals
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled = true;
+            if (normalSprite != null)
+            {
+                spriteRenderer.sprite = normalSprite;
+            }
+            spriteRenderer.color = Color.white;
+        }
+
+        // Re-enable collider
+        if (castleCollider != null)
+        {
+            castleCollider.enabled = true;
+        }
+
+        // Re-enable game object (in case it was hidden)
+        gameObject.SetActive(true);
+
+        // Reset spawn timer
+        lastSpawnTime = Time.time - spawnInterval;
     }
 
     private void FindPlayer()
@@ -274,6 +378,51 @@ public class Castle : MonoBehaviour
     }
 
     /// <summary>
+    /// Store a resource brought by a Peasant.
+    /// </summary>
+    public void StoreResource(ResourcePickup.ResourceType type, int amount)
+    {
+        if (!storedResources.ContainsKey(type))
+            storedResources[type] = 0;
+        storedResources[type] += amount;
+        Debug.Log($"[Castle] Stored {amount} {type}. Total: {storedResources[type]}");
+    }
+
+    /// <summary>
+    /// Drop all stored resources when building is destroyed.
+    /// </summary>
+    private void DropStoredResources()
+    {
+        if (ResourceSpawner.Instance == null) return;
+
+        foreach (var kvp in storedResources)
+        {
+            if (kvp.Value <= 0) continue;
+
+            for (int i = 0; i < kvp.Value; i++)
+            {
+                Vector2 offset = Random.insideUnitCircle * 2f;
+                Vector3 pos = transform.position + new Vector3(offset.x, offset.y, 0);
+
+                switch (kvp.Key)
+                {
+                    case ResourcePickup.ResourceType.Meat:
+                        ResourceSpawner.Instance.SpawnMeat(pos, 1);
+                        break;
+                    case ResourcePickup.ResourceType.Wood:
+                        ResourceSpawner.Instance.SpawnWood(pos, 1);
+                        break;
+                    case ResourcePickup.ResourceType.Gold:
+                        ResourceSpawner.Instance.SpawnGold(pos, 1);
+                        break;
+                }
+            }
+            Debug.Log($"[Castle] Dropped {kvp.Value} stored {kvp.Key}");
+        }
+        storedResources.Clear();
+    }
+
+    /// <summary>
     /// Called when castle is destroyed. Triggers zone liberation event.
     /// </summary>
     private void OnDestroyed()
@@ -294,6 +443,9 @@ public class Castle : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(liberationFanfare, transform.position);
         }
+
+        // Drop stored resources first (brought by peasants)
+        DropStoredResources();
 
         // Drop massive loot
         DropLoot();
@@ -355,7 +507,25 @@ public class Castle : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        // If respawn is enabled, start waiting for respawn instead of destroying
+        if (canRespawn)
+        {
+            waitingForRespawn = true;
+            respawnTimer = 0f;
+
+            // Hide the castle but don't destroy it
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = false;
+            }
+
+            Debug.Log($"[Castle] Castle hidden. Will respawn in {respawnTime} seconds (if player is {playerSafeDistance}+ units away)");
+        }
+        else
+        {
+            // No respawn - actually destroy
+            Destroy(gameObject);
+        }
     }
 
     // Properties

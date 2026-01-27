@@ -62,8 +62,10 @@ public abstract class BuildingBase : MonoBehaviour
         }
 
         float distance = Vector2.Distance(transform.position, player.position);
+        // Account for object scale when calculating interaction range
+        float scaledRange = interactionRange * transform.lossyScale.x;
         bool wasInRange = isPlayerInRange;
-        isPlayerInRange = distance <= interactionRange;
+        isPlayerInRange = distance <= scaledRange;
 
         // Trigger events on enter/exit
         if (isPlayerInRange && !wasInRange)
@@ -162,8 +164,9 @@ public abstract class BuildingBase : MonoBehaviour
 
     protected virtual void OnDrawGizmosSelected()
     {
-        // Draw interaction range
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, interactionRange);
+        // Draw interaction range (accounting for scale)
+        Gizmos.color = isPlayerInRange ? Color.green : Color.yellow;
+        float scaledRange = interactionRange * (Application.isPlaying ? transform.lossyScale.x : 1f);
+        Gizmos.DrawWireSphere(transform.position, scaledRange);
     }
 }

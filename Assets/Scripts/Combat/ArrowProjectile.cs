@@ -17,8 +17,8 @@ public class ArrowProjectile : MonoBehaviour
     [SerializeField] private float lifetime = 5f;
 
     [Header("Trajectory")]
-    [SerializeField] private float arcHeight = 2f;
-    [SerializeField] private float speed = 8f;
+    [SerializeField] private float arcHeight = 5f;        // Higher arc for more lob
+    [SerializeField] private float speed = 24f;            // 3x faster flight
     [SerializeField] private float groundedLifetime = 5f;
 
     [Header("Sprites")]
@@ -72,7 +72,14 @@ public class ArrowProjectile : MonoBehaviour
 
         // Calculate flight time based on distance
         float distance = Vector2.Distance(startPosition, targetPosition);
-        flightTime = distance / speed;
+
+        // Enforce minimum flight distance so close-range shots still arc properly
+        float effectiveDistance = Mathf.Max(distance, 3f);
+        flightTime = effectiveDistance / speed;
+
+        // Scale arc height with distance for natural lob
+        // Minimum arc of 2 units ensures arrows always lob overhead, even at close range
+        arcHeight = Mathf.Max(2f, Mathf.Max(arcHeight, effectiveDistance * 0.4f));
 
         // Start the flight
         currentTime = 0f;
@@ -95,7 +102,9 @@ public class ArrowProjectile : MonoBehaviour
         targetPosition = targetPos;
 
         float distance = Vector2.Distance(startPosition, targetPosition);
-        flightTime = distance / speed;
+        float effectiveDistance = Mathf.Max(distance, 3f);
+        flightTime = effectiveDistance / speed;
+        arcHeight = Mathf.Max(2f, Mathf.Max(arcHeight, effectiveDistance * 0.4f));
         currentTime = 0f;
 
         Destroy(gameObject, lifetime);
@@ -247,8 +256,8 @@ public class ArrowProjectile : MonoBehaviour
         // Set final position
         transform.position = targetPosition;
 
-        // Rotate to point downward (stuck in ground)
-        transform.rotation = Quaternion.Euler(0, 0, -45f);
+        // Keep the current rotation (angle of descent) - arrow sticks at the angle it arrived
+        // The rotation is already set by Update() to match flight direction
 
         Debug.Log("[ArrowProjectile] Arrow landed on ground, dissolving in 5 seconds");
 

@@ -2,40 +2,87 @@ using UnityEngine;
 using System.Collections;
 
 /// <summary>
-/// Peasant enemy that runs to grab gold and flees.
-/// Player must catch and kill them to get the gold.
-/// When killed, drops the gold they're carrying.
+/// Peasant - a resource-collecting enemy that:
+/// - Wanders around when idle
+/// - Spots any resource (except Skull) and runs to collect it
+/// - Carries resource to nearest building while avoiding player
+/// - Deposits resource in building
+/// Per GDD: Peasant collects ANY resource (Meat, Wood, Gold) and carries it to nearest house.
+/// Two forces when carrying: attraction to building + fear of player.
 /// </summary>
 public class Peasant : EnemyBase
 {
     public enum PeasantState
     {
-        RunningToGold,
-        GrabbingGold,
-        Fleeing
+        Idle,               // Standing still
+        Wandering,          // Walking around home position
+        RunningToResource,  // Spotted resource, going to pick it up
+        CarryingResource,   // Has resource, heading to building while avoiding player
+        Combat              // In combat (doesn't collect resources)
     }
 
     [Header("Peasant Settings")]
-    [SerializeField] private float grabRadius = 0.5f;
-    [SerializeField] private float grabTime = 0.5f;
-    [SerializeField] private float fleeSpeed = 4f;
-    [SerializeField] private int goldCarried = 0;
-    [SerializeField] private int maxGoldCarry = 3;
+    [SerializeField] private float pickupRadius = 0.5f;
+    [SerializeField] private float resourceDetectionRadius = 8f;
+    [SerializeField] private float buildingDeliveryRadius = 1f;
+    [SerializeField] private float playerFearRadius = 5f;
+    [SerializeField] private float playerFearStrength = 0.7f;
 
-    [Header("Visual")]
-    [SerializeField] private GameObject goldCarryIndicator;
-    [SerializeField] private Color fleeingTint = new Color(0.8f, 0.8f, 1f);
+    [Header("Wander Behavior")]
+    [SerializeField] private float wanderRadius = 2.5f;
+    [SerializeField] private float idleMinTime = 3f;
+    [SerializeField] private float idleMaxTime = 8f;
+    [SerializeField] private float wanderSpeed = 1.5f;
+    [SerializeField] private float carrySpeed = 2f;
 
-    private PeasantState currentState = PeasantState.RunningToGold;
-    private Vector3 goldTargetPosition;
-    private bool hasGoldTarget = false;
-    private float grabTimer = 0f;
-    private Vector3 fleeDirection;
+    [Header("Carrying Animation Sprites")]
+    [Tooltip("Sprites for carrying meat (idle, run)")]
+    [SerializeField] private Sprite idleMeatSprite;
+    [SerializeField] private Sprite runMeatSprite;
+    [Tooltip("Sprites for carrying wood (idle, run)")]
+    [SerializeField] private Sprite idleWoodSprite;
+    [SerializeField] private Sprite runWoodSprite;
+    [Tooltip("Sprites for carrying gold (idle, run)")]
+    [SerializeField] private Sprite idleGoldSprite;
+    [SerializeField] private Sprite runGoldSprite;
+    [Tooltip("Normal sprites (no resource)")]
+    [SerializeField] private Sprite normalIdleSprite;
+    [SerializeField] private Sprite normalRunSprite;
+
+    [Header("Visual Feedback")]
+    [SerializeField] private Color carryingTint = new Color(1f, 1f, 0.8f);
+    [SerializeField] private GameObject resourceIndicator;
+
+    // State
+    private PeasantState currentState = PeasantState.Idle;
+    private Vector3 homePosition;
+    private Vector3 wanderTarget;
+    private float idleTimer;
+    private float currentIdleDuration;
+
+    // Resource carrying
+    private ResourcePickup.ResourceType carriedResourceType;
+    private int carriedAmount = 0;
+    private ResourcePickup targetResource;
+    private MonoBehaviour targetBuilding; // EnemyHouse, Watchtower, or Castle
+
+    // Animation
+    private bool isMoving;
+    private Sprite currentIdleSprite;
+    private Sprite currentRunSprite;
 
     protected override void Start()
     {
         base.Start();
-        currentState = PeasantState.RunningToGold;
+        homePosition = transform.position;
+        currentState = PeasantState.Idle;
+        StartNewIdlePeriod();
+
+        // Store original sprites
+        if (spriteRenderer != null && normalIdleSprite == null)
+        {
+            normalIdleSprite = spriteRenderer.sprite;
+        }
     }
 
     protected override void Update()
@@ -45,18 +92,30 @@ public class Peasant : EnemyBase
 
         switch (currentState)
         {
-            case PeasantState.RunningToGold:
-                UpdateRunningToGold();
+            case PeasantState.Idle:
+                UpdateIdle();
                 break;
-
-            case PeasantState.GrabbingGold:
-                UpdateGrabbingGold();
+            case PeasantState.Wandering:
+                // Movement in FixedUpdate
                 break;
-
-            case PeasantState.Fleeing:
-                // Fleeing handled in FixedUpdate
+            case PeasantState.RunningToResource:
+                UpdateRunningToResource();
+                break;
+            case PeasantState.CarryingResource:
+                UpdateCarryingResource();
+                break;
+            case PeasantState.Combat:
+                // Combat handled by base class
                 break;
         }
+
+        // Always check for nearby resources when idle/wandering
+        if (currentState == PeasantState.Idle || currentState == PeasantState.Wandering)
+        {
+            CheckForNearbyResources();
+        }
+
+        UpdateAnimation();
     }
 
     protected override void FixedUpdate()
@@ -65,258 +124,435 @@ public class Peasant : EnemyBase
 
         switch (currentState)
         {
-            case PeasantState.RunningToGold:
-                MoveTowardsGold();
+            case PeasantState.Wandering:
+                MoveTowardsTarget(wanderTarget, wanderSpeed);
+                CheckWanderArrival();
                 break;
-
-            case PeasantState.Fleeing:
-                Flee();
+            case PeasantState.RunningToResource:
+                if (targetResource != null)
+                {
+                    MoveTowardsTarget(targetResource.transform.position, moveSpeed);
+                }
+                break;
+            case PeasantState.CarryingResource:
+                MoveTowardsBuildingWithFear();
                 break;
         }
-
-        UpdateMoveAnimation();
     }
 
-    private void UpdateRunningToGold()
-    {
-        if (!hasGoldTarget)
-        {
-            // No gold target - look for nearby gold
-            FindNearestGold();
+    #region Idle & Wander
 
-            if (!hasGoldTarget)
+    private void UpdateIdle()
+    {
+        idleTimer += Time.deltaTime;
+        if (idleTimer >= currentIdleDuration)
+        {
+            StartWandering();
+        }
+    }
+
+    private void StartNewIdlePeriod()
+    {
+        currentState = PeasantState.Idle;
+        idleTimer = 0f;
+        currentIdleDuration = Random.Range(idleMinTime, idleMaxTime);
+        StopMovement();
+    }
+
+    private void StartWandering()
+    {
+        // Pick random point within wander radius from home
+        Vector2 randomOffset = Random.insideUnitCircle * wanderRadius;
+        wanderTarget = homePosition + new Vector3(randomOffset.x, randomOffset.y, 0);
+        currentState = PeasantState.Wandering;
+    }
+
+    private void CheckWanderArrival()
+    {
+        float dist = Vector2.Distance(transform.position, wanderTarget);
+        if (dist < 0.3f)
+        {
+            StartNewIdlePeriod();
+        }
+    }
+
+    #endregion
+
+    #region Resource Detection & Collection
+
+    private void CheckForNearbyResources()
+    {
+        // Find all resource pickups in range
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, resourceDetectionRadius);
+
+        ResourcePickup closest = null;
+        float closestDist = float.MaxValue;
+
+        foreach (var col in colliders)
+        {
+            ResourcePickup pickup = col.GetComponent<ResourcePickup>();
+            if (pickup == null) continue;
+
+            // Skip skulls - peasants don't collect souls
+            if (pickup.Type == ResourcePickup.ResourceType.Skull) continue;
+
+            float dist = Vector2.Distance(transform.position, pickup.transform.position);
+            if (dist < closestDist)
             {
-                // No gold found - start fleeing
-                StartFleeing();
+                closestDist = dist;
+                closest = pickup;
+            }
+        }
+
+        if (closest != null)
+        {
+            targetResource = closest;
+            currentState = PeasantState.RunningToResource;
+            Debug.Log($"[Peasant] Spotted {closest.Type} at {closest.transform.position}");
+        }
+    }
+
+    private void UpdateRunningToResource()
+    {
+        // Check if resource still exists
+        if (targetResource == null)
+        {
+            StartNewIdlePeriod();
+            return;
+        }
+
+        // Check if close enough to pick up
+        float dist = Vector2.Distance(transform.position, targetResource.transform.position);
+        if (dist <= pickupRadius)
+        {
+            PickupResource();
+        }
+    }
+
+    private void PickupResource()
+    {
+        if (targetResource == null) return;
+
+        // Store resource info
+        carriedResourceType = targetResource.Type;
+        carriedAmount = targetResource.Amount;
+
+        Debug.Log($"[Peasant] Picked up {carriedAmount} {carriedResourceType}");
+
+        // Destroy the pickup
+        Destroy(targetResource.gameObject);
+        targetResource = null;
+
+        // Update visuals for carrying
+        UpdateCarryingVisuals(true);
+
+        // Find nearest building to deliver to
+        FindTargetBuilding();
+
+        if (targetBuilding != null)
+        {
+            currentState = PeasantState.CarryingResource;
+        }
+        else
+        {
+            // No building found - drop resource and return to idle
+            DropCarriedResource();
+            StartNewIdlePeriod();
+        }
+    }
+
+    #endregion
+
+    #region Carrying & Delivery
+
+    private void FindTargetBuilding()
+    {
+        targetBuilding = null;
+        float closestDist = float.MaxValue;
+
+        // Check EnemyHouse
+        EnemyHouse[] houses = Object.FindObjectsByType<EnemyHouse>(FindObjectsSortMode.None);
+        foreach (var house in houses)
+        {
+            if (house.IsDestroyed) continue;
+            float dist = Vector2.Distance(transform.position, house.transform.position);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                targetBuilding = house;
+            }
+        }
+
+        // Check Watchtower
+        Watchtower[] towers = Object.FindObjectsByType<Watchtower>(FindObjectsSortMode.None);
+        foreach (var tower in towers)
+        {
+            if (tower.IsDestroyed) continue;
+            float dist = Vector2.Distance(transform.position, tower.transform.position);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                targetBuilding = tower;
+            }
+        }
+
+        // Check Castle
+        Castle[] castles = Object.FindObjectsByType<Castle>(FindObjectsSortMode.None);
+        foreach (var castle in castles)
+        {
+            if (castle.IsDestroyed) continue;
+            float dist = Vector2.Distance(transform.position, castle.transform.position);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                targetBuilding = castle;
+            }
+        }
+
+        if (targetBuilding != null)
+        {
+            Debug.Log($"[Peasant] Target building: {targetBuilding.name}");
+        }
+    }
+
+    private void UpdateCarryingResource()
+    {
+        if (targetBuilding == null)
+        {
+            // Building was destroyed - find new one or drop resource
+            FindTargetBuilding();
+            if (targetBuilding == null)
+            {
+                DropCarriedResource();
+                StartNewIdlePeriod();
                 return;
             }
         }
 
-        // Check if reached gold
-        float dist = Vector2.Distance(transform.position, goldTargetPosition);
-        if (dist <= grabRadius)
+        // Check if reached building
+        float dist = Vector2.Distance(transform.position, targetBuilding.transform.position);
+        if (dist <= buildingDeliveryRadius)
         {
-            StartGrabbingGold();
+            DeliverResource();
         }
     }
 
-    private void UpdateGrabbingGold()
+    /// <summary>
+    /// Movement with two forces: attraction to building + repulsion from player.
+    /// </summary>
+    private void MoveTowardsBuildingWithFear()
     {
-        grabTimer += Time.deltaTime;
+        if (targetBuilding == null || rb == null) return;
 
-        if (grabTimer >= grabTime)
+        Vector2 targetPos = targetBuilding.transform.position;
+        Vector2 toBuilding = ((Vector2)targetPos - (Vector2)transform.position).normalized;
+
+        // Fear force from player
+        Vector2 fearForce = Vector2.zero;
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
         {
-            // Try to grab gold
-            GrabNearbyGold();
-
-            // Check if carrying max gold or no more gold nearby
-            if (goldCarried >= maxGoldCarry || !FindNearestGold())
+            float playerDist = Vector2.Distance(transform.position, playerObj.transform.position);
+            if (playerDist < playerFearRadius)
             {
-                StartFleeing();
+                Vector2 fromPlayer = ((Vector2)transform.position - (Vector2)playerObj.transform.position).normalized;
+                // Stronger fear when closer
+                float fearIntensity = 1f - (playerDist / playerFearRadius);
+                fearForce = fromPlayer * fearIntensity * playerFearStrength;
             }
-            else
+        }
+
+        // Combine forces
+        Vector2 finalDirection = (toBuilding + fearForce).normalized;
+        rb.linearVelocity = finalDirection * carrySpeed;
+
+        // Face movement direction
+        if (spriteRenderer != null && finalDirection.x != 0)
+        {
+            spriteRenderer.flipX = finalDirection.x < 0;
+        }
+
+        isMoving = rb.linearVelocity.magnitude > 0.1f;
+    }
+
+    private void DeliverResource()
+    {
+        Debug.Log($"[Peasant] Delivered {carriedAmount} {carriedResourceType} to {targetBuilding.name}");
+
+        // Store resource in building
+        if (targetBuilding is EnemyHouse house)
+        {
+            house.StoreResource(carriedResourceType, carriedAmount);
+        }
+        else if (targetBuilding is Watchtower tower)
+        {
+            tower.StoreResource(carriedResourceType, carriedAmount);
+        }
+        else if (targetBuilding is Castle castle)
+        {
+            castle.StoreResource(carriedResourceType, carriedAmount);
+        }
+
+        // Clear carrying state
+        carriedAmount = 0;
+        targetBuilding = null;
+
+        // Update visuals
+        UpdateCarryingVisuals(false);
+
+        // Return to idle
+        StartNewIdlePeriod();
+    }
+
+    private void DropCarriedResource()
+    {
+        if (carriedAmount <= 0) return;
+
+        if (ResourceSpawner.Instance != null)
+        {
+            Vector3 dropPos = transform.position + (Vector3)Random.insideUnitCircle * 0.3f;
+
+            switch (carriedResourceType)
             {
-                // Keep grabbing
-                currentState = PeasantState.RunningToGold;
+                case ResourcePickup.ResourceType.Meat:
+                    ResourceSpawner.Instance.SpawnMeat(dropPos, carriedAmount);
+                    break;
+                case ResourcePickup.ResourceType.Wood:
+                    ResourceSpawner.Instance.SpawnWood(dropPos, carriedAmount);
+                    break;
+                case ResourcePickup.ResourceType.Gold:
+                    ResourceSpawner.Instance.SpawnGold(dropPos, carriedAmount);
+                    break;
+            }
+
+            Debug.Log($"[Peasant] Dropped {carriedAmount} {carriedResourceType}");
+        }
+
+        carriedAmount = 0;
+        UpdateCarryingVisuals(false);
+    }
+
+    #endregion
+
+    #region Visuals & Animation
+
+    private void UpdateCarryingVisuals(bool isCarrying)
+    {
+        if (isCarrying)
+        {
+            // Set sprites based on resource type
+            switch (carriedResourceType)
+            {
+                case ResourcePickup.ResourceType.Meat:
+                    currentIdleSprite = idleMeatSprite;
+                    currentRunSprite = runMeatSprite;
+                    break;
+                case ResourcePickup.ResourceType.Wood:
+                    currentIdleSprite = idleWoodSprite;
+                    currentRunSprite = runWoodSprite;
+                    break;
+                case ResourcePickup.ResourceType.Gold:
+                    currentIdleSprite = idleGoldSprite;
+                    currentRunSprite = runGoldSprite;
+                    break;
+            }
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = carryingTint;
+            }
+
+            if (resourceIndicator != null)
+            {
+                resourceIndicator.SetActive(true);
+            }
+        }
+        else
+        {
+            currentIdleSprite = normalIdleSprite;
+            currentRunSprite = normalRunSprite;
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.white;
+            }
+
+            if (resourceIndicator != null)
+            {
+                resourceIndicator.SetActive(false);
             }
         }
     }
 
-    private void MoveTowardsGold()
+    private void UpdateAnimation()
     {
-        if (!hasGoldTarget || rb == null) return;
+        if (rb != null)
+        {
+            isMoving = rb.linearVelocity.magnitude > 0.1f;
+        }
 
-        Vector2 direction = ((Vector2)goldTargetPosition - (Vector2)transform.position).normalized;
-        rb.linearVelocity = direction * moveSpeed;
+        // Update animator if present
+        if (animator != null)
+        {
+            animator.SetBool(AnimIsMoving, isMoving);
+        }
+
+        // Update sprite based on movement (if using sprite swap instead of animator)
+        if (spriteRenderer != null && currentIdleSprite != null && currentRunSprite != null)
+        {
+            spriteRenderer.sprite = isMoving ? currentRunSprite : currentIdleSprite;
+        }
+    }
+
+    private void MoveTowardsTarget(Vector3 target, float speed)
+    {
+        if (rb == null) return;
+
+        Vector2 direction = ((Vector2)target - (Vector2)transform.position).normalized;
+        rb.linearVelocity = direction * speed;
 
         // Face movement direction
         if (spriteRenderer != null && direction.x != 0)
         {
             spriteRenderer.flipX = direction.x < 0;
         }
+
+        isMoving = true;
     }
 
-    private void StartGrabbingGold()
+    private void StopMovement()
     {
-        currentState = PeasantState.GrabbingGold;
-        grabTimer = 0f;
-
-        // Stop moving
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
         }
-
-        // Play grab animation
-        if (animator != null)
-        {
-            animator.SetBool(AnimIsMoving, false);
-        }
-
-        Debug.Log("[Peasant] Grabbing gold...");
+        isMoving = false;
     }
 
-    private void GrabNearbyGold()
-    {
-        // Find gold pickups in grab radius
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, grabRadius);
+    #endregion
 
-        foreach (var col in colliders)
-        {
-            ResourcePickup pickup = col.GetComponent<ResourcePickup>();
-            if (pickup != null && pickup.Type == ResourcePickup.ResourceType.Gold)
-            {
-                goldCarried += pickup.Amount;
-                Destroy(pickup.gameObject);
-
-                Debug.Log($"[Peasant] Grabbed gold! Now carrying: {goldCarried}");
-
-                // Update visual indicator
-                UpdateGoldIndicator();
-
-                if (goldCarried >= maxGoldCarry)
-                {
-                    break;
-                }
-            }
-        }
-    }
-
-    private bool FindNearestGold()
-    {
-        ResourcePickup[] allGold = Object.FindObjectsByType<ResourcePickup>(FindObjectsSortMode.None);
-        float closestDist = float.MaxValue;
-        Vector3? closestPos = null;
-
-        foreach (var gold in allGold)
-        {
-            if (gold.Type != ResourcePickup.ResourceType.Gold) continue;
-
-            float dist = Vector2.Distance(transform.position, gold.transform.position);
-            if (dist < closestDist)
-            {
-                closestDist = dist;
-                closestPos = gold.transform.position;
-            }
-        }
-
-        if (closestPos.HasValue)
-        {
-            goldTargetPosition = closestPos.Value;
-            hasGoldTarget = true;
-            return true;
-        }
-
-        hasGoldTarget = false;
-        return false;
-    }
-
-    private void StartFleeing()
-    {
-        currentState = PeasantState.Fleeing;
-
-        // Calculate flee direction (away from player)
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            fleeDirection = (transform.position - player.transform.position).normalized;
-        }
-        else
-        {
-            // Random flee direction
-            fleeDirection = Random.insideUnitCircle.normalized;
-        }
-
-        // Visual feedback
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = fleeingTint;
-        }
-
-        Debug.Log($"[Peasant] Fleeing with {goldCarried} gold!");
-
-        // Destroy after some time if not caught
-        StartCoroutine(DestroyAfterFlee());
-    }
-
-    private void Flee()
-    {
-        if (rb == null) return;
-
-        rb.linearVelocity = (Vector2)fleeDirection * fleeSpeed;
-
-        // Face movement direction
-        if (spriteRenderer != null && fleeDirection.x != 0)
-        {
-            spriteRenderer.flipX = fleeDirection.x < 0;
-        }
-    }
-
-    private IEnumerator DestroyAfterFlee()
-    {
-        yield return new WaitForSeconds(10f);
-
-        if (!isDead)
-        {
-            // Escaped with the gold!
-            Debug.Log($"[Peasant] Escaped with {goldCarried} gold!");
-            Destroy(gameObject);
-        }
-    }
-
-    private void UpdateGoldIndicator()
-    {
-        if (goldCarryIndicator != null)
-        {
-            goldCarryIndicator.SetActive(goldCarried > 0);
-            // Could scale based on amount carried
-            goldCarryIndicator.transform.localScale = Vector3.one * (0.5f + goldCarried * 0.2f);
-        }
-    }
-
-    private void UpdateMoveAnimation()
-    {
-        if (animator != null && rb != null)
-        {
-            animator.SetBool(AnimIsMoving, rb.linearVelocity.magnitude > 0.1f);
-        }
-    }
-
-    /// <summary>
-    /// Set the position where gold is located.
-    /// </summary>
-    public void SetGoldTarget(Vector3 position)
-    {
-        goldTargetPosition = position;
-        hasGoldTarget = true;
-    }
+    #region Death & Combat
 
     protected override void Die()
     {
         isDead = true;
 
-        // Drop all carried gold
-        if (goldCarried > 0)
+        // If carrying a resource, fling it far away (beyond magnet radius of 9)
+        if (carriedAmount > 0)
         {
-            DropCarriedGold();
+            DropCarriedResourceFar();
         }
 
         // Stop movement
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
+        StopMovement();
 
-        // Play death animation
-        if (animator != null)
-        {
-            animator.SetTrigger(AnimDie);
-        }
+        // Spawn death dust effect — skull appears simultaneously
+        Vector3 deathPos = transform.position;
 
-        // Spawn skull (peasant is a human - 1 skull per enemy)
-        if (ResourceSpawner.Instance != null)
+        if (EffectManager.Instance != null)
         {
-            ResourceSpawner.Instance.SpawnSkull(transform.position);
+            EffectManager.Instance.SpawnDeathEffect(deathPos);
+            EffectManager.Instance.SpawnSkullPickup(deathPos);
         }
 
         // Notify event system
@@ -325,51 +561,89 @@ public class Peasant : EnemyBase
             EventManager.Instance.OnEnemyDied(gameObject);
         }
 
-        Debug.Log($"[Peasant] Killed! Dropped {goldCarried} gold");
-
-        Destroy(gameObject, 1f);
+        Debug.Log("[Peasant] Killed! Skull dropped with dust effect.");
+        Destroy(gameObject);
     }
 
-    private void DropCarriedGold()
+    /// <summary>
+    /// Drop carried resource far away (beyond magnet radius) so player sees it before auto-collecting.
+    /// </summary>
+    private void DropCarriedResourceFar()
     {
-        if (ResourceSpawner.Instance != null)
+        if (carriedAmount <= 0 || ResourceSpawner.Instance == null) return;
+
+        // Drop at random position 10-12 units away (beyond magnetRadius of 9)
+        Vector2 randomDir = Random.insideUnitCircle.normalized;
+        float dropDistance = 10f + Random.Range(0f, 2f);
+        Vector3 dropPos = transform.position + new Vector3(randomDir.x, randomDir.y, 0) * dropDistance;
+
+        switch (carriedResourceType)
         {
-            for (int i = 0; i < goldCarried; i++)
-            {
-                Vector2 offset = Random.insideUnitCircle * 0.5f;
-                Vector3 spawnPos = transform.position + new Vector3(offset.x, offset.y, 0);
-                ResourceSpawner.Instance.SpawnGold(spawnPos, 1);
-            }
+            case ResourcePickup.ResourceType.Meat:
+                ResourceSpawner.Instance.SpawnMeat(dropPos, carriedAmount);
+                break;
+            case ResourcePickup.ResourceType.Wood:
+                ResourceSpawner.Instance.SpawnWood(dropPos, carriedAmount);
+                break;
+            case ResourcePickup.ResourceType.Gold:
+                ResourceSpawner.Instance.SpawnGold(dropPos, carriedAmount);
+                break;
         }
+
+        Debug.Log($"[Peasant] Flung {carriedAmount} {carriedResourceType} far away on death");
+        carriedAmount = 0;
+        UpdateCarryingVisuals(false);
     }
 
-    // Peasants don't attack
+    // Peasants don't attack - they run away
     protected override void PerformAttack() { }
     public override void DealDamage() { }
 
-    // Properties
-    public int GoldCarried => goldCarried;
+    #endregion
+
+    #region Properties
+
     public PeasantState State => currentState;
+    public int CarriedAmount => carriedAmount;
+    public ResourcePickup.ResourceType CarriedType => carriedResourceType;
+    public bool IsCarrying => carriedAmount > 0;
+
+    #endregion
+
+    #region Debug
 
     private void OnDrawGizmosSelected()
     {
-        // Grab radius
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, grabRadius);
+        // Home position
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(Application.isPlaying ? homePosition : transform.position, wanderRadius);
 
-        // Gold target
-        if (hasGoldTarget)
+        // Resource detection radius
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, resourceDetectionRadius);
+
+        // Pickup radius
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, pickupRadius);
+
+        // Player fear radius
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, playerFearRadius);
+
+        // Target resource
+        if (targetResource != null)
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, goldTargetPosition);
-            Gizmos.DrawWireSphere(goldTargetPosition, 0.3f);
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(transform.position, targetResource.transform.position);
         }
 
-        // Flee direction
-        if (currentState == PeasantState.Fleeing)
+        // Target building
+        if (targetBuilding != null)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(transform.position, fleeDirection * 2f);
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawLine(transform.position, targetBuilding.transform.position);
         }
     }
+
+    #endregion
 }

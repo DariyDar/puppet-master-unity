@@ -38,7 +38,7 @@ public class LevelEditor : EditorWindow
     private const float UNIT_SCALE = 4f;
     private const float PLAYER_SCALE = 1f;
     private const float BUILDING_SCALE = 1f;  // Changed from 2 to 1
-    private const float RESOURCE_SCALE = 0.33f;
+    private const float RESOURCE_SCALE = 1f;
     private const float DECORATION_SCALE = 1f;
     private const float TREE_SCALE = 1f;
     private const float PIXEL_ART_PROP_SCALE = 5f;  // Scale for Pixel Art Top Down props
@@ -46,9 +46,10 @@ public class LevelEditor : EditorWindow
     // Additional paths for decorations
     private const string TREES_PATH = "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees";
 
-    // Collider settings (spider sprite ~1.9 units at PPU=100)
-    private const float PLAYER_COLLIDER_RADIUS = 2.5f;
-    private const float ENEMY_COLLIDER_RADIUS = 0.5f;
+    // Collider settings
+    private const float PLAYER_COLLIDER_RADIUS = 2.2f;  // Spider body - large enough to prevent walking through enemies
+    // Enemy collider is in LOCAL space - will be multiplied by UNIT_SCALE (4x)
+    private const float ENEMY_COLLIDER_RADIUS = 0.4f;   // Enemy units (archer etc.)
 
     // Tab state
     private int selectedTab = 0;
@@ -1865,6 +1866,55 @@ public class LevelEditor : EditorWindow
 
     private void DrawToolsTab()
     {
+        // === UI SECTION ===
+        GUILayout.Label("UI Setup", EditorStyles.boldLabel);
+        EditorGUILayout.HelpBox("Create game UI with proper event bindings.", MessageType.Info);
+
+        GUI.backgroundColor = Color.cyan;
+        if (GUILayout.Button("CREATE GAME UI", GUILayout.Height(35)))
+        {
+            CreateGameUI();
+        }
+        GUI.backgroundColor = Color.white;
+
+        EditorGUILayout.BeginHorizontal();
+        if (GUILayout.Button("Create TopHUD Only"))
+        {
+            CreateTopHUDOnly();
+        }
+        if (GUILayout.Button("Create BottomHUD Only"))
+        {
+            CreateBottomHUDOnly();
+        }
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(10);
+
+        // === ANIMATIONS SECTION ===
+        GUILayout.Label("Animations", EditorStyles.boldLabel);
+        EditorGUILayout.HelpBox("Fix enemy animations if they appear static.", MessageType.Info);
+
+        GUI.backgroundColor = Color.green;
+        if (GUILayout.Button("FIX ALL ENEMY ANIMATIONS", GUILayout.Height(30)))
+        {
+            FixAllEnemyAnimations();
+        }
+        GUI.backgroundColor = Color.white;
+
+        EditorGUILayout.BeginHorizontal();
+        if (GUILayout.Button("Fix Selected Enemy"))
+        {
+            FixSelectedEnemyAnimation();
+        }
+        if (GUILayout.Button("Create All AnimControllers"))
+        {
+            CreateAllEnemyAnimatorControllers();
+        }
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(10);
+
+        // === SPRITE IMPORT SECTION ===
         GUILayout.Label("Sprite Import", EditorStyles.boldLabel);
         EditorGUILayout.HelpBox("Fix sprite imports if objects appear as blue squares or animations don't work.", MessageType.Info);
 
@@ -1939,13 +1989,650 @@ public class LevelEditor : EditorWindow
         EditorGUILayout.Space(10);
         GUILayout.Label("Quick Setup", EditorStyles.boldLabel);
 
-        GUI.backgroundColor = Color.green;
-        if (GUILayout.Button("CREATE COMPLETE TEST SCENE", GUILayout.Height(35)))
-        {
-            CreateCompleteTestScene();
-        }
-        GUI.backgroundColor = Color.white;
+        // CREATE TEST SCENE button removed per user request
+        // Use individual placement tools in each tab instead
     }
+
+    #region UI Creation
+
+    /// <summary>
+    /// Creates complete game UI with TopHUD and BottomHUD.
+    /// </summary>
+    private void CreateGameUI()
+    {
+        // Check if canvas exists
+        Canvas existingCanvas = Object.FindFirstObjectByType<Canvas>();
+        if (existingCanvas != null)
+        {
+            if (!EditorUtility.DisplayDialog("UI Exists", "Canvas already exists. Delete and recreate?", "Yes", "No"))
+                return;
+            DestroyImmediate(existingCanvas.gameObject);
+        }
+
+        // Create UIAutoBuilder object to build UI
+        GameObject uiBuilder = new GameObject("UIAutoBuilder");
+        UIAutoBuilder builder = uiBuilder.AddComponent<UIAutoBuilder>();
+        builder.buildOnStart = false;
+        builder.destroyAfterBuild = true;
+        builder.BuildUI();
+
+        Debug.Log("[LevelEditor] Game UI created successfully!");
+        EditorUtility.DisplayDialog("UI Created", "Game UI created:\n- TopHUD (Resources, Cargo)\n- BottomLeftHUD (HP, XP, Level, Upgrades)\n\nUI will auto-update from GameManager events.", "OK");
+    }
+
+    private void CreateTopHUDOnly()
+    {
+        Canvas canvas = Object.FindFirstObjectByType<Canvas>();
+        if (canvas == null)
+        {
+            EditorUtility.DisplayDialog("Error", "Create full UI first or add Canvas manually.", "OK");
+            return;
+        }
+        Debug.Log("[LevelEditor] TopHUD is created as part of full UI. Use 'CREATE GAME UI' button.");
+    }
+
+    private void CreateBottomHUDOnly()
+    {
+        Canvas canvas = Object.FindFirstObjectByType<Canvas>();
+        if (canvas == null)
+        {
+            EditorUtility.DisplayDialog("Error", "Create full UI first or add Canvas manually.", "OK");
+            return;
+        }
+        Debug.Log("[LevelEditor] BottomHUD is created as part of full UI. Use 'CREATE GAME UI' button.");
+    }
+
+    #endregion
+
+    #region Animation Fixes
+
+    /// <summary>
+    /// Fix animations for ALL enemies in scene.
+    /// </summary>
+    private void FixAllEnemyAnimations()
+    {
+        // First create all animator controllers
+        CreateAllEnemyAnimatorControllers();
+
+        // Find all HumanEnemy in scene
+        HumanEnemy[] enemies = Object.FindObjectsByType<HumanEnemy>(FindObjectsSortMode.None);
+        int fixedCount = 0;
+
+        foreach (var enemy in enemies)
+        {
+            if (FixEnemyAnimatorRuntime(enemy.gameObject))
+                fixedCount++;
+        }
+
+        Debug.Log($"[LevelEditor] Fixed animations for {fixedCount} enemies");
+        EditorUtility.DisplayDialog("Animations Fixed", $"Fixed {fixedCount} enemy animations.\n\nEnemies now have:\n- Idle animation\n- Walk animation\n- Attack animation\n- Die animation", "OK");
+    }
+
+    /// <summary>
+    /// Fix animation for selected enemy.
+    /// </summary>
+    private void FixSelectedEnemyAnimation()
+    {
+        GameObject selected = Selection.activeGameObject;
+        if (selected == null)
+        {
+            EditorUtility.DisplayDialog("Error", "Select an enemy first.", "OK");
+            return;
+        }
+
+        HumanEnemy enemy = selected.GetComponent<HumanEnemy>();
+        if (enemy == null)
+        {
+            EditorUtility.DisplayDialog("Error", "Selected object is not an enemy.", "OK");
+            return;
+        }
+
+        if (FixEnemyAnimatorRuntime(selected))
+        {
+            EditorUtility.DisplayDialog("Success", $"Fixed animation for {selected.name}", "OK");
+        }
+    }
+
+    /// <summary>
+    /// Create AnimatorControllers for all enemy types.
+    /// </summary>
+    private void CreateAllEnemyAnimatorControllers()
+    {
+        string animFolder = "Assets/Animations/Enemies";
+        if (!AssetDatabase.IsValidFolder(animFolder))
+        {
+            if (!AssetDatabase.IsValidFolder("Assets/Animations"))
+                AssetDatabase.CreateFolder("Assets", "Animations");
+            AssetDatabase.CreateFolder("Assets/Animations", "Enemies");
+        }
+
+        string[] enemyTypes = { "Pawn", "Archer", "Warrior", "Lancer", "Monk" };
+
+        foreach (string enemyType in enemyTypes)
+        {
+            CreateEnemyAnimatorController(enemyType, animFolder);
+        }
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+
+        Debug.Log($"[LevelEditor] Created AnimatorControllers for {enemyTypes.Length} enemy types");
+    }
+
+    /// <summary>
+    /// Create AnimatorController for a specific enemy type.
+    /// </summary>
+    private void CreateEnemyAnimatorController(string enemyType, string folder)
+    {
+        string controllerPath = $"{folder}/{enemyType}_Controller.controller";
+
+        // Check if already exists
+        AnimatorController existing = AssetDatabase.LoadAssetAtPath<AnimatorController>(controllerPath);
+        if (existing != null)
+        {
+            Debug.Log($"[LevelEditor] AnimatorController already exists: {controllerPath}");
+            return;
+        }
+
+        // Create new controller
+        AnimatorController controller = AnimatorController.CreateAnimatorControllerAtPath(controllerPath);
+
+        // Add parameters
+        controller.AddParameter("IsMoving", AnimatorControllerParameterType.Bool);
+        controller.AddParameter("Attack", AnimatorControllerParameterType.Trigger);
+        controller.AddParameter("Die", AnimatorControllerParameterType.Trigger);
+
+        // Get the root state machine
+        AnimatorStateMachine rootStateMachine = controller.layers[0].stateMachine;
+
+        // Create states
+        AnimatorState idleState = rootStateMachine.AddState("Idle");
+        AnimatorState walkState = rootStateMachine.AddState("Walk");
+        AnimatorState attackState = rootStateMachine.AddState("Attack");
+        AnimatorState dieState = rootStateMachine.AddState("Die");
+
+        // Set default state
+        rootStateMachine.defaultState = idleState;
+
+        // Create animations
+        string spritesPath = $"{SPRITES_ROOT}/{BLUE_UNITS}/{enemyType}";
+
+        AnimationClip idleClip = CreateAnimationClipFromSprites(enemyType, "Idle", spritesPath, 8f);
+        AnimationClip walkClip = CreateAnimationClipFromSprites(enemyType, "Run", spritesPath, 10f);
+        AnimationClip attackClip = CreateAnimationClipFromSprites(enemyType, "Attack", spritesPath, 12f);
+        AnimationClip dieClip = CreateAnimationClipFromSprites(enemyType, "Die", spritesPath, 8f);
+
+        // Assign clips to states
+        if (idleClip != null) idleState.motion = idleClip;
+        if (walkClip != null) walkState.motion = walkClip;
+        if (attackClip != null) attackState.motion = attackClip;
+        if (dieClip != null) dieState.motion = dieClip;
+
+        // Create transitions
+        // Idle <-> Walk
+        AnimatorStateTransition idleToWalk = idleState.AddTransition(walkState);
+        idleToWalk.AddCondition(AnimatorConditionMode.If, 0, "IsMoving");
+        idleToWalk.duration = 0.1f;
+        idleToWalk.hasExitTime = false;
+
+        AnimatorStateTransition walkToIdle = walkState.AddTransition(idleState);
+        walkToIdle.AddCondition(AnimatorConditionMode.IfNot, 0, "IsMoving");
+        walkToIdle.duration = 0.1f;
+        walkToIdle.hasExitTime = false;
+
+        // Any -> Attack
+        AnimatorStateTransition anyToAttack = rootStateMachine.AddAnyStateTransition(attackState);
+        anyToAttack.AddCondition(AnimatorConditionMode.If, 0, "Attack");
+        anyToAttack.duration = 0f;
+        anyToAttack.hasExitTime = false;
+
+        // Attack -> Idle
+        AnimatorStateTransition attackToIdle = attackState.AddTransition(idleState);
+        attackToIdle.hasExitTime = true;
+        attackToIdle.exitTime = 0.9f;
+        attackToIdle.duration = 0.1f;
+
+        // Any -> Die
+        AnimatorStateTransition anyToDie = rootStateMachine.AddAnyStateTransition(dieState);
+        anyToDie.AddCondition(AnimatorConditionMode.If, 0, "Die");
+        anyToDie.duration = 0f;
+        anyToDie.hasExitTime = false;
+
+        EditorUtility.SetDirty(controller);
+        Debug.Log($"[LevelEditor] Created AnimatorController: {controllerPath}");
+    }
+
+    /// <summary>
+    /// Create animation clip from sprite sheet.
+    /// </summary>
+    private AnimationClip CreateAnimationClipFromSprites(string enemyType, string animName, string spritesPath, float frameRate)
+    {
+        string clipPath = $"Assets/Animations/Enemies/{enemyType}_{animName}.anim";
+
+        // Check if exists
+        AnimationClip existing = AssetDatabase.LoadAssetAtPath<AnimationClip>(clipPath);
+        if (existing != null)
+            return existing;
+
+        // Find sprite file - try different naming conventions
+        string[] possibleNames = {
+            $"{enemyType}_{animName}.png",
+            $"{animName}.png",
+            $"{enemyType}_{animName} 1.png"  // Some have space+number
+        };
+
+        string spritePath = null;
+        foreach (string name in possibleNames)
+        {
+            string testPath = $"{spritesPath}/{name}";
+            if (AssetDatabase.LoadAssetAtPath<Texture2D>(testPath) != null)
+            {
+                spritePath = testPath;
+                break;
+            }
+        }
+
+        if (spritePath == null)
+        {
+            Debug.LogWarning($"[LevelEditor] Sprite not found for {enemyType} {animName}");
+            return null;
+        }
+
+        // Load sprites
+        Object[] assets = AssetDatabase.LoadAllAssetsAtPath(spritePath);
+        List<Sprite> sprites = new List<Sprite>();
+        foreach (var asset in assets)
+        {
+            if (asset is Sprite sprite)
+                sprites.Add(sprite);
+        }
+
+        if (sprites.Count == 0)
+        {
+            Debug.LogWarning($"[LevelEditor] No sprites found in {spritePath}. Need to slice the sprite sheet first.");
+            return null;
+        }
+
+        // Sort sprites by name
+        sprites.Sort((a, b) => NaturalCompare(a.name, b.name));
+
+        // Create animation clip
+        AnimationClip clip = new AnimationClip();
+        clip.frameRate = frameRate;
+
+        // Create keyframes
+        ObjectReferenceKeyframe[] keyframes = new ObjectReferenceKeyframe[sprites.Count];
+        for (int i = 0; i < sprites.Count; i++)
+        {
+            keyframes[i] = new ObjectReferenceKeyframe();
+            keyframes[i].time = i / frameRate;
+            keyframes[i].value = sprites[i];
+        }
+
+        // Create binding
+        EditorCurveBinding binding = new EditorCurveBinding();
+        binding.type = typeof(SpriteRenderer);
+        binding.path = "";
+        binding.propertyName = "m_Sprite";
+
+        AnimationUtility.SetObjectReferenceCurve(clip, binding, keyframes);
+
+        // Set loop for idle and walk
+        AnimationClipSettings settings = AnimationUtility.GetAnimationClipSettings(clip);
+        settings.loopTime = (animName == "Idle" || animName == "Run" || animName == "Walk");
+        AnimationUtility.SetAnimationClipSettings(clip, settings);
+
+        AssetDatabase.CreateAsset(clip, clipPath);
+        Debug.Log($"[LevelEditor] Created animation: {clipPath} ({sprites.Count} frames)");
+
+        return clip;
+    }
+
+    /// <summary>
+    /// Fix animator for a specific enemy at runtime.
+    /// </summary>
+    private bool FixEnemyAnimatorRuntime(GameObject enemy)
+    {
+        Animator animator = enemy.GetComponent<Animator>();
+        if (animator == null)
+        {
+            animator = enemy.AddComponent<Animator>();
+        }
+
+        // If animator already has a controller, skip
+        if (animator.runtimeAnimatorController != null)
+        {
+            Debug.Log($"[LevelEditor] {enemy.name} already has animator controller assigned");
+            return false;
+        }
+
+        // Determine enemy type from name or config
+        string enemyType = DetermineEnemyType(enemy);
+        if (string.IsNullOrEmpty(enemyType))
+        {
+            Debug.LogWarning($"[LevelEditor] Could not determine enemy type for {enemy.name}");
+            return false;
+        }
+
+        // Try multiple controller paths - primary controllers with embedded animations FIRST
+        string[] controllerPaths = {
+            $"Assets/Animations/Enemy_{enemyType}_Controller.controller",          // Primary with embedded anims
+            $"Assets/Animations/Enemy_{enemyType}Unarmed_Controller.controller",   // Pawn variants
+            $"Assets/Animations/Enemy_{enemyType}Axe_Controller.controller",       // Pawn variants
+            $"Assets/Animations/Enemies/{enemyType}_Controller.controller"         // Fallback (may have null motions)
+        };
+
+        AnimatorController controller = null;
+        string foundPath = null;
+
+        foreach (string path in controllerPaths)
+        {
+            controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(path);
+            if (controller != null)
+            {
+                foundPath = path;
+                break;
+            }
+        }
+
+        if (controller == null)
+        {
+            Debug.LogWarning($"[LevelEditor] AnimatorController not found for {enemyType}. Tried: {string.Join(", ", controllerPaths)}");
+            return false;
+        }
+
+        animator.runtimeAnimatorController = controller;
+        EditorUtility.SetDirty(enemy);
+
+        Debug.Log($"[LevelEditor] Assigned {foundPath} to {enemy.name}");
+        return true;
+    }
+
+    /// <summary>
+    /// Determine enemy type from GameObject name or EnemyConfig.
+    /// Returns type name for controller lookup (e.g., "Archer", "PawnUnarmed", "PawnAxe").
+    /// </summary>
+    private string DetermineEnemyType(GameObject enemy)
+    {
+        string name = enemy.name.ToLower();
+
+        // Check for specific types first
+        if (name.Contains("archer")) return "Archer";
+        if (name.Contains("warrior") || name.Contains("knight")) return "Warrior";
+        if (name.Contains("lancer")) return "Lancer";
+        if (name.Contains("monk")) return "Monk";
+
+        // Pawn variants - need to distinguish between Axe and Unarmed
+        if (name.Contains("pawnaxe") || name.Contains("pawn_axe") || name.Contains("pawn axe"))
+            return "PawnAxe";
+        if (name.Contains("pawnunarmed") || name.Contains("pawn_unarmed") || name.Contains("pawn unarmed"))
+            return "PawnUnarmed";
+        if (name.Contains("miner"))
+            return "PawnAxe"; // Miners use axe animation
+
+        // Try to get from HumanEnemy config for more precise determination
+        HumanEnemy humanEnemy = enemy.GetComponent<HumanEnemy>();
+        if (humanEnemy != null)
+        {
+            SerializedObject so = new SerializedObject(humanEnemy);
+            SerializedProperty configProp = so.FindProperty("config");
+            if (configProp != null && configProp.objectReferenceValue != null)
+            {
+                EnemyConfig config = configProp.objectReferenceValue as EnemyConfig;
+                if (config != null)
+                {
+                    // Use enemyType enum for precise matching
+                    switch (config.enemyType)
+                    {
+                        case EnemyType.Archer: return "Archer";
+                        case EnemyType.Warrior: return "Warrior";
+                        case EnemyType.Lancer: return "Lancer";
+                        case EnemyType.Monk: return "Monk";
+                        case EnemyType.PawnAxe: return "PawnAxe";
+                        case EnemyType.PawnMiner:
+                        case EnemyType.Miner: return "PawnAxe";
+                        case EnemyType.PawnUnarmed:
+                        case EnemyType.PeasantUnarmed:
+                        case EnemyType.Peasant:
+                        default: return "PawnUnarmed";
+                    }
+                }
+            }
+        }
+
+        // Default to generic Pawn (which will try PawnUnarmed first)
+        if (name.Contains("pawn") || name.Contains("peasant"))
+            return "PawnUnarmed";
+
+        return "PawnUnarmed"; // Default
+    }
+
+    #endregion
+
+    #region Tower Projectile
+
+    /// <summary>
+    /// Create and assign projectile prefab for tower.
+    /// </summary>
+    private static void CreateTowerProjectile(GameObject tower, Watchtower watchtower)
+    {
+        // Check if projectile prefab already exists - use ArrowProjectile for parabolic arc
+        string prefabPath = "Assets/Prefabs/TowerArrow.prefab";
+        GameObject existingPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+
+        if (existingPrefab == null)
+        {
+            // Create prefab folder if needed
+            if (!AssetDatabase.IsValidFolder("Assets/Prefabs"))
+            {
+                AssetDatabase.CreateFolder("Assets", "Prefabs");
+            }
+
+            // Load Arrow.png from Tiny Swords - same sprite for tower arrows
+            string arrowSpritePath = "Assets/Sprites/Tiny Swords/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Arrow/Arrow.png";
+            Object[] allAssets = AssetDatabase.LoadAllAssetsAtPath(arrowSpritePath);
+            Sprite fullArrow = null;
+            Sprite brokenArrow = null;
+
+            List<Sprite> sprites = new List<Sprite>();
+            foreach (Object asset in allAssets)
+            {
+                if (asset is Sprite s)
+                    sprites.Add(s);
+            }
+
+            if (sprites.Count >= 2)
+            {
+                sprites.Sort((a, b) => string.Compare(a.name, b.name));
+                fullArrow = sprites[0];
+                brokenArrow = sprites[1];
+            }
+            else if (sprites.Count == 1)
+            {
+                fullArrow = sprites[0];
+            }
+            else
+            {
+                fullArrow = AssetDatabase.LoadAssetAtPath<Sprite>(arrowSpritePath);
+            }
+
+            // Create tower arrow projectile object
+            GameObject projectile = new GameObject("TowerArrow");
+            projectile.transform.localScale = new Vector3(0.35f, 0.35f, 1f);
+
+            // Sprite
+            SpriteRenderer sr = projectile.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 100;
+            sr.color = Color.white;
+            if (fullArrow != null)
+            {
+                sr.sprite = fullArrow;
+            }
+
+            // Physics - kinematic since ArrowProjectile controls position manually
+            Rigidbody2D rb = projectile.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+
+            CircleCollider2D col = projectile.AddComponent<CircleCollider2D>();
+            col.radius = 0.2f;
+            col.isTrigger = true;
+
+            // Use ArrowProjectile for parabolic flight with ground stick and dissolve
+            ArrowProjectile arrowProj = projectile.AddComponent<ArrowProjectile>();
+
+            // Assign full and broken arrow sprites
+            SerializedObject arrowSO = new SerializedObject(arrowProj);
+            if (fullArrow != null)
+            {
+                SerializedProperty tipProp = arrowSO.FindProperty("arrowWithTip");
+                if (tipProp != null)
+                    tipProp.objectReferenceValue = fullArrow;
+            }
+            if (brokenArrow != null)
+            {
+                SerializedProperty noTipProp = arrowSO.FindProperty("arrowWithoutTip");
+                if (noTipProp != null)
+                    noTipProp.objectReferenceValue = brokenArrow;
+            }
+            arrowSO.ApplyModifiedProperties();
+
+            // Save as prefab
+            existingPrefab = PrefabUtility.SaveAsPrefabAsset(projectile, prefabPath);
+            DestroyImmediate(projectile);
+
+            Debug.Log("[LevelEditor] Created TowerArrow prefab with Tiny Swords Arrow sprites");
+        }
+
+        // Assign to tower
+        SerializedObject so = new SerializedObject(watchtower);
+        SerializedProperty projectileProp = so.FindProperty("projectilePrefab");
+        if (projectileProp != null)
+        {
+            projectileProp.objectReferenceValue = existingPrefab;
+            so.ApplyModifiedProperties();
+        }
+
+        // Create projectile spawn point
+        GameObject spawnPoint = new GameObject("ProjectileSpawnPoint");
+        spawnPoint.transform.SetParent(tower.transform);
+        spawnPoint.transform.localPosition = new Vector3(0, 1.5f, 0); // Top of tower
+
+        SerializedProperty spawnPointProp = so.FindProperty("projectileSpawnPoint");
+        if (spawnPointProp != null)
+        {
+            spawnPointProp.objectReferenceValue = spawnPoint.transform;
+            so.ApplyModifiedProperties();
+        }
+
+        Debug.Log($"[LevelEditor] Tower arrow projectile setup complete");
+    }
+
+    /// <summary>
+    /// Get or create projectile prefab for Archer.
+    /// </summary>
+    private static GameObject GetOrCreateArcherProjectilePrefab()
+    {
+        string prefabPath = "Assets/Prefabs/ArcherArrow.prefab";
+        GameObject existingPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+
+        if (existingPrefab != null)
+        {
+            return existingPrefab;
+        }
+
+        // Create prefab folder if needed
+        if (!AssetDatabase.IsValidFolder("Assets/Prefabs"))
+        {
+            AssetDatabase.CreateFolder("Assets", "Prefabs");
+        }
+
+        // Load Arrow.png from Tiny Swords - contains full arrow (top) + broken arrow (bottom)
+        string arrowSpritePath = "Assets/Sprites/Tiny Swords/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Arrow/Arrow.png";
+
+        // Load all sub-sprites from the sprite sheet
+        Object[] allAssets = AssetDatabase.LoadAllAssetsAtPath(arrowSpritePath);
+        Sprite fullArrow = null;
+        Sprite brokenArrow = null;
+
+        // Collect all Sprite assets
+        List<Sprite> sprites = new List<Sprite>();
+        foreach (Object asset in allAssets)
+        {
+            if (asset is Sprite s)
+                sprites.Add(s);
+        }
+
+        if (sprites.Count >= 2)
+        {
+            // Sort by name to get consistent order - full arrow first, broken second
+            sprites.Sort((a, b) => string.Compare(a.name, b.name));
+            fullArrow = sprites[0];
+            brokenArrow = sprites[1];
+            Debug.Log($"[LevelEditor] Loaded arrow sprites: {fullArrow.name}, {brokenArrow.name}");
+        }
+        else if (sprites.Count == 1)
+        {
+            fullArrow = sprites[0];
+            Debug.Log($"[LevelEditor] Loaded single arrow sprite: {fullArrow.name}");
+        }
+        else
+        {
+            // Fallback - load as single sprite
+            fullArrow = AssetDatabase.LoadAssetAtPath<Sprite>(arrowSpritePath);
+            Debug.Log($"[LevelEditor] Loaded arrow as single sprite");
+        }
+
+        // Create arrow projectile object
+        GameObject arrow = new GameObject("ArcherArrow");
+        arrow.transform.localScale = new Vector3(0.35f, 0.35f, 1f);
+
+        // Sprite
+        SpriteRenderer sr = arrow.AddComponent<SpriteRenderer>();
+        sr.sortingOrder = 100;
+        sr.color = Color.white;  // Use actual sprite colors
+        if (fullArrow != null)
+        {
+            sr.sprite = fullArrow;
+        }
+
+        // Physics - kinematic since ArrowProjectile controls position manually
+        Rigidbody2D rb = arrow.AddComponent<Rigidbody2D>();
+        rb.gravityScale = 0f;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+
+        CircleCollider2D col = arrow.AddComponent<CircleCollider2D>();
+        col.radius = 0.3f;
+        col.isTrigger = true;
+
+        // Use ArrowProjectile for parabolic flight with ground stick and dissolve
+        ArrowProjectile arrowProj = arrow.AddComponent<ArrowProjectile>();
+
+        // Assign full and broken arrow sprites to ArrowProjectile
+        SerializedObject arrowSO = new SerializedObject(arrowProj);
+        if (fullArrow != null)
+        {
+            SerializedProperty tipProp = arrowSO.FindProperty("arrowWithTip");
+            if (tipProp != null)
+                tipProp.objectReferenceValue = fullArrow;
+        }
+        if (brokenArrow != null)
+        {
+            SerializedProperty noTipProp = arrowSO.FindProperty("arrowWithoutTip");
+            if (noTipProp != null)
+                noTipProp.objectReferenceValue = brokenArrow;
+        }
+        arrowSO.ApplyModifiedProperties();
+
+        // Save as prefab
+        existingPrefab = PrefabUtility.SaveAsPrefabAsset(arrow, prefabPath);
+        DestroyImmediate(arrow);
+
+        Debug.Log("[LevelEditor] Created ArcherArrow prefab with Tiny Swords Arrow sprites");
+        return existingPrefab;
+    }
+
+    #endregion
 
     /// <summary>
     /// Fixes sprite imports for all Blue Units (enemies).
@@ -2202,16 +2889,38 @@ public class LevelEditor : EditorWindow
         // Debug visualizer
         enemy.AddComponent<ColliderVisualizer>();
 
-        // Enemy component with config
-        HumanEnemy humanEnemy = enemy.AddComponent<HumanEnemy>();
-        EnemyConfig config = CreateEnemyConfig(type);
-
-        SerializedObject so = new SerializedObject(humanEnemy);
-        SerializedProperty configProp = so.FindProperty("config");
-        if (configProp != null)
+        // Use Peasant class for PawnUnarmed and Peasant types (they collect resources)
+        // Use HumanEnemy for all other enemy types
+        if (type == EnemyType.PawnUnarmed || type == EnemyType.Peasant)
         {
-            configProp.objectReferenceValue = config;
-            so.ApplyModifiedProperties();
+            // Peasant class handles resource collection and Coward behavior
+            enemy.AddComponent<Peasant>();
+            // Note: Peasant inherits from EnemyBase and doesn't use EnemyConfig
+            // It has its own built-in stats for resource collection behavior
+        }
+        else
+        {
+            // Regular enemy with config
+            HumanEnemy humanEnemy = enemy.AddComponent<HumanEnemy>();
+            EnemyConfig config = CreateEnemyConfig(type);
+
+            // For ranged enemies (Archer), setup projectile prefab
+            if (type == EnemyType.Archer)
+            {
+                GameObject projPrefab = GetOrCreateArcherProjectilePrefab();
+                if (projPrefab != null)
+                {
+                    config.projectilePrefab = projPrefab;
+                }
+            }
+
+            SerializedObject so = new SerializedObject(humanEnemy);
+            SerializedProperty configProp = so.FindProperty("config");
+            if (configProp != null)
+            {
+                configProp.objectReferenceValue = config;
+                so.ApplyModifiedProperties();
+            }
         }
 
         // Animator
@@ -2248,7 +2957,21 @@ public class LevelEditor : EditorWindow
 
         if (isEnemy)
         {
-            building.AddComponent<EnemyHouse>();
+            // Add appropriate component based on building type
+            if (buildingType == "Tower")
+            {
+                Watchtower tower = building.AddComponent<Watchtower>();
+                // Create projectile prefab for tower
+                CreateTowerProjectile(building, tower);
+            }
+            else if (buildingType == "Castle")
+            {
+                building.AddComponent<Castle>();
+            }
+            else
+            {
+                building.AddComponent<EnemyHouse>();
+            }
         }
 
         Selection.activeGameObject = building;
@@ -2311,7 +3034,7 @@ public class LevelEditor : EditorWindow
         ResourcePickup rp = pickup.AddComponent<ResourcePickup>();
         SerializedObject so = new SerializedObject(rp);
         so.FindProperty("type").enumValueIndex = (int)type;
-        so.FindProperty("amount").intValue = Random.Range(1, 5);
+        so.FindProperty("amount").intValue = 1;  // Fixed amount, no random
         so.ApplyModifiedProperties();
 
         return pickup;
@@ -2841,10 +3564,67 @@ public class LevelEditor : EditorWindow
 
     private static void SetupEnemyAnimator(GameObject enemy, EnemyType type)
     {
-        if (enemy.GetComponent<Animator>() == null)
+        Animator animator = enemy.GetComponent<Animator>();
+        if (animator == null)
         {
-            enemy.AddComponent<Animator>();
+            animator = enemy.AddComponent<Animator>();
         }
+
+        // Try to load and assign the animator controller
+        string controllerPath = GetAnimatorControllerPath(type);
+        RuntimeAnimatorController controller = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(controllerPath);
+
+        if (controller != null)
+        {
+            animator.runtimeAnimatorController = controller;
+            Debug.Log($"[LevelEditor] Assigned animator controller: {controllerPath}");
+        }
+        else
+        {
+            // Try alternative path in Enemies folder
+            string altPath = GetAlternativeAnimatorPath(type);
+            controller = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(altPath);
+            if (controller != null)
+            {
+                animator.runtimeAnimatorController = controller;
+                Debug.Log($"[LevelEditor] Assigned animator controller (alt): {altPath}");
+            }
+            else
+            {
+                Debug.LogWarning($"[LevelEditor] No animator controller found for {type}. Tried: {controllerPath}, {altPath}");
+            }
+        }
+    }
+
+    private static string GetAnimatorControllerPath(EnemyType type)
+    {
+        return type switch
+        {
+            EnemyType.PawnUnarmed => "Assets/Animations/Enemy_PawnUnarmed_Controller.controller",
+            EnemyType.PawnAxe => "Assets/Animations/Enemy_PawnAxe_Controller.controller",
+            EnemyType.Lancer => "Assets/Animations/Enemy_Lancer_Controller.controller",
+            EnemyType.Archer => "Assets/Animations/Enemy_Archer_Controller.controller",
+            EnemyType.Warrior => "Assets/Animations/Enemy_Warrior_Controller.controller",
+            EnemyType.Monk => "Assets/Animations/Enemies/Monk_Controller.controller",
+            EnemyType.PawnMiner => "Assets/Animations/Enemy_PawnAxe_Controller.controller", // Use PawnAxe animation
+            _ => "Assets/Animations/Enemy_PawnUnarmed_Controller.controller"
+        };
+    }
+
+    private static string GetAlternativeAnimatorPath(EnemyType type)
+    {
+        // Try the Enemies subfolder
+        return type switch
+        {
+            EnemyType.PawnUnarmed => "Assets/Animations/Enemies/Pawn_Controller.controller",
+            EnemyType.PawnAxe => "Assets/Animations/Enemies/Pawn_Controller.controller",
+            EnemyType.Lancer => "Assets/Animations/Enemies/Lancer_Controller.controller",
+            EnemyType.Archer => "Assets/Animations/Enemies/Archer_Controller.controller",
+            EnemyType.Warrior => "Assets/Animations/Enemies/Warrior_Controller.controller",
+            EnemyType.Monk => "Assets/Animations/Enemies/Monk_Controller.controller",
+            EnemyType.PawnMiner => "Assets/Animations/Enemies/Pawn_Controller.controller",
+            _ => "Assets/Animations/Enemies/Pawn_Controller.controller"
+        };
     }
 
     private void CreateSizeReferenceCircles()

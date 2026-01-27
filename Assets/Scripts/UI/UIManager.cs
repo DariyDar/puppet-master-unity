@@ -290,6 +290,17 @@ public class UIManager : MonoBehaviour
                 }
                 break;
 
+            case "altar":
+                ShowPanel("altarUI");
+                // AltarUI will be created later - for now just show the panel
+                Debug.Log("[UIManager] Opening altar unit creation menu");
+                break;
+
+            case "upgrade":
+                ShowPanel("upgradeUI");
+                Debug.Log("[UIManager] Opening upgrade menu");
+                break;
+
             case "pause":
                 PauseGame();
                 break;

@@ -178,10 +178,10 @@ public class EnemyBase : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }
 
-        // Play death animation if available
-        if (animator != null)
+        // Spawn death effect (dust + skull)
+        if (EffectManager.Instance != null)
         {
-            animator.SetTrigger(AnimDie);
+            EffectManager.Instance.SpawnDeathEffect(transform.position);
         }
 
         // Notify event system
@@ -190,8 +190,8 @@ public class EnemyBase : MonoBehaviour
             EventManager.Instance.OnEnemyDied(gameObject);
         }
 
-        // Destroy after delay (for death animation)
-        Destroy(gameObject, 1f);
+        // Destroy immediately (death effect handles visuals)
+        Destroy(gameObject);
     }
 
     protected virtual bool CanAttack()

@@ -13,9 +13,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Auto-Attack")]
     [SerializeField] private bool autoAttackEnabled = true;
-    [SerializeField] private float autoAttackRange = 2f;
+    [SerializeField] private float autoAttackRange = 3f;  // Increased for better detection
     [SerializeField] private float autoAttackCooldown = 0.5f;
     [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private LayerMask buildingLayer;
 
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
@@ -68,6 +69,12 @@ public class PlayerController : MonoBehaviour
         if (enemyLayer == 0)
         {
             enemyLayer = LayerMask.GetMask("Enemy");
+        }
+
+        // Ensure Y-sorting for proper draw order
+        if (GetComponent<YSortingRenderer>() == null)
+        {
+            gameObject.AddComponent<YSortingRenderer>();
         }
     }
 
@@ -124,7 +131,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Handle automatic attack when player is not moving and enemies are in range.
+    /// Handle automatic attack when player is not moving and enemies/buildings are in range.
     /// </summary>
     private void HandleAutoAttack()
     {
@@ -138,19 +145,21 @@ public class PlayerController : MonoBehaviour
         // Check cooldown
         if (Time.time - lastAutoAttackTime < autoAttackCooldown) return;
 
-        // Find enemies in range
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(
-            transform.position,
-            autoAttackRange,
-            enemyLayer
-        );
-
-        // Filter for valid targets (not dead)
-        Transform nearestEnemy = null;
+        Transform nearestTarget = null;
         float nearestDist = float.MaxValue;
 
-        foreach (Collider2D col in enemies)
+        // Find ALL colliders in range (not filtered by layer - layer may not exist)
+        Collider2D[] allHits = Physics2D.OverlapCircleAll(
+            transform.position,
+            autoAttackRange
+        );
+
+        foreach (Collider2D col in allHits)
         {
+            // Skip self
+            if (col.gameObject == gameObject) continue;
+
+            // Check for enemy
             EnemyBase enemy = col.GetComponent<EnemyBase>();
             if (enemy != null && !enemy.IsDead)
             {
@@ -158,27 +167,53 @@ public class PlayerController : MonoBehaviour
                 if (dist < nearestDist)
                 {
                     nearestDist = dist;
-                    nearestEnemy = col.transform;
+                    nearestTarget = col.transform;
+                }
+                continue;
+            }
+
+            // Check for buildings
+            bool isValidTarget = false;
+
+            EnemyHouse house = col.GetComponent<EnemyHouse>();
+            if (house != null && !house.IsDestroyed) isValidTarget = true;
+
+            Watchtower tower = col.GetComponent<Watchtower>();
+            if (tower != null && !tower.IsDestroyed) isValidTarget = true;
+
+            Castle castle = col.GetComponent<Castle>();
+            if (castle != null && !castle.IsDestroyed) isValidTarget = true;
+
+            DestructibleTree tree = col.GetComponent<DestructibleTree>();
+            if (tree != null && !tree.IsDestroyed) isValidTarget = true;
+
+            if (isValidTarget)
+            {
+                float dist = Vector2.Distance(transform.position, col.transform.position);
+                if (dist < nearestDist)
+                {
+                    nearestDist = dist;
+                    nearestTarget = col.transform;
                 }
             }
         }
 
-        // Attack if enemy found
-        if (nearestEnemy != null)
+        // Attack if target found
+        if (nearestTarget != null)
         {
-            // Face the enemy
-            Vector2 dirToEnemy = (nearestEnemy.position - transform.position).normalized;
+            // Face the target
+            Vector2 dirToTarget = (nearestTarget.position - transform.position).normalized;
             if (spriteRenderer != null)
             {
-                spriteRenderer.flipX = dirToEnemy.x < 0;
+                spriteRenderer.flipX = dirToTarget.x < 0;
             }
-            lastMoveDirection = dirToEnemy;
+            lastMoveDirection = dirToTarget;
 
             // Perform attack
             lastAutoAttackTime = Time.time;
             Attack();
 
-            Debug.Log($"[PlayerController] Auto-attacking {nearestEnemy.name}");
+            Debug.Log($"[PlayerController] Auto-attacking {nearestTarget.name}");
         }
     }
 

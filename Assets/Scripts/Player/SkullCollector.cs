@@ -1,16 +1,19 @@
 using UnityEngine;
-using System.Collections;
 
 /// <summary>
-/// Skull Collector system - automatically collects skulls from nearby corpses.
-/// Shows progress bar during collection. Attach to player GameObject.
+/// Skull Collector system - automatically collects skull pickups from nearby dead enemies.
+/// Spider must stand STILL near a skull for a duration to collect it.
+/// During collection, the skull plays a pulsing reverse animation.
+/// Only one skull can be collected at a time.
+/// If spider moves, collection is canceled.
+/// Attach to player GameObject.
 /// </summary>
 public class SkullCollector : MonoBehaviour
 {
     [Header("Collection Settings")]
-    [SerializeField] private float collectionRange = 2f;
-    [SerializeField] private float collectionDuration = 2f;
+    [SerializeField] private float collectionRange = 4.5f;
     [SerializeField] private bool autoCollect = true;
+    [SerializeField] private float movementThreshold = 0.05f; // Max velocity to count as "standing still"
 
     [Header("Visual Feedback")]
     [SerializeField] private bool showCollectionRange = true;
@@ -18,27 +21,24 @@ public class SkullCollector : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip collectionStartSound;
-    [SerializeField] private AudioClip collectionLoopSound;
     [SerializeField] private AudioClip collectionCompleteSound;
 
     // State
     private bool isCollecting;
-    private float collectionProgress;
-    private HumanEnemy currentTarget;
-    private Coroutine collectionCoroutine;
+    private SkullPickup currentTarget;
     private AudioSource audioSource;
+    private Rigidbody2D playerRb;
 
     // Events
-    public event System.Action<HumanEnemy> OnCollectionStarted;
+    public event System.Action<SkullPickup> OnCollectionStarted;
     public event System.Action<float> OnCollectionProgress;
     public event System.Action<int> OnCollectionCompleted;
     public event System.Action OnCollectionCanceled;
 
     // Properties
     public bool IsCollecting => isCollecting;
-    public float CollectionProgress => collectionProgress;
+    public float CollectionProgress => currentTarget != null ? currentTarget.CollectionProgress : 0f;
     public float CollectionRange => collectionRange;
-    public HumanEnemy CurrentTarget => currentTarget;
 
     private void Awake()
     {
@@ -47,54 +47,90 @@ public class SkullCollector : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+        playerRb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         if (!autoCollect) return;
 
-        // If not collecting, try to find a corpse
+        // Check if player is moving
+        bool isMoving = IsPlayerMoving();
+
         if (!isCollecting)
         {
-            HumanEnemy nearestCorpse = FindNearestCorpse();
-            if (nearestCorpse != null)
+            // Only start collection if standing still
+            if (!isMoving)
             {
-                StartCollection(nearestCorpse);
+                SkullPickup nearest = FindNearestSkull();
+                if (nearest != null)
+                {
+                    StartCollection(nearest);
+                }
             }
         }
         else
         {
-            // Check if target is still valid
-            if (!IsTargetValid())
+            // Cancel if player starts moving
+            if (isMoving)
             {
                 CancelCollection();
+                return;
             }
-            // Check if player moved too far from target
-            else if (currentTarget != null && GetDistanceToTarget(currentTarget) > collectionRange * 1.2f)
+
+            // Check if target destroyed or collected
+            if (currentTarget == null || currentTarget.IsCollected)
+            {
+                OnComplete();
+                return;
+            }
+
+            // Check if player moved too far
+            float dist = Vector2.Distance(transform.position, currentTarget.transform.position);
+            if (dist > collectionRange * 1.3f)
             {
                 CancelCollection();
+                return;
+            }
+
+            // Fire progress event
+            OnCollectionProgress?.Invoke(currentTarget.CollectionProgress);
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnSkullCollectionProgress(currentTarget.CollectionProgress);
             }
         }
     }
 
     /// <summary>
-    /// Find the nearest corpse within collection range.
+    /// Check if the player is currently moving.
     /// </summary>
-    public HumanEnemy FindNearestCorpse()
+    private bool IsPlayerMoving()
     {
-        HumanEnemy[] allEnemies = FindObjectsByType<HumanEnemy>(FindObjectsSortMode.None);
-        HumanEnemy nearest = null;
+        if (playerRb != null)
+        {
+            return playerRb.linearVelocity.magnitude > movementThreshold;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Find the nearest uncollected skull within range.
+    /// </summary>
+    public SkullPickup FindNearestSkull()
+    {
+        SkullPickup[] allSkulls = FindObjectsByType<SkullPickup>(FindObjectsSortMode.None);
+        SkullPickup nearest = null;
         float nearestDist = float.MaxValue;
 
-        foreach (var enemy in allEnemies)
+        foreach (var skull in allSkulls)
         {
-            // Check if it's a corpse that can be collected
-            if (!enemy.IsCorpse) continue;
+            if (skull.IsBeingCollected || skull.IsCollected) continue;
 
-            float dist = GetDistanceToTarget(enemy);
+            float dist = Vector2.Distance(transform.position, skull.transform.position);
             if (dist <= collectionRange && dist < nearestDist)
             {
-                nearest = enemy;
+                nearest = skull;
                 nearestDist = dist;
             }
         }
@@ -103,19 +139,17 @@ public class SkullCollector : MonoBehaviour
     }
 
     /// <summary>
-    /// Start the collection process on a target corpse.
+    /// Start collecting a skull pickup. Only one at a time.
     /// </summary>
-    public void StartCollection(HumanEnemy target)
+    public void StartCollection(SkullPickup skull)
     {
-        if (target == null || !target.IsCorpse) return;
-        if (isCollecting) return;
+        if (skull == null || isCollecting) return;
 
-        currentTarget = target;
+        currentTarget = skull;
         isCollecting = true;
-        collectionProgress = 0f;
 
-        // Notify target that collection started
-        target.OnDrainStarted();
+        // Tell the skull to start its collection animation
+        skull.StartCollection(transform);
 
         // Play start sound
         if (collectionStartSound != null && audioSource != null)
@@ -123,184 +157,58 @@ public class SkullCollector : MonoBehaviour
             audioSource.PlayOneShot(collectionStartSound);
         }
 
-        // Start loop sound
-        if (collectionLoopSound != null && audioSource != null)
-        {
-            audioSource.clip = collectionLoopSound;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
+        OnCollectionStarted?.Invoke(skull);
 
-        // Fire events
-        OnCollectionStarted?.Invoke(target);
-        if (EventManager.Instance != null)
-        {
-            EventManager.Instance.OnSkullCollectionStarted(target);
-        }
-
-        // Start coroutine
-        collectionCoroutine = StartCoroutine(CollectionCoroutine());
-
-        Debug.Log($"[SkullCollector] Started collecting from {target.Config?.displayName ?? "enemy"}");
+        Debug.Log("[SkullCollector] Started collecting skull (standing still)");
     }
 
-    /// <summary>
-    /// Main collection coroutine - handles progress over time.
-    /// </summary>
-    private IEnumerator CollectionCoroutine()
+    private void OnComplete()
     {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < collectionDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            collectionProgress = Mathf.Clamp01(elapsedTime / collectionDuration);
-
-            // Fire progress events
-            OnCollectionProgress?.Invoke(collectionProgress);
-            if (EventManager.Instance != null)
-            {
-                EventManager.Instance.OnSkullCollectionProgress(collectionProgress);
-            }
-
-            yield return null;
-        }
-
-        // Collection complete
-        CompleteCollection();
-    }
-
-    /// <summary>
-    /// Complete the collection process - add skull and destroy corpse.
-    /// </summary>
-    private void CompleteCollection()
-    {
-        if (currentTarget == null) return;
-
-        // Stop loop sound
-        if (audioSource != null && audioSource.isPlaying)
-        {
-            audioSource.Stop();
-            audioSource.loop = false;
-        }
-
-        // Play complete sound
         if (collectionCompleteSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(collectionCompleteSound);
         }
 
-        // Add skull to player's resources
-        int skullsCollected = 1; // Always 1 skull per enemy
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.AddSkull(skullsCollected);
-        }
+        OnCollectionCompleted?.Invoke(1);
 
-        // Notify target that it was collected
-        currentTarget.OnDrained();
-
-        // Fire events
-        OnCollectionCompleted?.Invoke(skullsCollected);
-        if (EventManager.Instance != null)
-        {
-            EventManager.Instance.OnSkullCollectionCompleted(skullsCollected);
-        }
-
-        Debug.Log($"[SkullCollector] Completed! Collected {skullsCollected} skull(s)");
-
-        // Reset state
-        ResetCollectionState();
+        Debug.Log("[SkullCollector] Skull collected!");
+        ResetState();
     }
 
     /// <summary>
-    /// Cancel the current collection process.
+    /// Cancel the current collection.
     /// </summary>
     public void CancelCollection()
     {
         if (!isCollecting) return;
 
-        // Stop coroutine
-        if (collectionCoroutine != null)
+        if (currentTarget != null && !currentTarget.IsCollected)
         {
-            StopCoroutine(collectionCoroutine);
-            collectionCoroutine = null;
+            currentTarget.CancelCollection();
         }
 
-        // Stop loop sound
-        if (audioSource != null && audioSource.isPlaying)
-        {
-            audioSource.Stop();
-            audioSource.loop = false;
-        }
-
-        // Notify target that collection was canceled
-        if (currentTarget != null)
-        {
-            currentTarget.OnDrainCanceled();
-        }
-
-        // Fire events
         OnCollectionCanceled?.Invoke();
         if (EventManager.Instance != null)
         {
             EventManager.Instance.OnSkullCollectionCanceled();
         }
 
-        Debug.Log("[SkullCollector] Collection canceled");
-
-        // Reset state
-        ResetCollectionState();
+        Debug.Log("[SkullCollector] Collection canceled (player moved)");
+        ResetState();
     }
 
-    /// <summary>
-    /// Reset the collection state.
-    /// </summary>
-    private void ResetCollectionState()
+    private void ResetState()
     {
         isCollecting = false;
-        collectionProgress = 0f;
         currentTarget = null;
-        collectionCoroutine = null;
     }
 
     /// <summary>
-    /// Check if the current target is still valid.
+    /// Check if there's a skull in range (for UI hints).
     /// </summary>
-    private bool IsTargetValid()
+    public bool HasSkullInRange()
     {
-        return currentTarget != null && currentTarget.IsCorpse;
-    }
-
-    /// <summary>
-    /// Get distance to a target enemy.
-    /// </summary>
-    private float GetDistanceToTarget(HumanEnemy target)
-    {
-        return Vector2.Distance(transform.position, target.transform.position);
-    }
-
-    /// <summary>
-    /// Check if there's a corpse in range (for UI hints).
-    /// </summary>
-    public bool HasCorpseInRange()
-    {
-        return FindNearestCorpse() != null;
-    }
-
-    /// <summary>
-    /// Get info about nearest corpse for UI.
-    /// </summary>
-    public (HumanEnemy corpse, float distance) GetNearestCorpseInfo()
-    {
-        HumanEnemy nearest = FindNearestCorpse();
-        if (nearest == null)
-        {
-            return (null, float.MaxValue);
-        }
-
-        float dist = GetDistanceToTarget(nearest);
-        return (nearest, dist);
+        return FindNearestSkull() != null;
     }
 
     #region Gizmos
@@ -309,11 +217,9 @@ public class SkullCollector : MonoBehaviour
     {
         if (!showCollectionRange) return;
 
-        // Draw collection range
         Gizmos.color = rangeGizmoColor;
         Gizmos.DrawWireSphere(transform.position, collectionRange);
 
-        // Draw filled sphere for visibility
         Gizmos.color = new Color(rangeGizmoColor.r, rangeGizmoColor.g, rangeGizmoColor.b, 0.1f);
         Gizmos.DrawSphere(transform.position, collectionRange);
     }

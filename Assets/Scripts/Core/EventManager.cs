@@ -56,6 +56,9 @@ public class EventManager : MonoBehaviour
     public event Action<bool> GamePaused;                    // isPaused
     public event Action<string> LocationChanged;             // location
 
+    // Upgrade events
+    public event Action<string, int> UpgradePurchased;       // upgradeId, newLevel
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -228,6 +231,12 @@ public class EventManager : MonoBehaviour
     public void OnCloseModal()
     {
         CloseModal?.Invoke();
+    }
+
+    public void OnUpgradePurchased(string upgradeId, int newLevel)
+    {
+        UpgradePurchased?.Invoke(upgradeId, newLevel);
+        Debug.Log($"[EventManager] Upgrade purchased: {upgradeId} -> Level {newLevel}");
     }
 
     #endregion

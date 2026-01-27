@@ -27,8 +27,16 @@ public class Watchtower : MonoBehaviour
     [Header("Attack")]
     [SerializeField] private float damage = 5f;
     [SerializeField] private float attackSpeed = 0.8f;          // attacks per second
-    [SerializeField] private float attackRange = 180f;
+    [SerializeField] private float attackRange = 8f;            // Detection/attack range in units
+    [SerializeField] private float projectileSpeed = 10f;       // Speed of projectile
     [SerializeField] private Transform projectileSpawnPoint;
+
+    [Header("Collider Settings")]
+    [Tooltip("Setup collider at tower base so player can walk behind upper part")]
+    [SerializeField] private bool setupBaseCollider = true;
+    [SerializeField] private Vector2 baseColliderSize = new Vector2(5.5f, 5.5f);
+    [SerializeField] private Vector2 baseColliderOffset = new Vector2(0f, -3f);
+    [SerializeField] private float baseColliderEdgeRadius = 0.5f;
 
     [Header("Guards")]
     [SerializeField] private int guardCount = 5;
@@ -65,6 +73,9 @@ public class Watchtower : MonoBehaviour
     private bool isDestroyed;
     private List<GameObject> guards = new List<GameObject>();
 
+    // Resource storage (resources brought by Peasants)
+    private Dictionary<ResourcePickup.ResourceType, int> storedResources = new Dictionary<ResourcePickup.ResourceType, int>();
+
     // XP reward
     private int xpReward => towerType == TowerType.Basic ? 50 : 100;
 
@@ -79,11 +90,87 @@ public class Watchtower : MonoBehaviour
             projectileSpawnPoint = transform;
 
         SetupTowerType();
+
+        // Setup collider at tower base
+        if (setupBaseCollider)
+        {
+            SetupTowerCollider();
+        }
+
+        // Ensure Y-sorting for proper draw order
+        EnsureYSorting();
+    }
+
+    private void EnsureYSorting()
+    {
+        if (GetComponent<YSortingRenderer>() != null) return;
+        var ySorting = gameObject.AddComponent<YSortingRenderer>();
+        // Tower sorting point at the base (offset down)
+        ySorting.SetYOffset(-3f);
+    }
+
+    /// <summary>
+    /// Setup collider at the tower base so player can walk behind the upper part.
+    /// </summary>
+    private void SetupTowerCollider()
+    {
+        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        if (boxCollider == null)
+        {
+            boxCollider = gameObject.AddComponent<BoxCollider2D>();
+        }
+
+        boxCollider.size = baseColliderSize;
+        boxCollider.offset = baseColliderOffset;
+        boxCollider.edgeRadius = baseColliderEdgeRadius;
+
+        Debug.Log($"[Watchtower] Collider set at base - Size: {baseColliderSize}, Offset: {baseColliderOffset}, EdgeRadius: {baseColliderEdgeRadius}");
     }
 
     private void Start()
     {
+        // Ensure we have a projectile prefab
+        EnsureProjectilePrefab();
+
+        // Ensure we have a projectile spawn point
+        if (projectileSpawnPoint == null)
+        {
+            projectileSpawnPoint = transform;
+        }
+
         SpawnGuards();
+    }
+
+    /// <summary>
+    /// Ensure tower has a projectile prefab for shooting.
+    /// </summary>
+    private void EnsureProjectilePrefab()
+    {
+        if (projectilePrefab != null) return;
+
+        // Try to load existing prefab
+        projectilePrefab = Resources.Load<GameObject>("TowerArrow");
+        if (projectilePrefab != null) return;
+
+        // Try AssetDatabase in editor
+        #if UNITY_EDITOR
+        projectilePrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/TowerArrow.prefab");
+        if (projectilePrefab != null)
+        {
+            Debug.Log("[Watchtower] Loaded TowerArrow prefab from Assets");
+            return;
+        }
+
+        // Try ArcherArrow as fallback (same arrow sprite)
+        projectilePrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/ArcherArrow.prefab");
+        if (projectilePrefab != null)
+        {
+            Debug.Log("[Watchtower] Loaded ArcherArrow prefab as fallback");
+            return;
+        }
+        #endif
+
+        Debug.LogWarning("[Watchtower] No projectile prefab found! Tower will use instant damage.");
     }
 
     private void Update()
@@ -118,9 +205,10 @@ public class Watchtower : MonoBehaviour
         {
             case TowerType.Basic:
                 maxHealth = 150;
-                damage = 5f;
-                attackSpeed = 0.8f;
-                attackRange = 180f;
+                damage = 12f;           // Archer(10) × 1.2
+                attackSpeed = 0.5f;     // Same as Archer before 20% nerf
+                attackRange = 36f;      // Archer(30) × 1.2
+                projectileSpeed = 10f;
                 guardCount = 5;
                 woodMin = 4;
                 woodMax = 6;
@@ -132,7 +220,8 @@ public class Watchtower : MonoBehaviour
                 maxHealth = 150;
                 damage = 10f;
                 attackSpeed = 1f;
-                attackRange = 220f;
+                attackRange = 10f;  // 10 units detection range
+                projectileSpeed = 12f;
                 guardCount = 5;
                 woodMin = 4;
                 woodMax = 6;
@@ -241,43 +330,94 @@ public class Watchtower : MonoBehaviour
     }
 
     /// <summary>
-    /// Attack current target.
+    /// Attack current target with arrow projectile (parabolic arc trajectory).
     /// </summary>
     private void Attack()
     {
-        if (currentTarget == null || projectilePrefab == null) return;
+        if (currentTarget == null) return;
 
         lastAttackTime = Time.time;
 
-        // Spawn projectile
-        Vector2 direction = ((Vector2)currentTarget.position - (Vector2)projectileSpawnPoint.position).normalized;
-
-        GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
-
-        // Rotate projectile
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Set velocity
-        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        // If we have a prefab, use it
+        if (projectilePrefab != null)
         {
-            rb.linearVelocity = direction * 300f;
-        }
+            GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
 
-        // Setup damage
-        Projectile proj = projectile.GetComponent<Projectile>();
-        if (proj != null)
+            // Try ArrowProjectile first (parabolic arc with ground stick and dissolve)
+            ArrowProjectile arrowProj = projectile.GetComponent<ArrowProjectile>();
+            if (arrowProj != null)
+            {
+                // ArrowProjectile handles parabolic flight, collision, ground stick, and dissolve
+                arrowProj.Setup(damage, gameObject, currentTarget, true); // true = damages player/units
+                Debug.Log($"[Watchtower] Fired arrow at {currentTarget.name}");
+            }
+            else
+            {
+                // Fallback to TowerProjectile (straight line)
+                Vector2 direction = ((Vector2)currentTarget.position - (Vector2)projectileSpawnPoint.position).normalized;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+                TowerProjectile towerProj = projectile.GetComponent<TowerProjectile>();
+                if (towerProj != null)
+                {
+                    towerProj.Initialize(damage, direction, projectileSpeed);
+                }
+                else
+                {
+                    // Generic Projectile fallback
+                    Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        rb.linearVelocity = direction * projectileSpeed;
+                    }
+
+                    Projectile proj = projectile.GetComponent<Projectile>();
+                    if (proj != null)
+                    {
+                        proj.Setup(damage, gameObject, true);
+                    }
+                }
+
+                Destroy(projectile, 5f);
+            }
+        }
+        else
         {
-            proj.Setup(damage, gameObject, true); // Damages player and units
+            // No prefab - do instant damage (fallback)
+            Debug.LogWarning($"[Watchtower] No projectilePrefab assigned! Using instant damage fallback.");
+            DealInstantDamage();
         }
-
-        Destroy(projectile, 3f);
 
         // Play sound
         if (shootSound != null)
         {
             AudioSource.PlayClipAtPoint(shootSound, transform.position);
+        }
+    }
+
+    /// <summary>
+    /// Deal instant damage when no projectile prefab is available.
+    /// </summary>
+    private void DealInstantDamage()
+    {
+        if (currentTarget == null) return;
+
+        // Check if player
+        PlayerHealth playerHealth = currentTarget.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(Mathf.RoundToInt(damage));
+            Debug.Log($"[Watchtower] Instant hit player for {damage} damage");
+            return;
+        }
+
+        // Check if unit
+        UnitBase unit = currentTarget.GetComponent<UnitBase>();
+        if (unit != null)
+        {
+            unit.TakeDamage(Mathf.RoundToInt(damage));
+            Debug.Log($"[Watchtower] Instant hit unit for {damage} damage");
         }
     }
 
@@ -346,6 +486,51 @@ public class Watchtower : MonoBehaviour
     }
 
     /// <summary>
+    /// Store a resource brought by a Peasant.
+    /// </summary>
+    public void StoreResource(ResourcePickup.ResourceType type, int amount)
+    {
+        if (!storedResources.ContainsKey(type))
+            storedResources[type] = 0;
+        storedResources[type] += amount;
+        Debug.Log($"[Watchtower] Stored {amount} {type}. Total: {storedResources[type]}");
+    }
+
+    /// <summary>
+    /// Drop all stored resources when building is destroyed.
+    /// </summary>
+    private void DropStoredResources()
+    {
+        if (ResourceSpawner.Instance == null) return;
+
+        foreach (var kvp in storedResources)
+        {
+            if (kvp.Value <= 0) continue;
+
+            for (int i = 0; i < kvp.Value; i++)
+            {
+                Vector2 offset = Random.insideUnitCircle * 1.5f;
+                Vector3 pos = transform.position + new Vector3(offset.x, offset.y, 0);
+
+                switch (kvp.Key)
+                {
+                    case ResourcePickup.ResourceType.Meat:
+                        ResourceSpawner.Instance.SpawnMeat(pos, 1);
+                        break;
+                    case ResourcePickup.ResourceType.Wood:
+                        ResourceSpawner.Instance.SpawnWood(pos, 1);
+                        break;
+                    case ResourcePickup.ResourceType.Gold:
+                        ResourceSpawner.Instance.SpawnGold(pos, 1);
+                        break;
+                }
+            }
+            Debug.Log($"[Watchtower] Dropped {kvp.Value} stored {kvp.Key}");
+        }
+        storedResources.Clear();
+    }
+
+    /// <summary>
     /// Destroy the tower.
     /// </summary>
     private void DestroyTower()
@@ -359,6 +544,9 @@ public class Watchtower : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(destroySound, transform.position);
         }
+
+        // Drop stored resources first (brought by peasants)
+        DropStoredResources();
 
         DropLoot();
 

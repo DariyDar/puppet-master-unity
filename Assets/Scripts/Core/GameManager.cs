@@ -52,6 +52,9 @@ public class GameManager : MonoBehaviour
     public int ArmyCount => armyCount;
     public int ArmyLimit => armyLimit;
 
+    [Header("Settings")]
+    [SerializeField] private bool loadSaveOnStart = false;  // Set to false for fresh start each time
+
     private void Awake()
     {
         // Singleton pattern
@@ -63,7 +66,60 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        LoadGame();
+        if (loadSaveOnStart)
+        {
+            LoadGame();
+        }
+        else
+        {
+            // Start fresh - reset all values to initial state
+            ResetToInitialState();
+        }
+    }
+
+    /// <summary>
+    /// Reset to initial state without deleting PlayerPrefs.
+    /// </summary>
+    private void ResetToInitialState()
+    {
+        maxHealth = 150;
+        currentHealth = 150;
+        level = 1;
+        currentXp = 0;
+        xpToNextLevel = 100;
+
+        skulls = 0;
+        meat = 0;
+        wood = 0;
+        gold = 0;
+
+        cargoMeat = 0;
+        cargoWood = 0;
+        cargoGold = 0;
+
+        Debug.Log("[GameManager] Reset to initial state (fresh start)");
+    }
+
+    private void Start()
+    {
+        // Broadcast initial state to UI after EventManager has time to initialize
+        Invoke(nameof(BroadcastInitialState), 0.1f);
+    }
+
+    /// <summary>
+    /// Broadcast all state to UI. Called on startup and when UI needs refresh.
+    /// </summary>
+    public void BroadcastInitialState()
+    {
+        if (EventManager.Instance == null) return;
+
+        EventManager.Instance.OnPlayerHealthChanged(currentHealth, maxHealth);
+        EventManager.Instance.OnStorageUpdated(skulls, meat, wood, gold);
+        EventManager.Instance.OnLevelUp(level);
+        EventManager.Instance.OnXpGained(0);  // Trigger XP display update
+        EventManager.Instance.OnArmyUpdated(armyCount, armyLimit);
+
+        Debug.Log($"[GameManager] Broadcast initial state - Skulls:{skulls}, Meat:{meat}, Wood:{wood}, Gold:{gold}");
     }
 
     #region Health & XP
@@ -153,6 +209,10 @@ public class GameManager : MonoBehaviour
         }
 
         EventManager.Instance?.OnResourceCollected(resourceType, actualAmount);
+
+        // Also update cargo display if UI is listening
+        // The TopHUD will now show: Skulls (storage) + Cargo values
+        Debug.Log($"[GameManager] Added {actualAmount} {resourceType} to cargo. Total cargo: {CurrentCargo}/{cargoCapacity}");
         return true;
     }
 
@@ -230,6 +290,8 @@ public class GameManager : MonoBehaviour
     {
         skulls += amount;
         EventManager.Instance?.OnSkullCollected(amount);
+        // Also update storage display for skulls
+        EventManager.Instance?.OnStorageUpdated(skulls, meat, wood, gold);
     }
 
     /// <summary>

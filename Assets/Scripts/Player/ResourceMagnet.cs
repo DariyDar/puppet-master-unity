@@ -9,27 +9,12 @@ using System.Collections.Generic;
 public class ResourceMagnet : MonoBehaviour
 {
     [Header("Magnet Settings")]
-    [SerializeField] private float detectionRadius = 3f;
-    [SerializeField] private float attractionRadius = 1.5f;
-    [SerializeField] private float attractionSpeed = 8f;
-    [SerializeField] private float pickupRadius = 0.5f;
+    [SerializeField] private float detectionRadius = 9f;        // Doubled from 4.5f
+    [SerializeField] private float attractionRadius = 4.5f;     // Doubled from 2.25f
+    [SerializeField] private float attractionSpeed = 40f;       // 5x faster (was 8f)
+    // NOTE: pickupRadius removed - ResourcePickup handles actual pickup
 
-    [Header("Audio")]
-    [SerializeField] private AudioClip pickupSound;
-    [SerializeField] private float pickupVolume = 0.5f;
-
-    private AudioSource audioSource;
     private List<ResourcePickup> nearbyResources = new List<ResourcePickup>();
-
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.playOnAwake = false;
-        }
-    }
 
     private void Update()
     {
@@ -63,6 +48,7 @@ public class ResourceMagnet : MonoBehaviour
 
     /// <summary>
     /// Attract resources within attraction radius towards player.
+    /// ResourceMagnet ONLY moves resources closer - ResourcePickup.Pickup() handles the actual collection.
     /// </summary>
     private void AttractResources()
     {
@@ -77,15 +63,8 @@ public class ResourceMagnet : MonoBehaviour
 
             float dist = Vector2.Distance(transform.position, pickup.transform.position);
 
-            // Within pickup radius - collect immediately
-            if (dist <= pickupRadius)
-            {
-                CollectResource(pickup);
-                nearbyResources.RemoveAt(i);
-                continue;
-            }
-
             // Within attraction radius - move towards player
+            // ResourcePickup.Update() will handle the actual pickup when close enough
             if (dist <= attractionRadius)
             {
                 Vector3 direction = (transform.position - pickup.transform.position).normalized;
@@ -93,51 +72,6 @@ public class ResourceMagnet : MonoBehaviour
                 pickup.transform.position += direction * speed * Time.deltaTime;
             }
         }
-    }
-
-    /// <summary>
-    /// Collect a resource pickup.
-    /// </summary>
-    private void CollectResource(ResourcePickup pickup)
-    {
-        if (pickup == null) return;
-
-        int amount = pickup.Amount;
-        ResourcePickup.ResourceType type = pickup.Type;
-
-        // Add to cargo or storage
-        if (GameManager.Instance != null)
-        {
-            switch (type)
-            {
-                case ResourcePickup.ResourceType.Meat:
-                    GameManager.Instance.AddCargoMeat(amount);
-                    break;
-                case ResourcePickup.ResourceType.Wood:
-                    GameManager.Instance.AddCargoWood(amount);
-                    break;
-                case ResourcePickup.ResourceType.Gold:
-                    GameManager.Instance.AddCargoGold(amount);
-                    break;
-            }
-        }
-
-        // Fire event
-        if (EventManager.Instance != null)
-        {
-            EventManager.Instance.OnResourceCollected(type.ToString(), amount);
-        }
-
-        // Play sound
-        if (pickupSound != null && audioSource != null)
-        {
-            audioSource.PlayOneShot(pickupSound, pickupVolume);
-        }
-
-        Debug.Log($"[ResourceMagnet] Collected {amount} {type}");
-
-        // Destroy pickup
-        Destroy(pickup.gameObject);
     }
 
     /// <summary>
@@ -186,9 +120,5 @@ public class ResourceMagnet : MonoBehaviour
         // Attraction radius
         Gizmos.color = new Color(0f, 1f, 0f, 0.5f);
         Gizmos.DrawWireSphere(transform.position, attractionRadius);
-
-        // Pickup radius
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, pickupRadius);
     }
 }

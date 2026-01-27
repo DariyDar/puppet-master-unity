@@ -69,6 +69,9 @@ public class EnemyHouse : MonoBehaviour
     private bool hasLoggedMissingConfig;
     private List<GameObject> spawnedEnemies = new List<GameObject>();
 
+    // Resource storage (resources brought by Peasants)
+    private Dictionary<ResourcePickup.ResourceType, int> storedResources = new Dictionary<ResourcePickup.ResourceType, int>();
+
     // XP reward
     private int xpReward => houseType switch
     {
@@ -317,6 +320,51 @@ public class EnemyHouse : MonoBehaviour
     }
 
     /// <summary>
+    /// Store a resource brought by a Peasant.
+    /// </summary>
+    public void StoreResource(ResourcePickup.ResourceType type, int amount)
+    {
+        if (!storedResources.ContainsKey(type))
+            storedResources[type] = 0;
+        storedResources[type] += amount;
+        Debug.Log($"[EnemyHouse] Stored {amount} {type}. Total: {storedResources[type]}");
+    }
+
+    /// <summary>
+    /// Drop all stored resources when building is destroyed.
+    /// </summary>
+    private void DropStoredResources()
+    {
+        if (ResourceSpawner.Instance == null) return;
+
+        foreach (var kvp in storedResources)
+        {
+            if (kvp.Value <= 0) continue;
+
+            for (int i = 0; i < kvp.Value; i++)
+            {
+                Vector2 offset = Random.insideUnitCircle * 1.5f;
+                Vector3 pos = transform.position + new Vector3(offset.x, offset.y, 0);
+
+                switch (kvp.Key)
+                {
+                    case ResourcePickup.ResourceType.Meat:
+                        ResourceSpawner.Instance.SpawnMeat(pos, 1);
+                        break;
+                    case ResourcePickup.ResourceType.Wood:
+                        ResourceSpawner.Instance.SpawnWood(pos, 1);
+                        break;
+                    case ResourcePickup.ResourceType.Gold:
+                        ResourceSpawner.Instance.SpawnGold(pos, 1);
+                        break;
+                }
+            }
+            Debug.Log($"[EnemyHouse] Dropped {kvp.Value} stored {kvp.Key}");
+        }
+        storedResources.Clear();
+    }
+
+    /// <summary>
     /// Destroy the house and drop loot.
     /// </summary>
     private void DestroyHouse()
@@ -331,6 +379,9 @@ public class EnemyHouse : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(destroySound, transform.position);
         }
+
+        // Drop stored resources first (brought by peasants)
+        DropStoredResources();
 
         // Drop loot (Wood from buildings)
         DropLoot();

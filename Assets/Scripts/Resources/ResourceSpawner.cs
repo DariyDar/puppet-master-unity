@@ -45,10 +45,9 @@ public class ResourceSpawner : MonoBehaviour
 
     private void OnEnemyDied(GameObject enemy)
     {
-        if (enemy == null) return;
-
-        // Spawn random resources at enemy position
-        SpawnRandomLoot(enemy.transform.position);
+        // Enemies no longer drop resources on death.
+        // Only skulls drop (handled by EffectManager.SpawnSkullPickup in HumanEnemy/Peasant Die()).
+        // Exception: Peasant carrying resources drops them far away (handled in Peasant.Die()).
     }
 
     public void SpawnRandomLoot(Vector3 position)

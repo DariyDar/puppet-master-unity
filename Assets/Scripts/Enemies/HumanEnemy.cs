@@ -19,6 +19,16 @@ public class HumanEnemy : EnemyBase
     [SerializeField] private Vector3 homePosition;
     [SerializeField] private bool hasHomePosition;
 
+    [Header("Wander Behavior")]
+    [Tooltip("Radius for wandering from home position (in tiles, 1 tile ≈ 1 unit)")]
+    [SerializeField] private float wanderRadius = 2.5f;
+    [Tooltip("Minimum time to stay idle before wandering")]
+    [SerializeField] private float idleMinTime = 3f;
+    [Tooltip("Maximum time to stay idle before wandering")]
+    [SerializeField] private float idleMaxTime = 8f;
+    [Tooltip("Enable wander behavior when not in combat")]
+    [SerializeField] private bool enableWander = true;
+
     [Header("Corpse Settings")]
     [SerializeField] private float corpseLifetime = 10f;
     [SerializeField] private bool canBeDrained = true;
@@ -39,6 +49,12 @@ public class HumanEnemy : EnemyBase
     private float fleeTimer;
     private const float FLEE_DURATION = 3f;
 
+    // Wander state
+    private enum WanderState { Idle, Moving }
+    private WanderState currentWanderState = WanderState.Idle;
+    private float wanderStateTimer;
+    private Vector3 wanderTarget;
+
     public EnemyConfig Config => config;
     public EnemyType EnemyTypeEnum => config != null ? config.enemyType : EnemyType.PawnUnarmed;
     public bool IsCorpse => isCorpse;
@@ -52,7 +68,11 @@ public class HumanEnemy : EnemyBase
 
         if (projectileSpawnPoint == null)
         {
-            projectileSpawnPoint = transform;
+            // Create a spawn point offset for ranged enemies (bow position = upper body)
+            GameObject spawnPointObj = new GameObject("ProjectileSpawnPoint");
+            spawnPointObj.transform.SetParent(transform);
+            spawnPointObj.transform.localPosition = new Vector3(0f, 0.5f, 0f); // Upper body where bow is
+            projectileSpawnPoint = spawnPointObj.transform;
         }
     }
 
@@ -60,6 +80,21 @@ public class HumanEnemy : EnemyBase
     {
         InitializeFromConfig();
         base.Start();
+
+        // Ensure we have a collider for combat detection
+        EnsureCollider();
+
+        // Ensure Y-sorting for proper draw order
+        if (GetComponent<YSortingRenderer>() == null)
+        {
+            gameObject.AddComponent<YSortingRenderer>();
+        }
+
+        // Ensure ranged enemies have a projectile prefab
+        if (config != null && config.isRanged && config.projectilePrefab == null)
+        {
+            TryLoadArcherProjectilePrefab();
+        }
 
         if (!hasHomePosition)
         {
@@ -72,6 +107,11 @@ public class HumanEnemy : EnemyBase
         {
             originalAnimatorController = animator.runtimeAnimatorController;
         }
+
+        // Initialize wander state with random idle time
+        currentWanderState = WanderState.Idle;
+        wanderStateTimer = Random.Range(idleMinTime, idleMaxTime);
+        wanderTarget = homePosition;
     }
 
     /// <summary>
@@ -201,14 +241,26 @@ public class HumanEnemy : EnemyBase
                     FaceTarget();
                 }
             }
+            else if (config != null && config.behavior == EnemyBehavior.Coward)
+            {
+                // Coward behavior - NEVER attack or chase, only flee
+                // The flee is handled above when isFleeing is true
+                // If we get here, we're not fleeing - just stand still or wander
+                StopMovement();
+            }
             else
             {
-                // Normal melee behavior
-                if (dist <= attackRange && CanAttack())
+                // Normal melee behavior (Aggressive, Defensive, Guard)
+                if (dist <= attackRange)
                 {
+                    // In attack range - stop and face target
                     StopMovement();
                     FaceTarget();
-                    PerformAttack();
+                    // Attack if cooldown is ready
+                    if (CanAttack())
+                    {
+                        PerformAttack();
+                    }
                 }
                 else if (dist <= chaseRange)
                 {
@@ -309,15 +361,22 @@ public class HumanEnemy : EnemyBase
 
     private void UpdateCowardBehavior()
     {
-        // Check if player/units are too close - flee!
+        // Cowards ALWAYS try to flee when they see the player
         FindTarget();
 
-        if (target != null && !isFleeing)
+        if (target != null)
         {
             float dist = GetDistanceToTarget();
-            if (dist < (config?.fleeRange ?? 100f))
+            // Flee if within detection range (not just fleeRange which is too small)
+            float effectiveFleeRange = config?.detectionRange ?? 8f;
+            if (dist < effectiveFleeRange && !isFleeing)
             {
                 StartFleeing();
+            }
+            // Keep fleeing as long as player is visible
+            else if (isFleeing && dist < effectiveFleeRange)
+            {
+                fleeTimer = FLEE_DURATION; // Reset timer to keep fleeing
             }
         }
     }
@@ -347,6 +406,13 @@ public class HumanEnemy : EnemyBase
     {
         if (!hasHomePosition || rb == null) return;
 
+        // If wander is enabled, use wander behavior instead of just returning home
+        if (enableWander)
+        {
+            UpdateWanderBehavior();
+            return;
+        }
+
         float distToHome = Vector2.Distance(transform.position, homePosition);
         if (distToHome > 0.5f)
         {
@@ -361,6 +427,65 @@ public class HumanEnemy : EnemyBase
         else
         {
             StopMovement();
+        }
+    }
+
+    /// <summary>
+    /// Wander behavior: alternate between idle and moving to random points near home.
+    /// </summary>
+    private void UpdateWanderBehavior()
+    {
+        if (rb == null) return;
+
+        wanderStateTimer -= Time.fixedDeltaTime;
+
+        switch (currentWanderState)
+        {
+            case WanderState.Idle:
+                StopMovement();
+                if (wanderStateTimer <= 0)
+                {
+                    // Pick a new wander target within radius of home
+                    Vector2 randomOffset = Random.insideUnitCircle * wanderRadius;
+                    wanderTarget = homePosition + new Vector3(randomOffset.x, randomOffset.y, 0);
+                    currentWanderState = WanderState.Moving;
+                    // Time to reach target (estimate based on distance and speed)
+                    float distance = Vector2.Distance(transform.position, wanderTarget);
+                    wanderStateTimer = (distance / (moveSpeed * 0.5f)) + 0.5f; // Add buffer
+                }
+                break;
+
+            case WanderState.Moving:
+                float distToTarget = Vector2.Distance(transform.position, wanderTarget);
+
+                // Check if too far from home - return to home area first
+                float distFromHome = Vector2.Distance(transform.position, homePosition);
+                if (distFromHome > wanderRadius * 1.5f)
+                {
+                    // Too far from home, pick new target closer to home
+                    Vector2 toHome = ((Vector2)homePosition - (Vector2)transform.position).normalized;
+                    wanderTarget = homePosition + new Vector3(toHome.x * wanderRadius * 0.5f, toHome.y * wanderRadius * 0.5f, 0);
+                }
+
+                if (distToTarget > 0.3f && wanderStateTimer > 0)
+                {
+                    // Move towards wander target
+                    Vector2 direction = ((Vector2)wanderTarget - (Vector2)transform.position).normalized;
+                    rb.linearVelocity = direction * moveSpeed * 0.5f; // Slower wander speed
+
+                    if (spriteRenderer != null && direction.x != 0)
+                    {
+                        spriteRenderer.flipX = direction.x < 0;
+                    }
+                }
+                else
+                {
+                    // Reached target or timeout - go idle
+                    StopMovement();
+                    currentWanderState = WanderState.Idle;
+                    wanderStateTimer = Random.Range(idleMinTime, idleMaxTime);
+                }
+                break;
         }
     }
 
@@ -386,7 +511,8 @@ public class HumanEnemy : EnemyBase
 
     private void UpdateMoveAnimation()
     {
-        if (animator != null && rb != null)
+        // Check for valid animator with assigned controller to avoid errors
+        if (animator != null && animator.runtimeAnimatorController != null && rb != null)
         {
             animator.SetBool(AnimIsMoving, rb.linearVelocity.magnitude > 0.1f);
         }
@@ -398,14 +524,20 @@ public class HumanEnemy : EnemyBase
 
     protected override void PerformAttack()
     {
-        if (!CanAttack()) return;
+        if (!CanAttack())
+        {
+            Debug.Log($"[HumanEnemy] {name} CanAttack=false, cooldown remaining: {attackCooldown - (Time.time - lastAttackTime):F1}s");
+            return;
+        }
 
         // RULE: Can only attack when standing still (not moving)
         if (rb != null && rb.linearVelocity.magnitude > 0.1f)
         {
+            Debug.Log($"[HumanEnemy] {name} can't attack - still moving (vel={rb.linearVelocity.magnitude:F2})");
             return; // Can't attack while moving
         }
 
+        Debug.Log($"[HumanEnemy] {name} ATTACKING! isRanged={config?.isRanged}, hasPrefab={config?.projectilePrefab != null}");
         lastAttackTime = Time.time;
 
         // Switch to knife animation for unarmed Pawn
@@ -414,7 +546,7 @@ public class HumanEnemy : EnemyBase
             SwitchToKnifeAnimation();
         }
 
-        if (animator != null)
+        if (animator != null && animator.runtimeAnimatorController != null)
         {
             animator.SetTrigger(AnimAttack);
         }
@@ -425,10 +557,11 @@ public class HumanEnemy : EnemyBase
             AudioSource.PlayClipAtPoint(config.attackSound, transform.position);
         }
 
-        // For ranged enemies, spawn projectile
+        // For ranged enemies, spawn projectile synced with animation end
         if (config != null && config.isRanged)
         {
-            SpawnProjectile();
+            // Delay projectile spawn to sync with attack animation completion
+            StartCoroutine(SpawnProjectileAfterAnimation());
         }
         else
         {
@@ -503,33 +636,79 @@ public class HumanEnemy : EnemyBase
         }
     }
 
+    /// <summary>
+    /// Delay projectile spawn to sync with attack animation end.
+    /// </summary>
+    private IEnumerator SpawnProjectileAfterAnimation()
+    {
+        // Get attack animation length from animator
+        float animDelay = 0.5f; // Default fallback
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+            foreach (var clip in clips)
+            {
+                if (clip.name.ToLower().Contains("attack"))
+                {
+                    animDelay = clip.length * 0.85f; // Fire at 85% of animation
+                    break;
+                }
+            }
+        }
+
+        yield return new WaitForSeconds(animDelay);
+
+        // Only fire if still alive and target exists
+        if (!isDead && target != null)
+        {
+            SpawnProjectile();
+        }
+    }
+
     private void SpawnProjectile()
     {
-        if (config?.projectilePrefab == null || target == null) return;
+        if (target == null) return;
+
+        // Check if projectile prefab is missing - try to load it
+        if (config != null && config.projectilePrefab == null && config.isRanged)
+        {
+            TryLoadArcherProjectilePrefab();
+        }
+
+        if (config?.projectilePrefab == null)
+        {
+            Debug.LogWarning($"[HumanEnemy] {name} has no projectilePrefab! Cannot shoot.");
+            return;
+        }
 
         Vector3 spawnPos = projectileSpawnPoint != null ? projectileSpawnPoint.position : transform.position;
-        Vector3 targetPos = target.position;
 
         GameObject projectile = Instantiate(config.projectilePrefab, spawnPos, Quaternion.identity);
 
-        // Setup projectile damage
+        // Try ArrowProjectile first (for arc trajectory with ground stick)
+        ArrowProjectile arrowScript = projectile.GetComponent<ArrowProjectile>();
+        if (arrowScript != null)
+        {
+            // ArrowProjectile handles parabolic flight, collision, ground stick, and dissolve
+            arrowScript.Setup(damage, gameObject, target, true); // true = damages player/units
+            Debug.Log($"[HumanEnemy] Archer fired arrow at {target.name}");
+            return;
+        }
+
+        // Fallback to Projectile component
         Projectile projScript = projectile.GetComponent<Projectile>();
         if (projScript != null)
         {
-            projScript.Setup(damage, gameObject, true); // true = damages player/units
+            projScript.Setup(damage, gameObject, true);
 
-            // For Archer - use arc trajectory
+            // For Archer without ArrowProjectile - use arc trajectory on Projectile
             if (config.enemyType == EnemyType.Archer)
             {
-                // Calculate flight time based on distance
-                float distance = Vector2.Distance(spawnPos, targetPos);
+                float distance = Vector2.Distance(spawnPos, target.position);
                 float flightTime = distance / config.projectileSpeed;
-                flightTime = Mathf.Clamp(flightTime, 0.5f, 2f); // Min 0.5s, max 2s flight
-
-                // Arc height based on distance
+                flightTime = Mathf.Clamp(flightTime, 0.5f, 2f);
                 float arcHeight = Mathf.Clamp(distance * 0.3f, 1f, 4f);
-
-                projScript.SetupArcTrajectory(targetPos, flightTime, arcHeight);
+                projScript.SetupArcTrajectory(target.position, flightTime, arcHeight);
             }
             else
             {
@@ -544,7 +723,6 @@ public class HumanEnemy : EnemyBase
                     projRb.linearVelocity = direction * config.projectileSpeed;
                 }
 
-                // Destroy after time for non-arc projectiles
                 Destroy(projectile, 5f);
             }
         }
@@ -560,23 +738,24 @@ public class HumanEnemy : EnemyBase
 
         StopMovement();
 
-        // Play death animation
-        if (animator != null)
-        {
-            animator.SetTrigger(AnimDie);
-        }
-
         // Play death sound
         if (config?.deathSound != null)
         {
             AudioSource.PlayClipAtPoint(config.deathSound, transform.position);
         }
 
-        // Drop loot (resources)
-        DropLoot();
+        // No resource drops from enemies — only skulls
+        // (Exception: Peasant carrying resources drops them — handled in Peasant.cs)
 
-        // Note: Skulls are no longer dropped automatically - they come from Soul Drain
-        // DropSkull(); // Disabled - souls are extracted via Soul Drain
+        // Spawn death dust + skull simultaneously
+        // Dust covers the unit, when it fades the skull is already there underneath
+        Vector3 deathPos = transform.position;
+
+        if (EffectManager.Instance != null)
+        {
+            EffectManager.Instance.SpawnDeathEffect(deathPos);
+            EffectManager.Instance.SpawnSkullPickup(deathPos);
+        }
 
         // Notify event system
         if (EventManager.Instance != null)
@@ -584,24 +763,10 @@ public class HumanEnemy : EnemyBase
             EventManager.Instance.OnEnemyDied(gameObject);
         }
 
-        // Disable collider for movement but keep trigger for drain detection
-        Collider2D col = GetComponent<Collider2D>();
-        if (col != null)
-        {
-            col.enabled = false;
-        }
+        Debug.Log($"[HumanEnemy] {config?.displayName ?? "Enemy"} died! Skull will appear after dust.");
 
-        Debug.Log($"[HumanEnemy] {config?.displayName ?? "Enemy"} died!");
-
-        // Become a corpse instead of destroying immediately
-        if (canBeDrained)
-        {
-            BecomeCorpse();
-        }
-        else
-        {
-            Destroy(gameObject, 1f);
-        }
+        // Destroy immediately — visuals handled by death effect and skull pickup
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -748,6 +913,72 @@ public class HumanEnemy : EnemyBase
     }
 
     #endregion
+
+    /// <summary>
+    /// Try to load projectile prefab for ranged enemies (Archer).
+    /// </summary>
+    private void TryLoadArcherProjectilePrefab()
+    {
+        if (config == null || !config.isRanged) return;
+        if (config.projectilePrefab != null) return;
+
+        // Try to load from Resources
+        GameObject prefab = Resources.Load<GameObject>("ArcherArrow");
+        if (prefab != null)
+        {
+            config.projectilePrefab = prefab;
+            Debug.Log("[HumanEnemy] Loaded ArcherArrow prefab from Resources");
+            return;
+        }
+
+        prefab = Resources.Load<GameObject>("TowerArrow");
+        if (prefab != null)
+        {
+            config.projectilePrefab = prefab;
+            Debug.Log("[HumanEnemy] Loaded TowerArrow prefab from Resources");
+            return;
+        }
+
+        #if UNITY_EDITOR
+        // Try AssetDatabase - multiple paths
+        string[] prefabPaths = new string[]
+        {
+            "Assets/Prefabs/ArcherArrow.prefab",
+            "Assets/Prefabs/TowerArrow.prefab",
+            "Assets/Prefabs/Arrow.prefab"
+        };
+
+        foreach (string path in prefabPaths)
+        {
+            prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            if (prefab != null)
+            {
+                config.projectilePrefab = prefab;
+                Debug.Log($"[HumanEnemy] Loaded projectile prefab from {path}");
+                return;
+            }
+        }
+        #endif
+
+        Debug.LogWarning("[HumanEnemy] Could not find projectile prefab for Archer");
+    }
+
+    /// <summary>
+    /// Ensure the enemy has a collider for combat detection.
+    /// </summary>
+    private void EnsureCollider()
+    {
+        // Check if we already have a collider
+        Collider2D existingCollider = GetComponent<Collider2D>();
+        if (existingCollider != null) return;
+
+        // Add CircleCollider2D for combat detection and physics blocking
+        CircleCollider2D col = gameObject.AddComponent<CircleCollider2D>();
+        col.radius = 0.4f;  // Match LevelEditor ENEMY_COLLIDER_RADIUS
+        col.isTrigger = false;
+
+        Debug.Log($"[HumanEnemy] Added missing collider to {name}");
+    }
 
     private void OnDrawGizmosSelected()
     {

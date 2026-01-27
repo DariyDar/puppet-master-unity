@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 /// <summary>
@@ -16,6 +17,16 @@ public class EffectManager : MonoBehaviour
     [SerializeField] private GameObject waterSplashPrefab;
     [SerializeField] private GameObject hitPrefab;
     [SerializeField] private GameObject healPrefab;
+
+    [Header("Death Effect Sprites")]
+    [Tooltip("Sprite frames from Dust_01.png spritesheet (assign all sliced frames)")]
+    [SerializeField] private Sprite[] deathDustFrames;
+    [Tooltip("Sprite frames from Explosion_01.png spritesheet (for TNT death)")]
+    [SerializeField] private Sprite[] tntExplosionFrames;
+
+    [Header("Skull Pickup Sprites")]
+    [Tooltip("First 10 frames from Dead.png (Dead_0 through Dead_9). Used for skull on ground + collection animation.")]
+    [SerializeField] private Sprite[] skullPickupFrames;
 
     [Header("Pool Settings")]
     [SerializeField] private int initialPoolSize = 10;
@@ -343,6 +354,73 @@ public class EffectManager : MonoBehaviour
         }
 
         return effect;
+    }
+
+    /// <summary>
+    /// Spawn death effect: dust cloud animation at death position.
+    /// Returns the DeathEffectPlayer so callers can check dust duration.
+    /// </summary>
+    public DeathEffectPlayer SpawnDeathEffect(Vector3 position, bool useTntExplosion = false)
+    {
+        Sprite[] dustSprites = useTntExplosion ? tntExplosionFrames : deathDustFrames;
+
+        if (dustSprites == null || dustSprites.Length == 0)
+        {
+            Debug.LogWarning($"[EffectManager] No death dust sprites assigned! dust={deathDustFrames?.Length ?? 0}, tnt={tntExplosionFrames?.Length ?? 0}. Run 'Puppet Master > Setup Death Effects'.");
+            return null;
+        }
+
+        GameObject go = new GameObject("DeathEffect");
+        go.transform.position = position;
+        DeathEffectPlayer player = go.AddComponent<DeathEffectPlayer>();
+
+        // Dust only — skull is now a separate pickup
+        player.Setup(dustSprites, null, useTntExplosion ? 6f : 8f);
+        player.Play(position);
+
+        Debug.Log($"[EffectManager] Spawned death dust at {position} with {dustSprites.Length} frames");
+        return player;
+    }
+
+    /// <summary>
+    /// Spawn a skull pickup at position (dropped from dead enemy).
+    /// Shows Dead_9 frame on ground, collected by standing nearby.
+    /// </summary>
+    public GameObject SpawnSkullPickup(Vector3 position)
+    {
+        if (skullPickupFrames == null || skullPickupFrames.Length == 0)
+        {
+            Debug.LogWarning("[EffectManager] No skull pickup sprites assigned. Assign Dead_0 through Dead_9 frames in Inspector.");
+            return null;
+        }
+
+        GameObject go = new GameObject("SkullPickup");
+        go.transform.position = position;
+        SkullPickup pickup = go.AddComponent<SkullPickup>();
+        pickup.Initialize(skullPickupFrames);
+
+        return go;
+    }
+
+    /// <summary>
+    /// Spawn a skull pickup after a delay (waits for dust to dissipate).
+    /// </summary>
+    public void SpawnSkullPickupDelayed(Vector3 position, float delay)
+    {
+        if (delay <= 0f)
+        {
+            SpawnSkullPickup(position);
+        }
+        else
+        {
+            StartCoroutine(SpawnSkullPickupAfterDelay(position, delay));
+        }
+    }
+
+    private IEnumerator SpawnSkullPickupAfterDelay(Vector3 position, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SpawnSkullPickup(position);
     }
 
     #endregion

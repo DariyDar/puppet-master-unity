@@ -12,7 +12,7 @@ public class Storage : BuildingBase
 {
     [Header("Storage Settings")]
     [SerializeField] private bool autoDeposit = true;
-    [SerializeField] private float depositInterval = 0.15f; // Time between each resource flying
+    [SerializeField] private float depositInterval = 0.3f; // Time between each resource flying
 
     [Header("Chest Sprites")]
     [SerializeField] private Sprite chestClosed;
@@ -25,11 +25,14 @@ public class Storage : BuildingBase
 
     [Header("Flying Effect Settings")]
     [SerializeField] private float flyDuration = 0.8f;      // How long resource takes to fly to chest
-    [SerializeField] private float arcHeight = 3f;          // Height of the arc (bigger for longer distances)
-    [SerializeField] private float resourceScale = 1.5f;    // Scale of flying resource sprites (bigger to be visible)
+    [SerializeField] private float arcHeight = 5f;          // Height of the arc (bigger for longer distances)
+    private float resourceScale = 1f;                       // Will be set in Awake to match collected resources
 
     [Header("Effects")]
     [SerializeField] private AudioClip depositSound;
+
+    [Header("Debug")]
+    [SerializeField] private bool debugMode = false;
 
     private float lastDepositTime;
     private AudioSource audioSource;
@@ -43,8 +46,13 @@ public class Storage : BuildingBase
         base.Awake();
         buildingName = "Storage";
 
-        // Set large interaction range (~3 spider lengths, spider radius is ~2.5)
-        interactionRange = 10f;
+        // Set interaction range same as player's ResourcePickup.magnetRadius (9f)
+        // BuildingBase multiplies interactionRange by transform.lossyScale.x
+        // So we divide by scale to get exactly 9f effective radius
+        float scale = transform.lossyScale.x;
+        interactionRange = (scale > 0) ? (9f / scale) : 9f;
+
+        Debug.Log($"[Storage] Scale={scale}, interactionRange={interactionRange}, effectiveRadius={interactionRange * scale}");
 
         // Set initial closed state (spriteRenderer inherited from BuildingBase)
         if (chestClosed != null && spriteRenderer != null)
@@ -60,8 +68,60 @@ public class Storage : BuildingBase
             audioSource.spatialBlend = 0f;
         }
 
+        // Ensure chest has collision - player cannot walk through or push it
+        SetupCollision();
+
+        // Set sorting order so chest renders above player/spider
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sortingOrder = 200; // Much higher than player to ensure chest is always on top
+        }
+
+        // Flying resources should match the visual size of collected resources
+        // ResourcePickup prefabs typically have scale around 3-5
+        resourceScale = 5f;
+
         // Load resource sprites if not assigned
         LoadResourceSprites();
+    }
+
+    /// <summary>
+    /// Setup collision so player cannot walk through or push the chest.
+    /// Box collider covers the entire chest body (not the open lid).
+    /// </summary>
+    private void SetupCollision()
+    {
+        // Add BoxCollider2D if missing
+        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        if (boxCollider == null)
+        {
+            boxCollider = gameObject.AddComponent<BoxCollider2D>();
+        }
+
+        // Collider covers the visible chest body only (not empty space below sprite pivot)
+        if (spriteRenderer != null && spriteRenderer.sprite != null)
+        {
+            Bounds spriteBounds = spriteRenderer.sprite.bounds;
+            // Full width, 70% height (chest body without empty space below)
+            boxCollider.size = new Vector2(spriteBounds.size.x, spriteBounds.size.y * 0.7f);
+            // Offset UP to align with visible chest (pivot is at bottom, chest body is above)
+            boxCollider.offset = new Vector2(0f, spriteBounds.size.y * 0.35f);
+        }
+        else
+        {
+            // Fallback - reasonable chest size
+            boxCollider.size = new Vector2(1f, 0.7f);
+            boxCollider.offset = new Vector2(0f, 0.35f);
+        }
+        boxCollider.isTrigger = false; // Solid collision
+
+        // Add Rigidbody2D as static so it's completely immovable
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+        }
+        rb.bodyType = RigidbodyType2D.Static;
     }
 
     private void LoadResourceSprites()
@@ -74,13 +134,25 @@ public class Storage : BuildingBase
         if (woodSprite == null)
             woodSprite = Resources.Load<Sprite>("Sprites/Resources/Wood");
 
+        // Log what was loaded
+        Debug.Log($"[Storage] Resource sprites loaded - Gold: {(goldSprite != null ? goldSprite.name : "FALLBACK")}, Meat: {(meatSprite != null ? meatSprite.name : "FALLBACK")}, Wood: {(woodSprite != null ? woodSprite.name : "FALLBACK")}");
+
         // Create fallback colored sprites if none found
         if (goldSprite == null)
+        {
+            Debug.LogWarning("[Storage] Gold sprite not found in Resources/Sprites/Resources/Gold, using fallback");
             goldSprite = CreateColoredSprite(new Color(1f, 0.85f, 0f)); // Gold
+        }
         if (meatSprite == null)
+        {
+            Debug.LogWarning("[Storage] Meat sprite not found in Resources/Sprites/Resources/Meat, using fallback");
             meatSprite = CreateColoredSprite(new Color(0.9f, 0.3f, 0.3f)); // Red meat
+        }
         if (woodSprite == null)
+        {
+            Debug.LogWarning("[Storage] Wood sprite not found in Resources/Sprites/Resources/Wood, using fallback");
             woodSprite = CreateColoredSprite(new Color(0.6f, 0.4f, 0.2f)); // Brown wood
+        }
     }
 
     /// <summary>
@@ -127,6 +199,14 @@ public class Storage : BuildingBase
 
         bool playerHasCargo = GameManager.Instance != null && GameManager.Instance.CurrentCargo > 0;
 
+        // Debug output every second
+        if (debugMode && Time.frameCount % 60 == 0 && player != null)
+        {
+            float distance = Vector2.Distance(transform.position, player.position);
+            float scaledRange = interactionRange * transform.lossyScale.x;
+            Debug.Log($"[Storage] Distance: {distance:F1}, ScaledRange: {scaledRange:F1}, InRange: {isPlayerInRange}, HasCargo: {playerHasCargo}, CargoCount: {GameManager.Instance?.CurrentCargo ?? 0}");
+        }
+
         // Open chest when player is in range with cargo
         if (isPlayerInRange && playerHasCargo && !isChestOpen)
         {
@@ -147,7 +227,17 @@ public class Storage : BuildingBase
 
     private void StartDepositing()
     {
-        if (isDepositing) return;
+        if (isDepositing)
+        {
+            if (debugMode) Debug.Log($"[Storage:{GetInstanceID()}] StartDepositing called but already depositing, ignoring");
+            return;
+        }
+
+        // Set flag IMMEDIATELY to prevent multiple coroutines
+        isDepositing = true;
+
+        if (debugMode) Debug.Log($"[Storage:{GetInstanceID()}] Starting deposit coroutine. Cargo: Meat={GameManager.Instance?.CargoMeat}, Wood={GameManager.Instance?.CargoWood}, Gold={GameManager.Instance?.CargoGold}");
+
         if (depositCoroutine != null) StopCoroutine(depositCoroutine);
         depositCoroutine = StartCoroutine(DepositResourcesGradually());
     }
@@ -167,25 +257,30 @@ public class Storage : BuildingBase
     /// </summary>
     private IEnumerator DepositResourcesGradually()
     {
-        isDepositing = true;
+        // isDepositing is already set in StartDepositing()
 
         while (GameManager.Instance != null && GameManager.Instance.CurrentCargo > 0 && isPlayerInRange)
         {
+            // Capture current cargo counts BEFORE transfer
+            int meatBefore = GameManager.Instance.CargoMeat;
+            int woodBefore = GameManager.Instance.CargoWood;
+            int goldBefore = GameManager.Instance.CargoGold;
+
             // Determine which resource to deposit (prioritize: meat, wood, gold)
             string resourceType = null;
             Sprite resourceSprite = null;
 
-            if (GameManager.Instance.CargoMeat > 0)
+            if (meatBefore > 0)
             {
                 resourceType = "meat";
                 resourceSprite = meatSprite;
             }
-            else if (GameManager.Instance.CargoWood > 0)
+            else if (woodBefore > 0)
             {
                 resourceType = "wood";
                 resourceSprite = woodSprite;
             }
-            else if (GameManager.Instance.CargoGold > 0)
+            else if (goldBefore > 0)
             {
                 resourceType = "gold";
                 resourceSprite = goldSprite;
@@ -193,22 +288,42 @@ public class Storage : BuildingBase
 
             if (resourceType != null)
             {
-                // Spawn flying resource visual
-                if (player != null && resourceSprite != null)
+                // Actually transfer the resource FIRST
+                bool transferred = DepositSingleResource(resourceType);
+
+                // Verify transfer actually happened by checking cargo changed
+                int meatAfter = GameManager.Instance.CargoMeat;
+                int woodAfter = GameManager.Instance.CargoWood;
+                int goldAfter = GameManager.Instance.CargoGold;
+
+                bool cargoActuallyChanged = (meatAfter < meatBefore) || (woodAfter < woodBefore) || (goldAfter < goldBefore);
+
+                // Only spawn visual if resource was actually transferred AND cargo changed
+                if (transferred && cargoActuallyChanged)
                 {
-                    SpawnFlyingResource(player.position, transform.position, resourceSprite);
+                    if (player != null && resourceSprite != null)
+                    {
+                        SpawnFlyingResource(player.position, transform.position, resourceSprite);
+                    }
+
+                    // Play sound
+                    if (depositSound != null && audioSource != null)
+                    {
+                        audioSource.PlayOneShot(depositSound, 0.5f);
+                    }
+
+                    if (debugMode)
+                    {
+                        Debug.Log($"[Storage:{GetInstanceID()}] Deposited 1 {resourceType}. Cargo: Meat={meatAfter}, Wood={woodAfter}, Gold={goldAfter}");
+                    }
                 }
-
-                // Actually transfer the resource
-                DepositSingleResource(resourceType);
-
-                // Play sound
-                if (depositSound != null && audioSource != null)
+                else if (debugMode)
                 {
-                    audioSource.PlayOneShot(depositSound, 0.5f);
+                    Debug.LogWarning($"[Storage:{GetInstanceID()}] Transfer failed or cargo didn't change! transferred={transferred}, cargoChanged={cargoActuallyChanged}");
                 }
             }
 
+            // Wait before next deposit
             yield return new WaitForSeconds(depositInterval);
         }
 
@@ -223,11 +338,12 @@ public class Storage : BuildingBase
 
     /// <summary>
     /// Deposit a single unit of a specific resource type.
+    /// Returns true if resource was successfully transferred.
     /// </summary>
-    private void DepositSingleResource(string resourceType)
+    private bool DepositSingleResource(string resourceType)
     {
-        if (GameManager.Instance == null) return;
-        GameManager.Instance.DepositSingleResource(resourceType);
+        if (GameManager.Instance == null) return false;
+        return GameManager.Instance.DepositSingleResource(resourceType);
     }
 
     /// <summary>
@@ -240,8 +356,13 @@ public class Storage : BuildingBase
 
         SpriteRenderer sr = flyingObj.AddComponent<SpriteRenderer>();
         sr.sprite = sprite;
-        sr.sortingOrder = 100; // Above everything
+        sr.sortingOrder = 300; // Above chest (200) so resources are visible flying into it
         flyingObj.transform.localScale = Vector3.one * resourceScale;
+
+        if (debugMode)
+        {
+            Debug.Log($"[Storage] Spawning flying resource from {startPos} to {endPos}, sprite: {(sprite != null ? sprite.name : "fallback")}, scale: {resourceScale}");
+        }
 
         flyingResources.Add(flyingObj);
         StartCoroutine(FlyResourceToChest(flyingObj, startPos, endPos));
@@ -249,34 +370,59 @@ public class Storage : BuildingBase
 
     /// <summary>
     /// Animate resource flying in an arc from start to end position.
+    /// Resource lands in the open interior of the chest (upper part) and shrinks before disappearing.
     /// </summary>
     private IEnumerator FlyResourceToChest(GameObject obj, Vector3 start, Vector3 end)
     {
         float elapsed = 0f;
 
-        // End position is slightly above chest center
-        Vector3 chestTop = end + Vector3.up * 0.5f;
+        // End position is in the open interior of the chest (the dark opening when lid is open)
+        // 20 pixels = 20/32 = 0.625 units (at PPU=32)
+        Vector3 chestInterior = end + Vector3.up * 3.4f; // Slightly lower than before
 
-        while (elapsed < flyDuration && obj != null)
+        // Phase 1: Fly to chest with arc (70% of duration)
+        float flyPhase = flyDuration * 0.7f;
+
+        while (elapsed < flyPhase && obj != null)
         {
             elapsed += Time.deltaTime;
-            float t = elapsed / flyDuration;
+            float t = elapsed / flyPhase;
 
             // Ease out for smooth deceleration
             float smoothT = 1f - Mathf.Pow(1f - t, 2f);
 
             // Calculate arc position
-            Vector3 linearPos = Vector3.Lerp(start, chestTop, smoothT);
+            Vector3 linearPos = Vector3.Lerp(start, chestInterior, smoothT);
             float arc = arcHeight * Mathf.Sin(smoothT * Mathf.PI);
             linearPos.y += arc;
 
             obj.transform.position = linearPos;
 
-            // Scale down as it approaches chest
-            float scale = Mathf.Lerp(resourceScale, resourceScale * 0.5f, smoothT);
-            obj.transform.localScale = Vector3.one * scale;
+            // Keep scale constant during flight
+            obj.transform.localScale = Vector3.one * resourceScale;
 
             yield return null;
+        }
+
+        // Phase 2: Shrink rapidly inside chest interior (30% of duration)
+        if (obj != null)
+        {
+            obj.transform.position = chestInterior;
+            float shrinkDuration = flyDuration * 0.3f;
+            float shrinkElapsed = 0f;
+            float startScale = resourceScale;
+
+            while (shrinkElapsed < shrinkDuration && obj != null)
+            {
+                shrinkElapsed += Time.deltaTime;
+                float t = shrinkElapsed / shrinkDuration;
+
+                // Shrink from full size to zero (ease in - starts slow, ends fast)
+                float scale = startScale * (1f - t * t);
+                obj.transform.localScale = Vector3.one * Mathf.Max(0f, scale);
+
+                yield return null;
+            }
         }
 
         // Clean up
@@ -338,6 +484,13 @@ public class Storage : BuildingBase
     {
         if (!isChestOpen) return;
 
+        // Don't close while resources are still flying - wait for them to finish
+        if (flyingResources.Count > 0)
+        {
+            StartCoroutine(CloseChestWhenReady());
+            return;
+        }
+
         isChestOpen = false;
 
         if (chestClosed != null && spriteRenderer != null)
@@ -346,6 +499,29 @@ public class Storage : BuildingBase
         }
 
         Debug.Log("[Storage] Chest closed");
+    }
+
+    /// <summary>
+    /// Wait for all flying resources to finish before closing chest.
+    /// </summary>
+    private IEnumerator CloseChestWhenReady()
+    {
+        // Wait until all flying resources are gone
+        while (flyingResources.Count > 0)
+        {
+            yield return null;
+        }
+
+        // Now close
+        if (isChestOpen)
+        {
+            isChestOpen = false;
+            if (chestClosed != null && spriteRenderer != null)
+            {
+                spriteRenderer.sprite = chestClosed;
+            }
+            Debug.Log("[Storage] Chest closed (after resources finished)");
+        }
     }
 
     public override bool CanInteract()

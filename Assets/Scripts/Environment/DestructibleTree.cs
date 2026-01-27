@@ -31,6 +31,14 @@ public class DestructibleTree : MonoBehaviour
     [Header("Collision")]
     [SerializeField] private Collider2D treeCollider;
 
+    [Header("Trunk Collider Settings")]
+    [Tooltip("If true, collider will be resized to only cover the trunk (player can walk behind tree crown)")]
+    [SerializeField] private bool useTrunkCollider = true;
+    [Tooltip("Size of the trunk collider (width, height)")]
+    [SerializeField] private Vector2 trunkColliderSize = new Vector2(0.5f, 0.4f);
+    [Tooltip("Offset of trunk collider from sprite center (usually negative Y to place at bottom)")]
+    [SerializeField] private Vector2 trunkColliderOffset = new Vector2(0f, -0.8f);
+
     private AudioSource audioSource;
     private bool isDestroyed = false;
     private Color originalColor;
@@ -68,6 +76,37 @@ public class DestructibleTree : MonoBehaviour
                 spriteRenderer.sprite = treeSprite;
             }
         }
+
+        // Setup trunk collider for proper layering (player can walk behind crown)
+        if (useTrunkCollider)
+        {
+            SetupTrunkCollider();
+        }
+    }
+
+    /// <summary>
+    /// Setup a small collider at the trunk base so player can walk behind the crown.
+    /// </summary>
+    private void SetupTrunkCollider()
+    {
+        BoxCollider2D boxCollider = treeCollider as BoxCollider2D;
+        if (boxCollider == null)
+        {
+            boxCollider = GetComponent<BoxCollider2D>();
+        }
+
+        if (boxCollider == null)
+        {
+            // Create a new BoxCollider2D if none exists
+            boxCollider = gameObject.AddComponent<BoxCollider2D>();
+            treeCollider = boxCollider;
+        }
+
+        // Set size and offset for trunk only
+        boxCollider.size = trunkColliderSize;
+        boxCollider.offset = trunkColliderOffset;
+
+        Debug.Log($"[DestructibleTree] {gameObject.name}: Trunk collider set - Size: {trunkColliderSize}, Offset: {trunkColliderOffset}");
     }
 
     /// <summary>
@@ -260,5 +299,13 @@ public class DestructibleTree : MonoBehaviour
         // Draw health bar above tree
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(transform.position + Vector3.up * 1.5f, new Vector3(1f, 0.2f, 0f));
+
+        // Draw trunk collider preview
+        if (useTrunkCollider)
+        {
+            Gizmos.color = Color.yellow;
+            Vector3 colliderCenter = transform.position + new Vector3(trunkColliderOffset.x, trunkColliderOffset.y, 0);
+            Gizmos.DrawWireCube(colliderCenter, new Vector3(trunkColliderSize.x, trunkColliderSize.y, 0));
+        }
     }
 }

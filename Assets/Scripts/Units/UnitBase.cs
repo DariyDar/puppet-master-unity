@@ -594,16 +594,17 @@ public class UnitBase : MonoBehaviour
         // Stop movement
         StopMovement();
 
-        // Play death animation
-        if (animator != null)
-        {
-            animator.SetTrigger(AnimDie);
-        }
-
         // Disable collider
         if (col != null)
         {
             col.enabled = false;
+        }
+
+        // Spawn death effect (dust + skull, or TNT explosion for TNT units)
+        if (EffectManager.Instance != null)
+        {
+            bool isTnt = UnitTypeName != null && UnitTypeName.ToLower().Contains("tnt");
+            EffectManager.Instance.SpawnDeathEffect(transform.position, isTnt);
         }
 
         // Notify event system
@@ -618,8 +619,8 @@ public class UnitBase : MonoBehaviour
             GameManager.Instance.UpdateArmyCount(GameManager.Instance.ArmyCount - 1);
         }
 
-        // Destroy after delay (for death animation)
-        Destroy(gameObject, 1f);
+        // Destroy immediately (death effect handles visuals)
+        Destroy(gameObject);
     }
 
     #endregion

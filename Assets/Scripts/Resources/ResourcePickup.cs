@@ -19,9 +19,9 @@ public class ResourcePickup : MonoBehaviour
     [SerializeField] private int amount = 1;
 
     [Header("Pickup Settings")]
-    [SerializeField] private float pickupRadius = 0.5f;
-    [SerializeField] private float magnetRadius = 3f;
-    [SerializeField] private float magnetSpeed = 8f;
+    [SerializeField] private float pickupRadius = 1.5f;     // Doubled from 0.75f
+    [SerializeField] private float magnetRadius = 9f;       // Doubled from 4.5f
+    [SerializeField] private float magnetSpeed = 40f;       // 5x faster (was 8f)
     [SerializeField] private float spawnBounceForce = 3f;
 
     [Header("Visual")]
@@ -29,9 +29,16 @@ public class ResourcePickup : MonoBehaviour
     [SerializeField] private float bobSpeed = 2f;
     [SerializeField] private float bobAmount = 0.1f;
 
+    [Header("Collision")]
+    [SerializeField] private float collisionRadius = 0.4f;  // Radius for resource-to-resource collision
+
+    // Layer name for resources - will be created if doesn't exist
+    private const string RESOURCE_LAYER = "Resources";
+
     private Transform player;
     private Vector3 startPosition;
     private Rigidbody2D rb;
+    private CircleCollider2D circleCollider;
 
     private void Awake()
     {
@@ -39,12 +46,52 @@ public class ResourcePickup : MonoBehaviour
             spriteRenderer = GetComponent<SpriteRenderer>();
 
         rb = GetComponent<Rigidbody2D>();
+
+        // Setup collision between resources only
+        SetupResourceCollision();
+    }
+
+    /// <summary>
+    /// Setup collision so resources push each other apart but don't block magnet movement.
+    /// Uses trigger collider + manual overlap resolution instead of physics collision.
+    /// </summary>
+    private void SetupResourceCollision()
+    {
+        // Try to use "Resources" layer, fallback to layer 8 if not defined
+        int resourceLayer = LayerMask.NameToLayer(RESOURCE_LAYER);
+        if (resourceLayer == -1)
+        {
+            resourceLayer = 8;
+        }
+        gameObject.layer = resourceLayer;
+
+        // Add CircleCollider2D as TRIGGER for overlap detection
+        circleCollider = GetComponent<CircleCollider2D>();
+        if (circleCollider == null)
+        {
+            circleCollider = gameObject.AddComponent<CircleCollider2D>();
+        }
+        circleCollider.radius = collisionRadius;
+        circleCollider.isTrigger = true; // Trigger instead of solid - won't block movement
+
+        // Setup Rigidbody2D for physics queries only
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+        }
+        rb.gravityScale = 0f;
+        rb.linearDamping = 5f;
+        rb.angularDamping = 5f;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.bodyType = RigidbodyType2D.Kinematic; // Kinematic - we control movement directly
     }
 
     private void Start()
     {
         startPosition = transform.position;
         FindPlayer();
+
+        Debug.Log($"[ResourcePickup] Created {type} with amount={amount} at {transform.position}");
 
         // Initial bounce when spawned
         if (rb != null)
@@ -107,12 +154,36 @@ public class ResourcePickup : MonoBehaviour
 
         Vector3 direction = (player.position - transform.position).normalized;
         transform.position += direction * magnetSpeed * Time.deltaTime;
+    }
 
-        // Disable physics when magneting
-        if (rb != null)
+    /// <summary>
+    /// Push resources apart when they overlap (soft collision via triggers).
+    /// </summary>
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        // Only push apart other resources
+        ResourcePickup otherResource = other.GetComponent<ResourcePickup>();
+        if (otherResource == null) return;
+
+        // Calculate push direction (away from other resource)
+        Vector2 pushDir = (transform.position - other.transform.position);
+        float distance = pushDir.magnitude;
+
+        if (distance < 0.01f)
         {
-            rb.linearVelocity = Vector2.zero;
+            // If exactly overlapping, push in random direction
+            pushDir = Random.insideUnitCircle.normalized;
         }
+        else
+        {
+            pushDir = pushDir.normalized;
+        }
+
+        // Push force decreases with distance
+        float pushStrength = 2f * (1f - distance / (collisionRadius * 2f));
+        pushStrength = Mathf.Max(0f, pushStrength);
+
+        transform.position += (Vector3)(pushDir * pushStrength * Time.deltaTime);
     }
 
     private void Pickup()
