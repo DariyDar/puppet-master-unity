@@ -56,9 +56,9 @@ public class HumanEnemy : EnemyBase
     private Vector3 wanderTarget;
 
     public EnemyConfig Config => config;
-    public EnemyType EnemyTypeEnum => config != null ? config.enemyType : EnemyType.PawnUnarmed;
+    public EnemyType EnemyTypeEnum => config != null ? config.enemyType : EnemyType.Pawn;
     public bool IsCorpse => isCorpse;
-    public bool IsUnarmedPawn => config != null && config.enemyType == EnemyType.PawnUnarmed;
+    public bool IsUnarmedPawn => config != null && config.enemyType == EnemyType.Pawn;
     public bool IsBeingDrained => isBeingDrained;
     public bool CanBeDrained => canBeDrained && isCorpse && !isBeingDrained;
 
@@ -193,6 +193,10 @@ public class HumanEnemy : EnemyBase
                 UpdateRangedBehavior();
                 break;
 
+            case EnemyBehavior.Support:
+                UpdateSupportBehavior();
+                break;
+
             case EnemyBehavior.Aggressive:
             default:
                 UpdateAggressiveBehavior();
@@ -204,6 +208,14 @@ public class HumanEnemy : EnemyBase
     {
         if (isDead || IsStunned) return;
 
+        // Don't move while playing attack animation — movement would cancel it
+        if (isPlayingAttackAnimation)
+        {
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+            UpdateMoveAnimation();
+            return;
+        }
+
         if (isFleeing)
         {
             Flee();
@@ -211,52 +223,103 @@ public class HumanEnemy : EnemyBase
         else if (target != null)
         {
             float dist = GetDistanceToTarget();
+            // Use 20% range buffer so unit doesn't need to move and break attacks
+            float effectiveRange = attackRange * 1.2f;
+
+            string behavior = config != null ? config.behavior.ToString() : "NoConfig";
+
+            // Log every 60 frames to avoid spam
+            if (Time.frameCount % 60 == 0)
+            {
+                bool canAtk = CanAttack();
+                Debug.Log($"[HumanEnemy.FixedUpdate] {gameObject.name} behavior={behavior} dist={dist:F2} effectiveRange={effectiveRange:F2} attackRange={attackRange:F2} chaseRange={chaseRange:F2} canAttack={canAtk} target={target.name}");
+            }
 
             // Special handling for Ranged behavior (Archer)
             if (config != null && config.behavior == EnemyBehavior.Ranged)
             {
                 float fearRange = config.fearRange;
 
-                // If too close - flee (handled in UpdateRangedBehavior)
                 if (dist < fearRange)
                 {
-                    // Just wait for flee to be triggered in Update
+                    // Too close - flee (triggered in Update)
                 }
-                // In attack range - stop and shoot
-                else if (dist <= attackRange && CanAttack())
+                else if (dist <= effectiveRange && CanAttack())
                 {
                     StopMovement();
                     FaceTarget();
                     PerformAttack();
                 }
-                // Too far - move closer (handled in UpdateRangedBehavior)
                 else if (dist > attackRange)
                 {
                     // Movement handled in UpdateRangedBehavior
                 }
                 else
                 {
-                    // In range but cooling down - just stand
                     StopMovement();
                     FaceTarget();
                 }
             }
             else if (config != null && config.behavior == EnemyBehavior.Coward)
             {
-                // Coward behavior - NEVER attack or chase, only flee
-                // The flee is handled above when isFleeing is true
-                // If we get here, we're not fleeing - just stand still or wander
-                StopMovement();
+                // Pawn (Coward) - only attacks in desperate mode (knife)
+                float desperateRange = config?.desperateRange ?? 2f;
+                if (isUsingKnifeAnimation && dist <= desperateRange * 1.2f)
+                {
+                    // In desperate mode - attack!
+                    if (dist <= attackRange * 1.2f)
+                    {
+                        StopMovement();
+                        FaceTarget();
+                        if (CanAttack())
+                        {
+                            PerformAttack();
+                        }
+                    }
+                    else
+                    {
+                        // Move towards target to attack
+                        MoveTowardsTarget();
+                    }
+                }
+                else
+                {
+                    // Not in desperate mode - flee is handled in UpdateCowardBehavior
+                    StopMovement();
+                }
+            }
+            else if (config != null && config.behavior == EnemyBehavior.Support)
+            {
+                // Monk (Support) - doesn't attack player, only heals allies
+                // Fleeing is handled in isFleeing check above
+                // Here we move towards wounded ally if target is set (it's an ally, not player)
+                if (target != null && target.GetComponent<EnemyBase>() != null)
+                {
+                    // Target is a wounded ally - move towards them
+                    float distToAlly = Vector2.Distance(transform.position, target.position);
+                    float healRange = config?.healRange ?? 8f;
+
+                    if (distToAlly > healRange * 0.8f) // Move until 80% of heal range
+                    {
+                        MoveTowardsTarget();
+                    }
+                    else
+                    {
+                        StopMovement();
+                    }
+                }
+                else
+                {
+                    StopMovement();
+                }
             }
             else
             {
                 // Normal melee behavior (Aggressive, Defensive, Guard)
-                if (dist <= attackRange)
+                if (dist <= effectiveRange)
                 {
-                    // In attack range - stop and face target
                     StopMovement();
                     FaceTarget();
-                    // Attack if cooldown is ready
                     if (CanAttack())
                     {
                         PerformAttack();
@@ -268,7 +331,6 @@ public class HumanEnemy : EnemyBase
                 }
                 else
                 {
-                    // Target out of range
                     target = null;
                     ReturnToHome();
                 }
@@ -276,6 +338,10 @@ public class HumanEnemy : EnemyBase
         }
         else
         {
+            if (Time.frameCount % 60 == 0)
+            {
+                Debug.Log($"[HumanEnemy.FixedUpdate] {gameObject.name} NO TARGET — returning home");
+            }
             ReturnToHome();
         }
 
@@ -361,22 +427,147 @@ public class HumanEnemy : EnemyBase
 
     private void UpdateCowardBehavior()
     {
-        // Cowards ALWAYS try to flee when they see the player
+        // Pawn (Coward) behavior:
+        // 1. When player is within Fear range - flee
+        // 2. When player is within Desperate range - switch to knife and attack
+        // 3. When player exits Desperate range - put knife away and flee again
         FindTarget();
 
         if (target != null)
         {
             float dist = GetDistanceToTarget();
-            // Flee if within detection range (not just fleeRange which is too small)
-            float effectiveFleeRange = config?.detectionRange ?? 8f;
-            if (dist < effectiveFleeRange && !isFleeing)
+            float fearRange = config?.fearRange ?? 16f;
+            float desperateRange = config?.desperateRange ?? 2f;
+
+            // If player is too close (within desperate range) - switch to knife attack mode
+            if (dist <= desperateRange)
             {
-                StartFleeing();
+                // Stop fleeing, switch to desperate attack mode
+                isFleeing = false;
+
+                // Switch to knife animation if not already
+                if (!isUsingKnifeAnimation)
+                {
+                    SwitchToKnifeAnimation();
+                }
+
+                // Attack the player (handled in FixedUpdate)
             }
-            // Keep fleeing as long as player is visible
-            else if (isFleeing && dist < effectiveFleeRange)
+            // If player is within fear range but outside desperate range - flee
+            else if (dist <= fearRange)
             {
-                fleeTimer = FLEE_DURATION; // Reset timer to keep fleeing
+                // Return to unarmed animation if was in knife mode
+                if (isUsingKnifeAnimation)
+                {
+                    StartCoroutine(ReturnToUnarmedAnimation());
+                }
+
+                // Flee from player
+                if (!isFleeing)
+                {
+                    StartFleeing();
+                }
+                else
+                {
+                    fleeTimer = FLEE_DURATION; // Keep fleeing
+                }
+            }
+            // Player is outside fear range - calm down
+            else
+            {
+                isFleeing = false;
+                target = null;
+            }
+        }
+        else
+        {
+            // No target - return to normal and wander
+            isFleeing = false;
+            if (isUsingKnifeAnimation)
+            {
+                StartCoroutine(ReturnToUnarmedAnimation());
+            }
+        }
+    }
+
+    /// <summary>
+    /// Support (Monk) behavior:
+    /// 1. Does NOT attack player - no target seeking for attack
+    /// 2. If player is within Fear range - flee from player (stops healing)
+    /// 3. If wounded ally is within Heal range - heal them continuously
+    /// 4. Otherwise wander around home position
+    /// </summary>
+    private void UpdateSupportBehavior()
+    {
+        // Check for player to flee from (NOT to attack!)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        float fearRange = config?.fearRange ?? 8f;
+        float healRange = config?.healRange ?? 8f;
+
+        if (player != null)
+        {
+            float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
+
+            // If player is too close - flee!
+            if (distToPlayer <= fearRange)
+            {
+                // Stop healing if we were healing
+                if (isHealingContinuously)
+                {
+                    StopMonkHealing();
+                }
+
+                target = player.transform; // Set target for fleeing direction
+                if (!isFleeing)
+                {
+                    StartFleeing();
+                    Debug.Log($"[Monk] Player too close ({distToPlayer:F1} <= {fearRange:F1}) - fleeing!");
+                }
+                else
+                {
+                    fleeTimer = FLEE_DURATION; // Keep fleeing
+                }
+                return;
+            }
+        }
+
+        // Not fleeing - stop and look for allies to heal
+        isFleeing = false;
+        target = null; // Monk does NOT target player for attack
+
+        // Find wounded ally to heal
+        EnemyBase woundedAlly = FindNearestWoundedAlly();
+        if (woundedAlly != null)
+        {
+            float distToAlly = Vector2.Distance(transform.position, woundedAlly.transform.position);
+
+            // If ally is in heal range - start continuous healing (if not already)
+            if (distToAlly <= healRange)
+            {
+                if (!isHealingContinuously)
+                {
+                    PerformMonkHeal(); // Starts continuous healing loop
+                }
+                // else: already healing - loop handles finding new targets
+            }
+            // If ally is outside heal range - move towards them
+            else
+            {
+                // Stop healing while moving
+                if (isHealingContinuously)
+                {
+                    StopMonkHealing();
+                }
+                // Set temporary target for movement (not for attack)
+                target = woundedAlly.transform;
+            }
+        }
+        else
+        {
+            // No wounded allies - stop healing
+            if (isHealingContinuously)
+            {
+                StopMonkHealing();
             }
         }
     }
@@ -526,29 +717,34 @@ public class HumanEnemy : EnemyBase
     {
         if (!CanAttack())
         {
-            Debug.Log($"[HumanEnemy] {name} CanAttack=false, cooldown remaining: {attackCooldown - (Time.time - lastAttackTime):F1}s");
+            Debug.Log($"[HumanEnemy.PerformAttack] {gameObject.name} CanAttack=false (stunned={IsStunned} playing={isPlayingAttackAnimation} cooldown={(Time.time - lastAttackTime):F2}/{attackCooldown:F2})");
             return;
         }
 
         // RULE: Can only attack when standing still (not moving)
         if (rb != null && rb.linearVelocity.magnitude > 0.1f)
         {
-            Debug.Log($"[HumanEnemy] {name} can't attack - still moving (vel={rb.linearVelocity.magnitude:F2})");
-            return; // Can't attack while moving
+            Debug.Log($"[HumanEnemy.PerformAttack] {gameObject.name} BLOCKED: still moving vel={rb.linearVelocity.magnitude:F3}");
+            return;
         }
 
-        Debug.Log($"[HumanEnemy] {name} ATTACKING! isRanged={config?.isRanged}, hasPrefab={config?.projectilePrefab != null}");
-        lastAttackTime = Time.time;
+        string enemyType = config != null ? config.enemyType.ToString() : "NoConfig";
+        string behavior = config != null ? config.behavior.ToString() : "NoConfig";
+        bool isRanged = config != null && config.isRanged;
+        Debug.Log($"[HumanEnemy.PerformAttack] {gameObject.name} type={enemyType} behavior={behavior} isRanged={isRanged} isUnarmedPawn={IsUnarmedPawn}");
+
+        // Monk heals allies instead of attacking
+        if (config != null && config.enemyType == EnemyType.Monk)
+        {
+            PerformMonkHeal();
+            return;
+        }
 
         // Switch to knife animation for unarmed Pawn
         if (IsUnarmedPawn && !isUsingKnifeAnimation)
         {
+            Debug.Log($"[HumanEnemy.PerformAttack] {gameObject.name} switching to knife animation");
             SwitchToKnifeAnimation();
-        }
-
-        if (animator != null && animator.runtimeAnimatorController != null)
-        {
-            animator.SetTrigger(AnimAttack);
         }
 
         // Play attack sound
@@ -557,24 +753,256 @@ public class HumanEnemy : EnemyBase
             AudioSource.PlayClipAtPoint(config.attackSound, transform.position);
         }
 
-        // For ranged enemies, spawn projectile synced with animation end
+        // For ranged enemies, use ranged attack coroutine (projectile after animation)
         if (config != null && config.isRanged)
         {
-            // Delay projectile spawn to sync with attack animation completion
-            StartCoroutine(SpawnProjectileAfterAnimation());
+            lastAttackTime = Time.time;
+            isPlayingAttackAnimation = true;
+
+            float animDuration = GetAttackAnimationDuration();
+            if (animator != null)
+            {
+                animator.SetTrigger(AnimAttack);
+            }
+
+            if (attackAnimCoroutine != null) StopCoroutine(attackAnimCoroutine);
+            attackAnimCoroutine = StartCoroutine(RangedAttackAnimCoroutine(animDuration));
         }
         else
         {
-            // Melee - deal damage directly
-            DealDamage();
-        }
+            Debug.Log($"[HumanEnemy.PerformAttack] {gameObject.name} MELEE path → calling base.PerformAttack()");
+            // Melee - use base class animation-bound attack (damage on animation end)
+            base.PerformAttack();
 
-        // Schedule return to unarmed animation for Pawn
-        if (IsUnarmedPawn && isUsingKnifeAnimation)
-        {
-            StartCoroutine(ReturnToUnarmedAnimation());
+            // Schedule return to unarmed animation for Pawn
+            if (IsUnarmedPawn && isUsingKnifeAnimation)
+            {
+                StartCoroutine(ReturnToUnarmedAnimation());
+            }
         }
     }
+
+    /// <summary>
+    /// Ranged attack: spawn projectile on the LAST FRAME of animation (not after).
+    /// This makes the arrow appear to leave the bow at the right moment.
+    /// Canceled if interrupted by stun or death.
+    /// </summary>
+    private IEnumerator RangedAttackAnimCoroutine(float animDuration)
+    {
+        // Spawn projectile at ~75% of animation (second-to-last frame)
+        // For 8-frame animation at 12fps (0.667s), this is around frame 6 (0.5s)
+        float projectileSpawnTime = animDuration * 0.75f;
+        bool projectileSpawned = false;
+        float elapsed = 0f;
+
+        while (elapsed < animDuration)
+        {
+            elapsed += Time.deltaTime;
+
+            if (isDead || IsStunned)
+            {
+                CancelAttackAnimation();
+                yield break;
+            }
+
+            // Spawn projectile on the last frame of animation
+            if (!projectileSpawned && elapsed >= projectileSpawnTime)
+            {
+                projectileSpawned = true;
+                if (!isDead && target != null)
+                {
+                    SpawnProjectile();
+                }
+            }
+
+            yield return null;
+        }
+
+        isPlayingAttackAnimation = false;
+        attackAnimCoroutine = null;
+    }
+
+    #region Monk Healing
+
+    private Coroutine monkHealCoroutine;
+    private EnemyBase currentHealTarget;
+    private bool isHealingContinuously = false;
+
+    /// <summary>
+    /// Get heal amount from config (with fallback).
+    /// </summary>
+    private float MonkHealAmount => config?.healAmount ?? 15f;
+
+    /// <summary>
+    /// Get heal range from config (with fallback).
+    /// </summary>
+    private float MonkHealRange => config?.healRange ?? 8f;
+
+    /// <summary>
+    /// Monk heals the nearest wounded ally.
+    /// Starts continuous healing loop that repeats while there are wounded allies.
+    /// </summary>
+    private void PerformMonkHeal()
+    {
+        // Don't start if already healing
+        if (isHealingContinuously) return;
+
+        // Find nearest wounded ally in range
+        EnemyBase healTarget = FindNearestWoundedAlly();
+        if (healTarget == null) return;
+
+        // Set flag BEFORE starting coroutine to prevent multiple starts
+        isHealingContinuously = true;
+
+        // Start continuous healing loop
+        if (monkHealCoroutine != null) StopCoroutine(monkHealCoroutine);
+        monkHealCoroutine = StartCoroutine(ContinuousHealingLoop());
+
+        Debug.Log($"[Monk] Started continuous healing loop for {healTarget.name}");
+    }
+
+    /// <summary>
+    /// Stop monk healing (called when fleeing or dying).
+    /// </summary>
+    private void StopMonkHealing()
+    {
+        if (monkHealCoroutine != null)
+        {
+            StopCoroutine(monkHealCoroutine);
+            monkHealCoroutine = null;
+        }
+        isHealingContinuously = false;
+        isPlayingAttackAnimation = false;
+        currentHealTarget = null;
+    }
+
+    /// <summary>
+    /// Continuous healing loop - keeps healing while there are wounded allies.
+    /// Animation loops automatically.
+    /// </summary>
+    private IEnumerator ContinuousHealingLoop()
+    {
+        // isHealingContinuously is set in PerformMonkHeal() before starting this coroutine
+        float animDuration = GetAttackAnimationDuration();
+        Debug.Log($"[Monk] ContinuousHealingLoop started, animDuration={animDuration:F2}s");
+
+        while (true)
+        {
+            // Check for interruption conditions
+            if (isDead || IsStunned || isFleeing)
+            {
+                StopMonkHealing();
+                yield break;
+            }
+
+            // Find wounded ally
+            EnemyBase healTarget = FindNearestWoundedAlly();
+            if (healTarget == null)
+            {
+                // No more wounded allies - stop healing
+                StopMonkHealing();
+                yield break;
+            }
+
+            currentHealTarget = healTarget;
+
+            // Face the ally being healed
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.flipX = healTarget.transform.position.x < transform.position.x;
+            }
+
+            // Start heal animation
+            lastAttackTime = Time.time;
+            isPlayingAttackAnimation = true;
+
+            if (animator != null)
+            {
+                // Monk uses "Heal" trigger, not "Attack"
+                animator.SetTrigger("Heal");
+            }
+
+            // Wait for animation to complete
+            float elapsed = 0f;
+            while (elapsed < animDuration)
+            {
+                elapsed += Time.deltaTime;
+
+                // Check for interruption during animation
+                if (isDead || IsStunned || isFleeing)
+                {
+                    StopMonkHealing();
+                    yield break;
+                }
+
+                // Cancel if moved during heal
+                if (rb != null && rb.linearVelocity.magnitude > 0.1f)
+                {
+                    StopMonkHealing();
+                    yield break;
+                }
+
+                yield return null;
+            }
+
+            isPlayingAttackAnimation = false;
+
+            // Apply heal at end of animation
+            if (!isDead && healTarget != null && !healTarget.IsDead)
+            {
+                float dist = Vector2.Distance(transform.position, healTarget.transform.position);
+                if (dist <= MonkHealRange * 1.2f)
+                {
+                    healTarget.Heal(MonkHealAmount);
+                    Debug.Log($"[Monk] Healed {healTarget.name} for {MonkHealAmount} HP (now {healTarget.CurrentHealth}/{healTarget.MaxHealth})");
+
+                    // Spawn heal effect on target
+                    if (EffectManager.Instance != null)
+                    {
+                        GameObject fx = EffectManager.Instance.SpawnHealEffect(healTarget.transform.position);
+                        Debug.Log($"[Monk] SpawnHealEffect result: {(fx != null ? fx.name : "NULL")}");
+                    }
+                    else
+                    {
+                        Debug.LogWarning("[Monk] EffectManager.Instance is NULL - cannot spawn heal effect!");
+                    }
+                }
+            }
+
+            // Small pause before next heal cycle (attack cooldown)
+            float cooldownRemaining = attackCooldown - animDuration;
+            if (cooldownRemaining > 0)
+            {
+                yield return new WaitForSeconds(cooldownRemaining);
+            }
+
+            // Loop continues - will check for wounded allies again at top
+        }
+    }
+
+    private EnemyBase FindNearestWoundedAlly()
+    {
+        EnemyBase[] allEnemies = FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
+        EnemyBase nearest = null;
+        float nearestDist = float.MaxValue;
+
+        foreach (var enemy in allEnemies)
+        {
+            if (enemy == this || enemy.IsDead) continue;
+            if (enemy.CurrentHealth >= enemy.MaxHealth) continue; // Not wounded
+
+            float dist = Vector2.Distance(transform.position, enemy.transform.position);
+            if (dist < nearestDist && dist <= MonkHealRange)
+            {
+                nearestDist = dist;
+                nearest = enemy;
+            }
+        }
+
+        return nearest;
+    }
+
+    #endregion
 
     /// <summary>
     /// Switch unarmed Pawn to knife animation when attacking.
@@ -606,10 +1034,16 @@ public class HumanEnemy : EnemyBase
 
     public override void DealDamage()
     {
-        if (target == null) return;
+        if (target == null)
+        {
+            Debug.Log($"[HumanEnemy.DealDamage] {gameObject.name} target is NULL!");
+            return;
+        }
 
         float dist = GetDistanceToTarget();
-        if (dist <= attackRange)
+        Debug.Log($"[HumanEnemy.DealDamage] {gameObject.name} → {target.name} dist={dist:F2} range={attackRange:F2} buffer={attackRange * 1.2f:F2} inRange={dist <= attackRange * 1.2f}");
+
+        if (dist <= attackRange * 1.2f) // 20% buffer to avoid missing due to slight drift
         {
             // Damage player
             PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
@@ -636,34 +1070,7 @@ public class HumanEnemy : EnemyBase
         }
     }
 
-    /// <summary>
-    /// Delay projectile spawn to sync with attack animation end.
-    /// </summary>
-    private IEnumerator SpawnProjectileAfterAnimation()
-    {
-        // Get attack animation length from animator
-        float animDelay = 0.5f; // Default fallback
-        if (animator != null && animator.runtimeAnimatorController != null)
-        {
-            AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
-            foreach (var clip in clips)
-            {
-                if (clip.name.ToLower().Contains("attack"))
-                {
-                    animDelay = clip.length * 0.85f; // Fire at 85% of animation
-                    break;
-                }
-            }
-        }
-
-        yield return new WaitForSeconds(animDelay);
-
-        // Only fire if still alive and target exists
-        if (!isDead && target != null)
-        {
-            SpawnProjectile();
-        }
-    }
+    // SpawnProjectileAfterAnimation replaced by RangedAttackAnimCoroutine above
 
     private void SpawnProjectile()
     {
@@ -681,7 +1088,9 @@ public class HumanEnemy : EnemyBase
             return;
         }
 
-        Vector3 spawnPos = projectileSpawnPoint != null ? projectileSpawnPoint.position : transform.position;
+        // Calculate spawn position based on archer's facing direction
+        // Arrow should come from the upper corner of the sprite (where bow/hand is)
+        Vector3 spawnPos = GetProjectileSpawnPosition();
 
         GameObject projectile = Instantiate(config.projectilePrefab, spawnPos, Quaternion.identity);
 
@@ -728,6 +1137,27 @@ public class HumanEnemy : EnemyBase
         }
     }
 
+    /// <summary>
+    /// Calculate the position where projectile should spawn based on archer's facing direction.
+    /// Arrow spawns from the upper corner of the sprite (where the bow/hand is).
+    /// </summary>
+    private Vector3 GetProjectileSpawnPosition()
+    {
+        // Base offset: upper body height
+        float yOffset = 0.4f;
+        // Horizontal offset: bow is on the side the archer is facing
+        float xOffset = 0.5f;
+
+        // If sprite is flipped, arrow comes from left side; otherwise from right
+        bool facingLeft = spriteRenderer != null && spriteRenderer.flipX;
+        if (facingLeft)
+        {
+            xOffset = -xOffset;
+        }
+
+        return transform.position + new Vector3(xOffset, yOffset, 0f);
+    }
+
     #endregion
 
     #region Death & Loot
@@ -742,6 +1172,13 @@ public class HumanEnemy : EnemyBase
         if (config?.deathSound != null)
         {
             AudioSource.PlayClipAtPoint(config.deathSound, transform.position);
+        }
+
+        // Award XP to player
+        if (GameManager.Instance != null && xpReward > 0)
+        {
+            GameManager.Instance.AddXP(xpReward);
+            Debug.Log($"[HumanEnemy] {config?.displayName ?? gameObject.name} awarded {xpReward} XP");
         }
 
         // No resource drops from enemies — only skulls
@@ -980,33 +1417,90 @@ public class HumanEnemy : EnemyBase
         Debug.Log($"[HumanEnemy] Added missing collider to {name}");
     }
 
-    private void OnDrawGizmosSelected()
+    protected override void OnDrawGizmosSelected()
     {
-        // Attack range
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        // Collider — black
+        Gizmos.color = GizmosHelper.ColliderColor;
+        var col = GetComponent<Collider2D>();
+        if (col is CircleCollider2D cc)
+            Gizmos.DrawWireSphere(transform.TransformPoint(cc.offset), cc.radius * Mathf.Max(transform.lossyScale.x, transform.lossyScale.y));
+        else if (col is BoxCollider2D bc)
+            Gizmos.DrawWireCube(transform.TransformPoint(bc.offset), new Vector3(bc.size.x * transform.lossyScale.x, bc.size.y * transform.lossyScale.y, 0));
 
-        // Detection range
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, config?.detectionRange ?? detectionRange);
+        // Check if this is a Pawn (Coward) or Monk (Support) - they don't have Attack/Chase
+        bool isPawn = config != null && config.enemyType == EnemyType.Pawn;
+        bool isMonk = config != null && config.behavior == EnemyBehavior.Support;
+        bool hideAttackAndChase = isPawn || isMonk;
 
-        // Chase range
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, config?.chaseRange ?? chaseRange);
+        // Melee / Ranged attack range — NOT for Pawn (he only has Desperate) or Monk (no attack)
+        if (!hideAttackAndChase)
+        {
+            bool isRanged = config != null && config.isRanged;
+            float atkRange = config?.attackRange ?? attackRange;
+            if (atkRange > 0)
+            {
+                Gizmos.color = isRanged ? GizmosHelper.RangedAttackColor : GizmosHelper.MeleeAttackColor;
+                if (isRanged)
+                    GizmosHelper.DrawDashedWireCircle(transform.position, atkRange);
+                else
+                    Gizmos.DrawWireSphere(transform.position, atkRange);
+            }
+        }
 
-        // Home position
+        // Chase range — yellow — NOT for Pawn (he only flees) or Monk (no chase)
+        if (!hideAttackAndChase)
+        {
+            float chaseRangeValue = config?.chaseRange ?? chaseRange;
+            if (chaseRangeValue > 0)
+            {
+                Gizmos.color = GizmosHelper.ChaseColor;
+                Gizmos.DrawWireSphere(transform.position, chaseRangeValue);
+            }
+        }
+
+        // Fear range — white (only for enemies that have it: Pawn, Archer, Monk)
+        float fearRangeValue = config?.fearRange ?? 0f;
+        if (fearRangeValue > 0)
+        {
+            Gizmos.color = GizmosHelper.FearColor;
+            Gizmos.DrawWireSphere(transform.position, fearRangeValue);
+        }
+
+        // Heal range — green (Monk only)
+        float healRangeValue = config?.healRange ?? 0f;
+        if (healRangeValue > 0)
+        {
+            Gizmos.color = GizmosHelper.HealRangeColor;
+            Gizmos.DrawWireSphere(transform.position, healRangeValue);
+        }
+
+        // Desperate attack range — pink (Pawn only, knife)
+        float desperateRangeValue = config?.desperateRange ?? 0f;
+        if (desperateRangeValue > 0)
+        {
+            Gizmos.color = GizmosHelper.DesperateAttackColor;
+            Gizmos.DrawWireSphere(transform.position, desperateRangeValue);
+        }
+
+        // Resource detection range — brown (Pawn, Miner)
+        float resourceRangeValue = config?.resourceDetectionRange ?? 0f;
+        if (resourceRangeValue > 0)
+        {
+            Gizmos.color = GizmosHelper.ResourceDetectionColor;
+            Gizmos.DrawWireSphere(transform.position, resourceRangeValue);
+        }
+
+        // Wander radius — gray (read from config)
+        float wanderRadiusValue = config?.wanderRadius ?? wanderRadius;
+        Gizmos.color = GizmosHelper.WanderColor;
+        Vector3 home = hasHomePosition ? homePosition : transform.position;
+        Gizmos.DrawWireSphere(home, wanderRadiusValue);
+
+        // Home position line
         if (hasHomePosition)
         {
             Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, homePosition);
-            Gizmos.DrawWireSphere(homePosition, 0.5f);
-        }
-
-        // Flee range (for cowards)
-        if (config?.behavior == EnemyBehavior.Coward)
-        {
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(transform.position, config.fleeRange);
         }
     }
 }

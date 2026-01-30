@@ -7,6 +7,8 @@ using System.Collections;
 /// - Spots any resource (except Skull) and runs to collect it
 /// - Carries resource to nearest building while avoiding player
 /// - Deposits resource in building
+/// - ALWAYS flees from player (fear radius = archer's attack range = 30)
+/// - When cornered (can't flee), switches to Combat with knife
 /// Per GDD: Peasant collects ANY resource (Meat, Wood, Gold) and carries it to nearest house.
 /// Two forces when carrying: attraction to building + fear of player.
 /// </summary>
@@ -16,17 +18,31 @@ public class Peasant : EnemyBase
     {
         Idle,               // Standing still
         Wandering,          // Walking around home position
+        Fleeing,            // Running away from player
         RunningToResource,  // Spotted resource, going to pick it up
         CarryingResource,   // Has resource, heading to building while avoiding player
-        Combat              // In combat (doesn't collect resources)
+        Combat              // Cornered - fighting with knife
     }
+
+    [Header("Configuration")]
+    [SerializeField] private EnemyConfig config;
 
     [Header("Peasant Settings")]
     [SerializeField] private float pickupRadius = 0.5f;
     [SerializeField] private float resourceDetectionRadius = 8f;
     [SerializeField] private float buildingDeliveryRadius = 1f;
-    [SerializeField] private float playerFearRadius = 5f;
+    [SerializeField] private float playerFearRadius = 16f; // Fear range from config
     [SerializeField] private float playerFearStrength = 0.7f;
+    [SerializeField] private float fleeSpeed = 3f;
+
+    [Header("Cornered Combat")]
+    [SerializeField] private float corneredCheckInterval = 0.5f;
+    [SerializeField] private float corneredDistance = 6f; // If player within this range and pawn can't move, considered cornered
+    [SerializeField] private float corneredTime = 1.0f; // Must be cornered this long before fighting
+    [SerializeField] private float knifeAttackRange = 2f; // Desperate range from config
+    [SerializeField] private int knifeDamage = 5; // From config.damage
+    [SerializeField] private float knifeAttackCooldown = 1f; // From config.attackCooldown
+    [SerializeField] private float combatExitDistance = 8f; // If player goes this far, exit combat
 
     [Header("Wander Behavior")]
     [SerializeField] private float wanderRadius = 2.5f;
@@ -35,19 +51,8 @@ public class Peasant : EnemyBase
     [SerializeField] private float wanderSpeed = 1.5f;
     [SerializeField] private float carrySpeed = 2f;
 
-    [Header("Carrying Animation Sprites")]
-    [Tooltip("Sprites for carrying meat (idle, run)")]
-    [SerializeField] private Sprite idleMeatSprite;
-    [SerializeField] private Sprite runMeatSprite;
-    [Tooltip("Sprites for carrying wood (idle, run)")]
-    [SerializeField] private Sprite idleWoodSprite;
-    [SerializeField] private Sprite runWoodSprite;
-    [Tooltip("Sprites for carrying gold (idle, run)")]
-    [SerializeField] private Sprite idleGoldSprite;
-    [SerializeField] private Sprite runGoldSprite;
-    [Tooltip("Normal sprites (no resource)")]
-    [SerializeField] private Sprite normalIdleSprite;
-    [SerializeField] private Sprite normalRunSprite;
+    // Public accessor for config
+    public EnemyConfig Config => config;
 
     [Header("Visual Feedback")]
     [SerializeField] private Color carryingTint = new Color(1f, 1f, 0.8f);
@@ -66,29 +71,196 @@ public class Peasant : EnemyBase
     private ResourcePickup targetResource;
     private MonoBehaviour targetBuilding; // EnemyHouse, Watchtower, or Castle
 
-    // Animation
+    // Flee & cornered state
+    private float corneredTimer = 0f;
+    private Vector3 lastFleePosition;
+    private float corneredCheckTimer = 0f;
+    private bool isCornered = false;
+
+    // Combat state
+    private float lastCombatAttackTime;
+
+    // Animation - loaded at runtime from sprite sheets
     private bool isMoving;
-    private Sprite currentIdleSprite;
-    private Sprite currentRunSprite;
+    private bool spritesLoaded = false;
+    private bool useManualSprites = false; // True when carrying resource (disable Animator)
+
+    // Loaded sprite arrays for carrying (all frames for animation)
+    private Sprite[] loadedIdleMeatFrames, loadedRunMeatFrames;
+    private Sprite[] loadedIdleWoodFrames, loadedRunWoodFrames;
+    private Sprite[] loadedIdleGoldFrames, loadedRunGoldFrames;
+    private Sprite[] loadedIdleKnifeFrames, loadedRunKnifeFrames, loadedInteractKnifeFrames;
+    // Single references for quick access (first frame)
+    private Sprite loadedInteractKnife;
+    private Sprite normalIdleSprite;
+
+    // Manual animation state
+    private float manualAnimTimer = 0f;
+    private int manualAnimFrame = 0;
+    private float manualAnimFrameRate = 8f; // FPS for manual sprite animation
+
+    // Animator controllers
+    private RuntimeAnimatorController originalAnimatorController;
+    private RuntimeAnimatorController knifeAnimatorController;
+
+    // Sprite paths (Blue Units Pawn)
+    private const string PAWN_SPRITES = "Assets/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units/Pawn";
 
     protected override void Start()
     {
+        // Initialize from config BEFORE base.Start()
+        InitializeFromConfig();
+
         base.Start();
         homePosition = transform.position;
         currentState = PeasantState.Idle;
         StartNewIdlePeriod();
 
-        // Store original sprites
-        if (spriteRenderer != null && normalIdleSprite == null)
+        // Store original sprite and animator
+        if (spriteRenderer != null)
         {
             normalIdleSprite = spriteRenderer.sprite;
         }
+        if (animator != null)
+        {
+            originalAnimatorController = animator.runtimeAnimatorController;
+        }
+
+        // Load carrying & knife sprites from sprite sheets
+        LoadCarryingSprites();
+        LoadKnifeAnimatorController();
     }
+
+    /// <summary>
+    /// Initialize stats from EnemyConfig (like HumanEnemy).
+    /// </summary>
+    public void InitializeFromConfig()
+    {
+        if (config == null)
+        {
+            Debug.LogWarning($"[Peasant] No config assigned to {gameObject.name}, using defaults");
+            return;
+        }
+
+        // Base stats
+        maxHealth = config.maxHealth;
+        currentHealth = maxHealth;
+        damage = config.damage;
+        moveSpeed = config.moveSpeed;
+        xpReward = config.xpReward;
+
+        // Peasant-specific stats from config
+        playerFearRadius = config.fearRange;
+        knifeAttackRange = config.desperateRange;
+        resourceDetectionRadius = config.resourceDetectionRange;
+        wanderRadius = config.wanderRadius;
+        knifeDamage = config.damage;
+        knifeAttackCooldown = config.AttackCooldown;
+
+        Debug.Log($"[Peasant] Initialized from config: fear={playerFearRadius}, desperate={knifeAttackRange}, resource={resourceDetectionRadius}");
+    }
+
+    /// <summary>
+    /// Initialize with specific config (called by spawners/LevelEditor).
+    /// </summary>
+    public void Initialize(EnemyConfig enemyConfig)
+    {
+        config = enemyConfig;
+        InitializeFromConfig();
+    }
+
+    /// <summary>
+    /// Load all frames from each carrying sprite sheet for animated sprite swap.
+    /// </summary>
+    private void LoadCarryingSprites()
+    {
+        loadedIdleMeatFrames = LoadAllSprites($"{PAWN_SPRITES}/Pawn_Idle Meat.png");
+        loadedRunMeatFrames = LoadAllSprites($"{PAWN_SPRITES}/Pawn_Run Meat.png");
+        loadedIdleWoodFrames = LoadAllSprites($"{PAWN_SPRITES}/Pawn_Idle Wood.png");
+        loadedRunWoodFrames = LoadAllSprites($"{PAWN_SPRITES}/Pawn_Run Wood.png");
+        loadedIdleGoldFrames = LoadAllSprites($"{PAWN_SPRITES}/Pawn_Idle Gold.png");
+        loadedRunGoldFrames = LoadAllSprites($"{PAWN_SPRITES}/Pawn_Run Gold.png");
+        loadedIdleKnifeFrames = LoadAllSprites($"{PAWN_SPRITES}/Pawn_Idle Knife.png");
+        loadedRunKnifeFrames = LoadAllSprites($"{PAWN_SPRITES}/Pawn_Run Knife.png");
+        loadedInteractKnifeFrames = LoadAllSprites($"{PAWN_SPRITES}/Pawn_Interact Knife.png");
+
+        // Keep single reference for knife attack
+        if (loadedInteractKnifeFrames != null && loadedInteractKnifeFrames.Length > 0)
+            loadedInteractKnife = loadedInteractKnifeFrames[0];
+
+        spritesLoaded = (loadedIdleMeatFrames != null || loadedIdleWoodFrames != null || loadedIdleGoldFrames != null);
+        if (spritesLoaded)
+        {
+            Debug.Log("[Peasant] Carrying sprites loaded successfully");
+        }
+        else
+        {
+            Debug.LogWarning("[Peasant] Could not load carrying sprites from sprite sheets");
+        }
+    }
+
+    /// <summary>
+    /// Load all sprites from a sliced sprite sheet asset.
+    /// </summary>
+    private Sprite[] LoadAllSprites(string assetPath)
+    {
+#if UNITY_EDITOR
+        Object[] assets = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(assetPath);
+        if (assets != null)
+        {
+            var sprites = new System.Collections.Generic.List<Sprite>();
+            foreach (var asset in assets)
+            {
+                if (asset is Sprite sprite)
+                {
+                    sprites.Add(sprite);
+                }
+            }
+            if (sprites.Count > 0) return sprites.ToArray();
+        }
+#endif
+        return null;
+    }
+
+    /// <summary>
+    /// Try to find the knife animator controller in the project.
+    /// </summary>
+    private void LoadKnifeAnimatorController()
+    {
+#if UNITY_EDITOR
+        // Try to find the PawnKnife or Pawn_Knife controller
+        string[] guids = UnityEditor.AssetDatabase.FindAssets("Pawn_Controller t:RuntimeAnimatorController",
+            new[] { "Assets/Animations/Enemies" });
+        if (guids.Length > 0)
+        {
+            string path = UnityEditor.AssetDatabase.GUIDToAssetPath(guids[0]);
+            knifeAnimatorController = UnityEditor.AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(path);
+        }
+#endif
+    }
+
+    private float debugLogTimer = 0f;
 
     protected override void Update()
     {
         if (isDead) return;
         if (IsStunned) return;
+
+        // Debug: log state periodically
+        debugLogTimer += Time.deltaTime;
+        if (debugLogTimer >= 1f)
+        {
+            debugLogTimer = 0f;
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
+            float pd = p != null ? Vector2.Distance(transform.position, p.transform.position) : -1f;
+            Debug.Log($"[Peasant] State={currentState} playerDist={pd:F1} hp={currentHealth}/{maxHealth} useManual={useManualSprites}");
+        }
+
+        // Check player distance for fear in ALL states (except Combat)
+        if (currentState != PeasantState.Combat)
+        {
+            CheckPlayerFear();
+        }
 
         switch (currentState)
         {
@@ -98,6 +270,9 @@ public class Peasant : EnemyBase
             case PeasantState.Wandering:
                 // Movement in FixedUpdate
                 break;
+            case PeasantState.Fleeing:
+                UpdateFleeing();
+                break;
             case PeasantState.RunningToResource:
                 UpdateRunningToResource();
                 break;
@@ -105,11 +280,17 @@ public class Peasant : EnemyBase
                 UpdateCarryingResource();
                 break;
             case PeasantState.Combat:
-                // Combat handled by base class
+                UpdateCombat();
                 break;
         }
 
-        // Always check for nearby resources when idle/wandering
+        // Knife attack when player is super close (works in ANY state)
+        if (currentState != PeasantState.Combat)
+        {
+            CheckProximityKnifeAttack();
+        }
+
+        // Check for nearby resources when idle/wandering (not fleeing)
         if (currentState == PeasantState.Idle || currentState == PeasantState.Wandering)
         {
             CheckForNearbyResources();
@@ -128,6 +309,9 @@ public class Peasant : EnemyBase
                 MoveTowardsTarget(wanderTarget, wanderSpeed);
                 CheckWanderArrival();
                 break;
+            case PeasantState.Fleeing:
+                FleeFromPlayer();
+                break;
             case PeasantState.RunningToResource:
                 if (targetResource != null)
                 {
@@ -137,8 +321,397 @@ public class Peasant : EnemyBase
             case PeasantState.CarryingResource:
                 MoveTowardsBuildingWithFear();
                 break;
+            case PeasantState.Combat:
+                UpdateCombatMovement();
+                break;
         }
     }
+
+    #region Fear & Flee
+
+    /// <summary>
+    /// Check if player is within fear radius. If so, start fleeing.
+    /// </summary>
+    private void CheckPlayerFear()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj == null) return;
+
+        float playerDist = Vector2.Distance(transform.position, playerObj.transform.position);
+
+        if (playerDist < playerFearRadius && currentState != PeasantState.Fleeing)
+        {
+            // Drop resource pickup target if we were running to one
+            if (currentState == PeasantState.RunningToResource)
+            {
+                targetResource = null;
+            }
+
+            StartFleeing();
+        }
+    }
+
+    private void StartFleeing()
+    {
+        currentState = PeasantState.Fleeing;
+        corneredTimer = 0f;
+        isCornered = false;
+        lastFleePosition = transform.position;
+        corneredCheckTimer = 0f;
+        Debug.Log("[Peasant] Fleeing from player!");
+    }
+
+    private void UpdateFleeing()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj == null)
+        {
+            StartNewIdlePeriod();
+            return;
+        }
+
+        float playerDist = Vector2.Distance(transform.position, playerObj.transform.position);
+
+        // Player left fear range - return to idle
+        if (playerDist >= playerFearRadius)
+        {
+            corneredTimer = 0f;
+            isCornered = false;
+            StartNewIdlePeriod();
+            return;
+        }
+
+        // DESPERATE MODE: If player catches up and is within desperate range - enter combat immediately!
+        // This is the main trigger - Pawn switches to knife when player gets too close
+        if (playerDist <= knifeAttackRange)
+        {
+            Debug.Log($"[Peasant] Player caught up! dist={playerDist:F1} <= desperateRange={knifeAttackRange:F1} — entering Combat!");
+            EnterCombat();
+            return;
+        }
+
+        // Check if cornered (not making progress fleeing) - backup trigger
+        corneredCheckTimer += Time.deltaTime;
+        if (corneredCheckTimer >= corneredCheckInterval)
+        {
+            corneredCheckTimer = 0f;
+            float movedDistance = Vector2.Distance(transform.position, lastFleePosition);
+
+            if (movedDistance < 0.5f && playerDist < corneredDistance)
+            {
+                // Not moving much and player is close - might be cornered
+                corneredTimer += corneredCheckInterval;
+
+                if (corneredTimer >= corneredTime)
+                {
+                    // Cornered! Switch to combat
+                    EnterCombat();
+                    return;
+                }
+            }
+            else
+            {
+                corneredTimer = 0f;
+            }
+
+            lastFleePosition = transform.position;
+        }
+    }
+
+    private void FleeFromPlayer()
+    {
+        if (rb == null) return;
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj == null) return;
+
+        Vector2 fromPlayer = ((Vector2)transform.position - (Vector2)playerObj.transform.position).normalized;
+        rb.linearVelocity = fromPlayer * fleeSpeed;
+
+        // Face movement direction
+        if (spriteRenderer != null && fromPlayer.x != 0)
+        {
+            spriteRenderer.flipX = fromPlayer.x < 0;
+        }
+
+        isMoving = true;
+    }
+
+    #endregion
+
+    #region Combat (Cornered with Knife)
+
+    // Peasant knife attack animation state
+    private bool isPlayingKnifeAttack;
+    private Coroutine knifeAttackCoroutine;
+
+    /// <summary>
+    /// Even outside Combat state, stab with knife if player is right next to pawn.
+    /// </summary>
+    private void CheckProximityKnifeAttack()
+    {
+        if (isPlayingKnifeAttack) return;
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj == null) return;
+
+        float playerDist = Vector2.Distance(transform.position, playerObj.transform.position);
+        float effectiveRange = knifeAttackRange;
+        if (playerDist <= effectiveRange && Time.time - lastCombatAttackTime >= knifeAttackCooldown)
+        {
+            lastCombatAttackTime = Time.time;
+            Debug.Log($"[Peasant] Proximity knife stab! dist={playerDist:F1}");
+            StartKnifeAttack(playerObj);
+        }
+    }
+
+    private void EnterCombat()
+    {
+        currentState = PeasantState.Combat;
+        isCornered = true;
+        lastCombatAttackTime = -999f; // Ensure first attack fires immediately
+
+        // Switch to knife visuals
+        SwitchToKnifeVisuals(true);
+
+        // Start attack animation on entering combat — damage on completion
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            float dist = Vector2.Distance(transform.position, playerObj.transform.position);
+            Debug.Log($"[Peasant] Cornered! Drawing knife! Player dist={dist:F1}");
+            lastCombatAttackTime = Time.time;
+            StartKnifeAttack(playerObj);
+        }
+        else
+        {
+            Debug.Log("[Peasant] Cornered! Drawing knife and fighting!");
+        }
+    }
+
+    private void ExitCombat()
+    {
+        isCornered = false;
+        corneredTimer = 0f;
+
+        // Switch back to normal visuals
+        SwitchToKnifeVisuals(false);
+
+        // Return to fleeing (will transition to idle if player far enough)
+        StartFleeing();
+
+        Debug.Log("[Peasant] Exiting combat, back to normal.");
+    }
+
+    private void SwitchToKnifeVisuals(bool useKnife)
+    {
+        if (useKnife)
+        {
+            // Disable animator, use manual knife sprites
+            if (animator != null)
+            {
+                animator.enabled = false;
+            }
+            useManualSprites = true;
+        }
+        else
+        {
+            // Re-enable animator (unless carrying)
+            useManualSprites = (carriedAmount > 0);
+            if (!useManualSprites && animator != null)
+            {
+                animator.enabled = true;
+                if (originalAnimatorController != null)
+                {
+                    animator.runtimeAnimatorController = originalAnimatorController;
+                }
+            }
+        }
+    }
+
+    private void UpdateCombat()
+    {
+        // Don't interrupt ongoing knife attack
+        if (isPlayingKnifeAttack) return;
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj == null)
+        {
+            ExitCombat();
+            return;
+        }
+
+        float playerDist = Vector2.Distance(transform.position, playerObj.transform.position);
+
+        // If player moves far enough, exit combat and return to normal
+        if (playerDist > combatExitDistance)
+        {
+            ExitCombat();
+            return;
+        }
+
+        // Face the player
+        if (spriteRenderer != null)
+        {
+            float dx = playerObj.transform.position.x - transform.position.x;
+            if (dx != 0) spriteRenderer.flipX = dx < 0;
+        }
+
+        // Attack if cooldown elapsed
+        float timeSinceLastAttack = Time.time - lastCombatAttackTime;
+        if (timeSinceLastAttack >= knifeAttackCooldown)
+        {
+            lastCombatAttackTime = Time.time;
+            StartKnifeAttack(playerObj);
+        }
+    }
+
+    /// <summary>
+    /// In combat, pawn moves toward player to get within knife range, then stops.
+    /// Don't move during attack animation.
+    /// </summary>
+    private void UpdateCombatMovement()
+    {
+        if (rb == null) return;
+
+        // Don't move during attack animation
+        if (isPlayingKnifeAttack)
+        {
+            rb.linearVelocity = Vector2.zero;
+            isMoving = false;
+            return;
+        }
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj == null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            isMoving = false;
+            return;
+        }
+
+        float playerDist = Vector2.Distance(transform.position, playerObj.transform.position);
+
+        if (playerDist > knifeAttackRange * 0.9f)
+        {
+            Vector2 toPlayer = ((Vector2)playerObj.transform.position - (Vector2)transform.position).normalized;
+            rb.linearVelocity = toPlayer * moveSpeed;
+
+            if (spriteRenderer != null && toPlayer.x != 0)
+            {
+                spriteRenderer.flipX = toPlayer.x < 0;
+            }
+            isMoving = true;
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+            isMoving = false;
+        }
+    }
+
+    /// <summary>
+    /// Start knife attack: play animation, deal damage ONLY when animation completes.
+    /// If pawn moves or is stunned during animation, attack is canceled.
+    /// Animation speed scales with knifeAttackCooldown.
+    /// </summary>
+    private void StartKnifeAttack(GameObject playerObj)
+    {
+        if (isPlayingKnifeAttack) return;
+
+        isPlayingKnifeAttack = true;
+        Debug.Log($"[Peasant] Starting knife attack animation on {playerObj.name}");
+
+        if (knifeAttackCoroutine != null) StopCoroutine(knifeAttackCoroutine);
+        knifeAttackCoroutine = StartCoroutine(KnifeAttackAnimCoroutine(playerObj));
+    }
+
+    /// <summary>
+    /// Play knife attack animation frames, then deal damage on completion.
+    /// </summary>
+    private IEnumerator KnifeAttackAnimCoroutine(GameObject playerObj)
+    {
+        // Calculate animation duration scaled to match attack cooldown
+        int frameCount = (loadedInteractKnifeFrames != null) ? loadedInteractKnifeFrames.Length : 0;
+        float baseAnimDuration = frameCount > 0 ? frameCount / manualAnimFrameRate : 0.5f;
+        float targetDuration = knifeAttackCooldown * 0.85f;
+        float speedMultiplier = baseAnimDuration > 0 ? baseAnimDuration / targetDuration : 1f;
+        float scaledFrameRate = manualAnimFrameRate * speedMultiplier;
+
+        // Play animation frames
+        if (loadedInteractKnifeFrames != null && loadedInteractKnifeFrames.Length > 0 && spriteRenderer != null)
+        {
+            float frameDuration = 1f / scaledFrameRate;
+            foreach (var frame in loadedInteractKnifeFrames)
+            {
+                // Cancel if dead, stunned, or started moving
+                if (isDead || IsStunned)
+                {
+                    CancelKnifeAttack();
+                    yield break;
+                }
+                if (rb != null && rb.linearVelocity.magnitude > 0.1f)
+                {
+                    CancelKnifeAttack();
+                    yield break;
+                }
+
+                spriteRenderer.sprite = frame;
+                yield return new WaitForSeconds(frameDuration);
+            }
+        }
+        else
+        {
+            // No frames — wait for cooldown duration
+            float elapsed = 0f;
+            while (elapsed < targetDuration)
+            {
+                elapsed += Time.deltaTime;
+                if (isDead || IsStunned || (rb != null && rb.linearVelocity.magnitude > 0.1f))
+                {
+                    CancelKnifeAttack();
+                    yield break;
+                }
+                yield return null;
+            }
+        }
+
+        // Animation completed — deal damage
+        isPlayingKnifeAttack = false;
+        knifeAttackCoroutine = null;
+
+        if (playerObj == null)
+        {
+            Debug.Log("[Peasant] Knife attack completed but player gone!");
+            yield break;
+        }
+
+        // Deal damage
+        PlayerHealth playerHealth = playerObj.GetComponent<PlayerHealth>();
+        if (playerHealth == null)
+            playerHealth = playerObj.GetComponentInChildren<PlayerHealth>();
+        if (playerHealth == null)
+            playerHealth = playerObj.GetComponentInParent<PlayerHealth>();
+
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(knifeDamage);
+            Debug.Log($"[Peasant] Knife hit! {knifeDamage} damage dealt to {playerObj.name}");
+        }
+        else
+        {
+            Debug.LogError($"[Peasant] NO PlayerHealth found on {playerObj.name}!");
+        }
+    }
+
+    private void CancelKnifeAttack()
+    {
+        isPlayingKnifeAttack = false;
+        knifeAttackCoroutine = null;
+        Debug.Log("[Peasant] Knife attack canceled (interrupted)");
+    }
+
+    #endregion
 
     #region Idle & Wander
 
@@ -157,6 +730,16 @@ public class Peasant : EnemyBase
         idleTimer = 0f;
         currentIdleDuration = Random.Range(idleMinTime, idleMaxTime);
         StopMovement();
+
+        // Restore animator if we were using manual sprites without carrying
+        if (carriedAmount <= 0 && currentState != PeasantState.Combat)
+        {
+            useManualSprites = false;
+            if (animator != null)
+            {
+                animator.enabled = true;
+            }
+        }
     }
 
     private void StartWandering()
@@ -438,24 +1021,14 @@ public class Peasant : EnemyBase
 
     private void UpdateCarryingVisuals(bool isCarrying)
     {
-        if (isCarrying)
+        if (isCarrying && spritesLoaded)
         {
-            // Set sprites based on resource type
-            switch (carriedResourceType)
+            // Disable Animator — use manual sprite swap for carrying
+            if (animator != null)
             {
-                case ResourcePickup.ResourceType.Meat:
-                    currentIdleSprite = idleMeatSprite;
-                    currentRunSprite = runMeatSprite;
-                    break;
-                case ResourcePickup.ResourceType.Wood:
-                    currentIdleSprite = idleWoodSprite;
-                    currentRunSprite = runWoodSprite;
-                    break;
-                case ResourcePickup.ResourceType.Gold:
-                    currentIdleSprite = idleGoldSprite;
-                    currentRunSprite = runGoldSprite;
-                    break;
+                animator.enabled = false;
             }
+            useManualSprites = true;
 
             if (spriteRenderer != null)
             {
@@ -469,8 +1042,19 @@ public class Peasant : EnemyBase
         }
         else
         {
-            currentIdleSprite = normalIdleSprite;
-            currentRunSprite = normalRunSprite;
+            // Re-enable Animator when not carrying (unless in combat)
+            if (currentState != PeasantState.Combat)
+            {
+                useManualSprites = false;
+                if (animator != null)
+                {
+                    animator.enabled = true;
+                    if (originalAnimatorController != null)
+                    {
+                        animator.runtimeAnimatorController = originalAnimatorController;
+                    }
+                }
+            }
 
             if (spriteRenderer != null)
             {
@@ -491,16 +1075,54 @@ public class Peasant : EnemyBase
             isMoving = rb.linearVelocity.magnitude > 0.1f;
         }
 
-        // Update animator if present
-        if (animator != null)
+        // Animator handles animation when not using manual sprites
+        if (!useManualSprites)
         {
-            animator.SetBool(AnimIsMoving, isMoving);
+            if (animator != null && animator.runtimeAnimatorController != null)
+            {
+                animator.SetBool(AnimIsMoving, isMoving);
+            }
+            return;
         }
 
-        // Update sprite based on movement (if using sprite swap instead of animator)
-        if (spriteRenderer != null && currentIdleSprite != null && currentRunSprite != null)
+        // Manual sprite animation for carrying / combat
+        if (spriteRenderer == null) return;
+
+        // Advance frame timer
+        manualAnimTimer += Time.deltaTime;
+        float frameDuration = 1f / manualAnimFrameRate;
+        if (manualAnimTimer >= frameDuration)
         {
-            spriteRenderer.sprite = isMoving ? currentRunSprite : currentIdleSprite;
+            manualAnimTimer -= frameDuration;
+            manualAnimFrame++;
+        }
+
+        Sprite[] frames = null;
+
+        if (currentState == PeasantState.Combat)
+        {
+            frames = isMoving ? loadedRunKnifeFrames : loadedIdleKnifeFrames;
+        }
+        else if (carriedAmount > 0)
+        {
+            switch (carriedResourceType)
+            {
+                case ResourcePickup.ResourceType.Meat:
+                    frames = isMoving ? loadedRunMeatFrames : loadedIdleMeatFrames;
+                    break;
+                case ResourcePickup.ResourceType.Wood:
+                    frames = isMoving ? loadedRunWoodFrames : loadedIdleWoodFrames;
+                    break;
+                case ResourcePickup.ResourceType.Gold:
+                    frames = isMoving ? loadedRunGoldFrames : loadedIdleGoldFrames;
+                    break;
+            }
+        }
+
+        if (frames != null && frames.Length > 0)
+        {
+            int idx = manualAnimFrame % frames.Length;
+            spriteRenderer.sprite = frames[idx];
         }
     }
 
@@ -531,11 +1153,18 @@ public class Peasant : EnemyBase
 
     #endregion
 
-    #region Death & Combat
+    #region Death & Combat Overrides
 
     protected override void Die()
     {
         isDead = true;
+
+        // Award XP to player
+        if (GameManager.Instance != null && xpReward > 0)
+        {
+            GameManager.Instance.AddXP(xpReward);
+            Debug.Log($"[Peasant] Awarded {xpReward} XP");
+        }
 
         // If carrying a resource, fling it far away (beyond magnet radius of 9)
         if (carriedAmount > 0)
@@ -546,7 +1175,7 @@ public class Peasant : EnemyBase
         // Stop movement
         StopMovement();
 
-        // Spawn death dust effect — skull appears simultaneously
+        // Spawn death dust effect -- skull appears simultaneously
         Vector3 deathPos = transform.position;
 
         if (EffectManager.Instance != null)
@@ -595,7 +1224,7 @@ public class Peasant : EnemyBase
         UpdateCarryingVisuals(false);
     }
 
-    // Peasants don't attack - they run away
+    // Base class overrides - Peasant uses its own combat system
     protected override void PerformAttack() { }
     public override void DealDamage() { }
 
@@ -607,37 +1236,52 @@ public class Peasant : EnemyBase
     public int CarriedAmount => carriedAmount;
     public ResourcePickup.ResourceType CarriedType => carriedResourceType;
     public bool IsCarrying => carriedAmount > 0;
+    public bool IsCornered => isCornered;
 
     #endregion
 
     #region Debug
 
-    private void OnDrawGizmosSelected()
+    protected override void OnDrawGizmosSelected()
     {
-        // Home position
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(Application.isPlaying ? homePosition : transform.position, wanderRadius);
+        // Read values from config if available (for live editing in Balancer)
+        float fearRange = config?.fearRange ?? playerFearRadius;
+        float desperateRange = config?.desperateRange ?? knifeAttackRange;
+        float resourceRange = config?.resourceDetectionRange ?? resourceDetectionRadius;
+        float wanderRange = config?.wanderRadius ?? wanderRadius;
 
-        // Resource detection radius
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, resourceDetectionRadius);
+        // Collider — black
+        Gizmos.color = GizmosHelper.ColliderColor;
+        var col = GetComponent<Collider2D>();
+        if (col is CircleCollider2D cc)
+            Gizmos.DrawWireSphere(transform.TransformPoint(cc.offset), cc.radius * Mathf.Max(transform.lossyScale.x, transform.lossyScale.y));
+        else if (col is BoxCollider2D bc)
+            Gizmos.DrawWireCube(transform.TransformPoint(bc.offset), new Vector3(bc.size.x * transform.lossyScale.x, bc.size.y * transform.lossyScale.y, 0));
 
-        // Pickup radius
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, pickupRadius);
+        // Desperate attack (knife) — pink
+        Gizmos.color = GizmosHelper.DesperateAttackColor;
+        Gizmos.DrawWireSphere(transform.position, desperateRange);
 
-        // Player fear radius
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, playerFearRadius);
+        // Fear range — cyan (NOT yellow - Pawn doesn't have Detection/Chase, only Fear)
+        Gizmos.color = GizmosHelper.FearColor;
+        Gizmos.DrawWireSphere(transform.position, fearRange);
 
-        // Target resource
+        // Resource detection — brown
+        Gizmos.color = GizmosHelper.ResourceDetectionColor;
+        Gizmos.DrawWireSphere(transform.position, resourceRange);
+
+        // Wander radius — gray
+        Gizmos.color = GizmosHelper.WanderColor;
+        Gizmos.DrawWireSphere(Application.isPlaying ? homePosition : transform.position, wanderRange);
+
+        // Target resource line
         if (targetResource != null)
         {
             Gizmos.color = Color.cyan;
             Gizmos.DrawLine(transform.position, targetResource.transform.position);
         }
 
-        // Target building
+        // Target building line
         if (targetBuilding != null)
         {
             Gizmos.color = Color.magenta;
